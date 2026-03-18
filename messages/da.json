@@ -11,6 +11,9 @@
     "contact": "Kontakt",
     "bookWorkshop": "Book Workshop"
   },
+  "clients": {
+    "label": "Betroet af fremsynede virksomheder"
+  },
   "hero": {
     "badge": "Det Nordiske Forspring med AI",
     "headlinePre": "Bring",

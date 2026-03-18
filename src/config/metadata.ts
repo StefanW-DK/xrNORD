@@ -18,9 +18,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
     siteName: "xrNORD",
     pages: {
       home: {
-        title: "xrNORD — AI Strategy & Implementation for Business",
+        title: "AI Advisory & Solutions Built for Your Business | xrNORD",
         description:
-          "We help Scandinavian companies move from AI awareness to real adoption — with clear strategy, structured roadmaps, and AI solutions built for your business.",
+          "AI solutions designed for your business. We help companies identify AI opportunities, build strategies, and implement solutions that create real business value.",
         keywords: ["AI strategy", "AI implementation", "Scandinavian AI", "AI roadmap", "AI workshop", "Nordic AI"],
       },
       workshop: {
@@ -65,9 +65,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
     siteName: "xrNORD",
     pages: {
       home: {
-        title: "xrNORD — AI Strategi & Implementering til Forretningen",
+        title: "AI-rådgivning & løsninger skabt til jeres virksomhed | xrNORD",
         description:
-          "Vi hjælper skandinaviske virksomheder med at gå fra AI-bevidsthed til reel implementering — med klar strategi, strukturerede roadmaps og AI-løsninger bygget til jeres forretning.",
+          "AI skabt til jeres virksomhed. Vi hjælper virksomheder med at identificere AI-muligheder, udvikle strategier og implementere løsninger der skaber reel forretningsværdi.",
         keywords: ["AI strategi", "AI implementering", "Skandinavisk AI", "AI roadmap", "AI workshop", "Nordisk AI"],
       },
       workshop: {

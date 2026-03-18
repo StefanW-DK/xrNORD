@@ -45,21 +45,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="inline-flex items-center gap-2.5 mb-20 cursor-default"
+          className="inline-flex items-center mb-20 cursor-default"
         >
-          <span
-            className="w-1.5 h-1.5 rounded-full"
-            style={{
-              backgroundColor: "#22D3EE",
-              boxShadow: "0 0 6px #22D3EE",
-            }}
-          />
           <span
             className="font-semibold uppercase"
             style={{
-              letterSpacing: "0.2em",
-              fontSize: "13px",
-              color: "rgba(255,255,255,0.75)",
+              letterSpacing: "0.25em",
+              fontSize: "15px",
+              color: "rgba(255,255,255,0.9)",
             }}
           >
             {t("badge")}

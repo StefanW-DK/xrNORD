@@ -11,6 +11,9 @@
     "contact": "Contact",
     "bookWorkshop": "Book Workshop"
   },
+  "clients": {
+    "label": "Trusted by forward-thinking companies"
+  },
   "hero": {
     "badge": "The Nordic Edge in AI",
     "headlinePre": "Bring",
