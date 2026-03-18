@@ -284,7 +284,7 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-              <div className="mt-6 flex flex-col gap-3 pb-8">
+              <div className="mt-6 flex flex-col gap-6 pb-8">
                 <button
                   onClick={() => {
                     switchLocale();
