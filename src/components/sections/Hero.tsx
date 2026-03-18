@@ -22,9 +22,9 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover md:object-center"
         style={{
-          objectPosition: "center",
+          objectPosition: "65% center",
         }}
         src="/assets/home/hero/hero-video.mp4"
       />
