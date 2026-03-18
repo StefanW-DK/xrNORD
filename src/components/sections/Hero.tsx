@@ -2,8 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+const gradientStyle = {
+  backgroundImage: "linear-gradient(135deg, #22D3EE, #38BDF8, #818CF8)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+} as const;
 
 export default function Hero() {
+  const t = useTranslations("hero");
+
   return (
     <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden">
       {/* Background Video */}
@@ -32,12 +42,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="inline-flex items-center gap-2.5 mb-10 px-5 py-2 rounded-full"
-          style={{
-            border: "1px solid rgba(255,255,255,0.15)",
-            background: "rgba(255,255,255,0.08)",
-            backdropFilter: "blur(12px)",
-          }}
+          className="inline-flex items-center gap-2.5 mb-20 cursor-default"
         >
           <span
             className="w-1.5 h-1.5 rounded-full"
@@ -47,14 +52,14 @@ export default function Hero() {
             }}
           />
           <span
-            className="text-xs font-semibold uppercase"
+            className="font-semibold uppercase"
             style={{
-              letterSpacing: "0.18em",
-              fontSize: "11px",
-              color: "rgba(255,255,255,0.85)",
+              letterSpacing: "0.2em",
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.75)",
             }}
           >
-            The Nordic Edge in AI
+            {t("badge")}
           </span>
         </motion.div>
 
@@ -71,19 +76,12 @@ export default function Hero() {
             letterSpacing: "-0.02em",
           }}
         >
-          Bring AI Into
+          {t("headlinePre")}{" "}
+          <span style={gradientStyle}>{t("headlineHighlight1")}</span>{" "}
+          {t("headlineMid")}
           <br />
-          <span
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, #22D3EE, #38BDF8, #818CF8)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Your Business
-          </span>
+          <span style={gradientStyle}>{t("headlineHighlight2")}</span>{" "}
+          {t("headlineEnd")}
         </motion.h1>
 
         {/* Subline */}
@@ -91,16 +89,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
-          className="max-w-xl mx-auto mb-12 leading-relaxed"
+          className="max-w-2xl mx-auto mb-12"
           style={{
             fontFamily: "var(--font-inter), system-ui, sans-serif",
-            fontSize: "clamp(1rem, 2.2vw, 1.2rem)",
+            fontSize: "1.125rem",
+            lineHeight: 1.65,
             color: "rgba(255,255,255,0.65)",
           }}
         >
-          We help companies move from knowing AI matters to making it real —
-          with strategy, roadmaps, and solutions built for how your business
-          works.
+          {t("subtext")}
         </motion.p>
 
         {/* CTAs */}
@@ -118,7 +115,7 @@ export default function Hero() {
               boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
             }}
           >
-            Explore our AI Workshop
+            {t("ctaPrimary")}
             <svg
               className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5"
               fill="none"
@@ -165,7 +162,7 @@ export default function Hero() {
                 <path d="M0 0l8 5-8 5V0z" />
               </svg>
             </span>
-            Why AI Now?
+            {t("ctaSecondary")}
           </button>
         </motion.div>
       </div>

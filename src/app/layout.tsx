@@ -12,12 +12,18 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "xrNORD — AI Strategy for Business",
   description:
-    "We help companies move from knowing AI matters to making it real — with strategy, roadmaps, and solutions built for how your business works.",
-  keywords: ["AI strategy", "AI implementation", "Scandinavian AI", "AI roadmap", "AI workshop"],
+    "We develop and integrate AI into your business, products, and processes — helping you discover new ways to operate, create value, and compete.",
+  keywords: [
+    "AI strategy",
+    "AI implementation",
+    "Scandinavian AI",
+    "AI roadmap",
+    "AI workshop",
+  ],
   openGraph: {
     title: "xrNORD — AI Strategy for Business",
     description:
-      "We help companies move from knowing AI matters to making it real.",
+      "We develop and integrate AI into your business, products, and processes.",
     url: "https://xrnord.com",
     siteName: "xrNORD",
     locale: "en_US",
@@ -31,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${inter.variable}`}>
+    <html className={`${GeistSans.variable} ${inter.variable}`}>
       <body className="antialiased bg-white text-gray-900">{children}</body>
     </html>
   );

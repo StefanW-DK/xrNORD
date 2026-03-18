@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "whyAi": "Hvorfor AI",
+    "interviews": "Interviews",
+    "articles": "Artikler",
+    "reinvent": "Reinvent",
+    "workshop": "Workshop",
+    "aiRoadmap": "AI Roadmap",
+    "aiUseCases": "AI Use Cases",
+    "about": "Om os",
+    "contact": "Kontakt",
+    "bookWorkshop": "Book Workshop"
+  },
+  "hero": {
+    "badge": "Det Nordiske Forspring med AI",
+    "headlinePre": "Bring",
+    "headlineHighlight1": "AI",
+    "headlineMid": "Ind i",
+    "headlineHighlight2": "Jeres",
+    "headlineEnd": "Forretning",
+    "subtext": "Vi udvikler og integrerer AI i jeres forretning, produkter og processer — og hjælper jer med at opdage nye måder at skabe værdi og konkurrere på.",
+    "ctaPrimary": "Udforsk vores AI Workshop",
+    "ctaSecondary": "Hvorfor AI nu?"
+  }
+}

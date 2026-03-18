@@ -4,24 +4,41 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navItems = [
-  {
-    label: "Why AI",
-    href: "/why-ai",
-    dropdown: ["Interviews", "Articles", "Reinvent"],
-  },
-  { label: "Workshop", href: "/workshop" },
-  { label: "AI Roadmap", href: "/ai-roadmap" },
-  { label: "AI Use Cases", href: "/ai-use-cases" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const navItems = [
+    {
+      label: t("whyAi"),
+      href: `/${locale}/why-ai`,
+      dropdown: [
+        { label: t("interviews"), href: `/${locale}/why-ai/interviews` },
+        { label: t("articles"), href: `/${locale}/why-ai/articles` },
+        { label: t("reinvent"), href: `/${locale}/why-ai/reinvent` },
+      ],
+    },
+    { label: t("workshop"), href: `/${locale}/workshop` },
+    { label: t("aiRoadmap"), href: `/${locale}/ai-roadmap` },
+    { label: t("aiUseCases"), href: `/${locale}/ai-use-cases` },
+    { label: t("about"), href: `/${locale}/about` },
+    { label: t("contact"), href: `/${locale}/contact` },
+  ];
+
+  const switchLocale = () => {
+    const newLocale = locale === "en" ? "da" : "en";
+    const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+    router.push(`/${newLocale}${pathWithoutLocale}`);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -44,9 +61,9 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-24 lg:h-28">
             {/* Logo */}
-            <Link href="/" className="shrink-0">
+            <Link href={`/${locale}`} className="shrink-0">
               <Image
                 src={
                   scrolled
@@ -54,10 +71,10 @@ export default function Navbar() {
                     : "/images/logo-white.png"
                 }
                 alt="xrNORD"
-                width={130}
-                height={28}
+                width={140}
+                height={30}
                 priority
-                className="h-7 w-auto"
+                className="h-9 w-auto"
               />
             </Link>
 
@@ -74,7 +91,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="text-sm font-medium transition-colors duration-200 flex items-center gap-1"
+                    className="text-[15px] font-medium transition-colors duration-200 flex items-center gap-1"
                     style={{
                       color: scrolled
                         ? "rgba(55,65,81,1)"
@@ -125,11 +142,11 @@ export default function Navbar() {
                       >
                         {item.dropdown.map((sub) => (
                           <Link
-                            key={sub}
-                            href={`${item.href}/${sub.toLowerCase()}`}
+                            key={sub.label}
+                            href={sub.href}
                             className="block px-4 py-2.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
                           >
-                            {sub}
+                            {sub.label}
                           </Link>
                         ))}
                       </motion.div>
@@ -141,26 +158,55 @@ export default function Navbar() {
 
             {/* Right side */}
             <div className="hidden lg:flex items-center gap-5">
+              {/* Language switcher */}
               <button
-                className="text-sm font-medium transition-colors"
+                onClick={switchLocale}
+                className="text-sm font-medium transition-colors cursor-pointer"
                 style={{
                   letterSpacing: "0.04em",
                   color: scrolled
                     ? "rgba(156,163,175,1)"
                     : "rgba(255,255,255,0.55)",
                 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = scrolled
+                    ? "rgba(55,65,81,1)"
+                    : "rgba(255,255,255,1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = scrolled
+                    ? "rgba(156,163,175,1)"
+                    : "rgba(255,255,255,0.55)";
+                }}
               >
-                EN / DA
+                <span
+                  style={{
+                    fontWeight: locale === "en" ? 700 : 400,
+                    opacity: locale === "en" ? 1 : 0.6,
+                  }}
+                >
+                  EN
+                </span>
+                <span style={{ opacity: 0.3, margin: "0 4px" }}>/</span>
+                <span
+                  style={{
+                    fontWeight: locale === "da" ? 700 : 400,
+                    opacity: locale === "da" ? 1 : 0.6,
+                  }}
+                >
+                  DA
+                </span>
               </button>
+
               <Link
-                href="/workshop"
+                href={`/${locale}/workshop`}
                 className="text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200"
                 style={{
                   backgroundColor: scrolled ? "#111827" : "#ffffff",
                   color: scrolled ? "#ffffff" : "#111827",
                 }}
               >
-                Book Workshop
+                {t("bookWorkshop")}
               </Link>
             </div>
 
@@ -206,7 +252,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white pt-20 px-6 lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white pt-28 px-6 lg:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-1 mt-4">
               {navItems.map((item) => (
@@ -223,15 +269,15 @@ export default function Navbar() {
                     <div className="pl-4">
                       {item.dropdown.map((sub) => (
                         <Link
-                          key={sub}
-                          href={`${item.href}/${sub.toLowerCase()}`}
+                          key={sub.label}
+                          href={sub.href}
                           onClick={() => setMobileOpen(false)}
                           className="block py-2 text-sm text-gray-500"
                           style={{
                             borderBottom: "1px solid rgba(0,0,0,0.03)",
                           }}
                         >
-                          {sub}
+                          {sub.label}
                         </Link>
                       ))}
                     </div>
@@ -239,15 +285,23 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="mt-6 flex flex-col gap-3 pb-8">
-                <button className="text-sm text-gray-400 text-left">
-                  EN / DA
+                <button
+                  onClick={() => {
+                    switchLocale();
+                    setMobileOpen(false);
+                  }}
+                  className="text-sm text-gray-400 text-left"
+                >
+                  {locale === "en"
+                    ? "Skift til Dansk"
+                    : "Switch to English"}
                 </button>
                 <Link
-                  href="/workshop"
+                  href={`/${locale}/workshop`}
                   onClick={() => setMobileOpen(false)}
                   className="w-full text-center py-3.5 bg-gray-900 text-white rounded-full font-medium text-sm"
                 >
-                  Book Workshop
+                  {t("bookWorkshop")}
                 </Link>
               </div>
             </div>

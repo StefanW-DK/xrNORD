@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "whyAi": "Why AI",
+    "interviews": "Interviews",
+    "articles": "Articles",
+    "reinvent": "Reinvent",
+    "workshop": "Workshop",
+    "aiRoadmap": "AI Roadmap",
+    "aiUseCases": "AI Use Cases",
+    "about": "About",
+    "contact": "Contact",
+    "bookWorkshop": "Book Workshop"
+  },
+  "hero": {
+    "badge": "The Nordic Edge in AI",
+    "headlinePre": "Bring",
+    "headlineHighlight1": "AI",
+    "headlineMid": "Into",
+    "headlineHighlight2": "Your",
+    "headlineEnd": "Business",
+    "subtext": "We develop and integrate AI into your business, products, and processes — helping you discover new ways to operate, create value, and compete.",
+    "ctaPrimary": "Explore our AI Workshop",
+    "ctaSecondary": "Why AI Now?"
+  }
+}
