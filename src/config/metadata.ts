@@ -1,0 +1,118 @@
+// Centralised per-locale metadata config.
+// Add new pages by extending PageMetaKey and siteMetadata.pages.
+
+export const BASE_URL = "https://xrnord.com";
+
+export type Locale = "en" | "da";
+
+interface PageMeta {
+  title: string;
+  description: string;
+  keywords: string[];
+}
+
+type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "ai-use-cases" | "why-ai" | "about" | "contact";
+
+const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey, PageMeta> }> = {
+  en: {
+    siteName: "xrNORD",
+    pages: {
+      home: {
+        title: "xrNORD — AI Strategy & Implementation for Business",
+        description:
+          "We help Scandinavian companies move from AI awareness to real adoption — with clear strategy, structured roadmaps, and AI solutions built for your business.",
+        keywords: ["AI strategy", "AI implementation", "Scandinavian AI", "AI roadmap", "AI workshop", "Nordic AI"],
+      },
+      workshop: {
+        title: "AI Workshop — xrNORD",
+        description:
+          "One powerful day to kickstart your AI journey. We demystify AI, analyse your key processes, and identify where AI can deliver the most value for your business.",
+        keywords: ["AI workshop", "AI kickstarter", "AI for business", "AI strategy workshop"],
+      },
+      "ai-roadmap": {
+        title: "AI Roadmap — xrNORD",
+        description:
+          "A structured AI roadmap that combines your business challenges, opportunities, and strategy with the right AI technologies. Built for real results.",
+        keywords: ["AI roadmap", "AI strategy", "AI adoption", "business AI roadmap"],
+      },
+      "ai-use-cases": {
+        title: "AI Use Cases — xrNORD",
+        description:
+          "Explore real-world AI applications across industries. Discover how companies are turning AI potential into measurable business impact.",
+        keywords: ["AI use cases", "AI examples", "AI business applications", "AI ROI"],
+      },
+      "why-ai": {
+        title: "Why AI — xrNORD",
+        description:
+          "Interviews, articles, and insights from business leaders and AI experts on why AI matters now — and how to act on it.",
+        keywords: ["why AI", "AI insights", "AI interviews", "AI articles", "AI business"],
+      },
+      about: {
+        title: "About xrNORD — The Nordic Edge in AI",
+        description:
+          "xrNORD is a Scandinavian AI strategy and development company. We help businesses understand, plan, and implement AI in a structured and meaningful way.",
+        keywords: ["xrNORD", "Nordic AI company", "Scandinavian AI", "AI consultancy Denmark"],
+      },
+      contact: {
+        title: "Contact xrNORD — Start Your AI Journey",
+        description:
+          "Ready to explore what AI can do for your business? Get in touch with xrNORD. One conversation is all it takes.",
+        keywords: ["contact xrNORD", "AI consultancy contact", "start AI journey"],
+      },
+    },
+  },
+  da: {
+    siteName: "xrNORD",
+    pages: {
+      home: {
+        title: "xrNORD — AI Strategi & Implementering til Forretningen",
+        description:
+          "Vi hjælper skandinaviske virksomheder med at gå fra AI-bevidsthed til reel implementering — med klar strategi, strukturerede roadmaps og AI-løsninger bygget til jeres forretning.",
+        keywords: ["AI strategi", "AI implementering", "Skandinavisk AI", "AI roadmap", "AI workshop", "Nordisk AI"],
+      },
+      workshop: {
+        title: "AI Workshop — xrNORD",
+        description:
+          "Én stærk dag til at kickstarte jeres AI-rejse. Vi afmystificerer AI, analyserer jeres nøgleprocesser og identificerer, hvor AI skaber mest værdi.",
+        keywords: ["AI workshop", "AI kickstarter", "AI til forretningen", "AI strategi workshop"],
+      },
+      "ai-roadmap": {
+        title: "AI Roadmap — xrNORD",
+        description:
+          "Et struktureret AI roadmap, der kombinerer jeres forretningsudfordringer, muligheder og strategi med de rette AI-teknologier.",
+        keywords: ["AI roadmap", "AI strategi", "AI adoption", "forretnings AI roadmap"],
+      },
+      "ai-use-cases": {
+        title: "AI Use Cases — xrNORD",
+        description:
+          "Udforsk AI-anvendelser på tværs af brancher. Se hvordan virksomheder omsætter AI-potentiale til målbare forretningsresultater.",
+        keywords: ["AI use cases", "AI eksempler", "AI i forretningen", "AI ROI"],
+      },
+      "why-ai": {
+        title: "Hvorfor AI — xrNORD",
+        description:
+          "Interviews, artikler og indsigt fra erhvervsledere og AI-eksperter om, hvorfor AI er vigtig nu — og hvordan I handler på det.",
+        keywords: ["hvorfor AI", "AI indsigt", "AI interviews", "AI artikler", "AI forretning"],
+      },
+      about: {
+        title: "Om xrNORD — Det Nordiske Forspring med AI",
+        description:
+          "xrNORD er en skandinavisk AI-strategi og udviklingsvirksomhed. Vi hjælper virksomheder med at forstå, planlægge og implementere AI på en struktureret måde.",
+        keywords: ["xrNORD", "Nordisk AI virksomhed", "Skandinavisk AI", "AI rådgivning Danmark"],
+      },
+      contact: {
+        title: "Kontakt xrNORD — Start jeres AI-rejse",
+        description:
+          "Klar til at udforske, hvad AI kan gøre for jeres forretning? Kontakt xrNORD. Én samtale er alt, der skal til.",
+        keywords: ["kontakt xrNORD", "AI rådgivning kontakt", "start AI-rejse"],
+      },
+    },
+  },
+};
+
+export function getPageMeta(locale: Locale, page: PageMetaKey): PageMeta & { siteName: string } {
+  return {
+    siteName: siteMetadata[locale].siteName,
+    ...siteMetadata[locale].pages[page],
+  };
+}

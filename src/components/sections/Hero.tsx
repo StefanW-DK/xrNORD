@@ -23,7 +23,7 @@ export default function Hero() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/hero.mp4"
+        src="/assets/home/hero/hero-video.mp4"
       />
 
       {/* Dark overlay for text readability */}

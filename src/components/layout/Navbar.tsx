@@ -67,8 +67,8 @@ export default function Navbar() {
               <Image
                 src={
                   scrolled
-                    ? "/images/logo-dark.png"
-                    : "/images/logo-white.png"
+                    ? "/images/logos/logo-dark.png"
+                    : "/images/logos/logo-white.png"
                 }
                 alt="xrNORD"
                 width={140}
