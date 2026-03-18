@@ -24,7 +24,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover md:object-center"
         style={{
-          objectPosition: "65% center",
+          objectPosition: "80% center",
         }}
         src="/assets/home/hero/hero-video.mp4"
       />
