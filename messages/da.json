@@ -11,6 +11,22 @@
     "contact": "Kontakt",
     "bookWorkshop": "Book Workshop"
   },
+  "opportunity": {
+    "label": "Jeres mulighed for at vinde",
+    "topText": "Spørgsmålet er ikke længere om I skal handle. Det er hvordan I gør AI til en reel fordel.",
+    "headlinePre": "AI er ikke et værktøj.",
+    "headlineHighlight": "Det er jeres næste fordel",
+    "belowHeadline": "Vi bringer AI ind i jeres forretning for at",
+    "statementOne": "Øge produktiviteten",
+    "statementTwo": "Bygge bedre produkter",
+    "statementThree": "Styrke jeres position",
+    "diagramCenter": "Virksomheds-\ndata",
+    "diagramChallenge": "Udfordring",
+    "diagramRoadmap": "AI Roadmap",
+    "diagramSolutions": "Løsninger",
+    "diagramIntegration": "Integration",
+    "cta": "Udforsk jeres AI-muligheder"
+  },
   "clients": {
     "label": "Betroet af fremsynede virksomheder"
   },

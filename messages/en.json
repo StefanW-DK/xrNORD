@@ -11,6 +11,22 @@
     "contact": "Contact",
     "bookWorkshop": "Book Workshop"
   },
+  "opportunity": {
+    "label": "Your Opportunity to Win",
+    "topText": "The question is no longer if you should act. It is how to turn AI into real advantage.",
+    "headlinePre": "AI Is Not a Tool.",
+    "headlineHighlight": "It Is Your Next Advantage",
+    "belowHeadline": "We bring AI into your business to",
+    "statementOne": "Increase productivity",
+    "statementTwo": "Build better products",
+    "statementThree": "Strengthen your position",
+    "diagramCenter": "Company\nData",
+    "diagramChallenge": "Challenge",
+    "diagramRoadmap": "AI Roadmap",
+    "diagramSolutions": "Solutions",
+    "diagramIntegration": "Integration",
+    "cta": "Explore Your AI Opportunity"
+  },
   "clients": {
     "label": "Trusted by forward-thinking companies"
   },

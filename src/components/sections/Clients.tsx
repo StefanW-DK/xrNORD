@@ -1,34 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const clients = [
-  {
-    name: "First Coffee",
-    logo: "/assets/home/clients/first-coffee.png",
-    width: 120,
-    height: 40,
-  },
-  {
-    name: "Greybird",
-    logo: "/assets/home/clients/greybird.png",
-    width: 130,
-    height: 28,
-  },
-  {
-    name: "Ecojoys",
-    logo: "/assets/home/clients/ecojoys.png",
-    width: 110,
-    height: 44,
-  },
-  {
-    name: "Related",
-    logo: "/assets/home/clients/related.png",
-    width: 120,
-    height: 36,
-  },
+  { name: "First Coffee",    logo: "/assets/home/clients/first-coffee.png",    width: 130 },
+  { name: "Greybird",        logo: "/assets/home/clients/greybird.png",        width: 130 },
+  { name: "Ecojoys",         logo: "/assets/home/clients/ecojoys.png",         width: 120 },
+  { name: "Related",         logo: "/assets/home/clients/related.png",         width: 120 },
+  { name: "Destination Fyn", logo: "/assets/home/clients/destination-fyn.png", width: 140 },
 ];
 
 export default function Clients() {
@@ -45,44 +25,38 @@ export default function Clients() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center uppercase font-medium mb-12"
-          style={{
-            fontSize: "13px",
-            letterSpacing: "0.2em",
-            color: "rgba(0,0,0,0.35)",
-          }}
+          style={{ fontSize: "13px", letterSpacing: "0.2em", color: "rgba(0,0,0,0.35)" }}
         >
           {t("label")}
         </motion.p>
 
-        {/* Logos */}
+        {/* Logos — trimmed PNGs, aligned to bottom baseline */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-x-14 gap-y-10"
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "flex-end",
+            gap: "40px 56px",
+          }}
         >
           {clients.map((client) => (
             <div
               key={client.name}
               className="transition-all duration-300"
               style={{ filter: "grayscale(100%) opacity(0.45)" }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.filter =
-                  "grayscale(0%) opacity(1)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.filter =
-                  "grayscale(100%) opacity(0.45)";
-              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.filter = "grayscale(0%) opacity(1)"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.filter = "grayscale(100%) opacity(0.45)"; }}
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={client.logo}
                 alt={client.name}
-                width={client.width}
-                height={client.height}
-                className="object-contain"
-                style={{ maxHeight: "56px", width: "auto" }}
+                style={{ width: `${client.width}px`, height: "auto", display: "block" }}
               />
             </div>
           ))}
