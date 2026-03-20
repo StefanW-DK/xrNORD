@@ -30,6 +30,16 @@
   "clients": {
     "label": "Trusted by forward-thinking companies"
   },
+  "impact": {
+    "label": "Real Impact in Practice",
+    "headlinePre": "Real Impact.",
+    "headlineAccent": "Started Simply.",
+    "bodyOne": "We've done this across industries.",
+    "bodyTwo": "Some journeys start with proven standards. Others become something entirely your own.",
+    "bodyThree": "You don't need to see the full picture.",
+    "bodyFour": "It doesn't need to be complex.",
+    "bodyFive": "We start where you are."
+  },
   "hero": {
     "badge": "The Nordic Edge in AI",
     "headlinePre": "Bring",

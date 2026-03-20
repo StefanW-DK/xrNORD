@@ -31,8 +31,74 @@ html {
   }
 }
 
+/* Impact section */
+.impact-section {
+  padding: 80px 0 100px;
+}
+
+@media (min-width: 1024px) {
+  .impact-section {
+    padding: 140px 0 160px;
+  }
+}
+
+/* Impact section — responsive grid */
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media (max-width: 1280px) {
+  .impact-grid {
+    padding: 0 48px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 64px;
+  }
+}
+
+/* Industries section — responsive grid */
+.industries-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 72px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media (max-width: 1280px) {
+  .industries-grid {
+    padding: 0 48px;
+    gap: 56px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 56px;
+  }
+}
+
 body {
   font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -30,6 +30,16 @@
   "clients": {
     "label": "Betroet af fremsynede virksomheder"
   },
+  "impact": {
+    "label": "Reel effekt i praksis",
+    "headlinePre": "Reel effekt.",
+    "headlineAccent": "Startet enkelt.",
+    "bodyOne": "Vi har gjort det på tværs af brancher.",
+    "bodyTwo": "Nogle rejser starter med gennemprøvede standarder. Andre bliver til noget helt jeres eget.",
+    "bodyThree": "I behøver ikke se det fulde billede.",
+    "bodyFour": "Det behøver ikke være komplekst.",
+    "bodyFive": "Vi starter dér, hvor I er."
+  },
   "hero": {
     "badge": "Det Nordiske Forspring med AI",
     "headlinePre": "Bring",

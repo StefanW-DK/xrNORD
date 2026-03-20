@@ -10,21 +10,21 @@ const STATES = [
     // "Increase productivity" — Integration + Challenge emphasis
     emphasis: [0, 3],
     centerScale: 1.0,
-    centerGlow: "rgba(59,130,246,0.18)",
-    ambientHue: "rgba(8,145,178,0.06)",
+    centerGlow: "rgba(59,130,246,0.30)",
+    ambientHue: "rgba(8,145,178,0.10)",
   },
   {
     // "Build better products" — Solutions emphasis
     emphasis: [2],
     centerScale: 1.0,
-    centerGlow: "rgba(13,148,136,0.22)",
-    ambientHue: "rgba(13,148,136,0.06)",
+    centerGlow: "rgba(13,148,136,0.36)",
+    ambientHue: "rgba(13,148,136,0.10)",
   },
   {
     // "Strengthen your position" — Roadmap + center emphasis
     emphasis: [1],
     centerScale: 1.05,
-    centerGlow: "rgba(124,58,237,0.25)",
+    centerGlow: "rgba(124,58,237,0.42)",
     ambientHue: "rgba(124,58,237,0.05)",
   },
 ];
@@ -66,7 +66,7 @@ function LivingOrbit({
   const cy = size / 2;
   const orbitR = 248;
   const nodeR = 66;
-  const centerR = 96;
+  const centerR = 104;
 
   // Slightly irregular angles — break perfect symmetry
   const nodes = [
@@ -110,8 +110,8 @@ function LivingOrbit({
         </defs>
 
         {/* Orbit rings — very subtle */}
-        <circle cx={cx} cy={cy} r={orbitR - 15} fill="none" stroke="rgba(255,255,255,0.025)" strokeWidth="1" />
-        <circle cx={cx} cy={cy} r={orbitR + 15} fill="none" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+        <circle cx={cx} cy={cy} r={orbitR - 15} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+        <circle cx={cx} cy={cy} r={orbitR + 15} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
 
         {/* Energy arcs between nodes — soft, not dashed */}
         {nodes.map((node, i) => {
@@ -135,8 +135,8 @@ function LivingOrbit({
               d={`M${x1},${y1} A${arcR},${arcR} 0 0,1 ${x2},${y2}`}
               fill="none"
               animate={{
-                stroke: emphasized ? "rgba(255,255,255,0.09)" : "rgba(255,255,255,0.03)",
-                strokeWidth: emphasized ? 1.2 : 0.8,
+                stroke: emphasized ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.07)",
+                strokeWidth: emphasized ? 1.6 : 1.0,
               }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             />
@@ -200,9 +200,9 @@ function CenterNode({
       animate={{
         scale: [state.centerScale, state.centerScale * 1.03, state.centerScale],
         boxShadow: [
-          `0 0 70px ${state.centerGlow}, 0 0 140px ${state.centerGlow}`,
-          `0 0 90px ${state.centerGlow}, 0 0 160px ${state.centerGlow}`,
-          `0 0 70px ${state.centerGlow}, 0 0 140px ${state.centerGlow}`,
+          `0 0 110px ${state.centerGlow}, 0 0 200px ${state.centerGlow}`,
+          `0 0 140px ${state.centerGlow}, 0 0 260px ${state.centerGlow}`,
+          `0 0 110px ${state.centerGlow}, 0 0 200px ${state.centerGlow}`,
         ],
         x: drift.x * 0.5,
         y: drift.y * 0.5,
@@ -258,10 +258,10 @@ function OrbitNode({
         x: drift.x,
         y: drift.y,
         scale: isEmphasized ? 1.12 : 0.92,
-        opacity: isEmphasized ? 1 : 0.5,
+        opacity: isEmphasized ? 1 : 0.75,
         boxShadow: isEmphasized
-          ? `0 0 40px rgba(${node.rgb},0.35), 0 0 80px rgba(${node.rgb},0.12)`
-          : `0 0 15px rgba(${node.rgb},0.06)`,
+          ? `0 0 55px rgba(${node.rgb},0.50), 0 0 110px rgba(${node.rgb},0.20)`
+          : `0 0 24px rgba(${node.rgb},0.16)`,
       }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
       style={{
@@ -282,7 +282,7 @@ function OrbitNode({
           fontWeight: 600,
           color: node.color,
           letterSpacing: "0.01em",
-          opacity: isEmphasized ? 1 : 0.7,
+          opacity: isEmphasized ? 1 : 0.88,
         }}
       >
         {node.label}
@@ -314,7 +314,7 @@ export default function Opportunity() {
     <section
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(165deg, #060a14 0%, #0b1424 35%, #091020 70%, #060c18 100%)",
+        background: "linear-gradient(to bottom, #0d1e38 0%, #070c18 28%, #04080f 50%, #070c18 72%, #0d1e38 100%)",
         minHeight: "80vh",
         display: "flex",
         alignItems: "center",
@@ -328,6 +328,26 @@ export default function Opportunity() {
       <div className="absolute inset-0 pointer-events-none" style={{
         background: "radial-gradient(ellipse at 25% 60%, rgba(124,58,237,0.025) 0%, transparent 50%)",
       }} />
+      {/* Top edge line — subtle light separator */}
+      <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{
+        height: "1px",
+        background: "linear-gradient(90deg, transparent 10%, rgba(148,163,184,0.12) 40%, rgba(148,163,184,0.15) 50%, rgba(148,163,184,0.12) 60%, transparent 90%)",
+      }} />
+      <div className="absolute top-0 left-0 right-0 pointer-events-none" style={{
+        height: "60px",
+        background: "linear-gradient(to bottom, rgba(148,163,184,0.04) 0%, transparent 100%)",
+      }} />
+
+      {/* Bottom edge line — subtle light separator */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{
+        height: "1px",
+        background: "linear-gradient(90deg, transparent 10%, rgba(148,163,184,0.12) 40%, rgba(148,163,184,0.15) 50%, rgba(148,163,184,0.12) 60%, transparent 90%)",
+      }} />
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{
+        height: "60px",
+        background: "linear-gradient(to top, rgba(148,163,184,0.04) 0%, transparent 100%)",
+      }} />
+
       {/* Subtle grain texture */}
       <div className="absolute inset-0 pointer-events-none" style={{
         opacity: 0.03,
@@ -337,7 +357,7 @@ export default function Opportunity() {
       <div className="opportunity-grid relative z-10">
 
         {/* ── LEFT: Text — intentionally higher */}
-        <div style={{ maxWidth: "580px", marginTop: "-60px" }}>
+        <div style={{ maxWidth: "520px", marginTop: "60px", marginLeft: "32px" }}>
 
           {/* Micro label */}
           <motion.p
@@ -446,7 +466,7 @@ export default function Opportunity() {
           </div>
 
           {/* Progress indicators */}
-          <div className="flex gap-2" style={{ marginTop: "28px" }}>
+          <div className="flex gap-2" style={{ marginTop: "20px" }}>
             {[0, 1, 2].map((i) => (
               <button
                 key={i}
@@ -484,7 +504,7 @@ export default function Opportunity() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            style={{ marginTop: "48px" }}
+            style={{ marginTop: "32px" }}
           >
             <a
               href="#"
@@ -535,8 +555,8 @@ export default function Opportunity() {
           style={{
             display: "flex",
             justifyContent: "flex-end",
-            alignItems: "flex-start",
-            paddingTop: "120px",
+            alignItems: "center",
+            paddingTop: "40px",
             marginRight: "-120px",
             overflow: "visible",
           }}
