@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Large video files
 public/videos/
+public/assets/home/why/*.mp4
