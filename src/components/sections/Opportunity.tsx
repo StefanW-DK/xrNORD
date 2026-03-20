@@ -61,7 +61,7 @@ function LivingOrbit({
   t: (key: string) => string;
   activeState: number;
 }) {
-  const size = 720;
+  const size = 648;
   const cx = size / 2;
   const cy = size / 2;
   const orbitR = 248;
@@ -110,8 +110,8 @@ function LivingOrbit({
         </defs>
 
         {/* Orbit rings — very subtle */}
-        <circle cx={cx} cy={cy} r={orbitR - 15} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-        <circle cx={cx} cy={cy} r={orbitR + 15} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+        <circle cx={cx} cy={cy} r={orbitR - 15} fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1" />
+        <circle cx={cx} cy={cy} r={orbitR + 15} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
 
         {/* Energy arcs between nodes — soft, not dashed */}
         {nodes.map((node, i) => {
@@ -135,7 +135,7 @@ function LivingOrbit({
               d={`M${x1},${y1} A${arcR},${arcR} 0 0,1 ${x2},${y2}`}
               fill="none"
               animate={{
-                stroke: emphasized ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.07)",
+                stroke: emphasized ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.13)",
                 strokeWidth: emphasized ? 1.6 : 1.0,
               }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -219,7 +219,7 @@ function CenterNode({
         top: cy - r,
         left: cx - r,
         background: "radial-gradient(circle, rgba(20,35,65,0.95) 0%, rgba(10,18,35,0.98) 100%)",
-        border: "1px solid rgba(255,255,255,0.08)",
+        border: "1px solid rgba(255,255,255,0.16)",
       }}
     >
       <span
@@ -270,9 +270,9 @@ function OrbitNode({
         left: baseX,
         top: baseY,
         background: isEmphasized
-          ? `radial-gradient(circle, rgba(${node.rgb},0.18) 0%, rgba(${node.rgb},0.06) 100%)`
-          : `radial-gradient(circle, rgba(${node.rgb},0.08) 0%, rgba(${node.rgb},0.02) 100%)`,
-        border: `1px solid rgba(${node.rgb},${isEmphasized ? 0.35 : 0.15})`,
+          ? `radial-gradient(circle, rgba(${node.rgb},0.26) 0%, rgba(${node.rgb},0.10) 100%)`
+          : `radial-gradient(circle, rgba(${node.rgb},0.14) 0%, rgba(${node.rgb},0.04) 100%)`,
+        border: `1px solid rgba(${node.rgb},${isEmphasized ? 0.50 : 0.26})`,
       }}
     >
       <span
@@ -357,7 +357,7 @@ export default function Opportunity() {
       <div className="opportunity-grid relative z-10">
 
         {/* ── LEFT: Text — intentionally higher */}
-        <div style={{ maxWidth: "520px", marginTop: "60px", marginLeft: "32px" }}>
+        <div style={{ maxWidth: "520px", marginTop: "60px", marginLeft: "100px" }}>
 
           {/* Micro label */}
           <motion.p
@@ -557,7 +557,7 @@ export default function Opportunity() {
             justifyContent: "flex-end",
             alignItems: "center",
             paddingTop: "40px",
-            marginRight: "-120px",
+            marginRight: "-60px",
             overflow: "visible",
           }}
         >
