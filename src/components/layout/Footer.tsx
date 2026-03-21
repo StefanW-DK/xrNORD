@@ -271,9 +271,9 @@ export default function Footer() {
             }}>{t("socialLabel")}</p>
             <div style={{ display: "flex", gap: "10px" }}>
               {[
-                { href: "https://linkedin.com", icon: <LinkedIn />, label: "LinkedIn", color: "0,119,181" },
-                { href: "https://x.com", icon: <XIcon />, label: "X", color: "255,255,255" },
-                { href: "https://youtube.com", icon: <YouTube />, label: "YouTube", color: "255,0,0" },
+                { href: "https://www.linkedin.com/company/xrnord/", icon: <LinkedIn />, label: "LinkedIn", color: "0,119,181" },
+                { href: "https://twitter.com/xrNord", icon: <XIcon />, label: "X", color: "255,255,255" },
+                { href: "https://www.youtube.com/channel/UCv64WHqJ2P7Ck5MmhfZth8Q", icon: <YouTube />, label: "YouTube", color: "255,0,0" },
               ].map(({ href, icon, label, color }) => (
                 <a
                   key={label}
