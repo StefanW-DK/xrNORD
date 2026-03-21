@@ -202,113 +202,12 @@ export default function Industries() {
 
       <div className="industries-grid">
 
-        {/* ── LEFT: Text block ─────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          style={{ maxWidth: "440px", paddingTop: "40px", marginRight: "auto" }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--font-geist), system-ui, sans-serif",
-              fontSize: "11px",
-              fontWeight: 600,
-              letterSpacing: "0.3em",
-              textTransform: "uppercase" as const,
-              color: "#8B5CF6",
-              marginBottom: "36px",
-            }}
-          >
-            {t("label")}
-          </p>
-
-          <h2
-            style={{
-              fontFamily: "var(--font-geist), system-ui, sans-serif",
-              fontSize: "clamp(2.5rem, 4.2vw, 3.5rem)",
-              fontWeight: 700,
-              lineHeight: 1.08,
-              letterSpacing: "-0.034em",
-              color: "#0F172A",
-              marginBottom: "36px",
-            }}
-          >
-            <span style={headlineGradient}>{t("headlineAccent")}</span>
-            <br />
-            {t("headlineEnd")}
-          </h2>
-
-          <div
-            style={{
-              fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: "1.05rem",
-              lineHeight: 1.82,
-              color: "#64748B",
-              marginBottom: "40px",
-            }}
-          >
-            <p style={{ marginBottom: "18px" }}>
-              {t("bodyOne")}
-            </p>
-            <p style={{ marginBottom: "18px" }}>
-              {t("bodyTwo")}
-            </p>
-            <p style={{ marginBottom: "18px" }}>
-              {t("bodyThree")}
-            </p>
-            <p style={{ fontWeight: 600, color: "#1E293B", letterSpacing: "-0.01em" }}>
-              {t("bodyFour")}
-            </p>
-          </div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Link
-              href="/usecases"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "10px",
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-                fontSize: "1.15rem",
-                fontWeight: 700,
-                letterSpacing: "-0.01em",
-                color: "#6D28D9",
-                textDecoration: "none",
-                padding: "12px 0",
-              }}
-            >
-              {t("cta")}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </Link>
-          </motion.div>
-        </motion.div>
-
-        {/* ── RIGHT: Asymmetric video cluster ──────────────────────────────── */}
+        {/* ── LEFT: Asymmetric video cluster ───────────────────────────────── */}
         <div
           style={{
             position: "relative",
             maxWidth: "620px",
-            marginLeft: "auto",
+            marginRight: "auto",
             display: "flex",
             flexDirection: "column",
             gap: "20px",
@@ -359,6 +258,89 @@ export default function Industries() {
             />
           </div>
         </div>
+
+        {/* ── RIGHT: Text block ────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{ maxWidth: "440px", paddingTop: "40px", marginLeft: "auto" }}
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: "0.3em",
+              textTransform: "uppercase" as const,
+              color: "#8B5CF6",
+              marginBottom: "36px",
+            }}
+          >
+            {t("label")}
+          </p>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "clamp(2.5rem, 4.2vw, 3.5rem)",
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: "-0.034em",
+              color: "#0F172A",
+              marginBottom: "36px",
+            }}
+          >
+            <span style={headlineGradient}>{t("headlineAccent")}</span>
+            <br />
+            {t("headlineEnd")}
+          </h2>
+
+          <div
+            style={{
+              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontSize: "1.05rem",
+              lineHeight: 1.82,
+              color: "#64748B",
+              marginBottom: "40px",
+            }}
+          >
+            <p style={{ marginBottom: "18px" }}>{t("bodyOne")}</p>
+            <p style={{ marginBottom: "18px" }}>{t("bodyTwo")}</p>
+            <p style={{ marginBottom: "18px" }}>{t("bodyThree")}</p>
+            <p style={{ fontWeight: 600, color: "#1E293B", letterSpacing: "-0.01em" }}>{t("bodyFour")}</p>
+          </div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Link
+              href="/usecases"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "1.15rem",
+                fontWeight: 700,
+                letterSpacing: "-0.01em",
+                color: "#6D28D9",
+                textDecoration: "none",
+                padding: "12px 0",
+              }}
+            >
+              {t("cta")}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
+          </motion.div>
+        </motion.div>
 
       </div>
     </section>
