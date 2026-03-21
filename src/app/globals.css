@@ -4,6 +4,40 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Capabilities section — asymmetric bento grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "strategy strategy strategy bespoke  bespoke"
+    "proto    proto    data     data     data"
+    "impl     impl     roi      roi      roi";
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media (max-width: 1280px) {
+  .capabilities-grid {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "strategy"
+      "bespoke"
+      "proto"
+      "data"
+      "impl"
+      "roi";
+    padding: 0 24px;
+  }
+}
+
 /* Opportunity section — responsive grid */
 .opportunity-grid {
   display: grid;
@@ -72,7 +106,7 @@ html {
 /* Industries section — responsive grid */
 .industries-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 0.8fr 1.2fr;
   align-items: start;
   gap: 72px;
   width: 100%;

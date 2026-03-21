@@ -4,6 +4,7 @@ import Clients from "@/components/sections/Clients";
 import Opportunity from "@/components/sections/Opportunity";
 import Industries from "@/components/sections/Industries";
 import WhyAI from "@/components/sections/WhyAI";
+import Capabilities from "@/components/sections/Capabilities";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Opportunity />
       <Industries />
       <WhyAI />
+      <Capabilities />
     </main>
   );
 }

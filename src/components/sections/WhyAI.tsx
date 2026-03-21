@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const VIDEO_SRC = "/assets/home/why/177 - Kasper Junge - Dinero BW - Trailer for website white.mp4";
+const VIDEO_SRC = "/assets/home/why/xrNORD_interview.mp4";
 
 /* ── Preview card ──────────────────────────────────────── */
 interface CardProps {

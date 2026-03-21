@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getPageMeta, BASE_URL, type Locale } from "@/config/metadata";
 import JsonLd from "@/components/seo/JsonLd";
+import Footer from "@/components/layout/Footer";
 import "../globals.css";
 
 const inter = Inter({
@@ -99,6 +100,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="antialiased bg-white text-gray-900">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

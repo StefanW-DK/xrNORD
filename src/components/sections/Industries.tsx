@@ -200,70 +200,13 @@ export default function Industries() {
 
       <div className="industries-grid">
 
-        {/* ── LEFT: Asymmetric cluster ──────────────────────────────── */}
-        <div
-          style={{
-            position: "relative",
-            maxWidth: "620px",
-            marginRight: "auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-          }}
-        >
-          {/* Row 1 — Education dominant, anchored left */}
-          <div style={{ display: "flex", justifyContent: "flex-start", paddingLeft: "16px" }}>
-            <IndustryBlock
-              title="Education & Knowledge"
-              metric="+20% pass rate"
-              videoSrc="/assets/home/industries/education.mp4"
-              tintRgb="59, 130, 246"
-              delay={0.1}
-              dominant
-              style={{ width: "440px", minHeight: "232px" }}
-            />
-          </div>
-
-          {/* Row 2 — Accounting + Software, asymmetric widths */}
-          <div style={{ display: "flex", gap: "16px" }}>
-            <IndustryBlock
-              title="Accounting & Finance"
-              metric="3,500+ hours saved"
-              videoSrc="/assets/home/industries/accounting.mp4"
-              tintRgb="124, 58, 237"
-              delay={0.18}
-              style={{ width: "272px", minHeight: "232px", flexShrink: 0 }}
-            />
-            <IndustryBlock
-              title="Revitalizing Apps & Software"
-              metric="Extended product lifecycle"
-              videoSrc="/assets/home/industries/software.mp4"
-              tintRgb="6, 182, 212"
-              delay={0.26}
-              style={{ flex: 1, minHeight: "232px" }}
-            />
-          </div>
-
-          {/* Row 3 — Travel, offset right */}
-          <div style={{ display: "flex", justifyContent: "center", paddingLeft: "56px" }}>
-            <IndustryBlock
-              title="Travel & Leisure"
-              metric="+15% increase in visitors"
-              videoSrc="/assets/home/industries/travel.mp4"
-              tintRgb="20, 184, 166"
-              delay={0.34}
-              style={{ width: "400px", minHeight: "210px" }}
-            />
-          </div>
-        </div>
-
-        {/* ── RIGHT: Text block ─────────────────────── */}
+        {/* ── LEFT: Text block ─────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          style={{ maxWidth: "440px", paddingTop: "40px", marginLeft: "auto" }}
+          style={{ maxWidth: "440px", paddingTop: "40px", marginRight: "auto" }}
         >
           <p
             style={{
@@ -336,7 +279,7 @@ export default function Industries() {
                 alignItems: "center",
                 gap: "10px",
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
-                fontSize: "1.05rem",
+                fontSize: "1.15rem",
                 fontWeight: 700,
                 letterSpacing: "-0.01em",
                 color: "#6D28D9",
@@ -346,8 +289,8 @@ export default function Industries() {
             >
               Explore AI Use Cases
               <svg
-                width="18"
-                height="18"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -361,6 +304,63 @@ export default function Industries() {
             </Link>
           </motion.div>
         </motion.div>
+
+        {/* ── RIGHT: Asymmetric video cluster ──────────────────────────────── */}
+        <div
+          style={{
+            position: "relative",
+            maxWidth: "620px",
+            marginLeft: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          {/* Row 1 — Education dominant, anchored left */}
+          <div style={{ display: "flex", justifyContent: "flex-start", paddingLeft: "16px" }}>
+            <IndustryBlock
+              title="Education & Knowledge"
+              metric="+20% pass rate"
+              videoSrc="/assets/home/industries/education.mp4"
+              tintRgb="59, 130, 246"
+              delay={0.1}
+              dominant
+              style={{ width: "440px", minHeight: "232px" }}
+            />
+          </div>
+
+          {/* Row 2 — Accounting + Software, asymmetric widths */}
+          <div style={{ display: "flex", gap: "16px" }}>
+            <IndustryBlock
+              title="Accounting & Finance"
+              metric="3,500+ hours saved"
+              videoSrc="/assets/home/industries/accounting.mp4"
+              tintRgb="124, 58, 237"
+              delay={0.18}
+              style={{ width: "272px", minHeight: "232px", flexShrink: 0 }}
+            />
+            <IndustryBlock
+              title="Revitalizing Apps & Software"
+              metric="Extended product lifecycle"
+              videoSrc="/assets/home/industries/software.mp4"
+              tintRgb="6, 182, 212"
+              delay={0.26}
+              style={{ flex: 1, minHeight: "232px" }}
+            />
+          </div>
+
+          {/* Row 3 — Travel, offset right */}
+          <div style={{ display: "flex", justifyContent: "center", paddingLeft: "56px" }}>
+            <IndustryBlock
+              title="Travel & Leisure"
+              metric="+15% increase in visitors"
+              videoSrc="/assets/home/industries/travel.mp4"
+              tintRgb="20, 184, 166"
+              delay={0.34}
+              style={{ width: "400px", minHeight: "210px" }}
+            />
+          </div>
+        </div>
 
       </div>
     </section>
