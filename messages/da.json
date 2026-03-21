@@ -118,6 +118,14 @@
     "noSpam": "Ingen spam. Afmeld når som helst.",
     "successMessage": "Du er på listen. Vi vender tilbage."
   },
+  "news": {
+    "label": "Seneste nyt",
+    "headline": "Seneste nyt fra xrNORD",
+    "badge": "Nyt partnerskab",
+    "cardHeadline": "First Coffee vælger xrNORD som strategisk AI-partner",
+    "cardBody": "Sammen med First Coffee udforsker vi, hvordan kunstig intelligens kan omforme turisme- og oplevelsesøkonomien i Norden.",
+    "cta": "Læs annoncen"
+  },
   "impact": {
     "label": "Reel effekt i praksis",
     "headlinePre": "Reel effekt.",

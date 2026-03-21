@@ -118,6 +118,14 @@
     "noSpam": "No spam. Unsubscribe at any time.",
     "successMessage": "You're on the list. We'll be in touch."
   },
+  "news": {
+    "label": "Latest News",
+    "headline": "Latest xrNORD News",
+    "badge": "New Partnership",
+    "cardHeadline": "First Coffee chooses xrNORD as strategic AI partner",
+    "cardBody": "Together with First Coffee we are exploring how artificial intelligence can reshape tourism and hospitality experiences in the Nordic region.",
+    "cta": "Read the Announcement"
+  },
   "impact": {
     "label": "Real Impact in Practice",
     "headlinePre": "Real Impact.",

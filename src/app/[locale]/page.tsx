@@ -5,6 +5,7 @@ import Opportunity from "@/components/sections/Opportunity";
 import Industries from "@/components/sections/Industries";
 import WhyAI from "@/components/sections/WhyAI";
 import Capabilities from "@/components/sections/Capabilities";
+import News from "@/components/sections/News";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Industries />
       <WhyAI />
       <Capabilities />
+      <News />
     </main>
   );
 }
