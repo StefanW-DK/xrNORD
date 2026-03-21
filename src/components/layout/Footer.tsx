@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 /* ── Social icons ──────────────────────────────────────── */
 const LinkedIn = () => (
@@ -27,6 +28,7 @@ const YouTube = () => (
 
 /* ── Newsletter form ───────────────────────────────────── */
 function NewsletterForm() {
+  const t = useTranslations("footer");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState(false);
@@ -54,7 +56,7 @@ function NewsletterForm() {
           fontFamily: "var(--font-inter), system-ui, sans-serif",
           fontSize: "0.9rem", color: "rgba(16,185,129,0.9)",
         }}>
-          You&apos;re on the list. We&apos;ll be in touch.
+          {t("successMessage")}
         </p>
       </motion.div>
     );
@@ -72,7 +74,7 @@ function NewsletterForm() {
       }}>
         <input
           type="email"
-          placeholder="Your email address"
+          placeholder={t("emailPlaceholder")}
           value={email}
           onChange={e => setEmail(e.target.value)}
           onFocus={() => setFocused(true)}
@@ -101,7 +103,7 @@ function NewsletterForm() {
         onMouseEnter={e => (e.currentTarget.style.opacity = "0.88")}
         onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
       >
-        Subscribe
+        {t("subscribe")}
       </button>
     </form>
   );
@@ -109,6 +111,7 @@ function NewsletterForm() {
 
 /* ── Footer ────────────────────────────────────────────── */
 export default function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer style={{
       background: "#060B14",
@@ -148,14 +151,14 @@ export default function Footer() {
               fontSize: "11px", fontWeight: 600, letterSpacing: "0.3em",
               textTransform: "uppercase" as const, color: "#06B6D4",
               marginBottom: "16px",
-            }}>Stay Updated</p>
+            }}>{t("stayUpdated")}</p>
             <h3 style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 700,
               letterSpacing: "-0.025em", lineHeight: 1.2,
               color: "#F1F5F9", marginBottom: "8px",
             }}>
-              Be the First to Receive the Latest Articles & AI Interviews
+              {t("newsletterHeadline")}
             </h3>
           </div>
           <div style={{ flex: 1, minWidth: "280px", maxWidth: "480px" }}>
@@ -165,7 +168,7 @@ export default function Footer() {
               fontSize: "0.75rem", color: "rgba(148,163,184,0.4)",
               marginTop: "10px",
             }}>
-              No spam. Unsubscribe at any time.
+              {t("noSpam")}
             </p>
           </div>
         </div>
@@ -197,7 +200,7 @@ export default function Footer() {
               color: "rgba(148,163,184,0.55)",
               maxWidth: "280px",
             }}>
-              We help businesses integrate AI to drive real results — from pinpointing AI opportunities to delivering tailored solutions that unlock hidden efficiencies and accelerate growth.
+              {t("brandDesc")}
             </p>
           </div>
 
@@ -208,7 +211,7 @@ export default function Footer() {
               fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.2em",
               textTransform: "uppercase" as const, color: "rgba(148,163,184,0.5)",
               marginBottom: "20px",
-            }}>Contact</p>
+            }}>{t("contactLabel")}</p>
             <div style={{
               display: "flex", flexDirection: "column" as const, gap: "10px",
               fontFamily: "var(--font-inter), system-ui, sans-serif",
@@ -241,9 +244,9 @@ export default function Footer() {
               fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.2em",
               textTransform: "uppercase" as const, color: "rgba(148,163,184,0.5)",
               marginBottom: "20px",
-            }}>Legal</p>
+            }}>{t("legalLabel")}</p>
             <div style={{ display: "flex", flexDirection: "column" as const, gap: "10px" }}>
-              {["Privacy Policy", "Cookie Policy", "Terms of Use"].map(item => (
+              {[t("privacyPolicy"), t("cookiePolicy"), t("termsOfUse")].map(item => (
                 <Link key={item} href="#" style={{
                   fontFamily: "var(--font-inter), system-ui, sans-serif",
                   fontSize: "0.84rem", color: "rgba(148,163,184,0.7)",
@@ -265,7 +268,7 @@ export default function Footer() {
               fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.2em",
               textTransform: "uppercase" as const, color: "rgba(148,163,184,0.5)",
               marginBottom: "20px",
-            }}>Social</p>
+            }}>{t("socialLabel")}</p>
             <div style={{ display: "flex", gap: "10px" }}>
               {[
                 { href: "https://linkedin.com", icon: <LinkedIn />, label: "LinkedIn", color: "0,119,181" },
@@ -318,13 +321,13 @@ export default function Footer() {
             fontFamily: "var(--font-inter), system-ui, sans-serif",
             fontSize: "0.78rem", color: "rgba(148,163,184,0.35)",
           }}>
-            © 2025 xrNORD · CVR: 43396323
+            {t("copyright")}
           </p>
           <p style={{
             fontFamily: "var(--font-inter), system-ui, sans-serif",
             fontSize: "0.78rem", color: "rgba(148,163,184,0.25)",
           }}>
-            Scandinavian AI Strategy & Development
+            {t("tagline")}
           </p>
         </div>
       </div>

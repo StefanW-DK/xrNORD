@@ -11,6 +11,20 @@
     "contact": "Kontakt",
     "bookWorkshop": "Book Workshop"
   },
+  "hero": {
+    "badge": "Det Nordiske Forspring med AI",
+    "headlinePre": "Bring",
+    "headlineHighlight1": "AI",
+    "headlineMid": "Ind i",
+    "headlineHighlight2": "Jeres",
+    "headlineEnd": "Forretning",
+    "subtext": "Vi udvikler og integrerer AI i jeres forretning, produkter og processer - og hjælper jer med at opdage nye måder at skabe værdi og konkurrere på.",
+    "ctaPrimary": "Udforsk vores AI Workshop",
+    "ctaSecondary": "Hvorfor AI nu?"
+  },
+  "clients": {
+    "label": "Betroet af fremsynede virksomheder"
+  },
   "opportunity": {
     "label": "Jeres mulighed for at vinde",
     "topText": "Spørgsmålet er ikke længere om I skal handle. Det er hvordan I gør AI til en reel fordel.",
@@ -27,8 +41,82 @@
     "diagramIntegration": "Integration",
     "cta": "Udforsk jeres AI-muligheder"
   },
-  "clients": {
-    "label": "Betroet af fremsynede virksomheder"
+  "industries": {
+    "label": "På tværs af brancher",
+    "headlineAccent": "Reel effekt.",
+    "headlineEnd": "Startet enkelt",
+    "bodyOne": "Vi har gjort det på tværs af brancher.",
+    "bodyTwo": "Nogle rejser starter med gennemprøvede standarder. Andre bliver til noget helt jeres eget.",
+    "bodyThree": "I behøver ikke se det fulde billede. Det behøver ikke være komplekst.",
+    "bodyFour": "Vi starter dér, hvor I er.",
+    "cta": "Udforsk AI-anvendelser",
+    "educationTitle": "Uddannelse & Viden",
+    "educationMetric": "+20% beståelsesprocent",
+    "accountingTitle": "Regnskab & Finans",
+    "accountingMetric": "3.500+ timer sparet",
+    "softwareTitle": "Revitalisering af apps & software",
+    "softwareMetric": "Forlænget produktlevetid",
+    "travelTitle": "Rejse & Fritid",
+    "travelMetric": "+15% stigning i besøgende"
+  },
+  "whyai": {
+    "eyebrow": "Skiftet er allerede i gang",
+    "headline": "Hvad ledere og eksperter ser lige nu",
+    "bodyOne": "I samtaler med ledere og AI-eksperter er ét budskab klart - skiftet er allerede i gang.",
+    "bodyTwo": "Se hvordan de griber AI an i praksis, og hvad det betyder for deres forretning og fremtid.",
+    "featuredLabel": "Udvalgte virksomheder",
+    "cta": "Se alle interviews"
+  },
+  "capabilities": {
+    "eyebrow": "Kompetencer",
+    "headline": "Fra AI-potentiale til",
+    "headlineAccent": "Struktureret handling.",
+    "body": "Vi hjælper B2B-virksomheder med at navigere i AI's kompleksitet gennem en disciplineret, resultatorienteret tilgang.",
+    "strategyTitle": "AI-strategi",
+    "strategyDesc": "Uden om hype'n. Vi definerer en klar retning for AI-implementering, der understøtter jeres reelle drift.",
+    "bespokeTitle": "Skræddersyet udvikling",
+    "bespokeDesc": "Tilpassede AI-løsninger bygget til jeres specifikke data og arbejdsgange.",
+    "protoTitle": "Hurtig prototyping",
+    "protoDesc": "Fra koncept til fungerende prototype på under 20 dage.",
+    "dataTitle": "Data-parathed",
+    "dataDesc": "Vi strukturerer jeres datalandskab, så det er klar til AI og kan skaleres.",
+    "implTitle": "Implementering",
+    "implDesc": "Problemfri integration af AI i jeres eksisterende softwareplatform.",
+    "roiTitle": "ROI-fokus",
+    "roiDesc": "Vi fokuserer udelukkende på indsatser, der rykker ved bundlinjen i jeres forretning."
+  },
+  "footer": {
+    "stayUpdated": "Hold dig opdateret",
+    "newsletterHeadline": "Vær den første til at modtage de seneste artikler og AI-interviews",
+    "emailPlaceholder": "Din e-mailadresse",
+    "subscribe": "Tilmeld",
+    "noSpam": "Ingen spam. Afmeld når som helst.",
+    "brandDesc": "Vi hjælper virksomheder med at integrere AI og skabe reelle resultater - fra at identificere AI-muligheder til at levere skræddersyede løsninger, der frigør skjulte effektiviteter og accelererer vækst.",
+    "contactLabel": "Kontakt",
+    "legalLabel": "Juridisk",
+    "socialLabel": "Sociale medier",
+    "privacyPolicy": "Privatlivspolitik",
+    "cookiePolicy": "Cookiepolitik",
+    "termsOfUse": "Vilkår for brug",
+    "copyright": "© 2025 xrNORD · CVR: 43396323",
+    "tagline": "Skandinavisk AI-strategi & udvikling",
+    "successMessage": "Du er på listen. Vi vender tilbage."
+  },
+  "cookies": {
+    "message": "Vi bruger cookies til at se, hvordan du interagerer med vores side og forbedre din oplevelse. Ved at acceptere accepterer du vores brug af cookies.",
+    "privacyPolicy": "Privatlivspolitik",
+    "settings": "Indstillinger",
+    "acceptAll": "Accepter alle",
+    "preferencesTitle": "Cookie-indstillinger",
+    "necessary": "Nødvendige",
+    "necessaryDesc": "Påkrævet for at siden fungerer. Kan ikke deaktiveres.",
+    "analytics": "Analyse",
+    "analyticsDesc": "Hjælper os med at forstå, hvordan besøgende interagerer med siden.",
+    "marketing": "Marketing",
+    "marketingDesc": "Bruges til at levere personaliseret indhold og annoncer.",
+    "savePreferences": "Gem indstillinger",
+    "noSpam": "Ingen spam. Afmeld når som helst.",
+    "successMessage": "Du er på listen. Vi vender tilbage."
   },
   "impact": {
     "label": "Reel effekt i praksis",
@@ -39,16 +127,5 @@
     "bodyThree": "I behøver ikke se det fulde billede.",
     "bodyFour": "Det behøver ikke være komplekst.",
     "bodyFive": "Vi starter dér, hvor I er."
-  },
-  "hero": {
-    "badge": "Det Nordiske Forspring med AI",
-    "headlinePre": "Bring",
-    "headlineHighlight1": "AI",
-    "headlineMid": "Ind i",
-    "headlineHighlight2": "Jeres",
-    "headlineEnd": "Forretning",
-    "subtext": "Vi udvikler og integrerer AI i jeres forretning, produkter og processer — og hjælper jer med at opdage nye måder at skabe værdi og konkurrere på.",
-    "ctaPrimary": "Udforsk vores AI Workshop",
-    "ctaSecondary": "Hvorfor AI nu?"
   }
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 /* ── Data ──────────────────────────────────────────────── */
 interface Cap {
@@ -12,73 +13,6 @@ interface Cap {
   icon: React.ReactNode;
   area: string;
 }
-
-const caps: Cap[] = [
-  {
-    title: "AI Strategy",
-    desc: "Beyond the hype. We define a clear direction for AI adoption that supports real operations.",
-    hex: "#06B6D4", rgb: "6,182,212", area: "strategy",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Bespoke Development",
-    desc: "Custom AI solutions built for your specific data and workflows.",
-    hex: "#8B5CF6", rgb: "139,92,246", area: "bespoke",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
-        <line x1="14" y1="4" x2="10" y2="20" />
-      </svg>
-    ),
-  },
-  {
-    title: "Rapid Prototyping",
-    desc: "From concept to functional prototype in under 20 days.",
-    hex: "#3B82F6", rgb: "59,130,246", area: "proto",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-      </svg>
-    ),
-  },
-  {
-    title: "Data Readiness",
-    desc: "Structuring your data landscape to be AI-ready and scalable.",
-    hex: "#10B981", rgb: "16,185,129", area: "data",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" /><line x1="3" y1="20" x2="21" y2="20" />
-      </svg>
-    ),
-  },
-  {
-    title: "Implementation",
-    desc: "Seamless integration of AI into your existing software stack.",
-    hex: "#0891B2", rgb: "8,145,178", area: "impl",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="4" width="20" height="5" rx="1.5" /><rect x="2" y="13" width="20" height="5" rx="1.5" />
-        <path d="M6 9v4" /><path d="M18 9v4" />
-      </svg>
-    ),
-  },
-  {
-    title: "ROI Focused",
-    desc: "We focus strictly on interventions that move the needle for your business.",
-    hex: "#F43F5E", rgb: "244,63,94", area: "roi",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
-      </svg>
-    ),
-  },
-];
 
 /* ── Card component ────────────────────────────────────── */
 function Card({ cap, index }: { cap: Cap; index: number }) {
@@ -160,6 +94,75 @@ const headlineGradient = {
 
 /* ── Main Section ──────────────────────────────────────── */
 export default function Capabilities() {
+  const t = useTranslations("capabilities");
+
+  const caps: Cap[] = [
+    {
+      title: t("strategyTitle"),
+      desc: t("strategyDesc"),
+      hex: "#06B6D4", rgb: "6,182,212", area: "strategy",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+      ),
+    },
+    {
+      title: t("bespokeTitle"),
+      desc: t("bespokeDesc"),
+      hex: "#8B5CF6", rgb: "139,92,246", area: "bespoke",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+          <line x1="14" y1="4" x2="10" y2="20" />
+        </svg>
+      ),
+    },
+    {
+      title: t("protoTitle"),
+      desc: t("protoDesc"),
+      hex: "#3B82F6", rgb: "59,130,246", area: "proto",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+      ),
+    },
+    {
+      title: t("dataTitle"),
+      desc: t("dataDesc"),
+      hex: "#10B981", rgb: "16,185,129", area: "data",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" /><line x1="3" y1="20" x2="21" y2="20" />
+        </svg>
+      ),
+    },
+    {
+      title: t("implTitle"),
+      desc: t("implDesc"),
+      hex: "#0891B2", rgb: "8,145,178", area: "impl",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="4" width="20" height="5" rx="1.5" /><rect x="2" y="13" width="20" height="5" rx="1.5" />
+          <path d="M6 9v4" /><path d="M18 9v4" />
+        </svg>
+      ),
+    },
+    {
+      title: t("roiTitle"),
+      desc: t("roiDesc"),
+      hex: "#F43F5E", rgb: "244,63,94", area: "roi",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <section style={{
       background: "linear-gradient(180deg, #0A0F1E 0%, #0D1520 40%, #0F1A2A 70%, #0A0F1E 100%)",
@@ -192,7 +195,7 @@ export default function Capabilities() {
           fontFamily: "var(--font-geist), system-ui, sans-serif",
           fontSize: "11px", fontWeight: 600, letterSpacing: "0.35em",
           textTransform: "uppercase" as const, color: "#06B6D4", marginBottom: "32px",
-        }}>Capabilities</p>
+        }}>{t("eyebrow")}</p>
 
         <h2 style={{
           fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -200,8 +203,8 @@ export default function Capabilities() {
           lineHeight: 1.08, letterSpacing: "-0.035em",
           color: "#F1F5F9", marginBottom: "28px",
         }}>
-          Turning AI Potential into<br />
-          <span style={headlineGradient}>Structured Action.</span>
+          {t("headline")}<br />
+          <span style={headlineGradient}>{t("headlineAccent")}</span>
         </h2>
 
         <p style={{
@@ -209,7 +212,7 @@ export default function Capabilities() {
           fontSize: "1.1rem", lineHeight: 1.7,
           color: "rgba(148,163,184,0.7)", maxWidth: "560px", margin: "0 auto",
         }}>
-          We help B2B organizations navigate the complexities of AI through a disciplined, result-oriented framework.
+          {t("body")}
         </p>
       </motion.div>
 

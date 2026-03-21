@@ -4,24 +4,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useState, useEffect, useCallback, useRef } from "react";
 
-/* ── State definitions ─────────────────────────────────── */
+/* ── State definitions — one node per state, clockwise ─── */
 const STATES = [
   {
-    // "Increase productivity" — Integration + Challenge emphasis
-    emphasis: [0, 3],
-    centerScale: 1.0,
-    centerGlow: "rgba(59,130,246,0.30)",
-    ambientHue: "rgba(8,145,178,0.10)",
-  },
-  {
-    // "Build better products" — Solutions emphasis
+    // Solutions (48°, top-right) — green
     emphasis: [2],
     centerScale: 1.0,
     centerGlow: "rgba(13,148,136,0.36)",
     ambientHue: "rgba(13,148,136,0.10)",
   },
   {
-    // "Strengthen your position" — Roadmap + center emphasis
+    // Integration (138°, right) — teal
+    emphasis: [3],
+    centerScale: 1.0,
+    centerGlow: "rgba(8,145,178,0.30)",
+    ambientHue: "rgba(8,145,178,0.10)",
+  },
+  {
+    // Challenge (222°, bottom-left) — blue
+    emphasis: [0],
+    centerScale: 1.0,
+    centerGlow: "rgba(59,130,246,0.30)",
+    ambientHue: "rgba(59,130,246,0.08)",
+  },
+  {
+    // Roadmap (318°, top-left) — violet
     emphasis: [1],
     centerScale: 1.05,
     centerGlow: "rgba(124,58,237,0.42)",
@@ -297,7 +304,7 @@ export default function Opportunity() {
   const [activeState, setActiveState] = useState(0);
 
   const cycleState = useCallback(() => {
-    setActiveState((prev) => (prev + 1) % 3);
+    setActiveState((prev) => (prev + 1) % 4);
   }, []);
 
   useEffect(() => {
@@ -308,7 +315,9 @@ export default function Opportunity() {
   const statements = [t("statementOne"), t("statementTwo"), t("statementThree")];
 
   // Statement accent colors per state
-  const statementColors = ["#60A5FA", "#34D399", "#A78BFA"];
+  // 4 orbit states map to 3 text statements — cycle text every 2 orbit steps
+  const statementColors = ["#34D399", "#60A5FA", "#60A5FA", "#A78BFA"];
+  const statementIndex = activeState < 2 ? 0 : activeState === 2 ? 1 : 2;
 
   return (
     <section
@@ -460,7 +469,7 @@ export default function Opportunity() {
                   textShadow: `0 0 40px ${statementColors[activeState]}66, 0 0 80px ${statementColors[activeState]}33`,
                 }}
               >
-                {statements[activeState]}
+                {statements[statementIndex]}
               </motion.p>
             </AnimatePresence>
           </div>

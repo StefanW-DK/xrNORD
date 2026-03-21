@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import { getPageMeta, BASE_URL, type Locale } from "@/config/metadata";
 import JsonLd from "@/components/seo/JsonLd";
 import Footer from "@/components/layout/Footer";
+import CookieBanner from "@/components/layout/CookieBanner";
 import "../globals.css";
 
 const inter = Inter({
@@ -101,6 +102,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           {children}
           <Footer />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>

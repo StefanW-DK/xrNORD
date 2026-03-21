@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const VIDEO_SRC = "/assets/home/why/xrNORD_interview.mp4";
 
@@ -96,6 +97,7 @@ function PreviewCard({ name, role, topic, imageSrc, href, delay }: CardProps) {
 
 /* ── Main Section ──────────────────────────────────────── */
 export default function WhyAI() {
+  const t = useTranslations("whyai");
   return (
     <section style={{
       background: "#F1F5F9",
@@ -130,7 +132,7 @@ export default function WhyAI() {
             color: "#94A3B8",
             marginBottom: "28px",
           }}>
-            The Shift Is Already Underway
+            {t("eyebrow")}
           </p>
 
           <h2 style={{
@@ -142,7 +144,7 @@ export default function WhyAI() {
             color: "#0F172A",
             marginBottom: "28px",
           }}>
-            What Leaders and Experts Are Seeing Right Now
+            {t("headline")}
           </h2>
 
           <div style={{
@@ -153,10 +155,10 @@ export default function WhyAI() {
             marginBottom: "40px",
           }}>
             <p style={{ marginBottom: "12px" }}>
-              In conversations with executives and AI experts, one thing is clear - the shift is already happening.
+              {t("bodyOne")}
             </p>
             <p>
-              See how they approach AI in practice, and what it means for their business and future.
+              {t("bodyTwo")}
             </p>
           </div>
 
@@ -171,7 +173,7 @@ export default function WhyAI() {
               color: "#64748B",
               marginBottom: "14px",
             }}>
-              Featured companies
+              {t("featuredLabel")}
             </p>
             <div style={{
               display: "flex",
@@ -225,7 +227,7 @@ export default function WhyAI() {
               letterSpacing: "-0.01em",
             }}
           >
-            View All Interviews
+            {t("cta")}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
             </svg>

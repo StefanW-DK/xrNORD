@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 /* ── Types ──────────────────────────────────────────────── */
 interface IndustryBlockProps {
@@ -153,6 +154,7 @@ const headlineGradient = {
 
 /* ── Main Section ───────────────────────────────────────── */
 export default function Industries() {
+  const t = useTranslations("industries");
   return (
     <section
       style={{
@@ -219,7 +221,7 @@ export default function Industries() {
               marginBottom: "36px",
             }}
           >
-            Across Industries
+            {t("label")}
           </p>
 
           <h2
@@ -233,9 +235,9 @@ export default function Industries() {
               marginBottom: "36px",
             }}
           >
-            <span style={headlineGradient}>Real Impact.</span>
+            <span style={headlineGradient}>{t("headlineAccent")}</span>
             <br />
-            Started Simply
+            {t("headlineEnd")}
           </h2>
 
           <div
@@ -248,20 +250,16 @@ export default function Industries() {
             }}
           >
             <p style={{ marginBottom: "18px" }}>
-              We&apos;ve done this across industries.
+              {t("bodyOne")}
             </p>
             <p style={{ marginBottom: "18px" }}>
-              Some journeys start with proven standards.
-              <br />
-              Others become something entirely your own.
+              {t("bodyTwo")}
             </p>
             <p style={{ marginBottom: "18px" }}>
-              You don&apos;t need to see the full picture.
-              <br />
-              It doesn&apos;t need to be complex.
+              {t("bodyThree")}
             </p>
             <p style={{ fontWeight: 600, color: "#1E293B", letterSpacing: "-0.01em" }}>
-              We start where you are.
+              {t("bodyFour")}
             </p>
           </div>
 
@@ -287,7 +285,7 @@ export default function Industries() {
                 padding: "12px 0",
               }}
             >
-              Explore AI Use Cases
+              {t("cta")}
               <svg
                 width="20"
                 height="20"
@@ -319,8 +317,8 @@ export default function Industries() {
           {/* Row 1 — Education dominant, anchored left */}
           <div style={{ display: "flex", justifyContent: "flex-start", paddingLeft: "16px" }}>
             <IndustryBlock
-              title="Education & Knowledge"
-              metric="+20% pass rate"
+              title={t("educationTitle")}
+              metric={t("educationMetric")}
               videoSrc="/assets/home/industries/education.mp4"
               tintRgb="59, 130, 246"
               delay={0.1}
@@ -332,16 +330,16 @@ export default function Industries() {
           {/* Row 2 — Accounting + Software, asymmetric widths */}
           <div style={{ display: "flex", gap: "16px" }}>
             <IndustryBlock
-              title="Accounting & Finance"
-              metric="3,500+ hours saved"
+              title={t("accountingTitle")}
+              metric={t("accountingMetric")}
               videoSrc="/assets/home/industries/accounting.mp4"
               tintRgb="124, 58, 237"
               delay={0.18}
               style={{ width: "272px", minHeight: "232px", flexShrink: 0 }}
             />
             <IndustryBlock
-              title="Revitalizing Apps & Software"
-              metric="Extended product lifecycle"
+              title={t("softwareTitle")}
+              metric={t("softwareMetric")}
               videoSrc="/assets/home/industries/software.mp4"
               tintRgb="6, 182, 212"
               delay={0.26}
@@ -352,8 +350,8 @@ export default function Industries() {
           {/* Row 3 — Travel, offset right */}
           <div style={{ display: "flex", justifyContent: "center", paddingLeft: "56px" }}>
             <IndustryBlock
-              title="Travel & Leisure"
-              metric="+15% increase in visitors"
+              title={t("travelTitle")}
+              metric={t("travelMetric")}
               videoSrc="/assets/home/industries/travel.mp4"
               tintRgb="20, 184, 166"
               delay={0.34}

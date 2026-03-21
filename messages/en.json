@@ -11,6 +11,20 @@
     "contact": "Contact",
     "bookWorkshop": "Book Workshop"
   },
+  "hero": {
+    "badge": "The Nordic Edge in AI",
+    "headlinePre": "Bring",
+    "headlineHighlight1": "AI",
+    "headlineMid": "Into",
+    "headlineHighlight2": "Your",
+    "headlineEnd": "Business",
+    "subtext": "We develop and integrate AI into your business, products, and processes - helping you discover new ways to operate, create value, and compete.",
+    "ctaPrimary": "Explore our AI Workshop",
+    "ctaSecondary": "Why AI Now?"
+  },
+  "clients": {
+    "label": "Trusted by forward-thinking companies"
+  },
   "opportunity": {
     "label": "Your Opportunity to Win",
     "topText": "The question is no longer if you should act. It is how to turn AI into real advantage.",
@@ -27,8 +41,82 @@
     "diagramIntegration": "Integration",
     "cta": "Explore Your AI Opportunity"
   },
-  "clients": {
-    "label": "Trusted by forward-thinking companies"
+  "industries": {
+    "label": "Across Industries",
+    "headlineAccent": "Real Impact.",
+    "headlineEnd": "Started Simply",
+    "bodyOne": "We've done this across industries.",
+    "bodyTwo": "Some journeys start with proven standards. Others become something entirely your own.",
+    "bodyThree": "You don't need to see the full picture. It doesn't need to be complex.",
+    "bodyFour": "We start where you are.",
+    "cta": "Explore AI Use Cases",
+    "educationTitle": "Education & Knowledge",
+    "educationMetric": "+20% pass rate",
+    "accountingTitle": "Accounting & Finance",
+    "accountingMetric": "3,500+ hours saved",
+    "softwareTitle": "Revitalizing Apps & Software",
+    "softwareMetric": "Extended product lifecycle",
+    "travelTitle": "Travel & Leisure",
+    "travelMetric": "+15% increase in visitors"
+  },
+  "whyai": {
+    "eyebrow": "The Shift Is Already Underway",
+    "headline": "What Leaders and Experts Are Seeing Right Now",
+    "bodyOne": "In conversations with executives and AI experts, one thing is clear - the shift is already happening.",
+    "bodyTwo": "See how they approach AI in practice, and what it means for their business and future.",
+    "featuredLabel": "Featured companies",
+    "cta": "View All Interviews"
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "headline": "Turning AI Potential into",
+    "headlineAccent": "Structured Action.",
+    "body": "We help B2B organizations navigate the complexities of AI through a disciplined, result-oriented framework.",
+    "strategyTitle": "AI Strategy",
+    "strategyDesc": "Beyond the hype. We define a clear direction for AI adoption that supports real operations.",
+    "bespokeTitle": "Bespoke Development",
+    "bespokeDesc": "Custom AI solutions built for your specific data and workflows.",
+    "protoTitle": "Rapid Prototyping",
+    "protoDesc": "From concept to functional prototype in under 20 days.",
+    "dataTitle": "Data Readiness",
+    "dataDesc": "Structuring your data landscape to be AI-ready and scalable.",
+    "implTitle": "Implementation",
+    "implDesc": "Seamless integration of AI into your existing software stack.",
+    "roiTitle": "ROI Focused",
+    "roiDesc": "We focus strictly on interventions that move the needle for your business."
+  },
+  "footer": {
+    "stayUpdated": "Stay Updated",
+    "newsletterHeadline": "Be the First to Receive the Latest Articles & AI Interviews",
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "noSpam": "No spam. Unsubscribe at any time.",
+    "brandDesc": "We help businesses integrate AI to drive real results - from pinpointing AI opportunities to delivering tailored solutions that unlock hidden efficiencies and accelerate growth.",
+    "contactLabel": "Contact",
+    "legalLabel": "Legal",
+    "socialLabel": "Social",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "termsOfUse": "Terms of Use",
+    "copyright": "© 2025 xrNORD · CVR: 43396323",
+    "tagline": "Scandinavian AI Strategy & Development",
+    "successMessage": "You're on the list. We'll be in touch."
+  },
+  "cookies": {
+    "message": "We use cookies to see how you interact with our site and improve your experience. By accepting, you agree to our use of cookies.",
+    "privacyPolicy": "Privacy Policy",
+    "settings": "Settings",
+    "acceptAll": "Accept All",
+    "preferencesTitle": "Cookie Preferences",
+    "necessary": "Necessary",
+    "necessaryDesc": "Required for the site to function. Cannot be disabled.",
+    "analytics": "Analytics",
+    "analyticsDesc": "Help us understand how visitors interact with the site.",
+    "marketing": "Marketing",
+    "marketingDesc": "Used to deliver personalised content and ads.",
+    "savePreferences": "Save preferences",
+    "noSpam": "No spam. Unsubscribe at any time.",
+    "successMessage": "You're on the list. We'll be in touch."
   },
   "impact": {
     "label": "Real Impact in Practice",
@@ -39,16 +127,5 @@
     "bodyThree": "You don't need to see the full picture.",
     "bodyFour": "It doesn't need to be complex.",
     "bodyFive": "We start where you are."
-  },
-  "hero": {
-    "badge": "The Nordic Edge in AI",
-    "headlinePre": "Bring",
-    "headlineHighlight1": "AI",
-    "headlineMid": "Into",
-    "headlineHighlight2": "Your",
-    "headlineEnd": "Business",
-    "subtext": "We develop and integrate AI into your business, products, and processes — helping you discover new ways to operate, create value, and compete.",
-    "ctaPrimary": "Explore our AI Workshop",
-    "ctaSecondary": "Why AI Now?"
   }
 }
