@@ -288,12 +288,12 @@ export default function News() {
             }}
           >
             <Image
-              src="/assets/home/news/first-coffee-partnership.png"
+              src="/assets/home/news/first-coffee-photo.png"
               alt="First Coffee & xrNORD partnership"
               fill
               style={{
                 objectFit: "cover",
-                objectPosition: "center 60%",
+                objectPosition: "center center",
               }}
             />
             {/* Subtle left fade to blend with card */}
