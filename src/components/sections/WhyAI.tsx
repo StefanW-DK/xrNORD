@@ -153,11 +153,62 @@ export default function WhyAI() {
             marginBottom: "40px",
           }}>
             <p style={{ marginBottom: "12px" }}>
-              In conversations with executives and AI experts, one thing is clear — the shift is already happening.
+              In conversations with executives and AI experts, one thing is clear - the shift is already happening.
             </p>
             <p>
               See how they approach AI in practice, and what it means for their business and future.
             </p>
+          </div>
+
+          {/* Company logos — subtle social proof */}
+          <div style={{ marginBottom: "32px" }}>
+            <p style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "0.72rem",
+              fontWeight: 600,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase" as const,
+              color: "#64748B",
+              marginBottom: "14px",
+            }}>
+              Featured companies
+            </p>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "20px",
+              flexWrap: "wrap" as const,
+            }}>
+              {[
+                { src: "/assets/home/why/logos/dansk-erhverv.png", alt: "Dansk Erhverv" },
+                { src: "/assets/home/why/logos/greybird.png",      alt: "GreyBird Pilot Academy" },
+                { src: "/assets/home/why/logos/dinero.png",        alt: "Dinero" },
+                { src: "/assets/home/why/logos/no-zebra.png",      alt: "No Zebra" },
+                { src: "/assets/home/why/logos/acgroup.png",       alt: "AC Group" },
+                { src: "/assets/home/why/logos/vrpilot.png",       alt: "vrPILOT" },
+              ].map(({ src, alt }) => (
+                <img
+                  key={alt}
+                  src={src}
+                  alt={alt}
+                  title={alt}
+                  style={{
+                    height: "24px",
+                    width: "auto",
+                    maxWidth: "80px",
+                    objectFit: "contain",
+                    filter: "grayscale(100%) brightness(0) opacity(0.22)",
+                    transition: "opacity 0.3s ease, filter 0.3s ease",
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.filter = "grayscale(100%) brightness(0) opacity(0.5)";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.filter = "grayscale(100%) brightness(0) opacity(0.22)";
+                  }}
+                />
+              ))}
+            </div>
           </div>
 
           <Link
@@ -169,7 +220,7 @@ export default function WhyAI() {
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "0.92rem",
               fontWeight: 600,
-              color: "#1E293B",
+              color: "#7C3AED",
               textDecoration: "none",
               letterSpacing: "-0.01em",
             }}
