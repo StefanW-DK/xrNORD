@@ -283,26 +283,23 @@ export default function News() {
           <div
             style={{
               position: "relative",
-              minHeight: "420px",
+              minHeight: "380px",
               overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#f5f5f5",
             }}
           >
             <Image
               src="/assets/home/news/first-coffee-photo.png"
               alt="First Coffee & xrNORD partnership"
-              fill
+              width={800}
+              height={800}
               style={{
-                objectFit: "cover",
-                objectPosition: "center center",
-              }}
-            />
-            {/* Subtle left fade to blend with card */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "linear-gradient(to right, rgba(255,255,255,0.18) 0%, transparent 20%)",
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
               }}
             />
           </div>
