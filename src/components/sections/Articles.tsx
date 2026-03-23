@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 
 const ARTICLES = [
   {
@@ -33,6 +34,7 @@ const ARTICLES = [
 
 export default function Articles() {
   const t = useTranslations("articles");
+  const locale = useLocale();
 
   return (
     <section
@@ -142,7 +144,7 @@ export default function Articles() {
 
           {/* View all CTA */}
           <motion.a
-            href="#"
+            href={`/${locale}/why-ai/articles`}
             whileHover={{ x: 4 }}
             transition={{ duration: 0.2 }}
             style={{
