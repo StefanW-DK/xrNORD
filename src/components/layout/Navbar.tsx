@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between h-24 lg:h-28">
             {/* Logo */}
-            <Link href={`/${locale}`} className="shrink-0">
+            <Link href={`/${locale}`} className="shrink-0 -ml-2">
               <Image
                 src={
                   scrolled
@@ -164,7 +164,7 @@ export default function Navbar() {
             </div>
 
             {/* Right side */}
-            <div className="hidden lg:flex items-center gap-5">
+            <div className="hidden lg:flex items-center gap-8">
               {/* Language switcher */}
               <div
                 className="relative"
