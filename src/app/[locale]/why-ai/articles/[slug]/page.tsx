@@ -177,7 +177,7 @@ export default async function ArticlePage({ params }: Props) {
     <NextIntlClientProvider messages={messages} locale={locale}>
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero — sits directly below the fixed navbar */}
       <div
         style={{
           position: "relative",
@@ -195,65 +195,6 @@ export default async function ArticlePage({ params }: Props) {
           priority
           sizes="100vw"
         />
-        {/* Dark gradient overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(to bottom, rgba(10,15,30,0.3) 0%, rgba(10,15,30,0.65) 100%)",
-          }}
-        />
-        {/* Category + title overlay */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            padding: "0 0 48px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <div style={{ maxWidth: "760px", width: "100%", padding: "0 32px" }}>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "5px 14px",
-                borderRadius: "40px",
-                background: article.categoryBg,
-                border: `1px solid ${article.categoryColor}40`,
-                marginBottom: "16px",
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-geist), system-ui, sans-serif",
-                  fontSize: "0.72rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: article.categoryColor,
-                }}
-              >
-                {article.category}
-              </span>
-            </div>
-            <h1
-              style={{
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-                fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-                fontWeight: 800,
-                letterSpacing: "-0.03em",
-                lineHeight: 1.2,
-                color: "#FFFFFF",
-              }}
-            >
-              {article.title}
-            </h1>
-          </div>
-        </div>
       </div>
 
       {/* Meta bar */}
@@ -285,27 +226,13 @@ export default async function ArticlePage({ params }: Props) {
             {article.author}
           </span>
           <span style={{ color: "#CBD5E1", fontSize: "0.75rem" }}>•</span>
-          <span
-            style={{
-              fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: "0.85rem",
-              color: "#64748B",
-            }}
-          >
+          <span style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: "0.85rem", color: "#64748B" }}>
             {article.date}
           </span>
           <span style={{ color: "#CBD5E1", fontSize: "0.75rem" }}>•</span>
-          <span
-            style={{
-              fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: "0.85rem",
-              color: "#64748B",
-            }}
-          >
+          <span style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: "0.85rem", color: "#64748B" }}>
             {article.readTime}
           </span>
-
-          {/* Back link */}
           <Link
             href={`/${locale}/why-ai/articles`}
             style={{
@@ -323,25 +250,57 @@ export default async function ArticlePage({ params }: Props) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5" /><path d="m12 19-7-7 7-7" />
             </svg>
-            All articles
+            {locale === "da" ? "Alle artikler" : "All articles"}
           </Link>
         </div>
       </div>
 
       {/* Article body */}
-      <main
-        style={{
-          background: "#FFFFFF",
-          paddingBottom: "120px",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "760px",
-            margin: "0 auto",
-            padding: "64px 32px 0",
-          }}
-        >
+      <main style={{ background: "#FFFFFF", paddingBottom: "120px" }}>
+        <div style={{ maxWidth: "760px", margin: "0 auto", padding: "56px 32px 0" }}>
+          {/* Category badge */}
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              padding: "5px 14px",
+              borderRadius: "40px",
+              background: article.categoryBg,
+              border: `1px solid ${article.categoryColor}40`,
+              marginBottom: "20px",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: article.categoryColor,
+              }}
+            >
+              {article.category}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.035em",
+              lineHeight: 1.15,
+              color: "#0A0F1E",
+              marginBottom: "48px",
+              paddingBottom: "40px",
+              borderBottom: "1px solid rgba(15,23,42,0.08)",
+            }}
+          >
+            {article.title}
+          </h1>
+
           {article.content.map((section, i) => renderSection(section, i))}
         </div>
       </main>

@@ -13,7 +13,9 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [scrolled, setScrolled] = useState(false);
+  // On sub-pages (not homepage), always show solid/dark-text navbar
+  const isHomepage = pathname === `/${locale}` || pathname === `/${locale}/`;
+  const [scrolled, setScrolled] = useState(!isHomepage);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -41,10 +43,14 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    if (!isHomepage) {
+      setScrolled(true);
+      return;
+    }
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomepage]);
 
   return (
     <>
