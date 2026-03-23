@@ -1,0 +1,111 @@
+{
+  "website": "https://www.xrnord.com",
+  "extraction_date": "2026-03-23",
+  "note": "The xrNORD website is a Next.js single-page application. Full blog pages at /blog and /da/blog are not currently implemented. Articles are displayed on the homepage only and are sourced from the i18n message files.",
+  "articles": {
+    "english": [
+      {
+        "id": 1,
+        "title": "From Pilot to Production - Scaling AI in the Real World",
+        "category": "Implementation",
+        "categoryColor": "#DC2626",
+        "excerpt": "Moving from a proof-of-concept to a production-ready AI system is where most organisations stumble. Here is how to close that gap.",
+        "image": "/assets/home/articles/from-pilot-to-production.png",
+        "image_url": "https://www.xrnord.com/assets/home/articles/from-pilot-to-production.png",
+        "url": "Not implemented (href: #)",
+        "date_published": "Not specified in source",
+        "full_content": "Not available - article content not implemented",
+        "language": "en",
+        "source_key": "pilot"
+      },
+      {
+        "id": 2,
+        "title": "The Role of Data - Fuelling Intelligent Systems",
+        "category": "Data Strategy",
+        "categoryColor": "#D97706",
+        "excerpt": "No model is better than the data behind it. Understanding how to structure, clean, and govern your data is the foundation of every AI success.",
+        "image": "/assets/home/articles/the-role-of-data.png",
+        "image_url": "https://www.xrnord.com/assets/home/articles/the-role-of-data.png",
+        "url": "Not implemented (href: #)",
+        "date_published": "Not specified in source",
+        "full_content": "Not available - article content not implemented",
+        "language": "en",
+        "source_key": "data"
+      },
+      {
+        "id": 3,
+        "title": "AI Governance and Legal Compliance",
+        "category": "Governance",
+        "categoryColor": "#0891B2",
+        "excerpt": "As AI matures, so do the regulatory demands. What every Nordic business needs to know about responsible and compliant AI deployment.",
+        "image": "/assets/home/articles/ai-governance.png",
+        "image_url": "https://www.xrnord.com/assets/home/articles/ai-governance.png",
+        "url": "Not implemented (href: #)",
+        "date_published": "Not specified in source",
+        "full_content": "Not available - article content not implemented",
+        "language": "en",
+        "source_key": "governance"
+      }
+    ],
+    "danish": [
+      {
+        "id": 1,
+        "title": "Fra Pilot til Produktion - Skalering af AI i den virkelige verden",
+        "category": "Implementering",
+        "categoryColor": "#DC2626",
+        "excerpt": "At bevæge sig fra et proof-of-concept til et produktionsklart AI-system er der, hvor de fleste organisationer snubler. Sådan lukker du det hul.",
+        "image": "/assets/home/articles/from-pilot-to-production.png",
+        "image_url": "https://www.xrnord.com/assets/home/articles/from-pilot-to-production.png",
+        "url": "Not implemented (href: #)",
+        "date_published": "Not specified in source",
+        "full_content": "Not available - article content not implemented",
+        "language": "da",
+        "source_key": "pilot"
+      },
+      {
+        "id": 2,
+        "title": "Dataens Rolle - Brændstof til intelligente systemer",
+        "category": "Datastrategi",
+        "categoryColor": "#D97706",
+        "excerpt": "Intet model er bedre end dataen bag det. Forståelse af, hvordan man strukturerer, renser og styrer sine data, er fundamentet for enhver AI-succes.",
+        "image": "/assets/home/articles/the-role-of-data.png",
+        "image_url": "https://www.xrnord.com/assets/home/articles/the-role-of-data.png",
+        "url": "Not implemented (href: #)",
+        "date_published": "Not specified in source",
+        "full_content": "Not available - article content not implemented",
+        "language": "da",
+        "source_key": "data"
+      },
+      {
+        "id": 3,
+        "title": "AI Governance og Juridisk Compliance",
+        "category": "Governance",
+        "categoryColor": "#0891B2",
+        "excerpt": "I takt med at AI modnes, gør de regulatoriske krav det også. Det enhver nordisk virksomhed skal vide om ansvarlig og compliant AI-implementering.",
+        "image": "/assets/home/articles/ai-governance.png",
+        "image_url": "https://www.xrnord.com/assets/home/articles/ai-governance.png",
+        "url": "Not implemented (href: #)",
+        "date_published": "Not specified in source",
+        "full_content": "Not available - article content not implemented",
+        "language": "da",
+        "source_key": "governance"
+      }
+    ]
+  },
+  "summary": {
+    "total_articles": 6,
+    "articles_by_language": {
+      "english": 3,
+      "danish": 3
+    },
+    "implementation_status": {
+      "blog_pages": "Not implemented",
+      "article_routes": "Not implemented (href: #)",
+      "full_article_content": "Not available",
+      "article_dates": "Not specified",
+      "articles_displayed_on": "Homepage only"
+    }
+  },
+  "data_source": "/Users/stefanwerge/Claude Code/xrNORD Website/messages/en.json and messages/da.json",
+  "component_source": "/Users/stefanwerge/Claude Code/xrNORD Website/src/components/sections/Articles.tsx"
+}
