@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 const gradientStyle = {
   backgroundImage: "linear-gradient(135deg, #22D3EE, #38BDF8, #818CF8)",
@@ -13,6 +13,7 @@ const gradientStyle = {
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale();
 
   return (
     <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden">
@@ -105,7 +106,7 @@ export default function Hero() {
         >
           {/* Primary CTA */}
           <Link
-            href="/workshop"
+            href={`/${locale}/workshop`}
             className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-[1.02]"
             style={{
               boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
