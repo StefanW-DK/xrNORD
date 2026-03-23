@@ -3,8 +3,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import CookieBanner from "@/components/layout/CookieBanner";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -305,8 +303,6 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </main>
 
-      <Footer />
-      <CookieBanner />
     </NextIntlClientProvider>
   );
 }
