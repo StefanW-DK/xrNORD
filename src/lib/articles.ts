@@ -260,7 +260,7 @@ export const articles: Record<string, Record<string, Article>> = {
       readTime: "5 min læsning",
       excerpt:
         "Det er let at fejre en vellykket AI-prototype. Det svære er at få den til at leve videre i virkeligheden - på tværs af teams, systemer og hverdagens kaos.",
-      image: "/assets/home/articles/from-pilot-to-production.png",
+      image: "/assets/home/articles/from-pilot-to-production-da.png",
       content: [
         {
           type: "paragraph",

@@ -70,7 +70,7 @@ export default async function ArticlesPage({ params }: Props) {
               marginBottom: "20px",
             }}
           >
-            Articles
+            {locale === "da" ? "Artikler" : "Articles"}
           </p>
           <h1
             style={{
@@ -81,20 +81,38 @@ export default async function ArticlesPage({ params }: Props) {
               lineHeight: 1.05,
               color: "#FFFFFF",
               marginBottom: "24px",
-              maxWidth: "680px",
+              maxWidth: "780px",
             }}
           >
-            AI Opens Possibilities.{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Understanding Unlocks Them.
-            </span>
+            {locale === "da" ? (
+              <>
+                AI-viden og Artikler fra{" "}
+                <span
+                  style={{
+                    background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Virkeligheden.
+                </span>
+              </>
+            ) : (
+              <>
+                AI Opens Possibilities.{" "}
+                <span
+                  style={{
+                    background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Understanding Unlocks Them.
+                </span>
+              </>
+            )}
           </h1>
           <p
             style={{
@@ -102,10 +120,12 @@ export default async function ArticlesPage({ params }: Props) {
               fontSize: "1.05rem",
               lineHeight: 1.7,
               color: "#94A3B8",
-              maxWidth: "520px",
+              maxWidth: "560px",
             }}
           >
-            AI can reshape how your company operates and competes. But turning potential into real results requires understanding.
+            {locale === "da"
+              ? "Udforsk hvordan vi sammen med virksomheder bruger AI i praksis - én brugssituation ad gangen. Vores artikler giver jer konkret viden, brugbare indsigter og modeller, der hjælper jer med at implementere AI med tillid og overblik."
+              : "AI can reshape how your company operates and competes. But turning potential into real results requires understanding."}
           </p>
         </div>
       </div>
