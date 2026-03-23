@@ -126,6 +126,23 @@
     "cardBody": "Together with First Coffee we are exploring how artificial intelligence can reshape tourism and hospitality experiences in the Nordic region.",
     "cta": "Read the Announcement"
   },
+  "articles": {
+    "label": "Articles",
+    "headlineOne": "AI Opens Possibilities.",
+    "headlineAccent": "Understanding Unlocks Them.",
+    "body": "AI can reshape how your company operates and competes. But turning potential into real results requires understanding.",
+    "viewAll": "View all articles",
+    "readMore": "Read article",
+    "pilotCategory": "Implementation",
+    "pilotTitle": "From Pilot to Production - Scaling AI in the Real World",
+    "pilotExcerpt": "Moving from a proof-of-concept to a production-ready AI system is where most organisations stumble. Here is how to close that gap.",
+    "dataCategory": "Data Strategy",
+    "dataTitle": "The Role of Data - Fuelling Intelligent Systems",
+    "dataExcerpt": "No model is better than the data behind it. Understanding how to structure, clean, and govern your data is the foundation of every AI success.",
+    "governanceCategory": "Governance",
+    "governanceTitle": "AI Governance and Legal Compliance",
+    "governanceExcerpt": "As AI matures, so do the regulatory demands. What every Nordic business needs to know about responsible and compliant AI deployment."
+  },
   "impact": {
     "label": "Real Impact in Practice",
     "headlinePre": "Real Impact.",

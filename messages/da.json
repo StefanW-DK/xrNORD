@@ -126,6 +126,23 @@
     "cardBody": "Sammen med First Coffee udforsker vi, hvordan kunstig intelligens kan omforme turisme- og oplevelsesøkonomien i Norden.",
     "cta": "Læs annoncen"
   },
+  "articles": {
+    "label": "Artikler",
+    "headlineOne": "AI åbner muligheder.",
+    "headlineAccent": "Forståelse låser dem op.",
+    "body": "AI kan omforme, hvordan din virksomhed opererer og konkurrerer. Men at omsætte potentiale til reelle resultater kræver forståelse.",
+    "viewAll": "Se alle artikler",
+    "readMore": "Læs artikel",
+    "pilotCategory": "Implementering",
+    "pilotTitle": "Fra Pilot til Produktion - Skalering af AI i den virkelige verden",
+    "pilotExcerpt": "At bevæge sig fra et proof-of-concept til et produktionsklart AI-system er der, hvor de fleste organisationer snubler. Sådan lukker du det hul.",
+    "dataCategory": "Datastrategi",
+    "dataTitle": "Dataens Rolle - Brændstof til intelligente systemer",
+    "dataExcerpt": "Intet model er bedre end dataen bag det. Forståelse af, hvordan man strukturerer, renser og styrer sine data, er fundamentet for enhver AI-succes.",
+    "governanceCategory": "Governance",
+    "governanceTitle": "AI Governance og Juridisk Compliance",
+    "governanceExcerpt": "I takt med at AI modnes, gør de regulatoriske krav det også. Det enhver nordisk virksomhed skal vide om ansvarlig og compliant AI-implementering."
+  },
   "impact": {
     "label": "Reel effekt i praksis",
     "headlinePre": "Reel effekt.",
