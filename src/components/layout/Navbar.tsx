@@ -18,6 +18,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(!isHomepage);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [langOpen, setLangOpen] = useState(false);
 
   const navItems = [
     {
@@ -165,44 +166,87 @@ export default function Navbar() {
             {/* Right side */}
             <div className="hidden lg:flex items-center gap-5">
               {/* Language switcher */}
-              <button
-                onClick={switchLocale}
-                className="text-sm font-medium transition-colors cursor-pointer"
-                style={{
-                  letterSpacing: "0.04em",
-                  color: scrolled
-                    ? "rgba(156,163,175,1)"
-                    : "rgba(255,255,255,0.55)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = scrolled
-                    ? "rgba(55,65,81,1)"
-                    : "rgba(255,255,255,1)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = scrolled
-                    ? "rgba(156,163,175,1)"
-                    : "rgba(255,255,255,0.55)";
-                }}
+              <div
+                className="relative"
+                onMouseEnter={() => setLangOpen(true)}
+                onMouseLeave={() => setLangOpen(false)}
               >
-                <span
+                <button
+                  className="flex items-center gap-1.5 text-sm font-semibold transition-colors cursor-pointer"
                   style={{
-                    fontWeight: locale === "en" ? 700 : 400,
-                    opacity: locale === "en" ? 1 : 0.6,
+                    letterSpacing: "0.06em",
+                    color: scrolled
+                      ? "rgba(55,65,81,1)"
+                      : "rgba(255,255,255,0.85)",
                   }}
                 >
-                  EN
-                </span>
-                <span style={{ opacity: 0.3, margin: "0 4px" }}>/</span>
-                <span
-                  style={{
-                    fontWeight: locale === "da" ? 700 : 400,
-                    opacity: locale === "da" ? 1 : 0.6,
-                  }}
-                >
-                  DA
-                </span>
-              </button>
+                  {/* Globe icon */}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                  {locale.toUpperCase()}
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    style={{
+                      opacity: 0.5,
+                      transition: "transform 0.2s",
+                      transform: langOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    }}
+                  >
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <AnimatePresence>
+                  {langOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full right-0 mt-2 w-32 bg-white rounded-xl py-1.5 overflow-hidden"
+                      style={{
+                        boxShadow: "0 10px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05)",
+                      }}
+                    >
+                      {[
+                        { code: "en", label: "English" },
+                        { code: "da", label: "Dansk" },
+                      ].map(({ code, label }) => (
+                        <button
+                          key={code}
+                          onClick={() => {
+                            if (code !== locale) switchLocale();
+                            setLangOpen(false);
+                          }}
+                          className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors text-left"
+                          style={{
+                            color: code === locale ? "#7C3AED" : "#374151",
+                            background: code === locale ? "rgba(124,58,237,0.06)" : "transparent",
+                            fontWeight: code === locale ? 600 : 400,
+                          }}
+                        >
+                          <span style={{ fontSize: "0.7rem", letterSpacing: "0.06em", fontWeight: 700, opacity: 0.5 }}>
+                            {code.toUpperCase()}
+                          </span>
+                          {label}
+                          {code === locale && (
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" style={{ marginLeft: "auto", color: "#7C3AED" }}>
+                              <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                          )}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               <Link
                 href={`/${locale}/workshop`}
@@ -296,11 +340,13 @@ export default function Navbar() {
                     switchLocale();
                     setMobileOpen(false);
                   }}
-                  className="text-sm text-gray-400 text-left"
+                  className="flex items-center gap-2 text-sm text-gray-500 text-left"
                 >
-                  {locale === "en"
-                    ? "Skift til Dansk"
-                    : "Switch to English"}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                  {locale === "en" ? "Skift til Dansk" : "Switch to English"}
                 </button>
                 <Link
                   href={`/${locale}/workshop`}
