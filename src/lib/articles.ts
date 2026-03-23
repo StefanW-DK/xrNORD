@@ -20,6 +20,196 @@ export interface Article {
 
 export const articles: Record<string, Record<string, Article>> = {
   en: {
+    "ai-pipelines": {
+      slug: "ai-pipelines",
+      category: "Infrastructure",
+      categoryColor: "#7C3AED",
+      categoryBg: "rgba(124,58,237,0.08)",
+      title: "AI Pipelines – The Essential Infrastructure Behind Every Intelligent System",
+      author: "xrNORD Knowledge Team",
+      date: "May 14, 2025",
+      readTime: "4 min read",
+      excerpt:
+        "Behind every reliable AI system stands an invisible scaffold: the data pipeline. Without it, even the most sophisticated model is just a fragile prototype.",
+      image: "/assets/home/articles/ai-pipelines.png",
+      content: [
+        {
+          type: "paragraph",
+          text: "When businesses speak about AI, they often leap to questions of which model to use, what vendor to choose, or how quickly they can deploy. But behind every successful AI deployment, quietly but critically, stands an invisible scaffold: the data pipeline.",
+        },
+        {
+          type: "paragraph",
+          text: "Pipelines are not glamorous. They don't appear in demos or dashboards. But they are what make AI systems reliable, scalable, and trustworthy. Without them, even the most sophisticated model becomes a fragile prototype—useful only in perfect conditions, and useless everywhere else.",
+        },
+        {
+          type: "paragraph",
+          text: "This article explores the role of AI pipelines and ETL in turning scattered, messy, and inaccessible data into structured, contextualized, and high-impact input for intelligent systems.",
+        },
+        {
+          type: "heading",
+          text: "Beyond the Basics: What a Data Pipeline Really Is",
+        },
+        {
+          type: "paragraph",
+          text: "In classic data terms, the acronym ETL (Extract, Transform, Load) describes how data is pulled from sources, cleaned or reshaped, and loaded into a target system. That model still holds value, especially in analytics or reporting.",
+        },
+        {
+          type: "paragraph",
+          text: "But AI adds new demands. In AI, it's not enough to clean data. You must also make it learnable. That means enriching it with domain context, labeling it where needed, structuring it into model-readable formats, and ensuring it reflects real-world behavior rather than internal noise.",
+        },
+        {
+          type: "paragraph",
+          text: "A modern AI pipeline therefore involves:",
+        },
+        {
+          type: "bullets",
+          items: [
+            "Extracting data not just from databases, but from APIs, emails, documents, logs, and speech.",
+            "Transforming not just to align formats, but to embed meaning, normalize values across systems, and preserve historical intent.",
+            "Loading into more than a database—it may feed a vector store, a fine-tuning engine, a prompt context, or a continuously retraining model.",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Where ETL once ended with a data warehouse, AI pipelines extend into the lifeblood of machine reasoning.",
+        },
+        {
+          type: "heading",
+          text: "From Static Batches to Living Systems",
+        },
+        {
+          type: "paragraph",
+          text: "Traditional ETL assumes data changes slowly and is consumed by humans in dashboards. But intelligent systems demand dynamic, ongoing, and reactive pipelines.",
+        },
+        {
+          type: "paragraph",
+          text: "For instance, a customer service assistant powered by AI cannot rely on last week's ticket exports. It needs access to what's happening now—in live conversations, new CRM entries, updated order logs. A fraud detection model must work with near-real-time signals. A document-summarization tool may need to pull the latest policy version.",
+        },
+        {
+          type: "paragraph",
+          text: "This calls for pipelines that are not just batch jobs, but orchestrated flows with versioning, real-time access, latency thresholds, and feedback mechanisms.",
+        },
+        {
+          type: "paragraph",
+          text: "In short: pipelines must evolve from back-office tools into real-time business arteries.",
+        },
+        {
+          type: "heading",
+          text: "The Role of Metadata, Labels, and Semantics",
+        },
+        {
+          type: "paragraph",
+          text: "Clean data isn't just well-formatted—it's rich with meaning. AI systems don't \"understand\" the world—they interpret patterns. What you give them must be grounded in logic they can map.",
+        },
+        {
+          type: "paragraph",
+          text: "Metadata (data about data) helps pipelines preserve who created a file, when it was used, how it relates to other records. Labels enable classification and learning. Semantic mapping ensures that \"client,\" \"customer,\" and \"account owner\" are treated as equivalent—or not—depending on the context.",
+        },
+        {
+          type: "paragraph",
+          text: "This is why pipelines are not merely technical assets. They are interpretive infrastructures. They encode the organization's logic, priorities, and workflows into a form the AI can process.",
+        },
+        {
+          type: "heading",
+          text: "Observability and Version Control",
+        },
+        {
+          type: "paragraph",
+          text: "AI systems don't just rely on input—they evolve based on it. That creates risk. A shift in the input data—say, a change in product naming conventions—can silently corrupt downstream model performance.",
+        },
+        {
+          type: "paragraph",
+          text: "That's why robust pipelines include:",
+        },
+        {
+          type: "bullets",
+          items: [
+            "Audit logs: Who changed what, when, and why.",
+            "Versioning: So older models can be matched with the data they were trained on.",
+            "Alerts: When input distributions drift or key columns disappear.",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Without observability, you may think your AI is stable—when in fact, it's degrading quietly beneath the surface.",
+        },
+        {
+          type: "heading",
+          text: "From Proof-of-Concept to Production-Grade",
+        },
+        {
+          type: "paragraph",
+          text: "Many AI experiments succeed in isolated tests but collapse when brought into production. The usual culprit? Lack of proper data pipelines. In prototypes, data is clean, curated, and frozen. In reality, it's noisy, inconsistent, and constantly shifting.",
+        },
+        {
+          type: "paragraph",
+          text: "Moving from POC to real-world AI means investing in infrastructure that assumes:",
+        },
+        {
+          type: "bullets",
+          items: [
+            "Input will change.",
+            "Systems must scale.",
+            "Data will require interpretation.",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "At xrNORD, we see this challenge often. Organizations prove that a model can work, but don't yet have the machinery to keep it working. We help them design AI-aware pipelines—not just for training, but for inference, retraining, and validation.",
+        },
+        {
+          type: "heading",
+          text: "The Business Value of Pipelines",
+        },
+        {
+          type: "paragraph",
+          text: "AI pipelines are not an IT task—they are a business enabler. Done right, they:",
+        },
+        {
+          type: "bullets",
+          items: [
+            "Reduce time-to-value for AI features.",
+            "Improve model quality through consistent data.",
+            "Enable faster iteration and experimentation.",
+            "Support governance and audit readiness.",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "Without pipelines, AI remains locked in the lab. With them, it becomes part of your operating system.",
+        },
+        {
+          type: "heading",
+          text: "Final Thoughts: Infrastructure Before Intelligence",
+        },
+        {
+          type: "paragraph",
+          text: "If you want AI to behave intelligently, build it on infrastructure that reflects your intelligence—your knowledge, your signals, your judgment.",
+        },
+        {
+          type: "paragraph",
+          text: "Pipelines are where that knowledge flows. They are how you translate raw behavior into learnable patterns, and how you sustain intelligence at scale.",
+        },
+        {
+          type: "paragraph",
+          text: "Don't treat pipelines as plumbing. They are the nervous system of AI. Design them with care, and your models will reward you.",
+        },
+        {
+          type: "cta",
+          headline: "Understanding AI is only the first step.",
+          body: "The real challenge for most organizations is turning AI potential into real business value through a clear strategy and a structured roadmap. At xrNORD, we help companies translate AI opportunities into concrete strategic initiatives and long-term capabilities.",
+          linkLabel: "Explore our AI Strategy & Roadmap process",
+          href: "/en/ai-roadmap",
+        },
+        {
+          type: "cta",
+          headline: "Starting your AI journey does not have to be complicated.",
+          body: "Many of our clients begin their AI journey with a focused one-day workshop where leadership teams explore how AI can create real value across the business. The result is a clear understanding of opportunities, priorities, and the next steps toward building an AI-driven organization.",
+          linkLabel: "Discover the xrNORD AI Workshop",
+          href: "/en/workshop",
+        },
+      ],
+    },
     "from-pilot-to-production": {
       slug: "from-pilot-to-production",
       category: "Implementation",
