@@ -67,14 +67,14 @@ export default function WorkshopResults() {
               <>
                 Resultater fra{" "}
                 <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  tidligere workshops.
+                  vores AI workshops.
                 </span>
               </>
             ) : (
               <>
                 Results from{" "}
                 <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  previous workshops.
+                  our AI workshops.
                 </span>
               </>
             )}

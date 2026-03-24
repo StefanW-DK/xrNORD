@@ -21,10 +21,12 @@ export default async function ArticlesPage({ params }: Props) {
       <div
         style={{
           background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-          paddingTop: "140px",
-          paddingBottom: "80px",
+          paddingTop: "168px",
+          paddingBottom: "96px",
           position: "relative",
           overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
         }}
       >
         {/* Dot grid */}
@@ -55,6 +57,7 @@ export default async function ArticlesPage({ params }: Props) {
             margin: "0 auto",
             padding: "0 80px",
             position: "relative",
+            width: "100%",
           }}
         >
           <p
