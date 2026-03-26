@@ -235,7 +235,7 @@ export default function WorkshopPage() {
           >
             {locale === "da" ? (
               <>
-                Hvordan vil AI transformere
+                Hvad kan AI betyde
                 <br />
                 <span
                   style={{
@@ -245,7 +245,7 @@ export default function WorkshopPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  Jeres Forretning?
+                  for jeres forretning?
                 </span>
               </>
             ) : (
@@ -277,8 +277,8 @@ export default function WorkshopPage() {
             }}
           >
             {locale === "da"
-              ? "Klarhed over, hvor AI skaber værdi, og hvad næste skridt er."
-              : "Clarity on where AI creates value and what to do next."}
+              ? "Få klarhed over hvad AI betyder for jeres forretning - og hvad næste skridt er."
+              : "In one day, you get clarity on what AI means for your business - and what to do next."}
           </motion.p>
 
           <motion.p
@@ -292,13 +292,13 @@ export default function WorkshopPage() {
             }}
           >
             {locale === "da"
-              ? "Fra produktivitetsgevinster til stærkere produkter og langsigtet konkurrenceevne."
+              ? "Fra effektivisering til stærkere produkter og langsigtet konkurrencekraft."
               : "From productivity gains to stronger products and long-term competitiveness."}
           </motion.p>
 
           <motion.div variants={fadeUp}>
             <Link
-              href={`/${locale}/contact`}
+              href={`/${locale}/book-workshop`}
               style={{
                 display: "inline-flex",
                 alignItems: "center",

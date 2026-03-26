@@ -173,6 +173,19 @@ html {
   }
 }
 
+/* Contact page — responsive 2-col rows */
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .contact-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 body {
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;

@@ -96,27 +96,16 @@ export default function Navbar() {
                   }
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <Link
-                    href={item.href}
-                    className="text-[15px] font-medium transition-colors duration-200 flex items-center gap-1"
-                    style={{
-                      color: scrolled
-                        ? "rgba(55,65,81,1)"
-                        : "rgba(255,255,255,0.85)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = scrolled
-                        ? "rgba(17,24,39,1)"
-                        : "rgba(255,255,255,1)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = scrolled
-                        ? "rgba(55,65,81,1)"
-                        : "rgba(255,255,255,0.85)";
-                    }}
-                  >
-                    {item.label}
-                    {item.dropdown && (
+                  {item.dropdown ? (
+                    <span
+                      className="text-[15px] font-medium transition-colors duration-200 flex items-center gap-1 cursor-default"
+                      style={{
+                        color: scrolled
+                          ? "rgba(55,65,81,1)"
+                          : "rgba(255,255,255,0.85)",
+                      }}
+                    >
+                      {item.label}
                       <svg
                         className="w-3 h-3 opacity-60"
                         fill="none"
@@ -130,8 +119,30 @@ export default function Navbar() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    )}
-                  </Link>
+                    </span>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-[15px] font-medium transition-colors duration-200 flex items-center gap-1"
+                      style={{
+                        color: scrolled
+                          ? "rgba(55,65,81,1)"
+                          : "rgba(255,255,255,0.85)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = scrolled
+                          ? "rgba(17,24,39,1)"
+                          : "rgba(255,255,255,1)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = scrolled
+                          ? "rgba(55,65,81,1)"
+                          : "rgba(255,255,255,0.85)";
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
 
                   {/* Dropdown */}
                   <AnimatePresence>
@@ -249,7 +260,7 @@ export default function Navbar() {
               </div>
 
               <Link
-                href={`/${locale}/workshop`}
+                href={`/${locale}/book-workshop`}
                 className="text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200"
                 style={{
                   backgroundColor: scrolled ? "#111827" : "#ffffff",

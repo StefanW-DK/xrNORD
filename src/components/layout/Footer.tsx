@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 /* ── Social icons ──────────────────────────────────────── */
 const LinkedIn = () => (
@@ -112,6 +112,7 @@ function NewsletterForm() {
 /* ── Footer ────────────────────────────────────────────── */
 export default function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
   return (
     <footer style={{
       background: "#060B14",
@@ -246,18 +247,36 @@ export default function Footer() {
               marginBottom: "20px",
             }}>{t("legalLabel")}</p>
             <div style={{ display: "flex", flexDirection: "column" as const, gap: "10px" }}>
-              {[t("privacyPolicy"), t("cookiePolicy"), t("termsOfUse")].map(item => (
-                <Link key={item} href="#" style={{
-                  fontFamily: "var(--font-inter), system-ui, sans-serif",
-                  fontSize: "0.84rem", color: "rgba(148,163,184,0.7)",
-                  textDecoration: "none", transition: "color 0.2s ease",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#F1F5F9")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(148,163,184,0.7)")}
-                >
-                  {item}
-                </Link>
-              ))}
+              <Link href={`/${locale}/privacy-policy`} style={{
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
+                fontSize: "0.84rem", color: "rgba(148,163,184,0.7)",
+                textDecoration: "none", transition: "color 0.2s ease",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = "#F1F5F9")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(148,163,184,0.7)")}
+              >
+                {t("privacyPolicy")}
+              </Link>
+              <Link href={`/${locale}/cookie-policy`} style={{
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
+                fontSize: "0.84rem", color: "rgba(148,163,184,0.7)",
+                textDecoration: "none", transition: "color 0.2s ease",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = "#F1F5F9")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(148,163,184,0.7)")}
+              >
+                {t("cookiePolicy")}
+              </Link>
+              <Link href={`/${locale}/terms-of-use`} style={{
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
+                fontSize: "0.84rem", color: "rgba(148,163,184,0.7)",
+                textDecoration: "none", transition: "color 0.2s ease",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = "#F1F5F9")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(148,163,184,0.7)")}
+              >
+                {t("termsOfUse")}
+              </Link>
             </div>
           </div>
 

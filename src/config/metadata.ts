@@ -11,7 +11,7 @@ interface PageMeta {
   keywords: string[];
 }
 
-type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "ai-use-cases" | "why-ai" | "about" | "contact";
+type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "ai-use-cases" | "why-ai" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use";
 
 const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey, PageMeta> }> = {
   en: {
@@ -59,6 +59,24 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
           "Ready to explore what AI can do for your business? Get in touch with xrNORD. One conversation is all it takes.",
         keywords: ["contact xrNORD", "AI consultancy contact", "start AI journey"],
       },
+      "privacy-policy": {
+        title: "Privacy Policy — xrNORD",
+        description:
+          "Our Privacy Policy explains how xrNORD collects, uses, and protects your personal data in compliance with GDPR and international standards.",
+        keywords: ["privacy policy", "data protection", "GDPR", "personal data", "privacy"],
+      },
+      "cookie-policy": {
+        title: "Cookie Policy — xrNORD",
+        description:
+          "Learn how xrNORD uses cookies on its website, including necessary, analytics, and marketing cookies, and how to manage your preferences.",
+        keywords: ["cookie policy", "cookies", "tracking", "analytics", "GDPR cookies"],
+      },
+      "terms-of-use": {
+        title: "Terms of Use — xrNORD",
+        description:
+          "The Terms of Use for xrnord.com. By using our website, you agree to these terms governing intellectual property, acceptable use, and liability.",
+        keywords: ["terms of use", "terms and conditions", "legal", "website terms"],
+      },
     },
   },
   da: {
@@ -105,6 +123,24 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         description:
           "Klar til at udforske, hvad AI kan gøre for jeres forretning? Kontakt xrNORD. Én samtale er alt, der skal til.",
         keywords: ["kontakt xrNORD", "AI rådgivning kontakt", "start AI-rejse"],
+      },
+      "privacy-policy": {
+        title: "Privatlivspolitik — xrNORD",
+        description:
+          "Vores privatlivspolitik forklarer, hvordan xrNORD indsamler, bruger og beskytter dine personlige data i overensstemmelse med GDPR og internationale standarder.",
+        keywords: ["privatlivspolitik", "databeskyttelse", "GDPR", "personlige data", "privatliv"],
+      },
+      "cookie-policy": {
+        title: "Cookiepolitik — xrNORD",
+        description:
+          "Lær hvordan xrNORD bruger cookies på sit website, herunder nødvendige, analytiske og marketingcookies, samt hvordan du administrerer dine præferencer.",
+        keywords: ["cookiepolitik", "cookies", "sporing", "analyse", "GDPR cookies"],
+      },
+      "terms-of-use": {
+        title: "Vilkår for brug — xrNORD",
+        description:
+          "Vilkårene for brug af xrnord.com. Ved at bruge vores website accepterer du disse vilkår for intellektuel ejendomsret, acceptabel brug og ansvar.",
+        keywords: ["vilkår for brug", "betingelser", "juridisk", "webstedsvilkår"],
       },
     },
   },

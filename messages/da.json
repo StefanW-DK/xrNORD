@@ -3,7 +3,7 @@
     "whyAi": "Hvorfor AI",
     "interviews": "Interviews",
     "articles": "Artikler",
-    "reinvent": "Reinvent",
+    "reinvent": "Gentænk",
     "workshop": "Workshop",
     "aiRoadmap": "AI Roadmap",
     "aiUseCases": "AI Use Cases",
@@ -152,5 +152,186 @@
     "bodyThree": "I behøver ikke se det fulde billede.",
     "bodyFour": "Det behøver ikke være komplekst.",
     "bodyFive": "Vi starter dér, hvor I er."
+  },
+  "bookWorkshop": {
+    "eyebrow": "AI Workshop",
+    "headline": "Book dit",
+    "highlightWord": "AI Workshop",
+    "subtext": "En fokuseret dag til at afklare, hvordan AI skaber værdi i din virksomhed. Vi tager udgangspunkt i din forretning og arbejder med konkrete eksempler til at identificere, hvor AI giver mening.",
+    "callLabel": "Ring til os",
+    "callPlaceholder": "Tal direkte med vores team",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Send os en besked når som helst",
+    "nameLabel": "Fuldt navn",
+    "namePlaceholder": "Dit navn",
+    "phoneLabel": "Telefon (Valgfri)",
+    "emailInputLabel": "E-mail",
+    "companyLabel": "Et par ord om din virksomhed",
+    "companyPlaceholder": "Fortæl os om din virksomhed, branche og hvad du ønsker at opnå med AI...",
+    "dateLabel": "Ønsket workshop-dato",
+    "dayPlaceholder": "DD",
+    "yearPlaceholder": "ÅÅÅÅ",
+    "submitButton": "Anmod om AI Workshop",
+    "sendingButton": "Sender...",
+    "successTitle": "Anmodning modtaget!",
+    "successMessage": "Tak for din interesse. Vi kontakter dig snart for at bekræfte din workshop-dato.",
+    "errorMessage": "Der gik noget galt. Prøv igen senere.",
+    "privacyNotice": "Vi respekterer dit privatliv. Dine oplysninger er sikre, og vi sender aldrig spam."
+  },
+  "contact": {
+    "headline": "Lad os starte din",
+    "highlightWord": "AI-rejse",
+    "subtext": "Klar til at udforske, hvordan AI kan transformere din virksomhed? Kontakt vores team for at diskutere dine unikke muligheder og udfordringer.",
+    "callLabel": "Ring til os",
+    "callPlaceholder": "Tal direkte med vores team",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Send os en besked når som helst",
+    "responseTimeLabel": "Svarstid",
+    "responseTime": "Vi svarer typisk inden for 24-48 timer",
+    "nameLabel": "Fuldt navn",
+    "namePlaceholder": "Dit navn",
+    "emailInputPlaceholder": "din@email.dk",
+    "phoneLabel": "Telefon (Valgfri)",
+    "phonePlaceholder": "+45 XX XX XX XX",
+    "subjectLabel": "Emne",
+    "subjectPlaceholder": "Hvordan kan vi hjælpe?",
+    "messageLabel": "Besked",
+    "messagePlaceholder": "Fortæl os om dit projekt, udfordringer eller idéer...",
+    "sendButton": "Send besked",
+    "sendingButton": "Sender...",
+    "successTitle": "Besked sendt!",
+    "successMessage": "Tak fordi du kontaktede os. Vi vender tilbage til dig snarest.",
+    "errorMessage": "Der gik noget galt. Prøv igen senere.",
+    "privacyNotice": "Vi respekterer dit privatliv. Dine oplysninger er sikre, og vi sender aldrig spam."
+  },
+  "cookiePolicy": {
+    "eyebrow": "Juridisk",
+    "title": "Cookiepolitik",
+    "subtitle": "Denne cookiepolitik forklarer, hvordan xrNORD bruger cookies og lignende sporingsteknikker, når du besøger vores website.",
+    "intro": {
+      "title": "Introduktion",
+      "content": "Når du besøger xrnord.com, kan vi gemme små tekstfiler kaldet cookies på din enhed. Cookies hjælper os med at levere en bedre oplevelse ved at huske dine præferencer, forstå hvordan du bruger vores website og måle effektiviteten af vores indhold.\n\nDenne politik forklarer, hvilke cookies vi bruger, hvorfor vi bruger dem, og hvordan du kan styre dine præferencer. Den bør læses sammen med vores Privatlivspolitik, som dækker, hvordan vi håndterer personlige data mere bredt."
+    },
+    "whatAreCookies": {
+      "title": "Hvad er cookies?",
+      "content": "Cookies er små tekstfiler, der placeres på din enhed (computer, tablet eller mobil), når du besøger et website. De bruges bredt til at gøre websites mere effektive og til at give nyttige oplysninger til websiteejere.\n\nCookies kan være:\n\n• Sessionscookies — midlertidige cookies, der slettes, når du lukker din browser.\n\n• Vedvarende cookies — cookies, der forbliver på din enhed i en bestemt periode eller indtil du sletter dem.\n\n• Førstepartscookies — sat direkte af xrNORD.\n\n• Tredjepartscookies — sat af eksterne tjenester, vi bruger (f.eks. analyseplatforme).\n\nVi bruger også lignende sporingsteknikker som web beacons og pixels, der fungerer på en sammenlignelig måde."
+    },
+    "necessary": {
+      "title": "Nødvendige cookies",
+      "content": "Disse cookies er afgørende for, at websitet kan fungere korrekt. Uden dem ville visse funktioner – som at huske dine cookiepræferencer – ikke virke.\n\nNødvendige cookies kan ikke deaktiveres via vores cookieindstillinger, da de er nødvendige for kernetfunktionaliteten.\n\nEksempler på, hvad nødvendige cookies gør:\n\n• Husker dit samtykke til cookies (gemt som xrnord_cookie_consent i localStorage).\n\n• Opretholder sessionstilstand for serverbaserede funktioner.\n\n• Sikrer, at sikkerhedsfunktioner fungerer korrekt.\n\nOpbevaringstid: Sessionsbaseret eller op til 12 måneder for samtykkeposter."
+    },
+    "analytics": {
+      "title": "Analytiske cookies",
+      "content": "Vi bruger analytiske cookies til at forstå, hvordan besøgende interagerer med vores website. Dette hjælper os med at forbedre websitet og tilpasse vores indhold.\n\nVi bruger Google Analytics (leveret af Google LLC) til at indsamle anonymiserede data om:\n\n• Besøgte sider og tid brugt på hver side.\n\n• Hvordan du kom til vores website (f.eks. via søgning, direkte link eller henvisning).\n\n• Browsertype, enhed og omtrentlig geografisk placering.\n\n• Handlinger udført på websitet (f.eks. klik på links, indsendelse af formularer).\n\nGoogle kan overføre disse data uden for EU/EØS. Vi har aktiveret IP-anonymisering for at reducere mængden af personlige data, der indsamles. Du kan til enhver tid fravælge Google Analytics via vores cookieindstillinger eller ved at bruge Google Analytics Opt-out Browser-tilføjelse.\n\nOpbevaringstid: Op til 26 måneder (Google Analytics standard)."
+    },
+    "marketing": {
+      "title": "Marketingcookies",
+      "content": "Marketingcookies bruges til at levere personaliseret indhold og måle effektiviteten af vores marketingkampagner. Disse sættes kun, hvis du har givet dit samtykke.\n\nMarketingcookies kan bruges til:\n\n• At vise dig relevant indhold eller reklamer på tredjepartsplatforme.\n\n• At spore, om du har besøgt vores website efter at have set en af vores annoncer.\n\n• At opbygge en profil af dine interesser til brug i fremtidig markedsføring.\n\nVi kører ikke i øjeblikket aktive betalte reklamekampagner, men kan gøre det i fremtiden. Hvis marketingcookies er aktiveret, og du foretrækker ikke at modtage personaliseret indhold, kan du til enhver tid trække dit samtykke tilbage via vores cookieindstillinger.\n\nOpbevaringstid: Op til 90 dage."
+    },
+    "manage": {
+      "title": "Håndtering af dine cookiepræferencer",
+      "content": "Du har fuld kontrol over, hvilke cookiekategorier du giver samtykke til (med undtagelse af nødvendige cookies).\n\n• Cookie-banner: Når du første gang besøger vores website, vises et cookie-banner, der giver dig mulighed for at acceptere alle cookies eller tilpasse dine præferencer.\n\n• Cookieindstillinger: Du kan ændre dine præferencer til enhver tid ved at rydde din browsers localStorage for xrnord.com og opdatere siden – banneret vises igen.\n\n• Browserindstillinger: De fleste browsere giver dig mulighed for at blokere eller slette cookies via deres indstillinger. Bemærk, at blokering af alle cookies kan påvirke, hvordan vores website fungerer. Almindelige browserindstillinger:\n  – Chrome: Indstillinger → Privatliv og sikkerhed → Cookies og andre webstedsdata\n  – Firefox: Indstillinger → Privatliv og sikkerhed → Cookies og webstedsdata\n  – Safari: Indstillinger → Privatliv → Administrer webstedsdata\n  – Edge: Indstillinger → Cookies og webstedstilladelser\n\n• Google Analytics fravalg: Installer Google Analytics Opt-out Browser-tilføjelse (tilgængelig på tools.google.com/dlpage/gaoptout) for at forhindre, at dine data bruges af Google Analytics på tværs af alle websites."
+    },
+    "thirdparty": {
+      "title": "Tredjepartstjenester",
+      "content": "Nogle cookies på vores website sættes af tredjepartstjenester, vi integrerer. Disse tjenester har deres egne privatlivs- og cookiepolitikker, som vi opfordrer dig til at gennemgå:\n\n• Google Analytics (analytics.google.com) — webanalyse\n• Google Fonts (fonts.google.com) — typografilevering\n• Vercel (vercel.com) — webhosting og performance\n\nVi er ikke ansvarlige for indholdet eller privatlivspraksis hos tredjepartstjenester. Har du bekymringer om, hvordan de bruger data, bedes du gennemgå deres respektive politikker direkte."
+    },
+    "changes": {
+      "title": "Ændringer i denne politik",
+      "content": "Vi kan opdatere denne cookiepolitik fra tid til anden for at afspejle ændringer i teknologi, lovgivning eller vores praksis. Når vi foretager væsentlige ændringer, opdaterer vi datoen \"Senest opdateret\" nedenfor.\n\nHvis vi indfører nye cookies eller væsentligt ændrer, hvordan vi bruger eksisterende, vil vi vise en ny samtykkeanmodning på websitet."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "content": "Har du spørgsmål til vores brug af cookies, er du velkommen til at kontakte os:\n\nxrNORD ApS\nHægvej 11\n8250 Egå, Danmark\n\nE-mail: info@xrnord.com\nTelefon: +45 23 65 42 83"
+    },
+    "lastUpdated": "Senest opdateret"
+  },
+  "termsOfUse": {
+    "eyebrow": "Juridisk",
+    "title": "Vilkår for brug",
+    "subtitle": "Læs venligst disse vilkår for brug grundigt, inden du bruger xrNORDs website og tjenester. Ved at tilgå vores website accepterer du at være bundet af disse vilkår.",
+    "intro": {
+      "title": "Introduktion",
+      "content": "Disse vilkår for brug (\"Vilkårene\") regulerer din adgang til og brug af websitet xrnord.com og tilknyttede tjenester drevet af xrNORD ApS (\"xrNORD\", \"vi\", \"os\" eller \"vores\"), et selskab registreret i Danmark (CVR: 43396323) med registreret adresse på Hægvej 11, 8250 Egå.\n\nVed at besøge eller bruge vores website bekræfter du, at du har læst, forstået og accepterer at være bundet af disse Vilkår. Hvis du ikke er enig, bedes du ophøre med at bruge websitet omgående.\n\nDisse Vilkår gælder for alle besøgende, brugere og kunder og bør læses i sammenhæng med vores Privatlivspolitik og Cookiepolitik."
+    },
+    "acceptance": {
+      "title": "Accept af vilkår",
+      "content": "Ved at tilgå xrnord.com bekræfter du, at:\n\n• Du er mindst 18 år gammel eller har den retslige kapacitet til at indgå en bindende aftale.\n\n• Du tilgår websitet til lovlige formål og i overensstemmelse med alle gældende love og regler.\n\n• Hvis du handler på vegne af et selskab eller anden juridisk enhed, har du bemyndigelse til at binde den pågældende enhed til disse Vilkår.\n\nVi forbeholder os retten til at begrænse eller ophæve adgangen til websitet til enhver tid og af enhver grund, herunder ved overtrædelse af disse Vilkår."
+    },
+    "services": {
+      "title": "Vores tjenester",
+      "content": "xrNORD leverer AI-strategirådgivning, workshops, implementeringstjenester og relateret indhold via vores website og direkte kundeengagementer.\n\nInformationen på xrnord.com er udelukkende til generel information og markedsføringsformål. Den udgør ikke professionel rådgivning. Inden du træffer beslutninger baseret på indhold fra vores website, anbefaler vi, at du konsulterer en kvalificeret fagperson.\n\nTjenestespecifikke vilkår – såsom omfang, leverancer, priser, tidsplaner og fortrolighedsforpligtelser – er reguleret af separate skriftlige aftaler mellem xrNORD og den enkelte kunde. I tilfælde af modstrid mellem disse Vilkår og en kundespecifik aftale har den kundespecifikke aftale forrang."
+    },
+    "ip": {
+      "title": "Intellektuel ejendomsret",
+      "content": "Alt indhold på xrnord.com – herunder men ikke begrænset til tekst, grafik, logoer, billeder, video, lyd og software – tilhører xrNORD ApS eller dets indholdsleverandører og er beskyttet af gældende dansk og international lovgivning om intellektuel ejendomsret.\n\nDu må:\n\n• Se og udskrive indhold fra websitet til personlig, ikke-kommerciel reference.\n\n• Dele links til vores sider på sociale medier eller i skriftlig kommunikation.\n\nDu må IKKE:\n\n• Reproducere, ændre, distribuere eller genudgive indhold uden forudgående skriftlig tilladelse fra xrNORD.\n\n• Bruge vores branding, logoer eller varemærker til noget formål uden udtrykkelig tilladelse.\n\n• Scrape, crawle eller udtrække data fra websitet ved hjælp af automatiserede midler.\n\nFor licensforespørgsler bedes du kontakte info@xrnord.com."
+    },
+    "conduct": {
+      "title": "Acceptabel brug",
+      "content": "Du accepterer kun at bruge vores website til lovlige formål. Følgende er strengt forbudt:\n\n• At bruge websitet på en måde, der overtræder gældende dansk, EU-mæssig eller international lovgivning.\n\n• At forsøge at få uautoriseret adgang til nogen del af websitet, serveren eller relaterede systemer.\n\n• At sende skadeligt, stødende eller forstyrrende indhold via vores kontaktformularer eller andre kommunikationskanaler.\n\n• At uploade eller overføre vira, malware eller andre skadelige koder.\n\n• At forstyrre eller afbryde integriteten eller ydeevnen af websitet eller dets infrastruktur.\n\n• At udgive sig for xrNORD eller nogen af dets medarbejdere, partnere eller kunder.\n\nVi forbeholder os retten til at blokere adgang og rapportere overtrædelser til relevante myndigheder."
+    },
+    "disclaimer": {
+      "title": "Fraskrivelse af garantier",
+      "content": "xrNORDs website og dets indhold stilles til rådighed \"som de er\" og \"som tilgængeligt\" uden garantier af nogen art, hverken udtrykkelige eller underforståede.\n\nI det omfang gældende lovgivning tillader det, fraskriver xrNORD sig alle garantier, herunder men ikke begrænset til:\n\n• Underforståede garantier for salgbarhed, egnethed til et bestemt formål og ikke-krænkelse.\n\n• At websitet vil være uafbrudt, fejlfrit eller frit for skadelige komponenter.\n\n• At informationen på websitet er nøjagtig, komplet eller aktuel.\n\nVi gør alt for at sikre nøjagtigheden af information på vores website, men kan ikke garantere, at den altid er opdateret. Verificer altid kritisk information uafhængigt eller kontakt os direkte."
+    },
+    "liability": {
+      "title": "Ansvarsbegrænsning",
+      "content": "I det maksimale omfang tilladt af dansk og EU-ret, er xrNORD ApS ikke ansvarlig for:\n\n• Indirekte, hændelige, særlige, følgemæssige eller strafmæssige skader.\n\n• Tab af overskud, omsætning, data eller goodwill.\n\n• Driftsafbrydelse eller tab af forretningsmuligheder.\n\nDette gælder uanset om kravet opstår fra kontrakt, erstatningspligt (herunder uagtsomhed), objektivt ansvar eller ethvert andet retsgrundlag – selv hvis xrNORD er blevet gjort opmærksom på muligheden for sådanne skader.\n\nVores samlede ansvar over for dig for alle krav, der opstår fra din brug af websitet, må ikke overstige €100 (et hundrede euro).\n\nNogen jurisdiktioner tillader ikke udelukkelse eller begrænsning af ansvar for visse typer skader. I sådanne jurisdiktioner er vores ansvar begrænset til det maksimale omfang, lovgivningen tillader."
+    },
+    "governingLaw": {
+      "title": "Lovvalg og værneting",
+      "content": "Disse vilkår for brug er underlagt og fortolkes i overensstemmelse med dansk lovgivning uden hensyntagen til lovkonfliktregler.\n\nEnhver tvist, der opstår som følge af eller i forbindelse med disse Vilkår eller din brug af xrNORDs website, er underlagt de danske domstoles eksklusive jurisdiktion, med Retten i Aarhus som første instans, medmindre ufravigelig forbrugerbeskyttelseslovgivning i din jurisdiktion kræver andet.\n\nEr du forbruger i EU, kan du også bruge EU's platform for online tvistbilæggelse på ec.europa.eu/odr til at løse eventuelle tvister."
+    },
+    "changes": {
+      "title": "Ændringer i disse vilkår",
+      "content": "Vi kan opdatere disse Vilkår fra tid til anden. Når vi foretager væsentlige ændringer, opdaterer vi datoen \"Senest opdateret\" nederst på denne side.\n\nDin fortsatte brug af websitet efter eventuelle ændringer udgør din accept af de reviderede Vilkår. Vi opfordrer dig til at gennemgå disse Vilkår jævnligt.\n\nVed væsentlige ændringer, der påvirker dine rettigheder, kan vi underrette dig via e-mail eller en meddelelse på websitet."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "content": "Har du spørgsmål til disse vilkår for brug, er du velkommen til at kontakte os:\n\nxrNORD ApS\nHægvej 11\n8250 Egå, Danmark\n\nCVR: 43396323\nE-mail: info@xrnord.com\nTelefon: +45 23 65 42 83"
+    },
+    "lastUpdated": "Senest opdateret"
+  },
+  "privacyPolicy": {
+    "eyebrow": "Juridisk",
+    "title": "Privatlivspolitik",
+    "subtitle": "Hos xrNORD er vi forpligtet til at beskytte dit privatliv og være transparent om, hvordan vi indsamler, bruger og beskytter dine personlige data.",
+    "intro": {
+      "title": "Introduktion",
+      "content": "Denne Privatlivspolitik forklarer, hvordan xrNORD ApS (\"vi,\" \"os,\" \"vores\" eller \"xrNORD\") indsamler, bruger, offentliggør og på anden måde behandler personlige data i forbindelse med vores website, tjenester og forretningsdrift.\n\nVi tager dit privatliv alvorligt og er forpligtet til at være transparent om vores datapraksis. Denne politik gælder for alle interaktioner med xrNORD, herunder vores website (xrnord.com), tjenester og kommunikation.\n\nHvis du har spørgsmål til denne privatlivspolitik eller vores praksis omkring privatlivsbeskyttelse, bedes du kontakte os ved slutningen af dette dokument."
+    },
+    "collection": {
+      "title": "Dataindsamling",
+      "content": "Vi indsamler personlige data på følgende måder:\n\n• Oplysninger, du giver os: Når du kontakter os, anmoder om vores tjenester, tilmelder dig vores nyhedsbrev eller udfylder formularer på vores website, giver du os oplysninger såsom dit navn, e-mailadresse, telefonnummer, virksomhedsdetaljer og alle andre oplysninger, som du inkluderer i dine kommunikationer.\n\n• Automatisk indsamlede data: Når du besøger vores website, indsamler vi automatisk visse tekniske oplysninger, herunder IP-adresse, browsertype, operativsystem, henvisende URL'er og besøgte sider. Vi bruger cookies og lignende sporingsteknikker for at forbedre din oplevelse og forstå, hvordan du interagerer med vores websted.\n\n• Analysedata: Vi bruger Google Analytics og andre analyseværktøjer til at forstå webstedets brugsmønstre, hvilket hjælper os med at forbedre vores tjenester og brugeroplevelse.\n\n• Kommunikationsregistre: Vi vedligeholder registreringer af e-mails, telefonopkald og anden kommunikation med vores klienter og partnere."
+    },
+    "usage": {
+      "title": "Databrug og behandling",
+      "content": "Vi bruger de personlige data, som vi indsamler, til følgende formål:\n\n• Tjenestelevering: For at levere, vedligeholde og forbedre vores tjenester, herunder AI-rådgivning, workshops og strategisk planlægning.\n\n• Kommunikation: For at reagere på dine forespørgsler, sende dig anmodet information og holde dig opdateret om vores tjenester og nyheder.\n\n• Nyhedsbrev: For at sende dig vores nyhedsbrev og marketingkommunikation (kun hvis du har tilmeldt dig).\n\n• Forretningsdrift: For at styre klientrelationer, behandle betalinger og håndtere administrative forhold.\n\n• Lovlig overholdelse: For at overholde juridiske forpligtelser, håndhæve vores aftaler og beskytte vores rettigheder.\n\n• Analyser og forskning: For at analysere brugsmønstre, forbedre vores website-funktionalitet og udvikle bedre tjenester.\n\n• Svindelbekæmpelse: For at påvise, undersøge og forhindre svigagtig aktivitet eller sikkerhedstrusler.\n\nVi behandler dine data på grundlag af følgende juridiske grundlag:\n• Dit samtykke (for marketingkommunikation)\n• Kontraktudfyldelse (for at levere vores tjenester)\n• Juridiske forpligtelser (for at overholde love)\n• Legitime interesser (for at forbedre vores tjenester og beskytte vores forretning)"
+    },
+    "protection": {
+      "title": "Databeskyttelse og sikkerhed",
+      "content": "Vi implementerer omfattende tekniske og organisatoriske foranstaltninger for at beskytte dine personlige data mod uautoriseret adgang, ændring eller ødelæggelse. Disse omfatter:\n\n• Kryptering: Vi bruger SSL/TLS-kryptering til data transmitteret over internettet.\n\n• Adgangskontrol: Vi begrænser adgangen til personlige data til medarbejdere og entreprenører, der har behov for at få adgang til det for legitime forretningsformål.\n\n• Regelmæssige revisioner: Vi gennemgår regelmæssigt vores sikkerhedspraksis og opdaterer den for at adressere nye trusler.\n\n• GDPR-overholdelse: Vi overholder Generel Forordning om Databeskyttelse (GDPR) og anden gældende databeskyttelseslovgivning.\n\nSkønt vi bestræber os på at beskytte dine data, er intet sikkerhedssystem usårligt. Vi kan ikke garantere absolut sikkerhed, men vi arbejder kontinuerligt på at forbedre vores beskyttelsesforanstaltninger.\n\nVi gemmer dine personlige data kun så længe, det er nødvendigt for de formål, der er angivet i denne politik, eller som krævet af lovgivningen. Når data ikke længere er nødvendige, sletter eller anonymiserer vi dem sikkert."
+    },
+    "rights": {
+      "title": "Dine rettigheder",
+      "content": "Under GDPR og anden gældende databeskyttelseslovgivning har du følgende rettigheder:\n\n• Ret til indsigt: Du kan anmode om en kopi af de personlige data, som vi har om dig.\n\n• Ret til berigtigelse: Du kan anmode om, at vi retter unøjagtige eller ufuldstændige data.\n\n• Ret til at blive glemt: Under visse omstændigheder kan du anmode om, at vi sletter dine personlige data (\"retten til at blive glemt\").\n\n• Ret til at begrænse behandling: Du kan bede os om at begrænse, hvordan vi bruger dine data.\n\n• Ret til dataportabilitet: Du kan anmode om dine data i et portabelt format, der er egnet til overførsel til en anden tjenesteudbyder.\n\n• Ret til at gøre indsigelse: Du kan gøre indsigelse mod vores behandling af dine data, herunder til markedsføringsformål.\n\n• Ret til at trække samtykke tilbage: Hvis du har givet samtykke, kan du trække det tilbage på et hvilket som helst tidspunkt.\n\nFor at udøve nogle af disse rettigheder skal du kontakte os ved hjælp af de oplysninger, der er angivet ved slutningen af denne politik. Vi vil reagere på din anmodning inden for 30 dage (eller som krævet af gældende lovgivning)."
+    },
+    "cookies": {
+      "title": "Cookies og sporingsteknikker",
+      "content": "Vores website bruger cookies og lignende sporingsteknikker for at forbedre din oplevelse og indsamle analysedata. Cookies er små filer, der opbevares på din enhed, som gør det muligt for os at genkende dig og huske dine præferencer.\n\n• Nødvendige cookies: Disse er påkrævet for at webstedet fungerer korrekt og kan ikke deaktiveres.\n\n• Analytiske cookies: Vi bruger disse til at forstå, hvordan du interagerer med vores websted, hvilket hjælper os med at forbedre vores tjenester.\n\n• Marketingcookies: Vi bruger disse til at levere personaliseret indhold og måle effektiviteten af vores marketingkampagner.\n\nDu kan håndtere dine cookie-præferencer gennem dine browserindstillinger eller vores cookie-præferencecenter på vores websted. Hvis du deaktiverer visse cookies, kan det dog påvirke din oplevelse på vores websted.\n\nVi bruger også lignende teknologier som webbeacons og pixels til at spore engagement med vores kommunikation."
+    },
+    "thirdparty": {
+      "title": "Tredjepartstjenester",
+      "content": "Vi kan dele dine personlige data med tredjepartstjenesteudbydere, der hjælper os med at drive vores websted, drive forretning og betjene dig. Disse omfatter:\n\n• Cloud-lagerudbydere: Vi bruger tjenester som Microsoft Azure og lignende platforme til sikkert at lagre data.\n\n• E-mail-tjenesteudbydere: Vi bruger e-mail-platforme til at sende nyhedsbreve og kommunikation.\n\n• Analytikudbydere: Vi bruger Google Analytics og lignende værktøjer til at forstå webstedets brug.\n\n• Betalingsbehandlere: Hvis det er relevant, bruger vi tredjepartsbetalingsbehandlere til at håndtere transaktioner.\n\n• Kommunikationsplatforme: Vi kan bruge platforme til videokonference og samarbejde på holdet.\n\nVi sikrer, at alle tredjepartsudbyders GDPR og anden gældende databeskyttelseslovgivning overholdes. Vi sælger eller udlejer ikke dine personlige data til uvedkommende tredjeparter til deres markedsføringsformål.\n\nHvis vi er involveret i en fusion, opkøb eller konkurs, kan dine data blive overført som en del af denne transaktion. Vi vil underrette dig om sådanne ændringer."
+    },
+    "changes": {
+      "title": "Ændringer i politikken",
+      "content": "Vi kan fra tid til anden opdatere denne privatlivspolitik for at afspejle ændringer i vores praksis, teknologi, juridiske krav eller andre faktorer. Når vi foretager væsentlige ændringer, vil vi:\n\n• Opdatere datoen \"Senest opdateret\" i bunden af denne politik.\n\n• Underrette dig via e-mail, hvis ændringerne væsentligt påvirker dine rettigheder eller privatliv.\n\n• Anmode om dit samtykke, hvis det kræves af gældende lovgivning.\n\nDin fortsatte brug af vores websted og tjenester efter sådanne ændringer betyder, at du accepterer den opdaterede privatlivspolitik. Vi opfordrer dig til at gennemgå denne politik periodisk for at holde dig informeret om, hvordan vi beskytter dit privatliv."
+    },
+    "contact": {
+      "title": "Kontaktinformation",
+      "content": "Hvis du har spørgsmål til denne privatlivspolitik, ønsker at udøve dine databeskyttelsesrettigheder eller har bekymringer omkring vores privatlivspraksis, bedes du kontakte os:\n\nxrNORD ApS\nHægvej 11\n8250 Egå, Danmark\n\nE-mail: info@xrnord.com\nTelefon: +45 23 65 42 83\n\nDatabeskyttelsesansvarlig:\nFor GDPR-relaterede forespørgsler kan du også kontakte vores databeskyttelsesansvarlig på: dpo@xrnord.com\n\nDu har også ret til at indgive en klage til din lokale databeskyttelsesmyndighed, hvis du mener, at vores behandling af dine personlige data overtræder gældende love."
+    },
+    "lastUpdated": "Senest opdateret"
   }
 }

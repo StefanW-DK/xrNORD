@@ -152,5 +152,186 @@
     "bodyThree": "You don't need to see the full picture.",
     "bodyFour": "It doesn't need to be complex.",
     "bodyFive": "We start where you are."
+  },
+  "bookWorkshop": {
+    "eyebrow": "AI Workshop",
+    "headline": "Book Your",
+    "highlightWord": "AI Workshop",
+    "subtext": "One focused day to clarify how AI creates value in your business. We take our starting point in your business and work with concrete examples to identify where AI makes sense.",
+    "callLabel": "Call Us",
+    "callPlaceholder": "Speak directly with our team",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Send us a message anytime",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Your name",
+    "phoneLabel": "Phone (Optional)",
+    "emailInputLabel": "Email",
+    "companyLabel": "A few words about your company",
+    "companyPlaceholder": "Tell us about your business, industry, and what you're looking to achieve with AI...",
+    "dateLabel": "Preferred Workshop Date",
+    "dayPlaceholder": "DD",
+    "yearPlaceholder": "YYYY",
+    "submitButton": "Request AI Workshop",
+    "sendingButton": "Sending...",
+    "successTitle": "Request Received!",
+    "successMessage": "Thank you for your interest. We'll be in touch shortly to confirm your workshop date.",
+    "errorMessage": "Something went wrong. Please try again later.",
+    "privacyNotice": "We respect your privacy. Your information is secure and we'll never spam you."
+  },
+  "contact": {
+    "headline": "Let's Start Your",
+    "highlightWord": "AI Journey",
+    "subtext": "Ready to explore how AI can transform your business? Get in touch with our team to discuss your unique opportunities and challenges.",
+    "callLabel": "Call Us",
+    "callPlaceholder": "Speak directly with our team",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Send us a message anytime",
+    "responseTimeLabel": "Response Time",
+    "responseTime": "We typically respond within 24-48 hours",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Your name",
+    "emailInputPlaceholder": "your@email.com",
+    "phoneLabel": "Phone (Optional)",
+    "phonePlaceholder": "+45 XX XX XX XX",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "How can we help?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your project, challenges, or ideas...",
+    "sendButton": "Send Message",
+    "sendingButton": "Sending...",
+    "successTitle": "Message Sent!",
+    "successMessage": "Thank you for reaching out. We'll get back to you as soon as possible.",
+    "errorMessage": "Something went wrong. Please try again later.",
+    "privacyNotice": "We respect your privacy. Your information is secure and we'll never spam you."
+  },
+  "cookiePolicy": {
+    "eyebrow": "Legal",
+    "title": "Cookie Policy",
+    "subtitle": "This Cookie Policy explains how xrNORD uses cookies and similar tracking technologies when you visit our website.",
+    "intro": {
+      "title": "Introduction",
+      "content": "When you visit xrnord.com, we may store small text files called cookies on your device. Cookies help us deliver a better experience by remembering your preferences, understanding how you use our site, and measuring the effectiveness of our content.\n\nThis policy explains what cookies we use, why we use them, and how you can manage your preferences. It should be read alongside our Privacy Policy, which covers how we handle personal data more broadly."
+    },
+    "whatAreCookies": {
+      "title": "What Are Cookies?",
+      "content": "Cookies are small text files placed on your device (computer, tablet, or mobile) when you visit a website. They are widely used to make websites work efficiently and to provide useful information to website owners.\n\nCookies can be:\n\n• Session cookies — temporary cookies that are deleted when you close your browser.\n\n• Persistent cookies — cookies that remain on your device for a set period or until you delete them.\n\n• First-party cookies — set by xrNORD directly.\n\n• Third-party cookies — set by external services we use (e.g. analytics providers).\n\nWe also use similar tracking technologies such as web beacons and pixels, which function in a comparable way to cookies."
+    },
+    "necessary": {
+      "title": "Necessary Cookies",
+      "content": "These cookies are essential for the website to function properly. Without them, certain features — such as remembering your cookie preferences — would not work.\n\nNecessary cookies cannot be disabled through our cookie settings, as they are required for core functionality.\n\nExamples of what necessary cookies do:\n\n• Remember your cookie consent choice (stored as xrnord_cookie_consent in localStorage).\n\n• Maintain session state for server-side features.\n\n• Ensure security features function correctly.\n\nRetention: Session-based or up to 12 months for consent records."
+    },
+    "analytics": {
+      "title": "Analytics Cookies",
+      "content": "We use analytics cookies to understand how visitors interact with our website. This helps us improve the site and tailor our content to be more useful.\n\nWe use Google Analytics (provided by Google LLC) to collect anonymised data about:\n\n• Pages visited and time spent on each page.\n\n• How you arrived at our site (e.g. via search, direct link, or referral).\n\n• Browser type, device, and approximate geographic location.\n\n• Actions taken on the site (e.g. clicking links, submitting forms).\n\nGoogle may transfer this data outside the EU/EEA. We have enabled IP anonymisation to reduce the amount of personal data collected. You can opt out of Google Analytics at any time via our cookie settings or by using the Google Analytics Opt-out Browser Add-on.\n\nRetention: Up to 26 months (Google Analytics default)."
+    },
+    "marketing": {
+      "title": "Marketing Cookies",
+      "content": "Marketing cookies are used to deliver personalised content and measure the effectiveness of our marketing campaigns. These are only set if you have given your consent.\n\nMarketing cookies may be used to:\n\n• Show you relevant content or advertisements on third-party platforms.\n\n• Track whether you have visited our site after seeing one of our advertisements.\n\n• Build a profile of your interests to inform future marketing.\n\nWe do not currently run active paid advertising campaigns, but we may do so in the future. If marketing cookies are enabled and you prefer not to receive personalised content, you can withdraw consent at any time via our cookie settings.\n\nRetention: Up to 90 days."
+    },
+    "manage": {
+      "title": "Managing Your Cookie Preferences",
+      "content": "You have full control over which cookie categories you consent to (with the exception of necessary cookies).\n\n• Cookie Banner: When you first visit our site, a cookie banner will appear allowing you to accept all cookies or customise your preferences.\n\n• Cookie Settings: You can change your preferences at any time by clearing your browser's localStorage for xrnord.com and refreshing the page — the banner will reappear.\n\n• Browser Settings: Most browsers allow you to block or delete cookies through their settings. Please note that blocking all cookies may affect how our website functions. Common browser settings:\n  – Chrome: Settings → Privacy and security → Cookies and other site data\n  – Firefox: Settings → Privacy & Security → Cookies and Site Data\n  – Safari: Preferences → Privacy → Manage Website Data\n  – Edge: Settings → Cookies and site permissions\n\n• Google Analytics Opt-out: Install the Google Analytics Opt-out Browser Add-on (available at tools.google.com/dlpage/gaoptout) to prevent your data from being used by Google Analytics across all websites."
+    },
+    "thirdparty": {
+      "title": "Third-Party Services",
+      "content": "Some cookies on our site are set by third-party services we integrate. These services have their own privacy and cookie policies which we encourage you to review:\n\n• Google Analytics (analytics.google.com) — web analytics\n• Google Fonts (fonts.google.com) — typography delivery\n• Vercel (vercel.com) — website hosting and performance\n\nWe are not responsible for the content or privacy practices of third-party services. If you have concerns about how they use data, please review their respective policies directly."
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "content": "We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our practices. When we make material changes, we will update the \"Last Updated\" date below.\n\nIf we introduce new cookies or significantly change how we use existing ones, we will display a new consent request on the site."
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "If you have questions about our use of cookies, please contact us:\n\nxrNORD ApS\nHægvej 11\n8250 Egå, Denmark\n\nEmail: info@xrnord.com\nPhone: +45 23 65 42 83"
+    },
+    "lastUpdated": "Last Updated"
+  },
+  "termsOfUse": {
+    "eyebrow": "Legal",
+    "title": "Terms of Use",
+    "subtitle": "Please read these Terms of Use carefully before using the xrNORD website and services. By accessing our site, you agree to be bound by these terms.",
+    "intro": {
+      "title": "Introduction",
+      "content": "These Terms of Use (\"Terms\") govern your access to and use of the website xrnord.com and any related services operated by xrNORD ApS (\"xrNORD\", \"we\", \"us\", or \"our\"), a company registered in Denmark (CVR: 43396323) with its registered address at Hægvej 11, 8250 Egå.\n\nBy visiting or using our website, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, please discontinue use of the site immediately.\n\nThese Terms apply to all visitors, users, and clients, and should be read in conjunction with our Privacy Policy and Cookie Policy."
+    },
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "content": "By accessing xrnord.com, you represent that:\n\n• You are at least 18 years of age or have the legal capacity to enter into a binding agreement.\n\n• You are accessing the site for lawful purposes and in compliance with all applicable laws and regulations.\n\n• If you are acting on behalf of a company or other legal entity, you have the authority to bind that entity to these Terms.\n\nWe reserve the right to restrict or terminate access to the website at any time and for any reason, including for violation of these Terms."
+    },
+    "services": {
+      "title": "Our Services",
+      "content": "xrNORD provides AI strategy consulting, workshops, implementation services, and related content through our website and direct client engagements.\n\nThe information published on xrnord.com is provided for general informational and marketing purposes only. It does not constitute professional advice. Before making decisions based on content found on our site, we recommend consulting with a qualified professional.\n\nService-specific terms — such as scope, deliverables, pricing, timelines, and confidentiality obligations — are governed by separate written agreements between xrNORD and individual clients. In the event of any conflict between these Terms and a client-specific agreement, the client-specific agreement shall take precedence."
+    },
+    "ip": {
+      "title": "Intellectual Property",
+      "content": "All content published on xrnord.com — including but not limited to text, graphics, logos, images, video, audio, and software — is the property of xrNORD ApS or its content providers and is protected by applicable Danish and international intellectual property laws.\n\nYou may:\n\n• View and print content from the site for personal, non-commercial reference.\n\n• Share links to our pages on social media or in written communications.\n\nYou may NOT:\n\n• Reproduce, modify, distribute, or republish any content without prior written consent from xrNORD.\n\n• Use our branding, logos, or trademarked materials for any purpose without explicit permission.\n\n• Scrape, crawl, or extract data from the site using automated means.\n\nFor licensing enquiries, please contact info@xrnord.com."
+    },
+    "conduct": {
+      "title": "Acceptable Use",
+      "content": "You agree to use our website only for lawful purposes. The following are strictly prohibited:\n\n• Using the site in any way that violates applicable Danish, EU, or international laws or regulations.\n\n• Attempting to gain unauthorised access to any part of the website, server, or related systems.\n\n• Transmitting any harmful, offensive, or disruptive content via our contact forms or other communication channels.\n\n• Uploading or transmitting viruses, malware, or any other malicious code.\n\n• Interfering with or disrupting the integrity or performance of the website or its infrastructure.\n\n• Impersonating xrNORD or any of its employees, partners, or clients.\n\nWe reserve the right to block access and report violations to the relevant authorities."
+    },
+    "disclaimer": {
+      "title": "Disclaimer of Warranties",
+      "content": "The xrNORD website and its content are provided on an \"as is\" and \"as available\" basis without any warranties of any kind, either express or implied.\n\nTo the fullest extent permitted by applicable law, xrNORD disclaims all warranties, including but not limited to:\n\n• Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.\n\n• That the website will be uninterrupted, error-free, or free of harmful components.\n\n• That the information on the site is accurate, complete, or current.\n\nWe make every effort to ensure the accuracy of information published on our website, but we cannot guarantee that it is always up to date. Always verify critical information independently or contact us directly."
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "content": "To the maximum extent permitted by Danish and EU law, xrNORD ApS shall not be liable for any:\n\n• Indirect, incidental, special, consequential, or punitive damages.\n\n• Loss of profits, revenue, data, or goodwill.\n\n• Business interruption or loss of business opportunity.\n\nThis applies whether the claim arises from contract, tort (including negligence), strict liability, or any other legal theory — even if xrNORD has been advised of the possibility of such damages.\n\nOur total aggregate liability to you for any and all claims arising from your use of the website shall not exceed €100 (one hundred euros).\n\nSome jurisdictions do not allow the exclusion or limitation of liability for certain types of damages. In such jurisdictions, our liability is limited to the maximum extent permitted by law."
+    },
+    "governingLaw": {
+      "title": "Governing Law & Jurisdiction",
+      "content": "These Terms of Use are governed by and construed in accordance with the laws of Denmark, without regard to its conflict of law provisions.\n\nAny disputes arising out of or relating to these Terms or your use of the xrNORD website shall be subject to the exclusive jurisdiction of the Danish courts, with the City Court of Aarhus (Retten i Aarhus) as the first instance venue, unless mandatory consumer protection laws in your jurisdiction require otherwise.\n\nIf you are a consumer in the EU, you may also use the EU Online Dispute Resolution platform at ec.europa.eu/odr to resolve any dispute."
+    },
+    "changes": {
+      "title": "Changes to These Terms",
+      "content": "We may update these Terms from time to time. When we make material changes, we will update the \"Last Updated\" date at the bottom of this page.\n\nYour continued use of the website after any changes constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.\n\nFor significant changes affecting your rights, we may notify you via email or a notice on the website."
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "If you have any questions about these Terms of Use, please contact us:\n\nxrNORD ApS\nHægvej 11\n8250 Egå, Denmark\n\nCVR: 43396323\nEmail: info@xrnord.com\nPhone: +45 23 65 42 83"
+    },
+    "lastUpdated": "Last Updated"
+  },
+  "privacyPolicy": {
+    "eyebrow": "Legal",
+    "title": "Privacy Policy",
+    "subtitle": "At xrNORD, we are committed to protecting your privacy and ensuring transparency about how we collect, use, and protect your personal data.",
+    "intro": {
+      "title": "Introduction",
+      "content": "This Privacy Policy explains how xrNORD ApS (\"we,\" \"us,\" \"our,\" or \"xrNORD\") collects, uses, discloses, and otherwise processes personal data in connection with our website, services, and business operations.\n\nWe take your privacy seriously and are committed to being transparent about our data practices. This policy applies to all interactions with xrNORD, including our website (xrnord.com), services, and communications.\n\nIf you have any questions about this Privacy Policy or our privacy practices, please contact us at the end of this document."
+    },
+    "collection": {
+      "title": "Data Collection",
+      "content": "We collect personal data in the following ways:\n\n• Information You Provide: When you contact us, request our services, subscribe to our newsletter, or fill out forms on our website, you provide us with information such as your name, email address, phone number, company details, and any other information included in your communications.\n\n• Automatically Collected Data: When you visit our website, we automatically collect certain technical information, including IP address, browser type, operating system, referring URLs, and pages visited. We use cookies and similar tracking technologies to enhance your experience and understand how you interact with our site.\n\n• Analytics Data: We use Google Analytics and other analytics tools to understand website usage patterns, which help us improve our services and user experience.\n\n• Communication Records: We maintain records of emails, phone calls, and other communications with our clients and partners."
+    },
+    "usage": {
+      "title": "Data Usage & Processing",
+      "content": "We use the personal data we collect for the following purposes:\n\n• Service Delivery: To provide, maintain, and improve our services, including AI consulting, workshops, and strategic planning.\n\n• Communication: To respond to your inquiries, send you requested information, and keep you updated about our services and news.\n\n• Newsletter: To send you our newsletter and marketing communications (only if you have opted in).\n\n• Business Operations: To manage client relationships, process payments, and handle administrative matters.\n\n• Legal Compliance: To comply with legal obligations, enforce our agreements, and protect our rights.\n\n• Analytics and Research: To analyze usage patterns, improve our website functionality, and develop better services.\n\n• Fraud Prevention: To detect, investigate, and prevent fraudulent activities or security threats.\n\nWe process your data based on the following legal bases:\n• Your consent (for marketing communications)\n• Contract performance (to deliver our services)\n• Legal obligations (to comply with laws)\n• Legitimate interests (to improve our services and protect our business)"
+    },
+    "protection": {
+      "title": "Data Protection & Security",
+      "content": "We implement comprehensive technical and organizational measures to protect your personal data from unauthorized access, alteration, or destruction. These include:\n\n• Encryption: We use SSL/TLS encryption for data transmitted over the internet.\n\n• Access Controls: We restrict access to personal data to employees and contractors who need to access it for legitimate business purposes.\n\n• Regular Audits: We regularly review our security practices and update them to address emerging threats.\n\n• GDPR Compliance: We comply with the General Data Protection Regulation (GDPR) and other applicable data protection laws.\n\nWhile we strive to protect your data, no security system is impenetrable. We cannot guarantee absolute security, but we continuously work to improve our protective measures.\n\nWe retain your personal data only as long as necessary for the purposes outlined in this policy or as required by law. When data is no longer needed, we securely delete or anonymize it."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "content": "Under GDPR and other applicable data protection laws, you have the following rights:\n\n• Right of Access: You can request a copy of the personal data we hold about you.\n\n• Right to Rectification: You can request that we correct inaccurate or incomplete data.\n\n• Right to Erasure: Under certain circumstances, you can request that we delete your personal data (the \"right to be forgotten\").\n\n• Right to Restrict Processing: You can ask us to limit how we use your data.\n\n• Right to Data Portability: You can request your data in a portable format suitable for transfer to another service provider.\n\n• Right to Object: You can object to our processing of your data, including for marketing purposes.\n\n• Right to Withdraw Consent: If you have provided consent, you can withdraw it at any time.\n\nTo exercise any of these rights, please contact us using the information provided at the end of this policy. We will respond to your request within 30 days (or as required by applicable law)."
+    },
+    "cookies": {
+      "title": "Cookies & Tracking Technologies",
+      "content": "Our website uses cookies and similar tracking technologies to enhance your experience and collect analytics data. Cookies are small files stored on your device that allow us to recognize you and remember your preferences.\n\n• Necessary Cookies: These are required for the website to function properly and cannot be disabled.\n\n• Analytics Cookies: We use these to understand how you interact with our site, which helps us improve our services.\n\n• Marketing Cookies: We use these to deliver personalized content and measure the effectiveness of our marketing campaigns.\n\nYou can manage your cookie preferences through your browser settings or our cookie preference center on our website. However, disabling certain cookies may affect your experience on our site.\n\nWe also use similar technologies like web beacons and pixels to track engagement with our communications."
+    },
+    "thirdparty": {
+      "title": "Third-Party Services",
+      "content": "We may share your personal data with third-party service providers who assist us in operating our website, conducting business, and serving you. These include:\n\n• Cloud Storage Providers: We use services like Microsoft Azure and similar platforms to securely store data.\n\n• Email Service Providers: We use email platforms to send newsletters and communications.\n\n• Analytics Providers: We use Google Analytics and similar tools to understand website usage.\n\n• Payment Processors: If applicable, we use third-party payment processors to handle transactions.\n\n• Communications Platforms: We may use platforms for video conferencing and team collaboration.\n\nWe ensure that all third-party providers comply with GDPR and other applicable data protection regulations. We do not sell or rent your personal data to unrelated third parties for their marketing purposes.\n\nIf we are involved in a merger, acquisition, or bankruptcy, your data may be transferred as part of that transaction. We will notify you of any such change."
+    },
+    "changes": {
+      "title": "Policy Changes",
+      "content": "We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will:\n\n• Update the \"Last Updated\" date at the bottom of this policy.\n\n• Notify you via email if the changes significantly affect your rights or privacy.\n\n• Ask for your consent if required by applicable law.\n\nYour continued use of our website and services after such modifications constitute your acceptance of the updated Privacy Policy. We encourage you to review this policy periodically to stay informed about how we protect your privacy."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "content": "If you have questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about our privacy practices, please contact us:\n\nxrNORD ApS\nHægvej 11\n8250 Egå, Denmark\n\nEmail: info@xrnord.com\nPhone: +45 23 65 42 83\n\nData Protection Officer:\nFor GDPR-related inquiries, you can also reach out to our Data Protection Officer at: dpo@xrnord.com\n\nYou also have the right to lodge a complaint with your local data protection authority if you believe our processing of your personal data violates applicable laws."
+    },
+    "lastUpdated": "Last Updated"
   }
 }

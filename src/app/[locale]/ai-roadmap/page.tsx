@@ -43,21 +43,89 @@ const STEPS_DA = [
 ];
 
 /* ─── FAQ data ─── */
-const FAQ_EN = [
-  { q: "What is an AI Roadmap?", a: "An AI Roadmap is a structured, strategic plan that identifies where AI creates value in your business, prioritises opportunities, and defines a clear path from current state to implementation. It connects your business strategy with AI capabilities." },
-  { q: "Who is the AI Roadmap for?", a: "The AI Roadmap is designed for CEOs, CTOs, and leadership teams who want a clear, structured understanding of how AI fits into their business \u2014 and what to do next. It is relevant for both companies exploring AI for the first time and those looking to scale existing efforts." },
-  { q: "How long does it take?", a: "A typical AI Roadmap engagement takes 4\u20138 weeks depending on the complexity of the organisation and the scope of the assessment. The process is designed to deliver actionable outcomes quickly without disrupting daily operations." },
-  { q: "Do we need technical AI knowledge?", a: "No. The process is designed to work with business leaders, not just technical teams. We translate between business language and AI capabilities so the roadmap is practical and understandable for everyone involved in decision-making." },
-  { q: "What do we get at the end?", a: "A detailed AI Roadmap document including: identified AI opportunities, feasibility assessment, prioritised initiatives, phased implementation plan, business cases with projected ROI, and a governance framework for execution." },
-  { q: "How is this different from a workshop?", a: "The AI Workshop is a one-day exploration designed to help you understand whether AI is right for your business. The AI Roadmap goes deeper \u2014 it\u2019s a comprehensive strategic engagement that maps, prioritises, and plans your AI implementation across the organisation." },
+interface FAQLink { label: string; href: string; isButton?: boolean; }
+interface FAQEntry { q: string; a: string; links?: FAQLink[]; }
+
+const FAQ_EN: FAQEntry[] = [
+  {
+    q: "Why do companies need an AI strategy?",
+    a: "Many organizations begin their AI journey through isolated pilots, tools or experiments. While these initiatives can be valuable learning experiences, they rarely scale or create lasting impact without a clear strategic direction.\n\nAt the same time, artificial intelligence is rapidly reshaping industries, business models and competitive dynamics. Companies are no longer only competing with other organizations. Increasingly, they are competing with AI-enabled capabilities that can perform tasks, analyze information and support decisions at unprecedented speed.\n\nFor companies in the Nordic region, this creates both a challenge and an opportunity. Organizations with strong expertise, trusted brands and deep domain knowledge can become significantly stronger when AI is integrated in the right way.\n\nAn AI strategy helps companies move beyond experimentation by:\n\n• Identifying where AI can create the strongest business value\n• Prioritizing investments and initiatives\n• Aligning leadership, technology and operations\n• Turning AI from isolated experiments into a coordinated transformation\n\nThe goal is not simply to adopt new technology. It is to define how the organization will remain competitive, strengthen its capabilities and create new forms of value in a world where AI becomes part of everyday business.",
+    links: [{ label: "From Pilot to Production: Scaling AI in the Real World →", href: "/why-ai/articles/from-pilot-to-production" }],
+  },
+  {
+    q: "What is an AI strategy for your business?",
+    a: "An AI strategy defines how a company uses artificial intelligence to remain relevant and competitive in a rapidly changing market. It identifies where AI can create real value today, what capabilities must be built, and how AI initiatives should be prioritized across the organization.\n\nBut a strong AI strategy is not only about optimizing existing processes. It is also about defining how the company will compete in the future.\n\nFor most organizations this means working across three dimensions:\n\n1. Strengthening competitiveness\nUsing AI to stay relevant in both local and global markets as technology rapidly reshapes industries.\n\n2. Optimizing current operations\nApplying AI to improve processes, productivity, decision-making and operational efficiency.\n\n3. Creating tomorrow's services and competitive advantages\nIdentifying new services, products and value propositions that emerge when human expertise and AI capabilities work together.\n\nWhen done well, an AI strategy does not exist beside the business strategy. It becomes part of a unified strategy, where technology, data, operations and business development evolve together.",
+  },
+  {
+    q: "Who should be involved in developing an AI strategy?",
+    a: "Developing a meaningful AI strategy is not a technology exercise. It is a business transformation effort that requires participation from leadership, operational experts and technology specialists.\n\nIn many Nordic companies, the greatest strength lies in the combination of deep domain expertise, strong organizational cultures and highly skilled employees. An effective AI strategy therefore builds on this foundation rather than replacing it.\n\nTypical participants in the process include:\n\n• Executive leadership or board representatives\n• Business unit leaders responsible for products or services\n• IT and digitalization leaders\n• Data or analytics specialists\n• Key operational experts who understand day-to-day processes\n\nThe most successful AI strategies emerge when business insight, operational understanding and technological expertise meet at the same table. This is where companies begin to see how human expertise and AI capabilities can combine to create new forms of value and competitive advantage.",
+  },
+  {
+    q: "What does an AI strategy include?",
+    a: "A comprehensive AI strategy translates the potential of artificial intelligence into a clear direction for the business. It helps leadership understand where AI can strengthen the organization today, and where it can enable entirely new forms of value creation in the future.\n\nA strong AI strategy typically includes:\n\n• Identification of high-impact AI opportunities across products, services and internal processes\n• Evaluation of feasibility and business impact, ensuring that initiatives are both realistic and valuable\n• Prioritization of initiatives, often through a structured AI roadmap\n• Assessment of data, technology and infrastructure requirements\n• Organizational capabilities, including skills, governance and ways of working with AI\n• Alignment with the company's overall business and digital strategy\n\nBut the most important outcome is not a document.\n\nThe real result of a strong AI strategy is a clear and executable roadmap that helps the organization move from experimentation to real AI adoption, while also identifying how AI can contribute to new services, stronger differentiation and long-term competitiveness.",
+  },
+  {
+    q: "How does an AI strategy affect our existing digital or IT strategy?",
+    a: "An AI strategy rarely exists alongside a company's digital or IT strategy. In practice, it often reshapes it.\n\nTraditional digitalization strategies have typically focused on implementing systems, improving workflows and connecting business processes through software platforms. AI introduces a new layer: the ability for systems to analyze information, support decisions and automate complex tasks.\n\nThis means that many organizations must rethink parts of their existing digital and IT roadmap.\n\nAI initiatives often require:\n\n• Stronger data foundations and improved data accessibility\n• New AI capabilities integrated into existing systems and platforms\n• Updated governance around data, models and responsible AI\n• Closer collaboration between business leadership, digital teams and IT\n\nFor this reason, developing an AI strategy often leads to a broader shift. Instead of separate business, digital and technology strategies, companies begin moving toward a more integrated and unified strategy, where technology, data and business development evolve together.",
+    links: [{ label: "The Role of Data: Fueling Intelligent Systems →", href: "/why-ai/articles/the-role-of-data" }],
+  },
+  {
+    q: "What is the difference between an AI roadmap and an AI strategy?",
+    a: "An AI strategy defines the overall direction for how artificial intelligence should strengthen the company's competitiveness and future development. It clarifies where AI can create the greatest value, which capabilities must be developed, and how AI initiatives should support the broader business strategy.\n\nAn AI roadmap, on the other hand, translates this strategic direction into concrete actions. It outlines the initiatives to be implemented, their priorities, timelines and dependencies.\n\nIn simple terms:\n\n• The AI strategy defines why AI matters and where it should create value.\n• The AI roadmap defines what initiatives to implement, in which order, and how the organization moves forward.\n\nWithout a clear strategy, roadmaps often become a list of disconnected technology projects. When strategy comes first, the roadmap becomes a practical guide for how the organization moves toward a more intelligent and competitive business model.\n\nIn many companies, the AI strategy ultimately becomes part of a broader unified strategy, where business development, technology and operations evolve together.",
+  },
+  {
+    q: "What does it take to successfully implement an AI strategy?",
+    a: "Implementing an AI strategy is not a single project. It is an organizational transformation that unfolds over time.\n\nWhile technology plays an important role, the success of AI adoption depends just as much on leadership, organization and the ability to continuously identify new opportunities.\n\nOrganizations that succeed with AI typically focus on several dimensions:\n\n• Clear leadership direction that positions AI as a strategic capability rather than a series of isolated experiments\n• Strong collaboration between business, operations and technology, ensuring that AI initiatives are rooted in real processes and value creation\n• Accessible and reliable data foundations, enabling AI systems to generate meaningful insights and capabilities\n• Organizational capabilities, including skills, governance and responsible use of AI\n• A realistic investment and prioritization model, where initiatives are continuously evaluated and refined\n\nEqually important is establishing a working rhythm around AI. Companies that succeed treat AI development as an ongoing strategic capability: continuously exploring opportunities, learning from implementation, and evolving their services and operations.",
+  },
+  {
+    q: "What does AI strategy consulting cost?",
+    a: "The cost of developing an AI strategy varies depending on the size of the organization, the complexity of its operations, and the depth of analysis required.\n\nIn the Nordic region, experienced AI professionals are still relatively scarce, and the most valuable profiles are those who combine deep technological understanding with strong business and process insight. Developing a meaningful AI strategy is therefore not only about technology. It requires people who can connect AI capabilities with real business processes, operational improvements, and the creation of new services and competitive advantages.\n\nMany traditional consulting setups rely heavily on local senior specialists, which can make AI strategy engagements relatively expensive.\n\nxrNORD uses a different model. By combining international AI development expertise with local business and process specialists, we are able to assemble highly experienced teams while operating with a leaner structure. This often allows us to deliver strategy and solution development at significantly lower cost than traditional consulting firms, while remaining closely integrated with our clients locally.\n\nFor many companies, the first step is not a full strategy project but a focused AI workshop, where leadership teams explore opportunities and clarify whether developing a full AI strategy and roadmap is the right next step.",
+    links: [
+      { label: "Learn More About Our Approach", href: "/workshop" },
+      { label: "Learn About Our 1-Day Tailored AI Workshop", href: "/workshop", isButton: true },
+    ],
+  },
 ];
-const FAQ_DA = [
-  { q: "Hvad er et AI Roadmap?", a: "Et AI Roadmap er en struktureret, strategisk plan, der identificerer hvor AI skaber v\u00e6rdi i jeres forretning, prioriterer muligheder og definerer en klar vej fra nuv\u00e6rende tilstand til implementering. Det forbinder jeres forretningsstrategi med AI-kapabiliteter." },
-  { q: "Hvem er AI Roadmap til?", a: "AI Roadmap er designet til CEO\u2019er, CTO\u2019er og ledelsesteams, der \u00f8nsker en klar, struktureret forst\u00e5else af, hvordan AI passer ind i deres forretning \u2014 og hvad n\u00e6ste skridt er." },
-  { q: "Hvor lang tid tager det?", a: "Et typisk AI Roadmap-forl\u00f8b tager 4\u20138 uger afh\u00e6ngigt af organisationens kompleksitet og vurderingens omfang. Processen er designet til at levere handlingsbare resultater hurtigt." },
-  { q: "Skal vi have teknisk AI-viden?", a: "Nej. Processen er designet til at fungere med forretningsledere, ikke kun tekniske teams. Vi overs\u00e6tter mellem forretningssprog og AI-kapabiliteter." },
-  { q: "Hvad f\u00e5r vi til sidst?", a: "Et detaljeret AI Roadmap-dokument inklusiv: identificerede AI-muligheder, feasibility-vurdering, prioriterede initiativer, faseopdelt implementeringsplan, business cases med forventet ROI og en governance-ramme." },
-  { q: "Hvordan adskiller dette sig fra en workshop?", a: "AI Workshop er en \u00e9n-dags udforskning, der hj\u00e6lper jer med at forst\u00e5, om AI er rigtigt for jeres forretning. AI Roadmap g\u00e5r dybere \u2014 det er et omfattende strategisk forl\u00f8b." },
+
+const FAQ_DA: FAQEntry[] = [
+  {
+    q: "Hvorfor har virksomheder brug for en AI-strategi?",
+    a: "Mange organisationer starter deres AI-rejse med isolerede pilot-projekter eller eksperimenter. Mens disse kan v\u00e6re v\u00e6rdifulde, skalerer de sj\u00e6ldent eller skaber varig effekt uden en klar strategisk retning.\n\nEn AI-strategi hj\u00e6lper virksomheder med at g\u00e5 videre fra eksperimenter ved at identificere hvor AI kan skabe st\u00e6rkest forretningsv\u00e6rdi, prioritere investeringer og initiativer, og forvandle AI fra isolerede fors\u00f8g til en koordineret transformation.",
+    links: [{ label: "Fra pilot til produktion: Skalering af AI i den virkelige verden \u2192", href: "/why-ai/articles/from-pilot-to-production" }],
+  },
+  {
+    q: "Hvad er en AI-strategi for jeres forretning?",
+    a: "En AI-strategi definerer, hvordan en virksomhed bruger kunstig intelligens til at forblive relevant og konkurrencedygtig. Den identificerer, hvor AI kan skabe reel v\u00e6rdi i dag, hvilke kapabiliteter der skal opbygges, og hvordan AI-initiativer b\u00f8r prioriteres p\u00e5 tv\u00e6rs af organisationen.\n\nN\u00e5r det g\u00f8res rigtigt, eksisterer en AI-strategi ikke ved siden af forretningsstrategien. Den bliver en del af en samlet strategi, hvor teknologi, data, drift og forretningsudvikling udvikler sig sammen.",
+  },
+  {
+    q: "Hvem b\u00f8r v\u00e6re involveret i at udvikle en AI-strategi?",
+    a: "At udvikle en meningsfuld AI-strategi er ikke en teknologiøvelse. Det er en forretningstransformation, der kr\u00e6ver deltagelse fra ledelse, driftseksperter og teknologispecialister.\n\nDe mest succesfulde AI-strategier opst\u00e5r, n\u00e5r forretningsforst\u00e5else, operationel indsigt og teknologisk ekspertise m\u00f8des ved det samme bord.",
+  },
+  {
+    q: "Hvad indeholder en AI-strategi?",
+    a: "En omfattende AI-strategi overs\u00e6tter potentialet i kunstig intelligens til en klar retning for forretningen.\n\nEn st\u00e6rk AI-strategi inkluderer typisk: identifikation af AI-muligheder med h\u00f8j effekt, vurdering af feasibility og forretningseffekt, prioritering af initiativer via et struktureret AI roadmap, samt tilpasning til virksomhedens overordnede forretningsstrategi.",
+  },
+  {
+    q: "Hvordan p\u00e5virker en AI-strategi vores eksisterende digitale strategi eller IT-strategi?",
+    a: "En AI-strategi eksisterer sj\u00e6ldent ved siden af en virksomheds digitale strategi eller IT-strategi. I praksis omformer den den ofte.\n\nFor mange organisationer medf\u00f8rer udviklingen af en AI-strategi et bredere skift. I stedet for separate forretnings-, digitale og teknologistrategier beg\u00e6nder virksomheder at bevæge sig mod en mere integreret og samlet strategi.",
+    links: [{ label: "Dataens rolle: Br\u00e6ndstof til intelligente systemer \u2192", href: "/why-ai/articles/the-role-of-data" }],
+  },
+  {
+    q: "Hvad er forskellen p\u00e5 et AI roadmap og en AI-strategi?",
+    a: "En AI-strategi definerer den overordnede retning for, hvordan kunstig intelligens skal styrke virksomhedens konkurrenceevne og fremtidige udvikling.\n\nEt AI roadmap overs\u00e6tter denne strategiske retning til konkrete handlinger. Det skitserer de initiativer, der skal implementeres, deres prioriteter, tidsplaner og afh\u00e6ngigheder.\n\nKort sagt: Strategien definerer hvorfor og hvor AI skaber v\u00e6rdi. Roadmap'et definerer hvad der skal implementeres og i hvilken r\u00e6kkef\u00f8lge.",
+  },
+  {
+    q: "Hvad kr\u00e6ver det at implementere en AI-strategi succesfuldt?",
+    a: "Implementering af en AI-strategi er ikke et enkelt projekt. Det er en organisatorisk transformation, der udfolder sig over tid.\n\nOrganisationer, der lykkes med AI, fokuserer typisk p\u00e5: klar ledelsesretning, st\u00e6rkt samarbejde mellem forretning og teknologi, p\u00e5lidelige datafundamenter, og en realistisk investerings- og prioriteringsmodel.",
+  },
+  {
+    q: "Hvad koster AI-strategirådgivning?",
+    a: "Omkostningerne ved at udvikle en AI-strategi varierer afh\u00e6ngigt af organisationens st\u00f8rrelse, driftens kompleksitet og analysens dybde.\n\nxrNORD bruger en anden model. Ved at kombinere international AI-udviklingskompetence med lokale forretnings- og processpecialister kan vi sammens\u00e6tte h\u00f8jt erfarne teams, mens vi opererer med en slankere struktur.\n\nFor mange virksomheder er det f\u00f8rste skridt ikke et fuldt strategiprojekt, men en fokuseret AI-workshop.",
+    links: [
+      { label: "L\u00e6r mere om vores tilgang", href: "/workshop" },
+      { label: "L\u00e6r om vores 1-dags AI-workshop", href: "/workshop", isButton: true },
+    ],
+  },
 ];
 
 /* ─── maturity levels ─── */
@@ -77,8 +145,9 @@ const MATURITY_DA = [
 ];
 
 /* ─── FAQ accordion item ─── */
-function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
+function FAQItem({ q, a, links, locale, index }: { q: string; a: string; links?: FAQLink[]; locale: string; index: number }) {
   const [open, setOpen] = useState(false);
+  const paragraphs = a.split("\n\n");
   return (
     <motion.div
       variants={fadeUp}
@@ -131,24 +200,73 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
       </button>
       <div
         style={{
-          maxHeight: open ? "300px" : "0px",
+          maxHeight: open ? "3000px" : "0px",
           overflow: "hidden",
-          transition: "max-height 0.4s ease, opacity 0.3s ease",
+          transition: "max-height 0.6s ease, opacity 0.3s ease",
           opacity: open ? 1 : 0,
         }}
       >
-        <p
-          style={{
-            fontFamily: "var(--font-geist), system-ui, sans-serif",
-            fontSize: "0.95rem",
-            color: "rgba(255,255,255,0.55)",
-            lineHeight: 1.8,
-            paddingBottom: "28px",
-            maxWidth: "680px",
-          }}
-        >
-          {a}
-        </p>
+        <div style={{ paddingBottom: "28px", maxWidth: "680px" }}>
+          {paragraphs.map((para, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "0.95rem",
+                color: "rgba(255,255,255,0.55)",
+                lineHeight: 1.8,
+                marginBottom: i < paragraphs.length - 1 ? "16px" : "0",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {para}
+            </p>
+          ))}
+          {links && links.length > 0 && (
+            <div style={{ marginTop: "24px", display: "flex", flexDirection: "column" as const, gap: "12px", alignItems: "flex-start" }}>
+              {links.map((link, i) =>
+                link.isButton ? (
+                  <Link
+                    key={i}
+                    href={`/${locale}${link.href}`}
+                    style={{
+                      display: "inline-block",
+                      padding: "10px 22px",
+                      borderRadius: "8px",
+                      background: "linear-gradient(135deg, #A855F7, #6366F1)",
+                      color: "#fff",
+                      fontFamily: "var(--font-geist), system-ui, sans-serif",
+                      fontSize: "0.85rem",
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <Link
+                    key={i}
+                    href={`/${locale}${link.href}`}
+                    style={{
+                      display: "inline-block",
+                      padding: "10px 22px",
+                      borderRadius: "8px",
+                      background: "transparent",
+                      border: "1px solid rgba(168,85,247,0.5)",
+                      color: "#C084FC",
+                      fontFamily: "var(--font-geist), system-ui, sans-serif",
+                      fontSize: "0.85rem",
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );
@@ -173,7 +291,7 @@ export default function AIRoadmapPage() {
           position: "relative",
           minHeight: "92vh",
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: "center",
           overflow: "hidden",
           background: "linear-gradient(160deg, #020510 0%, #0A0F1E 40%, #0F1629 100%)",
         }}
@@ -242,7 +360,7 @@ export default function AIRoadmapPage() {
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
-            padding: "0 80px 120px",
+            padding: "80px 80px",
             position: "relative",
             zIndex: 3,
             width: "100%",
@@ -279,7 +397,7 @@ export default function AIRoadmapPage() {
             >
               {locale === "da" ? (
                 <>
-                  Stop med at g\u00e6tte.{" "}
+                  Definer hvordan AI forvandler{" "}
                   <br />
                   <span
                     style={{
@@ -289,12 +407,12 @@ export default function AIRoadmapPage() {
                       backgroundClip: "text",
                     }}
                   >
-                    Byg jeres AI-strategi.
+                    jeres forretning til at vinde fremtiden.
                   </span>
                 </>
               ) : (
                 <>
-                  Stop Guessing.{" "}
+                  Define How AI Transforms{" "}
                   <br />
                   <span
                     style={{
@@ -304,7 +422,7 @@ export default function AIRoadmapPage() {
                       backgroundClip: "text",
                     }}
                   >
-                    Build Your AI Strategy.
+                    Your Business to Win the Future.
                   </span>
                 </>
               )}
@@ -322,8 +440,8 @@ export default function AIRoadmapPage() {
               }}
             >
               {locale === "da"
-                ? "Et struktureret forl\u00f8b der forbinder jeres forretningsstrategi med AI \u2014 s\u00e5 I ved pr\u00e6cis hvad der skaber v\u00e6rdi, og hvad n\u00e6ste skridt er."
-                : "A structured engagement that connects your business strategy with AI \u2014 so you know exactly what creates value, and what to do next."}
+                ? "Vi forst\u00e5r jeres forretning og anvender en dyb forst\u00e5else af AI til at gentænke og styrke den \u2014 s\u00e5 I forlader med en klar, handlingsrettet retning fremad."
+                : "We understand your business and apply a deep understanding of AI to rethink and strengthen it \u2014 so you leave with a clear, actionable direction forward."}
             </motion.p>
 
             <motion.div variants={fadeUp}>
@@ -873,12 +991,53 @@ export default function AIRoadmapPage() {
                   lineHeight: 1.15,
                   letterSpacing: "-0.02em",
                   color: "#FFFFFF",
+                  marginBottom: "32px",
                 }}
               >
-                {locale === "da"
-                  ? "Ofte stillede sp\u00f8rgsm\u00e5l"
-                  : "Frequently Asked Questions"}
+                {locale === "da" ? (
+                  <>
+                    {"FAQ"}
+                    <br />
+                    <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                      {"Om AI-strategier & Roadmaps"}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    {"FAQ"}
+                    <br />
+                    <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                      {"About AI Strategies & Roadmaps"}
+                    </span>
+                  </>
+                )}
               </motion.h2>
+              <motion.div variants={fadeUp} style={{ display: "flex", flexDirection: "column" as const, gap: "10px" }}>
+                {(locale === "da"
+                  ? [
+                      "AI-strategi = konkurrencefordel",
+                      "AI-strategi = fremtidssikring",
+                      "AI-strategi = forretningstransformation",
+                    ]
+                  : [
+                      "AI strategy = competitive advantage",
+                      "AI strategy = future-proofing",
+                      "AI strategy = business transformation",
+                    ]
+                ).map((line, i) => (
+                  <p
+                    key={i}
+                    style={{
+                      fontFamily: "var(--font-geist), system-ui, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "rgba(192,132,252,0.7)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {line}
+                  </p>
+                ))}
+              </motion.div>
             </div>
 
             {/* Right: accordion */}
@@ -890,7 +1049,7 @@ export default function AIRoadmapPage() {
               style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
             >
               {faqs.map((faq, i) => (
-                <FAQItem key={i} q={faq.q} a={faq.a} index={i} />
+                <FAQItem key={i} q={faq.q} a={faq.a} links={faq.links} locale={locale} index={i} />
               ))}
             </motion.div>
           </motion.div>

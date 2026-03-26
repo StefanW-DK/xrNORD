@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function CookieBanner() {
   const t = useTranslations("cookies");
+  const locale = useLocale();
   const [visible, setVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [prefs, setPrefs] = useState({ analytics: true, marketing: false });
@@ -79,7 +80,7 @@ export default function CookieBanner() {
                 color: "rgba(148,163,184,0.85)",
               }}>
                 {t("message")}{" "}
-                <Link href="/privacy" style={{ color: "#06B6D4", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                <Link href={`/${locale}/cookie-policy`} style={{ color: "#06B6D4", textDecoration: "underline", textUnderlineOffset: "3px" }}>
                   {t("privacyPolicy")}
                 </Link>
               </p>
