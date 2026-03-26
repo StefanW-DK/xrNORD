@@ -129,12 +129,14 @@ export default function Hero() {
           </Link>
 
           {/* Secondary CTA */}
-          <button
+          <Link
+            href={`/${locale}/why-ai/interviews`}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium text-sm transition-all duration-200"
             style={{
               border: "1px solid rgba(255,255,255,0.2)",
               color: "rgba(255,255,255,0.85)",
               backdropFilter: "blur(4px)",
+              textDecoration: "none",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "rgba(255,255,255,0.08)";
@@ -160,7 +162,7 @@ export default function Hero() {
               </svg>
             </span>
             {t("ctaSecondary")}
-          </button>
+          </Link>
         </motion.div>
       </div>
 
