@@ -120,8 +120,8 @@ export default function BookWorkshopPage() {
       if (res.ok) {
         setSubmitted(true);
         setForm({ name: "", email: "", phone: "", company: "", day: "", month: "", year: "" });
-        if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-          (window as Window & { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead_workshop");
+        if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead_workshop");
         }
       } else {
         const data = await res.json();

@@ -116,8 +116,8 @@ export default function ContactPage() {
       if (res.ok) {
         setSubmitted(true);
         setForm({ name: "", email: "", phone: "", subject: "", message: "" });
-        if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-          (window as Window & { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead_contact");
+        if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead_contact");
         }
       } else {
         const data = await res.json();
