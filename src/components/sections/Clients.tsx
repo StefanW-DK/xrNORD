@@ -24,8 +24,8 @@ export default function Clients() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center uppercase font-medium mb-12"
-          style={{ fontSize: "13px", letterSpacing: "0.2em", color: "rgba(0,0,0,0.35)" }}
+          className="text-center uppercase font-medium mb-12 text-sm"
+          style={{ letterSpacing: "0.2em", color: "rgba(0,0,0,0.35)" }}
         >
           {t("label")}
         </motion.p>
@@ -36,13 +36,7 @@ export default function Clients() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "flex-end",
-            gap: "40px 56px",
-          }}
+          className="flex flex-wrap justify-center items-end gap-y-8 gap-x-10 sm:gap-x-14"
         >
           {clients.map((client) => (
             <div

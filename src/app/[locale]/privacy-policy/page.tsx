@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
         position: "relative",
         overflow: "hidden",
         paddingTop: "120px",
-        paddingBottom: "80px",
+        paddingBottom: "clamp(40px, 6vw, 80px)",
       }}>
         {/* Dot grid background */}
         <div style={{
@@ -52,12 +52,7 @@ export default function PrivacyPolicy() {
           pointerEvents: "none",
         }} />
 
-        <div style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 80px",
-          position: "relative",
-        }}>
+        <div className="page-container" style={{ position: "relative" }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,7 +97,7 @@ export default function PrivacyPolicy() {
       <div style={{
         maxWidth: "1200px",
         margin: "0 auto",
-        padding: "80px",
+        padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 80px)",
       }}>
         {sections.map((section, index) => (
           <motion.section

@@ -26,10 +26,10 @@ function Card({ cap, index }: { cap: Cap; index: number }) {
       transition={{ duration: 0.55, delay: 0.06 * index, ease: [0.25, 0.1, 0.25, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="p-5 sm:p-7"
       style={{
         gridArea: cap.area,
         position: "relative",
-        padding: "28px 28px 24px",
         borderRadius: "16px",
         background: hovered
           ? `rgba(${cap.rgb}, 0.04)`
@@ -164,12 +164,12 @@ export default function Capabilities() {
   ];
 
   return (
-    <section style={{
-      background: "linear-gradient(180deg, #0A0F1E 0%, #0D1520 40%, #0F1A2A 70%, #0A0F1E 100%)",
-      padding: "120px 0 140px",
-      position: "relative",
-      overflow: "hidden",
-    }}>
+    <section
+      className="py-20 lg:py-28 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #0A0F1E 0%, #0D1520 40%, #0F1A2A 70%, #0A0F1E 100%)",
+      }}
+    >
       {/* Dot grid */}
       <div style={{
         position: "absolute", inset: 0,

@@ -292,7 +292,7 @@ export default function AiUseCasesPage() {
           justifyContent: "center",
           background: "linear-gradient(135deg, #0B0F1A 0%, #141829 50%, #1A1040 100%)",
           overflow: "hidden",
-          padding: "140px 24px 80px",
+          padding: "clamp(100px, 12vw, 140px) 24px clamp(48px, 6vw, 80px)",
         }}
       >
         {/* Ambient glow */}

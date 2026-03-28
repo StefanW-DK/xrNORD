@@ -25,7 +25,7 @@ export default function WorkshopPage() {
       desc:
         locale === "da"
           ? "Vores AI Workshop er det første skridt på jeres AI-rejse. Her får I ekspertvejledning i, hvordan AI kan skabe konkret værdi for jeres virksomhed."
-          : "Our AI Workshop serves as the first step in your AI advisory journey. Here, you gain expert guidance on how AI can create tangible value for your business.",
+          : "A focused, 1-day session to understand your business, explore where AI creates value, and identify where to start.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
@@ -39,11 +39,11 @@ export default function WorkshopPage() {
       title:
         locale === "da"
           ? "Analyse, Planlægning & Business Case"
-          : "Analysis, Planning & Business Case",
+          : "Define Your Future Direction",
       desc:
         locale === "da"
           ? "Hvis vi sammen ser, at AI kan gavne jeres forretning, har I mulighed for at gå videre med en detaljeret, handlingsorienteret plan og et understøttende business case."
-          : "If together we see that AI can benefit your business, you'll have the option to move forward with a detailed, actionable plan and supporting business case.",
+          : "We go deep into your business to challenge your current strategy, identify where AI creates the greatest impact, and define a clear roadmap forward.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -57,11 +57,11 @@ export default function WorkshopPage() {
       title:
         locale === "da"
           ? "Udvikling & Eksekvering"
-          : "Development & Execution",
+          : "Execution & Implementation",
       desc:
         locale === "da"
           ? "En plan vi kan hjælpe jer med at realisere — fra proof-of-concept til produktionsklar implementering med lokal forankring."
-          : "A plan we can help you bring to life — from proof-of-concept to production-ready implementation with local accountability.",
+          : "We bring your roadmap to life — implementing solutions into your business and turning strategy into real operational impact.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -191,20 +191,7 @@ export default function WorkshopPage() {
           initial="hidden"
           animate="visible"
           variants={stagger}
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 80px",
-            zIndex: 1,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            height: "100%",
-            textAlign: "left",
-          }}
+          className="hero-content-wrap"
         >
           <motion.p
             variants={fadeUp}
@@ -225,12 +212,12 @@ export default function WorkshopPage() {
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
-              fontSize: "clamp(2.8rem, 6vw, 5.8rem)",
+              fontSize: "clamp(3.2rem, 8vw, 5.8rem)",
               fontWeight: 800,
               letterSpacing: "-0.05em",
               lineHeight: 1.0,
               color: "#F0EEF5",
-              marginBottom: "56px",
+              marginBottom: "clamp(28px, 5vw, 56px)",
             }}
           >
             {locale === "da" ? (
@@ -268,9 +255,9 @@ export default function WorkshopPage() {
 
           <motion.p
             variants={fadeUp}
+            className="hero-subtitle"
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: "1.35rem",
               lineHeight: 1.65,
               color: "rgba(220,216,232,0.9)",
               marginBottom: "8px",
@@ -283,12 +270,12 @@ export default function WorkshopPage() {
 
           <motion.p
             variants={fadeUp}
+            className="hero-subtitle"
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: "1.35rem",
               lineHeight: 1.65,
               color: "rgba(220,216,232,0.9)",
-              marginBottom: "64px",
+              marginBottom: "clamp(32px, 6vw, 64px)",
             }}
           >
             {locale === "da"
@@ -331,12 +318,33 @@ export default function WorkshopPage() {
               </svg>
             </Link>
           </motion.div>
+
         </motion.div>
+
+        {/* Step indicator — absolute bottom center */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{ position: "absolute", bottom: "48px", left: 0, right: 0, zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px" }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "linear-gradient(135deg, #C026D3 0%, #9333EA 100%)", boxShadow: "0 0 10px rgba(192,38,211,0.6)", flexShrink: 0 }} />
+            <div style={{ width: "36px", height: "1px", background: "rgba(255,255,255,0.45)" }} />
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.5)", flexShrink: 0 }} />
+            <div style={{ width: "36px", height: "1px", background: "rgba(255,255,255,0.45)" }} />
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.5)", flexShrink: 0 }} />
+          </div>
+          <p style={{ fontFamily: "var(--font-geist), system-ui, sans-serif", fontSize: "10px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", textAlign: "center" }}>
+            {locale === "da" ? "Trin 01 af 03  ·  Discovery Workshop" : "Step 01 of 03  ·  Discovery Workshop"}
+          </p>
+        </motion.div>
+
       </section>
 
       {/* ═══════════ INTRO STATEMENT ═══════════ */}
-      <section style={{ background: "#FFFFFF", padding: "120px 0 120px", overflow: "hidden", position: "relative" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px", display: "flex", alignItems: "center", gap: "60px" }}>
+      <section style={{ background: "#FFFFFF", padding: "clamp(72px, 10vw, 120px) 0", overflow: "hidden", position: "relative" }}>
+        <div className="page-container" style={{ display: "flex", alignItems: "center", gap: "60px" }}>
 
           {/* Left: text content */}
           <motion.div
@@ -606,13 +614,13 @@ export default function WorkshopPage() {
       <section
         style={{
           background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-          padding: "120px 0",
+          padding: "clamp(72px, 10vw, 120px) 0",
           position: "relative",
           overflow: "hidden",
         }}
       >
         <div style={{ position: "absolute", top: "0", left: "0", right: "0", height: "1px", background: "linear-gradient(90deg, transparent, rgba(124,58,237,0.3), transparent)" }} />
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2
               variants={fadeUp}
@@ -643,7 +651,7 @@ export default function WorkshopPage() {
               )}
             </motion.h2>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "32px" }}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
               {RESULTS.map((r, i) => (
                 <motion.div
                   key={i}
@@ -688,14 +696,14 @@ export default function WorkshopPage() {
       </section>
 
       {/* ═══════════ PROGRAM / AGENDA ═══════════ */}
-      <section style={{ background: "#FFFFFF", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px" }}>
+      <section style={{ background: "#FFFFFF", padding: "clamp(72px, 10vw, 120px) 0" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px" }}
+            className="about-grid" style={{ gap: "clamp(32px, 6vw, 80px)" }}
           >
             {/* Left: Agenda */}
             <div>
@@ -883,7 +891,7 @@ export default function WorkshopPage() {
       <section
         style={{
           background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-          padding: "120px 0",
+          padding: "clamp(72px, 10vw, 120px) 0",
           position: "relative",
           overflow: "hidden",
         }}
@@ -893,7 +901,7 @@ export default function WorkshopPage() {
         {/* Glow */}
         <div style={{ position: "absolute", top: "-20%", right: "-10%", width: "50%", height: "80%", background: "radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
 
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px", position: "relative" }}>
+        <div className="page-container" style={{ position: "relative" }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.p
               variants={fadeUp}
@@ -941,7 +949,7 @@ export default function WorkshopPage() {
               )}
             </motion.h2>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr auto 1fr", gap: "0", alignItems: "stretch" }}>
+            <div className="workshop-steps-grid">
               {STEPS.map((step, idx) => {
                 const isFirst = idx === 0;
                 return (
@@ -1037,7 +1045,7 @@ export default function WorkshopPage() {
 
                     {/* Flow arrow between cards */}
                     {idx < STEPS.length - 1 && (
-                      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 8px", alignSelf: "center" }}>
+                      <div className="workshop-step-arrow" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 8px", alignSelf: "center" }}>
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                           <path
                             d="M8 16h16M20 10l6 6-6 6"
@@ -1058,8 +1066,8 @@ export default function WorkshopPage() {
       </section>
 
       {/* ═══════════ BUSINESS CASE ═══════════ */}
-      <section style={{ background: "#FFFFFF", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px" }}>
+      <section style={{ background: "#FFFFFF", padding: "clamp(72px, 10vw, 120px) 0" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -1101,12 +1109,9 @@ export default function WorkshopPage() {
 
             <motion.div
               variants={fadeUp}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "64px",
-                marginTop: "64px",
-                alignItems: "center",
+              className="about-grid" style={{
+                gap: "clamp(32px, 5vw, 64px)",
+                marginTop: "clamp(40px, 5vw, 64px)",
               }}
             >
               {/* Stat cards */}
@@ -1179,8 +1184,8 @@ export default function WorkshopPage() {
       </section>
 
       {/* ═══════════ FINAL CTA ═══════════ */}
-      <section style={{ background: "#FFFFFF", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px" }}>
+      <section style={{ background: "#FFFFFF", padding: "clamp(72px, 10vw, 120px) 0" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"

@@ -29,7 +29,7 @@ export default function CookiePolicy() {
         position: "relative",
         overflow: "hidden",
         paddingTop: "120px",
-        paddingBottom: "80px",
+        paddingBottom: "clamp(40px, 6vw, 80px)",
       }}>
         <div style={{
           position: "absolute",
@@ -49,7 +49,7 @@ export default function CookiePolicy() {
           pointerEvents: "none",
         }} />
 
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px", position: "relative" }}>
+        <div className="page-container" style={{ position: "relative" }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -99,11 +99,12 @@ function PreviewCard({ name, role, topic, imageSrc, href, delay }: CardProps) {
 export default function WhyAI() {
   const t = useTranslations("whyai");
   return (
-    <section style={{
-      background: "#F1F5F9",
-      padding: "120px 0 140px",
-      position: "relative",
-    }}>
+    <section
+      className="py-20 lg:py-28 relative"
+      style={{
+        background: "#F1F5F9",
+      }}
+    >
 
       {/* Top separator */}
       <div style={{

@@ -51,15 +51,7 @@ export default async function ArticlesPage({ params }: Props) {
             pointerEvents: "none",
           }}
         />
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 80px",
-            position: "relative",
-            width: "100%",
-          }}
-        >
+        <div className="page-container" style={{ position: "relative", width: "100%" }}>
           <p
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -135,23 +127,11 @@ export default async function ArticlesPage({ params }: Props) {
       <main
         style={{
           background: "#FFFFFF",
-          padding: "80px 0 120px",
+          padding: "clamp(48px, 8vw, 80px) 0 clamp(72px, 10vw, 120px)",
         }}
       >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 80px",
-          }}
-        >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "28px",
-            }}
-          >
+        <div className="page-container">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {articles.map((article) => (
               <ArticleCard key={article.slug} article={article} locale={locale} />
             ))}

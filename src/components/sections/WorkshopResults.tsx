@@ -41,15 +41,13 @@ export default function WorkshopResults() {
 
   return (
     <section
+      className="py-20 lg:py-28 relative overflow-hidden"
       style={{
         background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-        padding: "120px 0",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
       <div style={{ position: "absolute", top: "0", left: "0", right: "0", height: "1px", background: "linear-gradient(90deg, transparent, rgba(124,58,237,0.3), transparent)" }} />
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.h2
             variants={fadeUp}
@@ -80,7 +78,7 @@ export default function WorkshopResults() {
             )}
           </motion.h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "32px" }}>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             {RESULTS.map((r, i) => (
               <motion.div
                 key={i}

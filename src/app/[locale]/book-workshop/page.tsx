@@ -169,7 +169,7 @@ export default function BookWorkshopPage() {
         <Navbar />
 
         {/* ── Hero ── */}
-        <section style={{ paddingTop: "180px", paddingBottom: "40px", textAlign: "center" }}>
+        <section style={{ paddingTop: "clamp(100px, 14vw, 180px)", paddingBottom: "40px", textAlign: "center" }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px" }}>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -241,7 +241,8 @@ export default function BookWorkshopPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}
+              className="contact-row"
+              style={{ gap: "24px" }}
             >
               {/* Call Us */}
               <div

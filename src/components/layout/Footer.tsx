@@ -63,7 +63,7 @@ function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", gap: "10px", maxWidth: "480px" }}>
+    <form onSubmit={handleSubmit} className="newsletter-form">
       <div style={{
         flex: 1, position: "relative",
         borderRadius: "12px", overflow: "hidden",
@@ -141,8 +141,7 @@ export default function Footer() {
         padding: "64px 0",
         position: "relative",
       }}>
-        <div style={{
-          maxWidth: "1200px", margin: "0 auto", padding: "0 80px",
+        <div className="page-container" style={{
           display: "flex", alignItems: "center", justifyContent: "space-between",
           gap: "48px", flexWrap: "wrap" as const,
         }}>
@@ -176,13 +175,8 @@ export default function Footer() {
       </div>
 
       {/* ── Main footer columns ─────────────────────── */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "64px 80px 48px" }}>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1.8fr 1fr 1fr 1fr",
-          gap: "48px",
-          marginBottom: "56px",
-        }}>
+      <div className="page-container" style={{ paddingTop: "64px", paddingBottom: "48px" }}>
+        <div className="footer-grid">
 
           {/* Col 1: Brand */}
           <div>

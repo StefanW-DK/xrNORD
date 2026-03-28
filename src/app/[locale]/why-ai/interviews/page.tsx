@@ -376,7 +376,7 @@ export default function InterviewsPage() {
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
-            padding: "0 80px 120px",
+            padding: "0 clamp(16px, 6.25vw, 80px) 120px",
             position: "relative",
             zIndex: 3,
             width: "100%",
@@ -514,7 +514,7 @@ export default function InterviewsPage() {
 
       {/* ═══════════ ALL LOGOS STRIP ═══════════ */}
       <section style={{ background: "#FFFFFF", padding: "80px 0", borderBottom: "1px solid #F3F4F6" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -581,15 +581,8 @@ export default function InterviewsPage() {
       {/* ═══════════ FRAMING SECTION ═══════════ */}
       <section style={{ background: "#FFFFFF", padding: "120px 0 100px" }}>
         <div
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            padding: "0 80px",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "80px",
-            alignItems: "center",
-          }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center"
+          style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(16px, 6.25vw, 80px)" }}
         >
           <motion.div
             initial="hidden"
@@ -676,7 +669,7 @@ export default function InterviewsPage() {
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
-            padding: "0 80px",
+            padding: "0 clamp(16px, 6.25vw, 80px)",
           }}
         >
           <motion.p
@@ -702,12 +695,7 @@ export default function InterviewsPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1.4fr",
-              gap: "80px",
-              alignItems: "center",
-            }}
+            className="grid grid-cols-1 featured-grid-lg gap-10 lg:gap-20 items-center"
           >
             {/* Left: copy */}
             <motion.div variants={fadeUp}>
@@ -874,7 +862,7 @@ export default function InterviewsPage() {
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
-            padding: "0 80px",
+            padding: "0 clamp(16px, 6.25vw, 80px)",
           }}
         >
           <motion.div
@@ -920,11 +908,7 @@ export default function InterviewsPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "32px",
-            }}
+            className="interview-grid"
           >
             {INTERVIEWS.map((interview, i) => (
               <InterviewCard
@@ -940,18 +924,13 @@ export default function InterviewsPage() {
 
       {/* ═══════════ UPCOMING INTERVIEWS ═══════════ */}
       <section style={{ background: "#FFFFFF", padding: "100px 0 120px", borderTop: "1px solid #F3F4F6" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "80px",
-              alignItems: "center",
-            }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center"
           >
             {/* Left: text */}
             <div>
@@ -1058,15 +1037,8 @@ export default function InterviewsPage() {
         }}
       >
         <div
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            padding: "0 80px",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "80px",
-            alignItems: "center",
-          }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center"
+          style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(16px, 6.25vw, 80px)" }}
         >
           <motion.div
             initial="hidden"

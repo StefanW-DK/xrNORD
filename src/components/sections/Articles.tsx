@@ -38,11 +38,9 @@ export default function Articles() {
 
   return (
     <section
+      className="py-20 lg:py-28 relative overflow-hidden"
       style={{
         background: "#FFFFFF",
-        padding: "120px 0 140px",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
       {/* Top separator */}
@@ -69,29 +67,16 @@ export default function Articles() {
         }}
       />
 
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 80px",
-        }}
-      >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-20">
         {/* Header row */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            gap: "40px",
-            marginBottom: "64px",
-            flexWrap: "wrap",
-          }}
+          className="flex flex-wrap items-end justify-between gap-10 mb-16"
         >
-          <div style={{ flex: "1 1 500px" }}>
+          <div className="flex-1 min-w-0" style={{ flexBasis: "min(100%, 500px)" }}>
             <p
               style={{
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -179,13 +164,7 @@ export default function Articles() {
         </motion.div>
 
         {/* Article cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "28px",
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {ARTICLES.map((article, i) => (
             <motion.a
               key={article.key}
