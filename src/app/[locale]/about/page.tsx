@@ -103,7 +103,7 @@ export default function AboutPage() {
         }} />
 
         {/* Content */}
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "160px 80px 120px 60px", position: "relative", zIndex: 2 }}>
+        <div className="page-container" style={{ paddingTop: "clamp(100px, 13vw, 160px)", paddingBottom: "clamp(72px, 10vw, 120px)", position: "relative", zIndex: 2 }}>
           <motion.div
             initial="hidden"
             animate="visible"
@@ -168,13 +168,13 @@ export default function AboutPage() {
               fontSize: "1.1rem",
               lineHeight: 1.75,
               color: "rgba(148,163,184,0.8)",
-              maxWidth: "520px",
+              maxWidth: "780px",
               marginBottom: "48px",
               whiteSpace: "pre-line" as const,
             }}>
               {da
                 ? "Forankret i Danmark. Formet af verden.\nVi hjælper nordiske virksomheder med at omsætte AI til reel fordel — ikke som et værktøj, men som måden de opererer og konkurrerer på."
-                : "Rooted in Denmark. Shaped by the world.\nWe help Nordic companies turn AI into real advantage — not as a tool, but as how they operate and compete."}
+                : "Rooted in Denmark. Shaped by the world. We help Nordic companies turn AI into\nreal advantage — not as a tool, but as how they operate and compete."}
             </motion.p>
 
             <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", flexWrap: "wrap" as const }}>
@@ -211,22 +211,17 @@ export default function AboutPage() {
       ═══════════════════════════════════════ */}
       <section style={{
         background: "#060B14",
-        padding: "140px 0",
+        padding: "clamp(80px, 11vw, 140px) 0",
         position: "relative",
         overflow: "hidden",
       }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "80px",
-              alignItems: "center",
-            }}
+            className="about-grid" style={{ gap: "clamp(32px, 6vw, 80px)", alignItems: "center" }}
           >
             {/* Left: map */}
             <motion.div variants={fadeIn} style={{ position: "relative" }}>
@@ -338,7 +333,7 @@ export default function AboutPage() {
       ═══════════════════════════════════════ */}
       <section style={{
         background: "#0A0F1E",
-        padding: "140px 0",
+        padding: "clamp(80px, 11vw, 140px) 0",
         position: "relative",
       }}>
         {/* Top accent */}
@@ -348,7 +343,7 @@ export default function AboutPage() {
           background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
         }} />
 
-        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -414,7 +409,7 @@ export default function AboutPage() {
       ═══════════════════════════════════════ */}
       <section style={{
         background: "linear-gradient(160deg, #060B14 0%, #0D0F20 100%)",
-        padding: "140px 0",
+        padding: "clamp(80px, 11vw, 140px) 0",
         position: "relative",
         overflow: "hidden",
       }}>
@@ -427,7 +422,7 @@ export default function AboutPage() {
           pointerEvents: "none",
         }} />
 
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           {/* Header */}
           <motion.div
             initial="hidden"
@@ -475,9 +470,7 @@ export default function AboutPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={stagger}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
+            className="grid grid-cols-2 sm:grid-cols-4" style={{
               gap: "2px",
               background: "rgba(255,255,255,0.04)",
               borderRadius: "16px",
@@ -555,10 +548,10 @@ export default function AboutPage() {
       ═══════════════════════════════════════ */}
       <section style={{
         background: "#0A0F1E",
-        padding: "140px 0",
+        padding: "clamp(80px, 11vw, 140px) 0",
         position: "relative",
       }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -576,10 +569,8 @@ export default function AboutPage() {
             }}>
               {da ? "Hvad vi gør" : "What We Do"}
             </motion.p>
-            <motion.div variants={stagger} style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "80px",
+            <motion.div variants={stagger} className="about-grid" style={{
+              gap: "clamp(32px, 6vw, 80px)",
               alignItems: "end",
               marginBottom: "72px",
             }}>
@@ -613,7 +604,7 @@ export default function AboutPage() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={stagger}
-              style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }}
+              className="roadmap-steps-grid" style={{ gap: "2px" }}
             >
               {[
                 {
@@ -689,7 +680,7 @@ export default function AboutPage() {
       ═══════════════════════════════════════ */}
       <section style={{
         background: "#060B14",
-        padding: "140px 0",
+        padding: "clamp(80px, 11vw, 140px) 0",
         position: "relative",
         overflow: "hidden",
       }}>
@@ -698,7 +689,7 @@ export default function AboutPage() {
           background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
         }} />
 
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -711,10 +702,8 @@ export default function AboutPage() {
             </motion.div>
             <motion.div
               variants={stagger}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "80px",
+              className="about-grid" style={{
+                gap: "clamp(32px, 6vw, 80px)",
                 alignItems: "end",
                 marginBottom: "72px",
               }}
@@ -746,11 +735,7 @@ export default function AboutPage() {
             {/* Portraits */}
             <motion.div
               variants={stagger}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "32px",
-              }}
+              className="about-grid" style={{ gap: "32px" }}
             >
               {[
                 {
@@ -773,14 +758,14 @@ export default function AboutPage() {
                 },
               ].map((person, i) => (
                 <motion.div key={i} variants={fadeUp} style={{
-                  display: "grid",
-                  gridTemplateColumns: "200px 1fr",
-                  gap: "40px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "clamp(24px, 3vw, 40px)",
                   alignItems: "start",
                   background: "rgba(255,255,255,0.015)",
                   border: "1px solid rgba(255,255,255,0.06)",
                   borderRadius: "20px",
-                  padding: "40px",
+                  padding: "clamp(24px, 4vw, 40px)",
                   overflow: "hidden",
                 }}>
                   {/* Portrait */}
@@ -788,6 +773,8 @@ export default function AboutPage() {
                     position: "relative",
                     borderRadius: "14px",
                     overflow: "hidden",
+                    width: "100%",
+                    maxWidth: "280px",
                     aspectRatio: "3/4",
                     background: "#0D1324",
                     flexShrink: 0,
@@ -854,7 +841,7 @@ export default function AboutPage() {
       ═══════════════════════════════════════ */}
       <section style={{
         background: "linear-gradient(160deg, #020510 0%, #0A0F1E 100%)",
-        padding: "160px 0",
+        padding: "clamp(80px, 13vw, 160px) 0",
         position: "relative",
         overflow: "hidden",
       }}>
@@ -873,7 +860,7 @@ export default function AboutPage() {
           pointerEvents: "none",
         }} />
 
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"

@@ -157,11 +157,9 @@ export default function Industries() {
   const t = useTranslations("industries");
   return (
     <section
+      className="py-20 lg:py-28 relative overflow-hidden"
       style={{
         background: "linear-gradient(162deg, #F8FAFC 0%, #F0F4F8 60%, #F8FAFC 100%)",
-        padding: "140px 0 160px",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
       {/* Subtle top separator */}
@@ -214,7 +212,7 @@ export default function Industries() {
           }}
         >
           {/* Row 1 — Education dominant, anchored left */}
-          <div style={{ display: "flex", justifyContent: "flex-start", paddingLeft: "16px" }}>
+          <div className="flex justify-start pl-0 sm:pl-4">
             <IndustryBlock
               title={t("educationTitle")}
               metric={t("educationMetric")}
@@ -222,19 +220,19 @@ export default function Industries() {
               tintRgb="59, 130, 246"
               delay={0.1}
               dominant
-              style={{ width: "440px", minHeight: "232px" }}
+              style={{ width: "min(440px, 100%)", minHeight: "200px" }}
             />
           </div>
 
           {/* Row 2 — Accounting + Software, asymmetric widths */}
-          <div style={{ display: "flex", gap: "16px" }}>
+          <div className="flex gap-4">
             <IndustryBlock
               title={t("accountingTitle")}
               metric={t("accountingMetric")}
               videoSrc="/assets/home/industries/accounting.mp4"
               tintRgb="124, 58, 237"
               delay={0.18}
-              style={{ width: "272px", minHeight: "232px", flexShrink: 0 }}
+              style={{ width: "min(272px, 45%)", minHeight: "200px", flexShrink: 0 }}
             />
             <IndustryBlock
               title={t("softwareTitle")}
@@ -242,19 +240,19 @@ export default function Industries() {
               videoSrc="/assets/home/industries/software.mp4"
               tintRgb="6, 182, 212"
               delay={0.26}
-              style={{ flex: 1, minHeight: "232px" }}
+              style={{ flex: 1, minHeight: "200px" }}
             />
           </div>
 
           {/* Row 3 — Travel, offset right */}
-          <div style={{ display: "flex", justifyContent: "center", paddingLeft: "56px" }}>
+          <div className="flex justify-center pl-0 sm:pl-14">
             <IndustryBlock
               title={t("travelTitle")}
               metric={t("travelMetric")}
               videoSrc="/assets/home/industries/travel.mp4"
               tintRgb="20, 184, 166"
               delay={0.34}
-              style={{ width: "400px", minHeight: "210px" }}
+              style={{ width: "min(400px, 100%)", minHeight: "200px" }}
             />
           </div>
         </div>

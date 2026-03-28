@@ -141,7 +141,7 @@ export default function ContactPage() {
 
       <div>
         {/* ── Hero ── */}
-        <section style={{ paddingTop: "180px", paddingBottom: "40px", textAlign: "center" }}>
+        <section style={{ paddingTop: "clamp(100px, 14vw, 180px)", paddingBottom: "40px", textAlign: "center" }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px" }}>
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
@@ -168,7 +168,7 @@ export default function ContactPage() {
                 fontSize: "1.1rem",
                 lineHeight: 1.7,
                 color: "rgba(255,255,255,0.6)",
-                maxWidth: "640px",
+                maxWidth: "100%",
                 margin: "0 auto",
               }}
             >
@@ -185,7 +185,8 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}
+              className="contact-row"
+              style={{ gap: "24px" }}
             >
               {/* Call */}
               <div

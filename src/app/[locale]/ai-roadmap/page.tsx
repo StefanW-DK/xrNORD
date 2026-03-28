@@ -151,7 +151,7 @@ function FAQItem({ q, a, links, locale, index }: { q: string; a: string; links?:
   return (
     <motion.div
       variants={fadeUp}
-      style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
+      style={{ borderBottom: "1px solid #E5E7EB" }}
     >
       <button
         onClick={() => setOpen(!open)}
@@ -172,7 +172,7 @@ function FAQItem({ q, a, links, locale, index }: { q: string; a: string; links?:
             fontFamily: "var(--font-geist), system-ui, sans-serif",
             fontSize: "1.1rem",
             fontWeight: 600,
-            color: "#FFFFFF",
+            color: "#0A0F1E",
             paddingRight: "32px",
           }}
         >
@@ -190,7 +190,7 @@ function FAQItem({ q, a, links, locale, index }: { q: string; a: string; links?:
             justifyContent: "center",
             transition: "transform 0.3s ease, background 0.3s ease",
             transform: open ? "rotate(45deg)" : "rotate(0deg)",
-            background: open ? "rgba(168,85,247,0.15)" : "transparent",
+            background: open ? "rgba(168,85,247,0.08)" : "transparent",
           }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A855F7" strokeWidth="2" strokeLinecap="round">
@@ -213,7 +213,7 @@ function FAQItem({ q, a, links, locale, index }: { q: string; a: string; links?:
               style={{
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
                 fontSize: "0.95rem",
-                color: "rgba(255,255,255,0.55)",
+                color: "#6B7280",
                 lineHeight: 1.8,
                 marginBottom: i < paragraphs.length - 1 ? "16px" : "0",
                 whiteSpace: "pre-line",
@@ -252,8 +252,8 @@ function FAQItem({ q, a, links, locale, index }: { q: string; a: string; links?:
                       padding: "10px 22px",
                       borderRadius: "8px",
                       background: "transparent",
-                      border: "1px solid rgba(168,85,247,0.5)",
-                      color: "#C084FC",
+                      border: "1px solid rgba(168,85,247,0.4)",
+                      color: "#7C3AED",
                       fontFamily: "var(--font-geist), system-ui, sans-serif",
                       fontSize: "0.85rem",
                       fontWeight: 600,
@@ -289,206 +289,241 @@ export default function AIRoadmapPage() {
       <section
         style={{
           position: "relative",
-          minHeight: "92vh",
-          display: "flex",
-          alignItems: "center",
+          width: "100%",
+          height: "100vh",
+          minHeight: "600px",
+          maxHeight: "900px",
           overflow: "hidden",
-          background: "linear-gradient(160deg, #020510 0%, #0A0F1E 40%, #0F1629 100%)",
         }}
       >
-        {/* Subtle background pattern — ghosted roadmap nodes */}
+        {/* Soft top-edge transition */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "120px",
+            background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%)",
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Background — gradient + ghosted roadmap pattern */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(160deg, #020510 0%, #0A0F1E 40%, #0F1629 100%)",
+          }}
+        />
+
+        {/* Subtle roadmap pattern */}
         <div style={{ position: "absolute", inset: 0, overflow: "hidden", opacity: 0.06 }}>
-          {/* Vertical line */}
           <div style={{ position: "absolute", left: "72%", top: "10%", width: "1px", height: "80%", background: "linear-gradient(to bottom, transparent, #A855F7, transparent)" }} />
-          {/* Horizontal line */}
           <div style={{ position: "absolute", left: "20%", top: "55%", width: "60%", height: "1px", background: "linear-gradient(to right, transparent, #818CF8, transparent)" }} />
-          {/* Nodes */}
           {[
             { x: "72%", y: "25%" }, { x: "72%", y: "55%" }, { x: "72%", y: "78%" },
             { x: "35%", y: "55%" }, { x: "50%", y: "55%" },
             { x: "20%", y: "30%" }, { x: "85%", y: "42%" },
           ].map((n, i) => (
-            <div
-              key={i}
-              style={{
-                position: "absolute",
-                left: n.x,
-                top: n.y,
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                background: i % 2 === 0 ? "#A855F7" : "#818CF8",
-                transform: "translate(-50%, -50%)",
-              }}
-            />
+            <div key={i} style={{ position: "absolute", left: n.x, top: n.y, width: "8px", height: "8px", borderRadius: "50%", background: i % 2 === 0 ? "#A855F7" : "#818CF8", transform: "translate(-50%, -50%)" }} />
           ))}
-          {/* Concentric rings — unified strategy ghost */}
           <div style={{ position: "absolute", left: "72%", top: "55%", transform: "translate(-50%, -50%)" }}>
             {[80, 120, 160].map((s, i) => (
-              <div
-                key={i}
-                style={{
-                  position: "absolute",
-                  width: `${s}px`,
-                  height: `${s}px`,
-                  borderRadius: "50%",
-                  border: "1px solid",
-                  borderColor: i === 0 ? "#A855F7" : "#818CF8",
-                  left: `${-s / 2}px`,
-                  top: `${-s / 2}px`,
-                }}
-              />
+              <div key={i} style={{ position: "absolute", width: `${s}px`, height: `${s}px`, borderRadius: "50%", border: "1px solid", borderColor: i === 0 ? "#A855F7" : "#818CF8", left: `${-s / 2}px`, top: `${-s / 2}px` }} />
             ))}
           </div>
         </div>
 
         {/* Top-right glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-15%",
-            right: "-10%",
-            width: "50%",
-            height: "60%",
-            background: "radial-gradient(ellipse, rgba(168,85,247,0.08) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
+        <div style={{ position: "absolute", top: "-15%", right: "-10%", width: "50%", height: "60%", background: "radial-gradient(ellipse, rgba(168,85,247,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
 
-        {/* Content */}
-        <div
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            padding: "80px 80px",
-            position: "relative",
-            zIndex: 3,
-            width: "100%",
-          }}
-        >
-          <motion.div initial="hidden" animate="visible" variants={stagger}>
-            <motion.p
-              variants={fadeUp}
-              style={{
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-                fontSize: "11px",
-                fontWeight: 600,
-                letterSpacing: "0.35em",
-                textTransform: "uppercase",
-                color: "#C084FC",
-                marginBottom: "28px",
-              }}
-            >
-              {locale === "da" ? "AI Roadmap" : "AI Roadmap"}
-            </motion.p>
-
-            <motion.h1
-              variants={fadeUp}
-              style={{
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-                fontSize: "clamp(2.8rem, 5.5vw, 5rem)",
-                fontWeight: 800,
-                lineHeight: 1.08,
-                letterSpacing: "-0.03em",
-                color: "#FFFFFF",
-                marginBottom: "36px",
-                maxWidth: "780px",
-              }}
-            >
-              {locale === "da" ? (
-                <>
-                  Definer hvordan AI forvandler{" "}
-                  <br />
-                  <span
-                    style={{
-                      background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    jeres forretning til at vinde fremtiden.
-                  </span>
-                </>
-              ) : (
-                <>
-                  Define How AI Transforms{" "}
-                  <br />
-                  <span
-                    style={{
-                      background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    Your Business to Win the Future.
-                  </span>
-                </>
-              )}
-            </motion.h1>
-
-            <motion.p
-              variants={fadeUp}
-              style={{
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-                fontSize: "1.15rem",
-                color: "rgba(255,255,255,0.6)",
-                lineHeight: 1.7,
-                maxWidth: "520px",
-                marginBottom: "48px",
-              }}
-            >
-              {locale === "da"
-                ? "Vi forst\u00e5r jeres forretning og anvender en dyb forst\u00e5else af AI til at gentænke og styrke den \u2014 s\u00e5 I forlader med en klar, handlingsrettet retning fremad."
-                : "We understand your business and apply a deep understanding of AI to rethink and strengthen it \u2014 so you leave with a clear, actionable direction forward."}
-            </motion.p>
-
-            <motion.div variants={fadeUp}>
-              <Link
-                href={`/${locale}/workshop`}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  background: "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)",
-                  borderRadius: "100px",
-                  padding: "15px 34px",
-                  fontFamily: "var(--font-geist), system-ui, sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 700,
-                  color: "#FFFFFF",
-                  textDecoration: "none",
-                  letterSpacing: "0.02em",
-                  boxShadow: "0 8px 32px rgba(124,58,237,0.35)",
-                }}
-              >
-                {locale === "da" ? "Start med en workshop" : "Start With a Workshop"}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Bottom fade to white */}
+        {/* Bottom fade */}
         <div
           style={{
             position: "absolute",
             bottom: 0,
             left: 0,
             right: 0,
-            height: "160px",
-            background: "linear-gradient(to top, #FFFFFF 0%, transparent 100%)",
+            height: "180px",
+            background: "linear-gradient(0deg, rgba(5,4,10,0.98) 0%, transparent 100%)",
             zIndex: 2,
+            pointerEvents: "none",
           }}
         />
+
+        {/* Thin horizontal rule */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "min(1200px, calc(100% - 160px))",
+            height: "1px",
+            background: "linear-gradient(90deg, transparent 0%, rgba(168,85,247,0.15) 30%, rgba(129,140,248,0.10) 70%, transparent 100%)",
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Content */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
+          className="hero-content-wrap"
+        >
+          <motion.p
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "20px",
+              fontWeight: 700,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#C084FC",
+              marginBottom: "28px",
+            }}
+          >
+            AI Roadmap
+          </motion.p>
+
+          <motion.h1
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "clamp(2.8rem, 6vw, 5.8rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.05em",
+              lineHeight: 1.0,
+              color: "#F0EEF5",
+              marginBottom: "56px",
+            }}
+          >
+            {locale === "da" ? (
+              <>
+                Udfordr & omform
+                <br />
+                <span style={{ backgroundImage: "linear-gradient(135deg, #E879F9 0%, #A855F7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Jeres Forretning
+                </span>
+                <br />
+                {"til "}
+                <span style={{ backgroundImage: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  at Vinde Fremtiden.
+                </span>
+              </>
+            ) : (
+              <>
+                Challenge & Reshape
+                <br />
+                <span style={{ backgroundImage: "linear-gradient(135deg, #E879F9 0%, #A855F7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Your Business
+                </span>
+                <br />
+                {"to "}
+                <span style={{ backgroundImage: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Win the Future.
+                </span>
+              </>
+            )}
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontSize: "1.35rem",
+              lineHeight: 1.65,
+              color: "rgba(220,216,232,0.9)",
+              marginBottom: "8px",
+            }}
+          >
+            {locale === "da"
+              ? "Vi forstår jeres forretning og anvender en dyb forståelse af AI til at gentænke og styrke den."
+              : "We understand your business and apply a deep understanding of AI to rethink and strengthen it."}
+          </motion.p>
+
+          <motion.p
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontSize: "1.35rem",
+              lineHeight: 1.65,
+              color: "rgba(220,216,232,0.9)",
+              marginBottom: "64px",
+            }}
+          >
+            {locale === "da"
+              ? "Så I forlader med en klar, handlingsrettet retning fremad."
+              : "So you leave with a clear, actionable direction forward."}
+          </motion.p>
+
+          <motion.div variants={fadeUp}>
+            <Link
+              href={`/${locale}/workshop`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "16px 38px",
+                borderRadius: "60px",
+                background: "linear-gradient(135deg, rgba(168,85,247,0.8) 0%, rgba(129,140,248,0.85) 100%)",
+                color: "rgba(255,255,255,0.95)",
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                transition: "transform 0.2s, box-shadow 0.2s",
+                border: "1px solid rgba(168,85,247,0.15)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(168,85,247,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              {locale === "da" ? "Start med en workshop" : "Start With a Workshop"}
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
+          </motion.div>
+
+        </motion.div>
+
+        {/* Step indicator — absolute bottom center */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{ position: "absolute", bottom: "48px", left: "50%", transform: "translateX(-50%)", zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.5)", flexShrink: 0 }} />
+            <div style={{ width: "36px", height: "1px", background: "rgba(255,255,255,0.45)" }} />
+            <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "linear-gradient(135deg, #E879F9 0%, #A855F7 100%)", boxShadow: "0 0 10px rgba(168,85,247,0.6)", flexShrink: 0 }} />
+            <div style={{ width: "36px", height: "1px", background: "rgba(255,255,255,0.45)" }} />
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.5)", flexShrink: 0 }} />
+          </div>
+          <p style={{ fontFamily: "var(--font-geist), system-ui, sans-serif", fontSize: "10px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", whiteSpace: "nowrap" }}>
+            {locale === "da" ? "Trin 02 af 03  ·  Definer jeres fremtidige retning" : "Step 02 of 03  ·  Define Your Future Direction"}
+          </p>
+        </motion.div>
+
       </section>
 
       {/* ═══════════ UNIFIED STRATEGY ═══════════ */}
       <section style={{ background: "#FFFFFF", padding: "120px 0 140px" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -682,27 +717,229 @@ export default function AIRoadmapPage() {
         </div>
       </section>
 
-      {/* ═══════════ 8-STEP PROCESS ═══════════ */}
+      {/* ═══════════ 3-STEP PROCESS ═══════════ */}
       <section
         style={{
           background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-          padding: "140px 0",
+          padding: "clamp(72px, 10vw, 120px) 0",
           position: "relative",
           overflow: "hidden",
         }}
       >
         {/* Dot grid */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.08) 1px, transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
+        {/* Glow */}
+        <div style={{ position: "absolute", top: "-20%", right: "-10%", width: "50%", height: "80%", background: "radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
+
+        <div className="page-container" style={{ position: "relative" }}>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+
+            <motion.p
+              variants={fadeUp}
+              style={{
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
+                fontSize: "1rem",
+                lineHeight: 1.7,
+                color: "#94A3B8",
+                maxWidth: "540px",
+                marginBottom: "20px",
+              }}
+            >
+              {locale === "da"
+                ? "At gøre AI til en del af jeres forretning kræver en fokuseret plan."
+                : "Making AI a part of your business requires a focused plan."}
+            </motion.p>
+
+            <motion.h2
+              variants={fadeUp}
+              style={{
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.04em",
+                lineHeight: 1.1,
+                color: "#FFFFFF",
+                maxWidth: "700px",
+                marginBottom: "72px",
+              }}
+            >
+              {locale === "da" ? (
+                <>
+                  Jeres første skridt mod en klar{" "}
+                  <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                    handlingsplan og business case.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Your second step toward securing{" "}
+                  <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                    your future business.
+                  </span>
+                </>
+              )}
+            </motion.h2>
+
+            {/* Cards with flow arrows */}
+            <div className="workshop-steps-grid">
+              {[
+                {
+                  num: "01",
+                  title: "Discovery Workshop",
+                  desc: locale === "da"
+                    ? "Vores AI Workshop er det første skridt på jeres AI-rejse. Her får I ekspertvejledning i, hvordan AI kan skabe konkret værdi for jeres virksomhed."
+                    : "A focused, 1-day session to understand your business, explore where AI creates value, and identify where to start.",
+                  icon: (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 16v-4M12 8h.01" />
+                      <path d="M9 9a3 3 0 0 1 5.12-2.13" />
+                    </svg>
+                  ),
+                },
+                {
+                  num: "02",
+                  title: locale === "da" ? "Analyse, Planlægning & Business Case" : "Define Your Future Direction",
+                  desc: locale === "da"
+                    ? "Hvis vi sammen ser, at AI kan gavne jeres forretning, har I mulighed for at gå videre med en detaljeret, handlingsorienteret plan og et understøttende business case."
+                    : "We go deep into your business to challenge your current strategy, identify where AI creates the greatest impact, and define a clear roadmap forward.",
+                  icon: (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <path d="M14 2v6h6" />
+                      <path d="M16 13H8M16 17H8M10 9H8" />
+                    </svg>
+                  ),
+                },
+                {
+                  num: "03",
+                  title: locale === "da" ? "Udvikling & Eksekvering" : "Execution & Implementation",
+                  desc: locale === "da"
+                    ? "En plan vi kan hjælpe jer med at realisere — fra proof-of-concept til produktionsklar implementering med lokal forankring."
+                    : "We bring your roadmap to life — implementing solutions into your business and turning strategy into real operational impact.",
+                  icon: (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg>
+                  ),
+                },
+              ].map((step, idx) => {
+                const isActive = idx === 1;
+                return (
+                  <React.Fragment key={step.num}>
+                    <motion.div
+                      variants={fadeUp}
+                      style={{
+                        padding: "40px 36px",
+                        borderRadius: "20px",
+                        background: isActive ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)",
+                        border: isActive ? "1px solid rgba(192,38,211,0.25)" : "1px solid rgba(255,255,255,0.06)",
+                        backdropFilter: "blur(8px)",
+                        transition: "border-color 0.3s, background 0.3s",
+                        position: "relative",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = isActive ? "rgba(192,38,211,0.45)" : "rgba(124,58,237,0.25)";
+                        e.currentTarget.style.background = isActive ? "rgba(192,38,211,0.12)" : "rgba(255,255,255,0.05)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = isActive ? "rgba(192,38,211,0.25)" : "rgba(255,255,255,0.06)";
+                        e.currentTarget.style.background = isActive ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)";
+                      }}
+                    >
+                      {isActive && (
+                        <div style={{
+                          position: "absolute",
+                          top: "-1px",
+                          left: "36px",
+                          right: "36px",
+                          height: "2px",
+                          background: "linear-gradient(90deg, #C026D3, #9333EA)",
+                          borderRadius: "0 0 2px 2px",
+                        }} />
+                      )}
+                      <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}>
+                        <div style={{
+                          width: "52px",
+                          height: "52px",
+                          borderRadius: "14px",
+                          background: isActive
+                            ? "linear-gradient(135deg, rgba(192,38,211,0.25) 0%, rgba(147,51,234,0.2) 100%)"
+                            : "linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.15) 100%)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: isActive ? "#C026D3" : "#7C3AED",
+                        }}>
+                          {step.icon}
+                        </div>
+                        <span style={{
+                          fontFamily: "var(--font-geist), system-ui, sans-serif",
+                          fontSize: "0.7rem",
+                          fontWeight: 700,
+                          letterSpacing: "0.12em",
+                          color: isActive ? "rgba(192,38,211,0.8)" : "rgba(124,58,237,0.6)",
+                        }}>
+                          {locale === "da" ? `TRIN ${step.num}` : `STEP ${step.num}`}
+                        </span>
+                      </div>
+                      <h3 style={{
+                        fontFamily: "var(--font-geist), system-ui, sans-serif",
+                        fontSize: "1.15rem",
+                        fontWeight: 700,
+                        letterSpacing: "-0.02em",
+                        color: "#FFFFFF",
+                        marginBottom: "16px",
+                      }}>
+                        {step.title}
+                      </h3>
+                      <p style={{
+                        fontFamily: "var(--font-inter), system-ui, sans-serif",
+                        fontSize: "0.92rem",
+                        lineHeight: 1.7,
+                        color: "#94A3B8",
+                      }}>
+                        {step.desc}
+                      </p>
+                    </motion.div>
+
+                    {idx < 2 && (
+                      <div className="workshop-step-arrow" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 8px", alignSelf: "center" }}>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <path d="M8 16h16M20 10l6 6-6 6" stroke="rgba(192,38,211,0.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ 8-STEP PROCESS ═══════════ */}
+      <section
+        style={{
+          background: "#FFFFFF",
+          padding: "clamp(80px, 11vw, 140px) 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Dot grid — very subtle on white */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "radial-gradient(circle, rgba(168,85,247,0.05) 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.04) 1px, transparent 1px)",
             backgroundSize: "48px 48px",
             pointerEvents: "none",
           }}
         />
 
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px", position: "relative" }}>
+        <div className="page-container" style={{ position: "relative" }}>
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -718,7 +955,7 @@ export default function AIRoadmapPage() {
                 fontWeight: 600,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
-                color: "#C084FC",
+                color: "#A855F7",
                 marginBottom: "20px",
               }}
             >
@@ -732,7 +969,7 @@ export default function AIRoadmapPage() {
                 fontWeight: 800,
                 lineHeight: 1.15,
                 letterSpacing: "-0.02em",
-                color: "#FFFFFF",
+                color: "#0A0F1E",
               }}
             >
               {locale === "da" ? (
@@ -759,11 +996,7 @@ export default function AIRoadmapPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "0 64px",
-            }}
+            className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "0 clamp(32px, 5vw, 64px)" }}
           >
             {steps.map((step, i) => (
               <motion.div
@@ -773,7 +1006,7 @@ export default function AIRoadmapPage() {
                   display: "flex",
                   gap: "24px",
                   padding: "36px 0",
-                  borderBottom: i < 6 ? "1px solid rgba(255,255,255,0.06)" : i === 6 || i === 7 ? "none" : "1px solid rgba(255,255,255,0.06)",
+                  borderBottom: i < 6 ? "1px solid #F3F4F6" : i === 6 || i === 7 ? "none" : "1px solid #F3F4F6",
                 }}
               >
                 {/* Step number */}
@@ -784,14 +1017,14 @@ export default function AIRoadmapPage() {
                     height: "48px",
                     borderRadius: "12px",
                     background: `linear-gradient(135deg, rgba(168,85,247,${0.08 + i * 0.02}) 0%, rgba(129,140,248,${0.06 + i * 0.015}) 100%)`,
-                    border: "1px solid rgba(168,85,247,0.15)",
+                    border: "1px solid rgba(168,85,247,0.2)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontFamily: "var(--font-geist), system-ui, sans-serif",
                     fontSize: "14px",
                     fontWeight: 700,
-                    color: "#C084FC",
+                    color: "#7C3AED",
                   }}
                 >
                   {step.num}
@@ -802,7 +1035,7 @@ export default function AIRoadmapPage() {
                       fontFamily: "var(--font-geist), system-ui, sans-serif",
                       fontSize: "1.05rem",
                       fontWeight: 700,
-                      color: "#FFFFFF",
+                      color: "#0A0F1E",
                       marginBottom: "8px",
                     }}
                   >
@@ -812,7 +1045,7 @@ export default function AIRoadmapPage() {
                     style={{
                       fontFamily: "var(--font-geist), system-ui, sans-serif",
                       fontSize: "0.9rem",
-                      color: "rgba(255,255,255,0.45)",
+                      color: "#6B7280",
                       lineHeight: 1.7,
                     }}
                   >
@@ -826,14 +1059,14 @@ export default function AIRoadmapPage() {
       </section>
 
       {/* ═══════════ MATURITY ASSESSMENT ═══════════ */}
-      <section style={{ background: "#FFFFFF", padding: "140px 0" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+      <section style={{ background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)", padding: "clamp(80px, 11vw, 140px) 0" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "100px", alignItems: "center" }}
+            className="about-grid" style={{ gap: "clamp(40px, 8vw, 100px)", alignItems: "center" }}
           >
             {/* Left: text */}
             <motion.div variants={fadeUp}>
@@ -844,7 +1077,7 @@ export default function AIRoadmapPage() {
                   fontWeight: 600,
                   letterSpacing: "0.3em",
                   textTransform: "uppercase",
-                  color: "#A855F7",
+                  color: "#C084FC",
                   marginBottom: "20px",
                 }}
               >
@@ -857,7 +1090,7 @@ export default function AIRoadmapPage() {
                   fontWeight: 800,
                   lineHeight: 1.15,
                   letterSpacing: "-0.02em",
-                  color: "#0A0F1E",
+                  color: "#FFFFFF",
                   marginBottom: "24px",
                 }}
               >
@@ -869,7 +1102,7 @@ export default function AIRoadmapPage() {
                 style={{
                   fontFamily: "var(--font-geist), system-ui, sans-serif",
                   fontSize: "1.05rem",
-                  color: "#6B7280",
+                  color: "#94A3B8",
                   lineHeight: 1.8,
                 }}
               >
@@ -890,7 +1123,7 @@ export default function AIRoadmapPage() {
                       alignItems: "center",
                       gap: "24px",
                       padding: "22px 0",
-                      borderBottom: i < maturity.length - 1 ? "1px solid #F3F4F6" : "none",
+                      borderBottom: i < maturity.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
                     }}
                   >
                     {/* Progress bar */}
@@ -899,7 +1132,7 @@ export default function AIRoadmapPage() {
                         style={{
                           height: "6px",
                           borderRadius: "3px",
-                          background: "#F3F4F6",
+                          background: "rgba(255,255,255,0.08)",
                           overflow: "hidden",
                         }}
                       >
@@ -920,7 +1153,7 @@ export default function AIRoadmapPage() {
                           fontFamily: "var(--font-geist), system-ui, sans-serif",
                           fontSize: "0.95rem",
                           fontWeight: 700,
-                          color: "#0A0F1E",
+                          color: "#FFFFFF",
                           display: "block",
                           marginBottom: "2px",
                         }}
@@ -931,7 +1164,7 @@ export default function AIRoadmapPage() {
                         style={{
                           fontFamily: "var(--font-geist), system-ui, sans-serif",
                           fontSize: "0.8rem",
-                          color: "#9CA3AF",
+                          color: "#94A3B8",
                         }}
                       >
                         {m.desc}
@@ -948,21 +1181,20 @@ export default function AIRoadmapPage() {
       {/* ═══════════ FAQ ═══════════ */}
       <section
         style={{
-          background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-          padding: "140px 0",
+          background: "#FFFFFF",
+          padding: "clamp(80px, 11vw, 140px) 0",
           position: "relative",
         }}
       >
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
+            className="about-grid"
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1.5fr",
-              gap: "100px",
+              gap: "clamp(40px, 8vw, 100px)",
               alignItems: "start",
             }}
           >
@@ -972,11 +1204,11 @@ export default function AIRoadmapPage() {
                 variants={fadeUp}
                 style={{
                   fontFamily: "var(--font-geist), system-ui, sans-serif",
-                  fontSize: "11px",
-                  fontWeight: 600,
-                  letterSpacing: "0.3em",
+                  fontSize: "22px",
+                  fontWeight: 800,
+                  letterSpacing: "0.15em",
                   textTransform: "uppercase",
-                  color: "#C084FC",
+                  color: "#0A0F1E",
                   marginBottom: "20px",
                 }}
               >
@@ -990,26 +1222,18 @@ export default function AIRoadmapPage() {
                   fontWeight: 800,
                   lineHeight: 1.15,
                   letterSpacing: "-0.02em",
-                  color: "#FFFFFF",
+                  color: "#0A0F1E",
                   marginBottom: "32px",
                 }}
               >
                 {locale === "da" ? (
-                  <>
-                    {"FAQ"}
-                    <br />
-                    <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                      {"Om AI-strategier & Roadmaps"}
-                    </span>
-                  </>
+                  <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                    {"Spørgsmål om jeres AI-rejse"}
+                  </span>
                 ) : (
-                  <>
-                    {"FAQ"}
-                    <br />
-                    <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                      {"About AI Strategies & Roadmaps"}
-                    </span>
-                  </>
+                  <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                    {"Questions About Your AI Journey"}
+                  </span>
                 )}
               </motion.h2>
               <motion.div variants={fadeUp} style={{ display: "flex", flexDirection: "column" as const, gap: "10px" }}>
@@ -1030,7 +1254,7 @@ export default function AIRoadmapPage() {
                     style={{
                       fontFamily: "var(--font-geist), system-ui, sans-serif",
                       fontSize: "0.9rem",
-                      color: "rgba(192,132,252,0.7)",
+                      color: "#A855F7",
                       fontWeight: 500,
                     }}
                   >
@@ -1046,7 +1270,7 @@ export default function AIRoadmapPage() {
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={stagger}
-              style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+              style={{ borderTop: "1px solid #E5E7EB" }}
             >
               {faqs.map((faq, i) => (
                 <FAQItem key={i} q={faq.q} a={faq.a} links={faq.links} locale={locale} index={i} />
@@ -1057,14 +1281,14 @@ export default function AIRoadmapPage() {
       </section>
 
       {/* ═══════════ FINAL CTA ═══════════ */}
-      <section style={{ background: "#FFFFFF", padding: "140px 0" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+      <section style={{ background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)", padding: "clamp(80px, 11vw, 140px) 0" }}>
+        <div className="page-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            style={{ maxWidth: "640px" }}
+            style={{ maxWidth: "640px", margin: "0 auto", textAlign: "center" }}
           >
             <motion.p
               variants={fadeUp}
@@ -1074,7 +1298,7 @@ export default function AIRoadmapPage() {
                 fontWeight: 600,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
-                color: "#A855F7",
+                color: "#C084FC",
                 marginBottom: "24px",
               }}
             >
@@ -1088,7 +1312,7 @@ export default function AIRoadmapPage() {
                 fontWeight: 800,
                 lineHeight: 1.15,
                 letterSpacing: "-0.02em",
-                color: "#0A0F1E",
+                color: "#FFFFFF",
                 marginBottom: "24px",
               }}
             >
@@ -1101,7 +1325,7 @@ export default function AIRoadmapPage() {
               style={{
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
                 fontSize: "1.1rem",
-                color: "#6B7280",
+                color: "#94A3B8",
                 lineHeight: 1.8,
                 marginBottom: "48px",
               }}
@@ -1110,7 +1334,7 @@ export default function AIRoadmapPage() {
                 ? "Start med klarhed. Vores AI Workshop er det f\u00f8rste skridt mod en struktureret AI-strategi, der skaber reel v\u00e6rdi."
                 : "Start with clarity. Our AI Workshop is the first step toward a structured AI strategy that creates real value."}
             </motion.p>
-            <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+            <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
               <Link
                 href={`/${locale}/workshop`}
                 style={{
@@ -1141,13 +1365,13 @@ export default function AIRoadmapPage() {
                   alignItems: "center",
                   gap: "10px",
                   background: "transparent",
-                  border: "1px solid #E5E7EB",
+                  border: "1px solid rgba(255,255,255,0.15)",
                   borderRadius: "100px",
                   padding: "16px 36px",
                   fontFamily: "var(--font-geist), system-ui, sans-serif",
                   fontSize: "15px",
                   fontWeight: 600,
-                  color: "#374151",
+                  color: "rgba(255,255,255,0.75)",
                   textDecoration: "none",
                   letterSpacing: "0.02em",
                 }}

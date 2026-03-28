@@ -321,13 +321,10 @@ export default function Opportunity() {
 
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-24 flex items-center"
       style={{
         background: "linear-gradient(to bottom, #0d1e38 0%, #070c18 28%, #04080f 50%, #070c18 72%, #0d1e38 100%)",
         minHeight: "80vh",
-        display: "flex",
-        alignItems: "center",
-        padding: "100px 0",
       }}
     >
       {/* Ambient background layers */}
@@ -366,7 +363,7 @@ export default function Opportunity() {
       <div className="opportunity-grid relative z-10">
 
         {/* ── LEFT: Text — intentionally higher */}
-        <div style={{ maxWidth: "520px", marginTop: "60px", marginLeft: "100px" }}>
+        <div className="ml-0 lg:ml-24 mt-0 lg:mt-[60px]" style={{ maxWidth: "520px" }}>
 
           {/* Micro label */}
           <motion.p
@@ -561,16 +558,14 @@ export default function Opportunity() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, delay: 0.25, ease: "easeOut" }}
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            paddingTop: "40px",
-            marginRight: "-60px",
-            overflow: "visible",
-          }}
+          className="flex justify-center lg:justify-end items-start mr-0 lg:-mr-16 overflow-visible"
         >
-          <LivingOrbit t={t} activeState={activeState} />
+          {/* CSS class handles responsive scaling via calc(px/px) = unitless ratio */}
+          <div className="orbit-scale-container">
+            <div className="orbit-scale-inner">
+              <LivingOrbit t={t} activeState={activeState} />
+            </div>
+          </div>
         </motion.div>
 
       </div>

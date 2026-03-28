@@ -25,7 +25,7 @@ export default function WorkshopProcess() {
       desc:
         locale === "da"
           ? "Vores AI Workshop er det første skridt på jeres AI-rejse. Her får I ekspertvejledning i, hvordan AI kan skabe konkret værdi for jeres virksomhed."
-          : "Our AI Workshop serves as the first step in your AI advisory journey. Here, you gain expert guidance on how AI can create tangible value for your business.",
+          : "A focused, 1-day session to understand your business, explore where AI creates value, and identify where to start.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
@@ -36,11 +36,11 @@ export default function WorkshopProcess() {
     },
     {
       num: "02",
-      title: locale === "da" ? "Analyse, Planlægning & Business Case" : "Analysis, Planning & Business Case",
+      title: locale === "da" ? "Analyse, Planlægning & Business Case" : "Define Your Future Direction",
       desc:
         locale === "da"
           ? "Hvis vi sammen ser, at AI kan gavne jeres forretning, har I mulighed for at gå videre med en detaljeret, handlingsorienteret plan og et understøttende business case."
-          : "If together we see that AI can benefit your business, you'll have the option to move forward with a detailed, actionable plan and supporting business case.",
+          : "We go deep into your business to challenge your current strategy, identify where AI creates the greatest impact, and define a clear roadmap forward.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -51,11 +51,11 @@ export default function WorkshopProcess() {
     },
     {
       num: "03",
-      title: locale === "da" ? "Udvikling & Eksekvering" : "Development & Execution",
+      title: locale === "da" ? "Udvikling & Eksekvering" : "Execution & Implementation",
       desc:
         locale === "da"
           ? "En plan vi kan hjælpe jer med at realisere — fra proof-of-concept til produktionsklar implementering med lokal forankring."
-          : "A plan we can help you bring to life — from proof-of-concept to production-ready implementation with local accountability.",
+          : "We bring your roadmap to life — implementing solutions into your business and turning strategy into real operational impact.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -68,7 +68,7 @@ export default function WorkshopProcess() {
     <section
       style={{
         background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-        padding: "120px 0",
+        padding: "clamp(72px, 10vw, 120px) 0",
         position: "relative",
         overflow: "hidden",
       }}
@@ -78,7 +78,7 @@ export default function WorkshopProcess() {
       {/* Glow */}
       <div style={{ position: "absolute", top: "-20%", right: "-10%", width: "50%", height: "80%", background: "radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
 
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 80px", position: "relative" }}>
+      <div className="page-container" style={{ position: "relative" }}>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
 
           <motion.p
@@ -119,16 +119,16 @@ export default function WorkshopProcess() {
               </>
             ) : (
               <>
-                Your first step toward a clear{" "}
+                Your first step toward securing{" "}
                 <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  action plan and business case.
+                  your future business.
                 </span>
               </>
             )}
           </motion.h2>
 
           {/* Cards with flow arrows */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr auto 1fr", gap: "0", alignItems: "stretch" }}>
+          <div className="workshop-steps-grid">
             {STEPS.map((step, idx) => {
               const isFirst = idx === 0;
               return (
@@ -214,7 +214,7 @@ export default function WorkshopProcess() {
 
                   {/* Flow arrow */}
                   {idx < STEPS.length - 1 && (
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 8px", alignSelf: "center" }}>
+                    <div className="workshop-step-arrow" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 8px", alignSelf: "center" }}>
                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path d="M8 16h16M20 10l6 6-6 6" stroke="rgba(192,38,211,0.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>

@@ -12,11 +12,9 @@ export default function News() {
 
   return (
     <section
+      className="py-20 lg:py-28 relative overflow-hidden"
       style={{
         background: "linear-gradient(160deg, #F0FDF4 0%, #F8FAFC 50%, #ECFDF5 100%)",
-        padding: "120px 0 140px",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
       {/* Subtle top separator */}
@@ -58,13 +56,7 @@ export default function News() {
         }}
       />
 
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 80px",
-        }}
-      >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-20">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,9 +102,9 @@ export default function News() {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           whileHover={{ y: -6 }}
+          className="news-card"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
             borderRadius: "24px",
             overflow: "hidden",
             background: "#fff",
@@ -134,8 +126,8 @@ export default function News() {
         >
           {/* Left — text content */}
           <div
+            className="p-8 sm:p-10 lg:p-[52px]"
             style={{
-              padding: "52px 52px 48px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -281,9 +273,9 @@ export default function News() {
 
           {/* Right — photo */}
           <div
+            className="min-h-48 sm:min-h-64 lg:min-h-[380px]"
             style={{
               position: "relative",
-              minHeight: "380px",
               overflow: "hidden",
               display: "flex",
               alignItems: "center",
