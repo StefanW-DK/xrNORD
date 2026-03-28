@@ -287,6 +287,7 @@ export default function AIRoadmapPage() {
 
       {/* ═══════════ HERO ═══════════ */}
       <section
+        suppressHydrationWarning
         style={{
           position: "relative",
           width: "100%",
