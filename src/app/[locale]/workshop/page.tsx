@@ -336,7 +336,7 @@ export default function WorkshopPage() {
             <div style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.5)", flexShrink: 0 }} />
           </div>
           <p style={{ fontFamily: "var(--font-geist), system-ui, sans-serif", fontSize: "10px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", textAlign: "center" }}>
-            {locale === "da" ? "Trin 01 af 03  ·  Discovery Workshop" : "Step 01 of 03  ·  Discovery Workshop"}
+            {locale === "da" ? "Trin 1 af 3  ·  Discovery Workshop" : "Step 1 of 3  ·  Discovery Workshop"}
           </p>
         </motion.div>
 

@@ -376,7 +376,7 @@ export default function InterviewsPage() {
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
-            padding: "0 clamp(16px, 6.25vw, 80px) 120px",
+            padding: "0 clamp(16px, 6.25vw, 80px) 200px",
             position: "relative",
             zIndex: 3,
             width: "100%",

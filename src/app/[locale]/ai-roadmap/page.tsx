@@ -291,8 +291,8 @@ export default function AIRoadmapPage() {
           position: "relative",
           width: "100%",
           height: "100vh",
-          minHeight: "600px",
-          maxHeight: "900px",
+          minHeight: "700px",
+          maxHeight: "1000px",
           overflow: "hidden",
         }}
       >
@@ -505,7 +505,7 @@ export default function AIRoadmapPage() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          style={{ position: "absolute", bottom: "48px", left: "50%", transform: "translateX(-50%)", zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}
+          style={{ position: "absolute", bottom: "48px", left: 0, right: 0, zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px" }}
         >
           <div style={{ display: "flex", alignItems: "center" }}>
             <div style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.5)", flexShrink: 0 }} />
@@ -515,7 +515,7 @@ export default function AIRoadmapPage() {
             <div style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.5)", flexShrink: 0 }} />
           </div>
           <p style={{ fontFamily: "var(--font-geist), system-ui, sans-serif", fontSize: "10px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", whiteSpace: "nowrap" }}>
-            {locale === "da" ? "Trin 02 af 03  ·  Definer jeres fremtidige retning" : "Step 02 of 03  ·  Define Your Future Direction"}
+            {locale === "da" ? "Trin 2 af 3  ·  Definer jeres fremtidige retning" : "Step 2 of 3  ·  Define Your Future Direction"}
           </p>
         </motion.div>
 
