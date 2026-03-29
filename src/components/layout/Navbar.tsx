@@ -27,7 +27,6 @@ export default function Navbar() {
       dropdown: [
         { label: t("interviews"), href: `/${locale}/why-ai/interviews` },
         { label: t("articles"), href: `/${locale}/why-ai/articles` },
-        { label: t("reinvent"), href: `/${locale}/why-ai/reinvent` },
       ],
     },
     { label: t("workshop"), href: `/${locale}/workshop` },
