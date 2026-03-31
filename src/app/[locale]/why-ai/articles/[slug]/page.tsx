@@ -5,9 +5,46 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import type { Metadata } from "next";
+import { BASE_URL } from "@/config/metadata";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const article = getArticle(locale, slug);
+  if (!article) return {};
+
+  const url = `${BASE_URL}/${locale}/why-ai/articles/${slug}`;
+  const otherLocale = locale === "en" ? "da" : "en";
+  const otherUrl = `${BASE_URL}/${otherLocale}/why-ai/articles/${slug}`;
+
+  return {
+    title: `${article.title} | xrNORD`,
+    description: article.excerpt,
+    alternates: {
+      canonical: url,
+      languages: {
+        en: locale === "en" ? url : otherUrl,
+        da: locale === "da" ? url : otherUrl,
+        "x-default": `${BASE_URL}/en/why-ai/articles/${slug}`,
+      },
+    },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url,
+      type: "article",
+      siteName: "xrNORD",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+    },
+  };
 }
 
 export async function generateStaticParams() {
