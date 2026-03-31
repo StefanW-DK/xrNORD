@@ -43,3 +43,4 @@ next-env.d.ts
 # Large video files
 public/videos/
 public/assets/home/why/*.mp4
+!public/assets/home/why/xrNORD_interview.mp4
