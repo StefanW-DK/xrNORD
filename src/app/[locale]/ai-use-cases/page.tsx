@@ -286,13 +286,13 @@ export default function AiUseCasesPage() {
       <section
         style={{
           position: "relative",
-          minHeight: 520,
+          minHeight: "clamp(520px, 85vh, 780px)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           background: "linear-gradient(135deg, #0B0F1A 0%, #141829 50%, #1A1040 100%)",
           overflow: "hidden",
-          padding: "clamp(100px, 12vw, 140px) 24px clamp(48px, 6vw, 80px)",
+          padding: "clamp(100px, 12vw, 160px) 24px clamp(60px, 8vw, 100px)",
         }}
       >
         {/* Ambient glow */}
@@ -313,7 +313,7 @@ export default function AiUseCasesPage() {
           variants={stagger}
           initial="hidden"
           animate="visible"
-          style={{ position: "relative", zIndex: 1, maxWidth: 860, textAlign: "center" }}
+          style={{ position: "relative", zIndex: 1, maxWidth: 1100, textAlign: "center" }}
         >
           {/* Label */}
           <motion.p
@@ -334,7 +334,7 @@ export default function AiUseCasesPage() {
           <motion.h1
             variants={fadeUp}
             style={{
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
+              fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)",
               fontWeight: 800,
               lineHeight: 1.12,
               color: "#fff",
@@ -373,39 +373,90 @@ export default function AiUseCasesPage() {
           {/* Filter Pills */}
           <motion.div
             variants={fadeUp}
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 10,
-              justifyContent: "center",
-            }}
+            style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}
           >
-            {CATEGORIES.map((cat) => {
-              const isActive = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => scrollToSection(cat.id)}
-                  style={{
-                    padding: "10px 20px",
-                    borderRadius: 999,
-                    border: isActive ? "1px solid transparent" : "1px solid rgba(255,255,255,0.2)",
-                    background: isActive
-                      ? "linear-gradient(135deg, #A855F7, #818CF8)"
-                      : "transparent",
-                    color: isActive ? "#fff" : "rgba(255,255,255,0.7)",
-                    fontSize: 14,
-                    fontWeight: 600,
-                    cursor: "pointer",
-                    transition: "all 0.25s ease",
-                    fontFamily: "var(--font-geist), sans-serif",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {t(cat.title)}
-                </button>
-              );
-            })}
+            {/* Row 1: first 3 */}
+            <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "nowrap" }}>
+              {CATEGORIES.slice(0, 3).map((cat) => {
+                const isActive = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => scrollToSection(cat.id)}
+                    style={{
+                      padding: "10px 20px",
+                      borderRadius: 999,
+                      border: isActive ? "1px solid transparent" : "1px solid rgba(255,255,255,0.2)",
+                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "transparent",
+                      color: isActive ? "#fff" : "rgba(255,255,255,0.7)",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      transition: "all 0.25s ease",
+                      fontFamily: "var(--font-geist), sans-serif",
+                      whiteSpace: "nowrap",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background = "linear-gradient(135deg, #A855F7, #818CF8)";
+                        e.currentTarget.style.color = "#fff";
+                        e.currentTarget.style.border = "1px solid transparent";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+                        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.2)";
+                      }
+                    }}
+                  >
+                    {t(cat.title)}
+                  </button>
+                );
+              })}
+            </div>
+            {/* Row 2: last 2 */}
+            <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "nowrap" }}>
+              {CATEGORIES.slice(3).map((cat) => {
+                const isActive = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => scrollToSection(cat.id)}
+                    style={{
+                      padding: "10px 20px",
+                      borderRadius: 999,
+                      border: isActive ? "1px solid transparent" : "1px solid rgba(255,255,255,0.2)",
+                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "transparent",
+                      color: isActive ? "#fff" : "rgba(255,255,255,0.7)",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      transition: "all 0.25s ease",
+                      fontFamily: "var(--font-geist), sans-serif",
+                      whiteSpace: "nowrap",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background = "linear-gradient(135deg, #A855F7, #818CF8)";
+                        e.currentTarget.style.color = "#fff";
+                        e.currentTarget.style.border = "1px solid transparent";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+                        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.2)";
+                      }
+                    }}
+                  >
+                    {t(cat.title)}
+                  </button>
+                );
+              })}
+            </div>
           </motion.div>
         </motion.div>
       </section>

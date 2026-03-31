@@ -29,8 +29,6 @@ const nextConfig: NextConfig = {
       { source: "/da/ai-workshop-booking",destination: "/da/book-workshop",     permanent: true },
       { source: "/da/usecases",           destination: "/da/ai-use-cases",      permanent: true },
       { source: "/da/blog",               destination: "/da/why-ai/articles",   permanent: true },
-      { source: "/da/about",              destination: "/da/about",             permanent: true },
-      { source: "/da/contact",            destination: "/da/contact",           permanent: true },
 
       // ── Extra DA pages found in Search Console ──────────────────────────────
       { source: "/da/reinvent",           destination: "/da/ai-roadmap",        permanent: true },

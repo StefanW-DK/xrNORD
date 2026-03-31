@@ -406,15 +406,13 @@ export default function AIRoadmapPage() {
           >
             {locale === "da" ? (
               <>
-                Udfordr & omform
-                <br />
+                {"Gentænk "}
                 <span style={{ backgroundImage: "linear-gradient(135deg, #E879F9 0%, #A855F7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  Jeres Forretning
+                  jeres forretning
                 </span>
                 <br />
-                {"til "}
                 <span style={{ backgroundImage: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  at Vinde Fremtiden.
+                  og vind fremtiden
                 </span>
               </>
             ) : (
@@ -975,9 +973,9 @@ export default function AIRoadmapPage() {
             >
               {locale === "da" ? (
                 <>
-                  8 skridt fra forst\u00e5else til{" "}
+                  {"8 trin - Fra forståelse til "}
                   <span style={{ background: "linear-gradient(135deg, #E879F9, #A855F7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                    eksekvering.
+                    eksekvering
                   </span>
                 </>
               ) : (
@@ -1229,11 +1227,11 @@ export default function AIRoadmapPage() {
               >
                 {locale === "da" ? (
                   <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                    {"Spørgsmål om jeres AI-rejse"}
+                    {"Af alle svar, så husk dette"}
                   </span>
                 ) : (
                   <span style={{ background: "linear-gradient(135deg, #C084FC, #818CF8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                    {"Questions About Your AI Journey"}
+                    {"Of all the answers, remember this"}
                   </span>
                 )}
               </motion.h2>
