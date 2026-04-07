@@ -421,6 +421,7 @@ html {
   }
 }
 
+
 /* ── Opportunity H2 — DA locale desktop: scale down so both lines fit ─ */
 @media (min-width: 1024px) {
   [lang="da"] .opportunity-h2 {
