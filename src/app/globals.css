@@ -386,6 +386,7 @@ html {
   }
 }
 
+
 /* ── Interview / article cards grid ────────────────────── */
 .interview-grid {
   display: grid;
@@ -417,6 +418,26 @@ html {
 @media (min-width: 640px) {
   .contact-row {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Opportunity H2 — DA locale desktop: scale down so both lines fit ─ */
+@media (min-width: 1024px) {
+  [lang="da"] .opportunity-h2 {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* ── Opportunity section — mobile type scale ────────────── */
+@media (max-width: 640px) {
+  .opportunity-subtitle {
+    font-size: 0.95rem !important;
+  }
+  .opportunity-statement {
+    font-size: 1.55rem !important;
+  }
+  .opportunity-statement-wrap {
+    height: 48px !important;
   }
 }
 

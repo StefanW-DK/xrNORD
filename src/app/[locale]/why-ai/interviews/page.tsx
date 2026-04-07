@@ -6,6 +6,25 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
 
+type HeroLayout = "normal" | "short" | "mobile";
+
+function useHeroLayout(): HeroLayout {
+  const [layout, setLayout] = useState<HeroLayout>("normal");
+  React.useEffect(() => {
+    const check = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      if (w < 768) setLayout("mobile");
+      else if (h <= 900 && w >= 1024) setLayout("short");
+      else setLayout("normal");
+    };
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return layout;
+}
+
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: {
@@ -293,6 +312,7 @@ function InterviewCard({
 
 export default function InterviewsPage() {
   const locale = useLocale();
+  const heroLayout = useHeroLayout();
 
   return (
     <>
@@ -304,7 +324,7 @@ export default function InterviewsPage() {
           position: "relative",
           minHeight: "92vh",
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: heroLayout === "normal" ? "flex-end" : "flex-start",
           overflow: "hidden",
           background: "#020510",
         }}
@@ -376,7 +396,12 @@ export default function InterviewsPage() {
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
-            padding: "0 clamp(16px, 6.25vw, 80px) 260px",
+            padding:
+              heroLayout === "mobile"
+                ? `120px clamp(16px, 5vw, 32px) 60px`
+                : heroLayout === "short"
+                ? `180px clamp(16px, 6.25vw, 80px) 60px`
+                : `0 clamp(16px, 6.25vw, 80px) 260px`,
             position: "relative",
             zIndex: 3,
             width: "100%",

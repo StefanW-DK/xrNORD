@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 /* ── State definitions — one node per state, clockwise ─── */
@@ -301,6 +301,7 @@ function OrbitNode({
 /* ── Main Section ───────────────────────────────────────── */
 export default function Opportunity() {
   const t = useTranslations("opportunity");
+  const locale = useLocale();
   const [activeState, setActiveState] = useState(0);
 
   const cycleState = useCallback(() => {
@@ -321,7 +322,7 @@ export default function Opportunity() {
 
   return (
     <section
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-24 flex items-center"
+      className="relative overflow-hidden py-20 sm:py-28 lg:py-24 flex items-center"
       style={{
         background: "linear-gradient(to bottom, #0d1e38 0%, #070c18 28%, #04080f 50%, #070c18 72%, #0d1e38 100%)",
         minHeight: "80vh",
@@ -363,7 +364,7 @@ export default function Opportunity() {
       <div className="opportunity-grid relative z-10">
 
         {/* ── LEFT: Text — intentionally higher */}
-        <div className="ml-0 lg:ml-24 mt-0 lg:mt-[60px]" style={{ maxWidth: "520px" }}>
+        <div className="ml-0 lg:ml-24 mt-0 lg:mt-[60px] text-center sm:text-left" style={{ maxWidth: "520px" }}>
 
           {/* Micro label */}
           <motion.p
@@ -390,9 +391,12 @@ export default function Opportunity() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.08 }}
+            className="opportunity-h2"
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
-              fontSize: "clamp(2.6rem, 5vw, 3.8rem)",
+              fontSize: locale === "da"
+                ? "clamp(2.6rem, 3.5vw, 2.5rem)"
+                : "clamp(2.6rem, 5vw, 3.8rem)",
               fontWeight: 700,
               lineHeight: 1.08,
               letterSpacing: "-0.035em",
@@ -418,6 +422,7 @@ export default function Opportunity() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.14 }}
+            className="opportunity-subtitle"
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: "1.15rem",
@@ -441,7 +446,7 @@ export default function Opportunity() {
               fontSize: "1.05rem",
               fontWeight: 500,
               color: "rgba(255,255,255,0.85)",
-              marginBottom: "16px",
+              marginBottom: "24px",
               letterSpacing: "0.01em",
             }}
           >
@@ -449,7 +454,7 @@ export default function Opportunity() {
           </motion.p>
 
           {/* Dynamic cycling statement — prominent with glow */}
-          <div style={{ height: "72px", position: "relative" }}>
+          <div className="opportunity-statement-wrap" style={{ height: "60px", position: "relative" }}>
             <AnimatePresence mode="wait">
               <motion.p
                 key={activeState}
@@ -457,6 +462,7 @@ export default function Opportunity() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -16, filter: "blur(6px)" }}
                 transition={{ duration: 0.75, ease: [0.22, 0.1, 0.25, 1] }}
+                className="opportunity-statement"
                 style={{
                   fontFamily: "var(--font-geist), system-ui, sans-serif",
                   fontSize: "2rem",
@@ -472,7 +478,7 @@ export default function Opportunity() {
           </div>
 
           {/* Progress indicators */}
-          <div className="flex gap-2" style={{ marginTop: "20px" }}>
+          <div className="flex gap-2 justify-center sm:justify-start" style={{ marginTop: "12px" }}>
             {[0, 1, 2].map((i) => (
               <button
                 key={i}
@@ -510,7 +516,8 @@ export default function Opportunity() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            style={{ marginTop: "32px" }}
+            className="flex justify-center sm:justify-start"
+            style={{ marginTop: "72px" }}
           >
             <a
               href="#"
@@ -558,7 +565,7 @@ export default function Opportunity() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, delay: 0.25, ease: "easeOut" }}
-          className="flex justify-center lg:justify-end items-start mr-0 lg:-mr-16 overflow-visible"
+          className="flex justify-center lg:justify-end items-start mr-0 lg:-mr-16 overflow-visible mt-16 lg:mt-[60px]"
         >
           {/* CSS class handles responsive scaling via calc(px/px) = unitless ratio */}
           <div className="orbit-scale-container">
