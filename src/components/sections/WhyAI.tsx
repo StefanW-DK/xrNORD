@@ -100,7 +100,7 @@ export default function WhyAI() {
   const t = useTranslations("whyai");
   return (
     <section
-      className="py-20 lg:py-28 relative"
+      className="py-20 lg:py-44 relative"
       style={{
         background: "#F1F5F9",
       }}
@@ -131,7 +131,7 @@ export default function WhyAI() {
             letterSpacing: "0.3em",
             textTransform: "uppercase" as const,
             color: "#94A3B8",
-            marginBottom: "28px",
+            marginBottom: "40px",
           }}>
             {t("eyebrow")}
           </p>
@@ -143,7 +143,7 @@ export default function WhyAI() {
             lineHeight: 1.1,
             letterSpacing: "-0.03em",
             color: "#0F172A",
-            marginBottom: "28px",
+            marginBottom: "40px",
           }}>
             {t("headline")}
           </h2>
@@ -153,7 +153,7 @@ export default function WhyAI() {
             fontSize: "1rem",
             lineHeight: 1.75,
             color: "#64748B",
-            marginBottom: "40px",
+            marginBottom: "56px",
           }}>
             <p style={{ marginBottom: "12px" }}>
               {t("bodyOne")}
@@ -164,7 +164,7 @@ export default function WhyAI() {
           </div>
 
           {/* Company logos — subtle social proof */}
-          <div style={{ marginBottom: "32px" }}>
+          <div style={{ marginBottom: "48px" }}>
             <p style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "0.72rem",
@@ -215,7 +215,7 @@ export default function WhyAI() {
           </div>
 
           <Link
-            href="/interviews"
+            href="/why-ai/interviews"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -244,6 +244,10 @@ export default function WhyAI() {
           style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: 0 }}
         >
           {/* Main video */}
+          <Link
+            href="/why-ai/interviews#interviews"
+            style={{ display: "block", textDecoration: "none" }}
+          >
           <div style={{
             position: "relative",
             width: "100%",
@@ -252,6 +256,7 @@ export default function WhyAI() {
             aspectRatio: "16 / 9",
             boxShadow: "0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06)",
             background: "#0F172A",
+            cursor: "pointer",
           }}>
             <video
               autoPlay
@@ -311,6 +316,7 @@ export default function WhyAI() {
               Conversations with leaders and AI experts
             </p>
           </div>
+          </Link>
 
           {/* Preview cards */}
           <div className="whyai-cards" style={{ display: "flex", gap: "12px" }}>
