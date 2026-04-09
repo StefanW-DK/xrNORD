@@ -164,17 +164,28 @@ export default function AboutPage() {
             </motion.h1>
 
             <motion.p variants={fadeUp} style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "1.35rem",
+              fontWeight: 500,
+              lineHeight: 1.5,
+              color: "#F1F5F9",
+              maxWidth: "780px",
+              marginBottom: "20px",
+            }}>
+              {da ? "Forankret i Danmark. Formet af verden." : "Rooted in Denmark. Shaped by the world."}
+            </motion.p>
+
+            <motion.p variants={fadeUp} style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: "1.1rem",
               lineHeight: 1.75,
               color: "rgba(148,163,184,0.8)",
               maxWidth: "780px",
               marginBottom: "48px",
-              whiteSpace: "pre-line" as const,
             }}>
               {da
-                ? "Forankret i Danmark. Formet af verden.\nVi hjælper nordiske virksomheder med at omsætte AI til reel fordel — ikke som et værktøj, men som måden de opererer og konkurrerer på."
-                : "Rooted in Denmark. Shaped by the world. We help Nordic companies turn AI into\nreal advantage — not as a tool, but as how they operate and compete."}
+                ? "Vi hjælper nordiske virksomheder med at omsætte AI til reel fordel — ikke som et værktøj, men som måden de opererer og konkurrerer på."
+                : "We help Nordic companies turn AI into real advantage — not as a tool, but as how they operate and compete."}
             </motion.p>
 
             <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", flexWrap: "wrap" as const }}>
@@ -311,8 +322,8 @@ export default function AboutPage() {
                 marginBottom: "20px",
               }}>
                 {da
-                  ? "xrNORD er bygget på Skandinavisk forretningsforståelse og lokal tilstedeværelse. Vi kender de virksomheder, vi arbejder med — deres markeder, deres strukturer, deres mennesker."
-                  : "xrNORD is built on Scandinavian business understanding and local presence. We know the companies we work with — their markets, their structures, their people."}
+                  ? "Bygget på en nordisk tilgang med fokus på klarhed, tillid og eksekvering, gør vi en dyd ud af, at forstå jeres virksomhed, jeres mål, udfordringer og mennesket."
+                  : "Built on a Nordic mindset of clarity, trust, and execution, we take the time to truly understand your business, your objectives, challenges, and people."}
               </motion.p>
               <motion.p variants={fadeUp} style={{
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
@@ -320,8 +331,8 @@ export default function AboutPage() {
                 color: "rgba(148,163,184,0.7)",
               }}>
                 {da
-                  ? "Det kombinerer vi med global AI-kompetence, reel implementeringserfaring og et skarpt blik for, hvor AI faktisk skaber forretningsværdi — ikke bare i teorien, men i praksis."
-                  : "We combine that with global AI capability, real implementation experience, and a sharp eye for where AI actually creates business value — not just in theory, but in practice."}
+                  ? "Kombineret med europæisk AI-ekspertise og solid implementeringserfaring skaber vi forretningsværdi med AI, i praksis, ikke kun i teorien."
+                  : "Combined with European AI expertise and solid implementation experience, we create business value with AI, in practice, not theory."}
               </motion.p>
             </div>
           </motion.div>
@@ -372,21 +383,21 @@ export default function AboutPage() {
               marginBottom: "40px",
             }}>
               {da
-                ? "De fleste virksomheder udforsker AI. Meget få bygger det ind i, hvordan de opererer."
-                : "Most companies are exploring AI. Very few are building it into how they operate."}
+                ? "At styrke jer, skandinaviske virksomheder og mennesker, til at vinde med AI"
+                : "Strengthening you, Scandinavian companies and people, to win with AI"}
             </motion.h2>
 
             <motion.div variants={stagger} style={{ display: "flex", flexDirection: "column" as const, gap: "24px" }}>
               {[
                 da
-                  ? "De tester værktøjer. De kører pilotprojekter. Men de formår ikke at omsætte AI til reel forretningsfordel — fordi de mangler den strategiske retning, datafundamentet og evnen til at eksekvere."
-                  : "They test tools. They run pilots. But they fail to turn AI into real business advantage — because they lack the strategic direction, the data foundation, and the ability to execute.",
+                  ? "Europa kommer ikke til at lede udviklingen af AI-teknologi. Det er i anvendelsen, vi vinder."
+                  : "Europe will not lead the development of AI technology. Winning happens in how the technology is adopted.",
                 da
-                  ? "xrNORD eksisterer for at ændre det. Vi kombinerer strategisk klarhed med reel implementeringsevne og lokal forretningsforståelse — og vi arbejder tæt på de virksomheder, vi hjælper."
-                  : "xrNORD exists to change that. We combine strategic clarity with real implementation capability and local business understanding — and we work closely with the companies we help.",
+                  ? "Vi sikrer, at I ikke bare følger med, men rykker foran. At AI ikke kun effektiviserer, men styrker mennesket, skaber nye services og produkter og løfter jeres forretning ind i fremtiden."
+                  : "We make sure you don't just keep up, but leap ahead. AI shouldn't just improve efficiency, it should empower the individual human, create new services and products, and move your business into the future.",
                 da
-                  ? "Vi er ikke en generisk konsulentvirksomhed. Vi er ikke et AI-hype-bureau. Vi er en nordisk AI-virksomhed med et klart formål: at hjælpe virksomheder med at vinde med AI."
-                  : "We are not a generic consultancy. We are not an AI hype agency. We are a Nordic AI company with a clear purpose: to help companies win with AI.",
+                  ? "Vi gør AI til en integreret del af jeres forretning. Så I kan skabe nye muligheder og vinde med AI."
+                  : "We make AI an integrated part of your business. So you can create new opportunities and win with AI.",
               ].map((text, i) => (
                 <motion.p key={i} variants={fadeUp} style={{
                   fontFamily: "var(--font-inter), system-ui, sans-serif",
@@ -399,6 +410,107 @@ export default function AboutPage() {
                   {text}
                 </motion.p>
               ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          BUSINESS CASE
+      ═══════════════════════════════════════ */}
+      <section style={{ background: "#FFFFFF", padding: "clamp(72px, 10vw, 120px) 0" }}>
+        <div className="page-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+          >
+            <motion.p
+              variants={fadeUp}
+              style={{
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "11px",
+                fontWeight: 600,
+                letterSpacing: "0.3em",
+                textTransform: "uppercase" as const,
+                color: "#7C3AED",
+                marginBottom: "20px",
+              }}
+            >
+              {da ? "Et stærkt business case" : "A Strong Business Case"}
+            </motion.p>
+
+            <motion.h2
+              variants={fadeUp}
+              style={{
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.04em",
+                lineHeight: 1.1,
+                color: "#0A0F1E",
+                maxWidth: "700px",
+                marginBottom: "20px",
+              }}
+            >
+              {da
+                ? "Accelerér jeres digitalisering med 25 % eller spar op til 50 % af budgettet."
+                : "Accelerate your digitalization by 25% or save up to 50% of your budget."}
+            </motion.h2>
+
+            <motion.div
+              variants={fadeUp}
+              className="about-grid" style={{
+                gap: "clamp(32px, 5vw, 64px)",
+                marginTop: "clamp(40px, 5vw, 64px)",
+              }}
+            >
+              {/* Stat cards */}
+              <div style={{ display: "flex", gap: "24px" }}>
+                <div style={{
+                  flex: 1, padding: "40px 32px", borderRadius: "20px",
+                  background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
+                  position: "relative", overflow: "hidden",
+                }}>
+                  <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.06) 1px, transparent 1px)", backgroundSize: "24px 24px", pointerEvents: "none" }} />
+                  <p style={{ fontFamily: "var(--font-geist), system-ui, sans-serif", fontSize: "3rem", fontWeight: 800, letterSpacing: "-0.04em", color: "#7C3AED", marginBottom: "8px", position: "relative" }}>+25%</p>
+                  <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: "0.85rem", lineHeight: 1.5, color: "#94A3B8", position: "relative" }}>
+                    {da ? "Hurtigere digitalisering" : "Faster digitalization"}
+                  </p>
+                </div>
+                <div style={{
+                  flex: 1, padding: "40px 32px", borderRadius: "20px",
+                  background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
+                  position: "relative", overflow: "hidden",
+                }}>
+                  <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(6,182,212,0.06) 1px, transparent 1px)", backgroundSize: "24px 24px", pointerEvents: "none" }} />
+                  <p style={{ fontFamily: "var(--font-geist), system-ui, sans-serif", fontSize: "3rem", fontWeight: 800, letterSpacing: "-0.04em", color: "#06B6D4", marginBottom: "8px", position: "relative" }}>50%</p>
+                  <p style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", fontSize: "0.85rem", lineHeight: 1.5, color: "#94A3B8", position: "relative" }}>
+                    {da ? "Reducerede omkostninger" : "Budget savings"}
+                  </p>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div>
+                <p style={{
+                  fontFamily: "var(--font-inter), system-ui, sans-serif",
+                  fontSize: "1.05rem", lineHeight: 1.75, color: "#374151", marginBottom: "24px",
+                }}>
+                  {da
+                    ? "Vi kombinerer global AI-ekspertise med lokal ansvarlighed for at styrke jeres AI-implementering og bane vejen for digital transformation og forretningssucces."
+                    : "We combine global AI expertise with local accountability to strengthen your AI implementation, paving the way for your digital transformation and business success."}
+                </p>
+                <p style={{
+                  fontFamily: "var(--font-inter), system-ui, sans-serif",
+                  fontSize: "1.05rem", lineHeight: 1.75, color: "#374151",
+                }}>
+                  {da
+                    ? "Samtidig reducerer vi jeres omkostninger og styrker jeres interne kompetencer, så I forbliver fuldt i kontrol og i stand til at træffe de rigtige beslutninger fremover."
+                    : "At the same time, we reduce your costs and enhance your internal capabilities, ensuring that you remain fully in control and able to make the right decisions going forward."}
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -440,7 +552,7 @@ export default function AboutPage() {
               textTransform: "uppercase" as const, color: "#818CF8",
               marginBottom: "20px",
             }}>
-              {da ? "Positionering" : "Positioning"}
+              {da ? "Vores Fundament" : "Our Foundation"}
             </motion.p>
             <motion.h2 variants={fadeUp} style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -451,16 +563,17 @@ export default function AboutPage() {
               color: "#F1F5F9",
               marginBottom: "24px",
             }}>
-              {da ? "Det nordiske forspring er reelt." : "The Nordic Edge is real."}
+              {da ? "Bygget på hvordan vi arbejder med jer, ikke kun hvad vi bygger" : "Built on how we work with you, not just what we build"}
             </motion.h2>
             <motion.p variants={fadeUp} style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: "1.05rem", lineHeight: 1.8,
               color: "rgba(148,163,184,0.7)",
+              whiteSpace: "pre-line" as const,
             }}>
               {da
-                ? "Skandinavien behøver ikke at vinde på AI-skala som USA eller Kina. Det nordiske forspring kommer fra noget andet: forretningsforståelse, præcision, formål og stærk operationel integration."
-                : "Scandinavia does not win AI by scale like the US or China. The Nordic edge comes from something different: business understanding, precision, purpose, and strong operational integration."}
+                ? "Vi arbejder tæt sammen med jer for at forstå jeres forretning, jeres udfordringer, jeres strategi og jeres mennesker.\n\nDet sikrer, at vi ikke bygger på symptomer, men arbejder med det, der reelt skaber værdi. Vi udfordrer, hvor det er nødvendigt, tager udgangspunkt i jeres virkelighed og tager ansvar for, at AI virker i praksis."
+                : "We work closely with you to understand your business, your challenges, your strategy, and your people.\n\nThis ensures we don't build on symptoms, but address what truly creates value. We challenge where needed, stay grounded in your reality, and take responsibility for making AI work in practice."}
             </motion.p>
           </motion.div>
 

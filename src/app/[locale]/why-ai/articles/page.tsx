@@ -21,8 +21,9 @@ export default async function ArticlesPage({ params }: Props) {
       <div
         style={{
           background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
-          paddingTop: "168px",
-          paddingBottom: "96px",
+          minHeight: "60vh",
+          paddingTop: "220px",
+          paddingBottom: "140px",
           position: "relative",
           overflow: "hidden",
           display: "flex",
@@ -68,18 +69,19 @@ export default async function ArticlesPage({ params }: Props) {
           <h1
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
-              fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
+              fontSize: "clamp(3rem, 5.2vw, 4.4rem)",
               fontWeight: 800,
               letterSpacing: "-0.04em",
               lineHeight: 1.05,
               color: "#FFFFFF",
               marginBottom: "24px",
-              maxWidth: "780px",
+              maxWidth: "1200px",
             }}
           >
             {locale === "da" ? (
               <>
-                AI-viden og Artikler fra{" "}
+                AI-viden og Artikler fra
+                <br />
                 <span
                   style={{
                     background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)",
@@ -93,7 +95,8 @@ export default async function ArticlesPage({ params }: Props) {
               </>
             ) : (
               <>
-                AI Opens Possibilities.{" "}
+                AI Opens Possibilities.
+                <br />
                 <span
                   style={{
                     background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)",
@@ -110,10 +113,10 @@ export default async function ArticlesPage({ params }: Props) {
           <p
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: "1.05rem",
+              fontSize: "1.15rem",
               lineHeight: 1.7,
               color: "#94A3B8",
-              maxWidth: "560px",
+              maxWidth: "780px",
             }}
           >
             {locale === "da"

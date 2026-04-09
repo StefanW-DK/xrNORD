@@ -268,32 +268,6 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Response time */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              style={{
-                marginTop: "24px",
-                padding: "20px 32px",
-                borderRadius: "16px",
-                background: "rgba(34,211,238,0.05)",
-                border: "1px solid rgba(34,211,238,0.12)",
-                display: "flex",
-                alignItems: "center",
-                gap: "12px",
-              }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.9rem" }}>
-                {t("responseTimeLabel")}:
-              </span>
-              <span style={{ color: "#fff", fontSize: "0.9rem", fontWeight: 600 }}>{t("responseTime")}</span>
-            </motion.div>
           </div>
         </section>
 

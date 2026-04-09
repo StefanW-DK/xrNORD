@@ -298,12 +298,8 @@ export default function InterviewsPage() {
   return (
     <>
       <style>{`
-        .interviews-hero-section { align-items: flex-end; }
-        .interviews-hero-content { padding: 0 clamp(16px, 6.25vw, 80px) 260px; }
-        @media (max-height: 1079px) and (min-width: 768px) {
-          .interviews-hero-section { align-items: flex-start; }
-          .interviews-hero-content { padding: 180px clamp(16px, 6.25vw, 80px) 60px; }
-        }
+        .interviews-hero-section { align-items: center; }
+        .interviews-hero-content { padding: 80px clamp(16px, 6.25vw, 80px) 80px; }
         @media (max-width: 767px) {
           .interviews-hero-section { align-items: flex-start; }
           .interviews-hero-content { padding: 120px clamp(16px, 5vw, 32px) 60px; }
@@ -421,13 +417,13 @@ export default function InterviewsPage() {
               variants={fadeUp}
               style={{
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
-                fontSize: "clamp(3rem, 6.5vw, 6rem)",
+                fontSize: "clamp(3rem, 5.2vw, 5.5rem)",
                 fontWeight: 800,
                 lineHeight: 1.06,
                 letterSpacing: "-0.03em",
                 color: "#FFFFFF",
                 marginBottom: "36px",
-                maxWidth: "900px",
+                maxWidth: "1100px",
               }}
             >
               {locale === "da" ? (
@@ -471,13 +467,13 @@ export default function InterviewsPage() {
                 fontSize: "1.15rem",
                 color: "rgba(255,255,255,0.65)",
                 lineHeight: 1.7,
-                maxWidth: "540px",
+                maxWidth: "860px",
                 marginBottom: "48px",
               }}
             >
               {locale === "da"
-                ? "Direkte perspektiver på, hvordan AI bruges, hvor det skaber værdi, og hvad det forandrer for erhvervslivet."
-                : "Direct perspectives on how AI is being used, where it creates value, and what it changes for business."}
+                ? "Få indblik i, hvordan AI skaber værdi i erhvervslivet, gennem ledere og eksperter."
+                : "See how AI creates value in business, through leaders and experts."}
             </motion.p>
 
             {/* CTA */}

@@ -50,7 +50,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
       "why-ai-interviews": {
         title: "Why AI Matters | Insights from Business & AI Leaders | xrNORD",
         description:
-          "Hear how business and AI leaders think about AI today. Understand what matters, what works, and what it means for your business.",
+          "See how AI creates value in business, through leaders and experts.",
         keywords: ["AI interviews", "AI leaders", "AI insights", "business AI", "AI perspectives"],
       },
       "why-ai-articles": {
@@ -127,7 +127,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
       "why-ai-interviews": {
         title: "Hvorfor AI betyder noget | Lyt til erhvervs- og AI-ledere | xrNORD",
         description:
-          "Hør erhvervs- og AI-lederes erfaringer med AI i praksis, og hvorfor det er afgørende at tage teknologien seriøst.",
+          "Få indblik i, hvordan AI skaber værdi i erhvervslivet, gennem ledere og eksperter.",
         keywords: ["AI interviews", "AI ledere", "AI indsigt", "erhvervs AI", "AI perspektiver"],
       },
       "why-ai-articles": {

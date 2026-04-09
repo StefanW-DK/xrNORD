@@ -27,7 +27,7 @@
   },
   "opportunity": {
     "label": "Jeres mulighed for at vinde",
-    "topText": "Spørgsmålet er ikke længere om I skal handle. Det er hvordan I gør AI til en reel fordel.",
+    "topText": "Spørgsmålet er ikke længere, om I skal handle. Det er, hvordan I gør AI til jeres næste konkurrencefordel.",
     "headlinePre": "AI er ikke et værktøj.",
     "headlineHighlight": "Det er jeres næste fordel",
     "belowHeadline": "Vi bringer AI ind i jeres forretning for at",
@@ -77,7 +77,7 @@
     "bespokeTitle": "Skræddersyet udvikling",
     "bespokeDesc": "Tilpassede AI-løsninger bygget til jeres specifikke data og arbejdsgange.",
     "protoTitle": "Hurtig prototyping",
-    "protoDesc": "Fra koncept til fungerende prototype på under 20 dage.",
+    "protoDesc": "Vi omsætter hurtigt jeres idéer til prototyper, så vi sammen kan teste, validere og træffe de rigtige beslutninger.",
     "dataTitle": "Data-parathed",
     "dataDesc": "Vi strukturerer jeres datalandskab, så det er klar til AI og kan skaleres.",
     "implTitle": "Implementering",
