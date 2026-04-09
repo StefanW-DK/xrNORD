@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { GeistSans } from "geist/font/sans";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import JsonLd from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -30,6 +31,20 @@ export default async function RootLayout({
       className={`${GeistSans.variable} ${inter.variable}`}
     >
       <body className="antialiased bg-white text-gray-900">
+        {/* Consent Mode v2 — must live in root layout for beforeInteractive to work */}
+        <Script id="ga-consent-defaults" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'wait_for_update': 2000
+            });
+          `}
+        </Script>
         <JsonLd />
         {children}
       </body>

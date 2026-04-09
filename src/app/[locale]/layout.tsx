@@ -88,20 +88,6 @@ export default async function LocaleLayout({ children, params }: Props) {
     <>
       {GA_ID && (
         <>
-          {/* Consent Mode v2 — set denied defaults BEFORE GA loads */}
-          <Script id="ga-consent-defaults" strategy="beforeInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('consent', 'default', {
-                'analytics_storage': 'denied',
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'wait_for_update': 2000
-              });
-            `}
-          </Script>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
             strategy="afterInteractive"
