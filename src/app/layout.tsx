@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { GeistSans } from "geist/font/sans";
 import { Inter } from "next/font/google";
@@ -8,6 +9,13 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/images/favicons/xr_Nord_Favicon_3.jpg",
+    apple: "/images/favicons/xr_Nord_Favicon_3.jpg",
+  },
+};
 
 export default async function RootLayout({
   children,
