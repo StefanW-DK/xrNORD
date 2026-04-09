@@ -207,9 +207,41 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const messages = await getMessages();
+  const articleUrl = `${BASE_URL}/${locale}/why-ai/articles/${slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt,
+    image: `${BASE_URL}${article.image}`,
+    author: {
+      "@type": "Person",
+      name: article.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "xrNORD",
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/images/logos/logo-dark.png`,
+      },
+    },
+    datePublished: article.date,
+    dateModified: article.date,
+    url: articleUrl,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
+  };
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Navbar />
 
       {/* Hero — sits directly below the fixed navbar */}

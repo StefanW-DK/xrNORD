@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
+import { trackLead } from "@/lib/analytics";
 
 const COUNTRY_CODES = [
   { code: "+45", country: "DK", flag: "🇩🇰" },
@@ -120,9 +121,7 @@ export default function BookWorkshopPage() {
       if (res.ok) {
         setSubmitted(true);
         setForm({ name: "", email: "", phone: "", company: "", day: "", month: "", year: "" });
-        if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead_workshop");
-        }
+        trackLead("workshop", locale);
       } else {
         const data = await res.json();
         setError(data.message || t("errorMessage"));

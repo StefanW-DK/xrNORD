@@ -5,6 +5,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function CookieBanner() {
   const t = useTranslations("cookies");
   const locale = useLocale();
@@ -17,18 +23,32 @@ export default function CookieBanner() {
     if (!consent) setVisible(true);
   }, []);
 
+  function updateGtagConsent(analytics: boolean, marketing: boolean) {
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("consent", "update", {
+        analytics_storage: analytics ? "granted" : "denied",
+        ad_storage: marketing ? "granted" : "denied",
+        ad_user_data: marketing ? "granted" : "denied",
+        ad_personalization: marketing ? "granted" : "denied",
+      });
+    }
+  }
+
   function accept() {
     localStorage.setItem("xrnord_cookie_consent", JSON.stringify({ all: true }));
+    updateGtagConsent(true, true);
     setVisible(false);
   }
 
   function saveSettings() {
     localStorage.setItem("xrnord_cookie_consent", JSON.stringify(prefs));
+    updateGtagConsent(prefs.analytics, prefs.marketing);
     setVisible(false);
   }
 
   function dismiss() {
     localStorage.setItem("xrnord_cookie_consent", "dismissed");
+    // Consent stays denied — no gtag update needed
     setVisible(false);
   }
 

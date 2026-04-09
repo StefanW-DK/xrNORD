@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
+import { trackLead } from "@/lib/analytics";
 
 const gradientText = {
   backgroundImage: "linear-gradient(135deg, #22D3EE, #38BDF8, #818CF8)",
@@ -87,6 +88,7 @@ const COUNTRY_CODES = [
 
 export default function ContactPage() {
   const t = useTranslations("contact");
+  const locale = useLocale();
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [countryCode, setCountryCode] = useState("+45");
   const [loading, setLoading] = useState(false);
@@ -116,9 +118,7 @@ export default function ContactPage() {
       if (res.ok) {
         setSubmitted(true);
         setForm({ name: "", email: "", phone: "", subject: "", message: "" });
-        if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead_contact");
-        }
+        trackLead("contact", locale);
       } else {
         const data = await res.json();
         setError(data.message || t("errorMessage"));
