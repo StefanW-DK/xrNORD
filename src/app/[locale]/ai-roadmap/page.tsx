@@ -457,7 +457,7 @@ export default function AIRoadmapPage() {
             }}
           >
             {locale === "da"
-              ? "Så I forlader med en klar, handlingsrettet retning fremad."
+              ? "Jeres strategi bliver udfordret, en AI strategi skabt. Forenet i en samlet retning."
               : "So you leave with a clear, actionable direction forward."}
           </motion.p>
 
