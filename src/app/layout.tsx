@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import JsonLd from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -49,6 +50,7 @@ export default async function RootLayout({
         <JsonLd />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
