@@ -443,7 +443,7 @@ export default function AIRoadmapPage() {
           >
             {locale === "da"
               ? "Vi forstår jeres forretning og anvender en dyb forståelse af AI til at gentænke og styrke den."
-              : "We understand your business and apply a deep understanding of AI to rethink and strengthen it."}
+              : "We understand your business and apply deep AI expertise to rethink and strengthen it."}
           </motion.p>
 
           <motion.p
@@ -458,7 +458,7 @@ export default function AIRoadmapPage() {
           >
             {locale === "da"
               ? "Jeres strategi bliver udfordret, en AI strategi skabt. Forenet i en samlet retning."
-              : "So you leave with a clear, actionable direction forward."}
+              : "Your strategy is challenged, an AI strategy is created, and unified into one clear direction."}
           </motion.p>
 
           <motion.div variants={fadeUp}>
