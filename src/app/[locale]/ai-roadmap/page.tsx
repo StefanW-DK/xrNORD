@@ -377,7 +377,7 @@ export default function AIRoadmapPage() {
           variants={stagger}
           className="hero-content-wrap"
         >
-          <motion.p
+          <motion.h1
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -389,10 +389,10 @@ export default function AIRoadmapPage() {
               marginBottom: "28px",
             }}
           >
-            AI Roadmap
-          </motion.p>
+            {locale === "da" ? "AI Strategi & Roadmap" : "AI Strategy & Roadmap"}
+          </motion.h1>
 
-          <motion.h1
+          <motion.h2
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -429,7 +429,7 @@ export default function AIRoadmapPage() {
                 </span>
               </>
             )}
-          </motion.h1>
+          </motion.h2>
 
           <motion.p
             variants={fadeUp}
