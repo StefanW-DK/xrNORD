@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Local data / analytics exports
+seo-data/
+
 # Large video files
 public/videos/
 public/assets/home/why/*.mp4
