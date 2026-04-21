@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
+import ArticleTracker from "@/components/analytics/ArticleTracker";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
@@ -242,6 +243,7 @@ export default async function ArticlePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <ArticleTracker slug={slug} title={article.title} locale={locale} />
       <Navbar />
 
       {/* Hero — sits directly below the fixed navbar */}

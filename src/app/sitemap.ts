@@ -25,6 +25,7 @@ const STATIC_PAGES = [
   { path: "/workshop", priority: 0.9 },
   { path: "/contact", priority: 0.8 },
   { path: "/ai-roadmap", priority: 0.8 },
+  { path: "/execution", priority: 0.8 },
   { path: "/ai-use-cases", priority: 0.8 },
   { path: "/why-ai/interviews", priority: 0.7 },
   { path: "/why-ai/articles", priority: 0.7 },

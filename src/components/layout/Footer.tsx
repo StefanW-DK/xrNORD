@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import { trackNewsletterSignup, trackSocialClick, trackContactInfoClick } from "@/lib/analytics";
 
 /* ── Social icons ──────────────────────────────────────── */
 const LinkedIn = () => (
@@ -29,6 +30,7 @@ const YouTube = () => (
 /* ── Newsletter form ───────────────────────────────────── */
 function NewsletterForm() {
   const t = useTranslations("footer");
+  const locale = useLocale();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState(false);
@@ -36,6 +38,7 @@ function NewsletterForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
+    trackNewsletterSignup(locale);
     setSubmitted(true);
   }
 
@@ -180,7 +183,7 @@ export default function Footer() {
 
           {/* Col 1: Brand */}
           <div>
-            <Link href="/en" style={{ textDecoration: "none", display: "inline-block", marginBottom: "20px" }}>
+            <Link href={`/${locale}`} style={{ textDecoration: "none", display: "inline-block", marginBottom: "20px" }}>
               <span style={{
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
                 fontSize: "1.4rem", fontWeight: 800,
@@ -219,6 +222,7 @@ export default function Footer() {
                 color: "#06B6D4", textDecoration: "none",
                 transition: "opacity 0.2s ease",
               }}
+              onClick={() => trackContactInfoClick("email")}
               onMouseEnter={e => (e.currentTarget.style.opacity = "0.75")}
               onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
               >
@@ -226,7 +230,9 @@ export default function Footer() {
               </a>
               <a href="tel:+4523654283" style={{
                 color: "rgba(148,163,184,0.7)", textDecoration: "none",
-              }}>
+              }}
+              onClick={() => trackContactInfoClick("phone")}
+              >
                 +45 23654283
               </a>
             </div>
@@ -294,6 +300,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
+                  onClick={() => trackSocialClick(label)}
                   style={{
                     width: "40px", height: "40px", borderRadius: "10px",
                     display: "flex", alignItems: "center", justifyContent: "center",
