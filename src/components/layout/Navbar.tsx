@@ -32,7 +32,6 @@ export default function Navbar() {
     },
     { label: t("workshop"), href: `/${locale}/workshop` },
     { label: t("aiRoadmap"), href: `/${locale}/ai-roadmap` },
-    { label: t("execution"), href: `/${locale}/execution` },
     { label: t("aiUseCases"), href: `/${locale}/ai-use-cases` },
     { label: t("about"), href: `/${locale}/about` },
     { label: t("contact"), href: `/${locale}/contact` },
