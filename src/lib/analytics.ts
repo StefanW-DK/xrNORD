@@ -17,11 +17,15 @@ export function trackEvent(eventName: string, params?: EventParams) {
 
 /**
  * Track a CTA button or link click.
- * @param ctaName  Human-readable label, e.g. "Book consultation — hero"
+ * @param ctaName      Human-readable label, e.g. "Book Workshop — hero"
  * @param destination  The href/URL the user is navigating to
- * @param section  Optional page section, e.g. "hero", "about", "workshop"
+ * @param section      Optional page section, e.g. "hero", "navbar", "footer"
  */
-export function trackCTAClick(ctaName: string, destination: string, section?: string) {
+export function trackCTAClick(
+  ctaName: string,
+  destination: string,
+  section?: string
+) {
   trackEvent("cta_click", {
     cta_name: ctaName,
     destination,
@@ -30,7 +34,7 @@ export function trackCTAClick(ctaName: string, destination: string, section?: st
 }
 
 /**
- * Track an article read (fired when the article body becomes visible).
+ * Track an article read. Fire when the article body becomes visible.
  */
 export function trackArticleRead(slug: string, title: string, locale: string) {
   trackEvent("article_read", {
@@ -42,8 +46,54 @@ export function trackArticleRead(slug: string, title: string, locale: string) {
 
 /**
  * Track a form submission lead event.
- * Mirrors existing events: generate_lead_contact / generate_lead_workshop
+ * Event names: generate_lead_contact / generate_lead_workshop
  */
 export function trackLead(type: "contact" | "workshop", locale: string) {
   trackEvent(`generate_lead_${type}`, { locale });
+}
+
+/**
+ * Track a YouTube / video link click on the interviews page.
+ */
+export function trackVideoClick(
+  videoTitle: string,
+  videoId: string,
+  locale: string
+) {
+  trackEvent("video_click", {
+    video_title: videoTitle,
+    video_id: videoId,
+    locale,
+  });
+}
+
+/**
+ * Track when a user switches the site language.
+ */
+export function trackLanguageSwitch(fromLocale: string, toLocale: string) {
+  trackEvent("language_switch", {
+    from_locale: fromLocale,
+    to_locale: toLocale,
+  });
+}
+
+/**
+ * Track newsletter form submission (footer).
+ */
+export function trackNewsletterSignup(locale: string) {
+  trackEvent("newsletter_signup", { locale });
+}
+
+/**
+ * Track social link clicks in the footer.
+ */
+export function trackSocialClick(platform: string) {
+  trackEvent("social_click", { platform });
+}
+
+/**
+ * Track contact info clicks (email / phone) in the footer.
+ */
+export function trackContactInfoClick(type: "email" | "phone") {
+  trackEvent("contact_info_click", { type });
 }

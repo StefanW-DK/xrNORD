@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
+import { trackCTAClick } from "@/lib/analytics";
 
 const gradientStyle = {
   backgroundImage: "linear-gradient(135deg, #22D3EE, #38BDF8, #818CF8)",
@@ -111,6 +112,7 @@ export default function Hero() {
             style={{
               boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
             }}
+            onClick={() => trackCTAClick(t("ctaPrimary"), `/${locale}/workshop`, "hero")}
           >
             {t("ctaPrimary")}
             <svg
@@ -132,6 +134,7 @@ export default function Hero() {
           <Link
             href={`/${locale}/why-ai/interviews`}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium text-sm transition-all duration-200"
+            onClick={() => trackCTAClick(t("ctaSecondary"), `/${locale}/why-ai/interviews`, "hero")}
             style={{
               border: "1px solid rgba(255,255,255,0.2)",
               color: "rgba(255,255,255,0.85)",

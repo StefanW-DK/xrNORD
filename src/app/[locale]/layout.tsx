@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { getPageMeta, BASE_URL, type Locale } from "@/config/metadata";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
+import RouteChangeTracker from "@/components/analytics/RouteChangeTracker";
 import "../globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -115,6 +116,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         </>
       )}
       <NextIntlClientProvider messages={messages}>
+        <RouteChangeTracker />
         {children}
         <Footer />
         <CookieBanner />

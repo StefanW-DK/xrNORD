@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
+import { trackCTAClick, trackLanguageSwitch } from "@/lib/analytics";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -31,14 +32,16 @@ export default function Navbar() {
     },
     { label: t("workshop"), href: `/${locale}/workshop` },
     { label: t("aiRoadmap"), href: `/${locale}/ai-roadmap` },
+    { label: t("execution"), href: `/${locale}/execution` },
     { label: t("aiUseCases"), href: `/${locale}/ai-use-cases` },
     { label: t("about"), href: `/${locale}/about` },
     { label: t("contact"), href: `/${locale}/contact` },
   ];
 
-  const switchLocale = () => {
-    const newLocale = locale === "en" ? "da" : "en";
+  const switchLocale = (targetLocale?: string) => {
+    const newLocale = targetLocale ?? (locale === "en" ? "da" : "en");
     const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+    trackLanguageSwitch(locale, newLocale);
     router.push(`/${newLocale}${pathWithoutLocale}`);
   };
 
@@ -232,7 +235,7 @@ export default function Navbar() {
                         <button
                           key={code}
                           onClick={() => {
-                            if (code !== locale) switchLocale();
+                            if (code !== locale) switchLocale(code);
                             setLangOpen(false);
                           }}
                           className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors text-left"
@@ -265,6 +268,7 @@ export default function Navbar() {
                   backgroundColor: scrolled ? "#111827" : "#ffffff",
                   color: scrolled ? "#ffffff" : "#111827",
                 }}
+                onClick={() => trackCTAClick(t("bookWorkshop"), `/${locale}/book-workshop`, "navbar")}
               >
                 {t("bookWorkshop")}
               </Link>
@@ -347,7 +351,7 @@ export default function Navbar() {
               <div className="mt-16 flex flex-col gap-12 pb-8">
                 <button
                   onClick={() => {
-                    switchLocale();
+                    switchLocale();  // no arg = toggle
                     setMobileOpen(false);
                   }}
                   className="flex items-center gap-2 text-sm text-gray-500 text-left"
@@ -359,8 +363,11 @@ export default function Navbar() {
                   {locale === "en" ? "Skift til Dansk" : "Switch to English"}
                 </button>
                 <Link
-                  href={`/${locale}/workshop`}
-                  onClick={() => setMobileOpen(false)}
+                  href={`/${locale}/book-workshop`}
+                  onClick={() => {
+                    setMobileOpen(false);
+                    trackCTAClick(t("bookWorkshop"), `/${locale}/book-workshop`, "navbar-mobile");
+                  }}
                   className="w-full text-center py-3.5 bg-gray-900 text-white rounded-full font-medium text-sm"
                 >
                   {t("bookWorkshop")}

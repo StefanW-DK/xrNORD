@@ -461,6 +461,161 @@ export default function AiUseCasesPage() {
         </motion.div>
       </section>
 
+      {/* ─── Destination Fyn Case Story ─── */}
+      <section
+        style={{
+          position: "relative",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background image */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/assets/cases/Fyn 1.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.38,
+          }}
+        />
+        {/* Dark base */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(7,6,12,0.72) 0%, rgba(10,9,18,0.65) 50%, rgba(7,6,12,0.80) 100%)",
+          }}
+        />
+        {/* Top fade */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "200px",
+            background: "linear-gradient(180deg, rgba(5,4,10,0.98) 0%, transparent 100%)",
+          }}
+        />
+        {/* Bottom fade */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "200px",
+            background: "linear-gradient(0deg, rgba(255,255,255,1) 0%, transparent 100%)",
+          }}
+        />
+
+        {/* Content */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={stagger}
+          style={{
+            position: "relative",
+            zIndex: 1,
+            maxWidth: 1280,
+            width: "100%",
+            margin: "0 auto",
+            padding: "clamp(100px, 12vw, 160px) 24px",
+          }}
+        >
+          {/* Label */}
+          <motion.p
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: 13,
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#C084FC",
+              marginBottom: 20,
+            }}
+          >
+            {locale === "da" ? "Case Story" : "Case Story"}
+          </motion.p>
+
+          {/* Heading */}
+          <motion.h2
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "clamp(2.8rem, 6vw, 5.5rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.04em",
+              lineHeight: 1.05,
+              color: "#F0EEF5",
+              marginBottom: 32,
+            }}
+          >
+            {locale === "da" ? "Destination Fyn" : "Destination Fyn"}
+          </motion.h2>
+
+          {/* Supporting tagline */}
+          <motion.p
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              fontSize: "clamp(1.1rem, 1.8vw, 1.5rem)",
+              fontWeight: 500,
+              lineHeight: 1.4,
+              color: "rgba(220,216,232,0.75)",
+              marginBottom: 32,
+            }}
+          >
+            {locale === "da"
+              ? "Making the turist Stay One More Day"
+              : "Making the turist Stay One More Day"}
+          </motion.p>
+
+          {/* Client logos */}
+          <motion.div
+            variants={fadeUp}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 40,
+              marginBottom: 48,
+              flexWrap: "wrap",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/home/clients/destination-fyn.png"
+              alt="Destination Fyn"
+              style={{ width: 140, height: "auto", display: "block", filter: "brightness(0) invert(1)", opacity: 0.75 }}
+            />
+          </motion.div>
+
+          {/* Subtext */}
+          <motion.p
+            variants={fadeUp}
+            style={{
+              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontSize: "clamp(1rem, 1.4vw, 1.25rem)",
+              lineHeight: 1.75,
+              color: "rgba(220,216,232,0.8)",
+              maxWidth: 640,
+              marginBottom: 48,
+            }}
+          >
+            {locale === "da"
+              ? "Kommer snart."
+              : "Coming soon."}
+          </motion.p>
+        </motion.div>
+      </section>
+
       {/* ─── Category Sections ─── */}
       {CATEGORIES.map((cat, catIdx) => (
         <section
