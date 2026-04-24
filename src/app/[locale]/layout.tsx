@@ -10,7 +10,7 @@ import CookieBanner from "@/components/layout/CookieBanner";
 import RouteChangeTracker from "@/components/analytics/RouteChangeTracker";
 import "../globals.css";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = "G-KZBPLJL8VK";
 
 type Props = {
   children: React.ReactNode;
