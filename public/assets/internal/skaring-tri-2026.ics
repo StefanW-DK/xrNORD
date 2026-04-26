@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Werge//Skæring Tri & Hygge//EN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20260815T060000Z
+DTEND:20260815T200000Z
+SUMMARY:Skæring Tri & Hygge
+DESCRIPTION:Triatlondag med familie og venner.\nSvømning 800m · Cykling 30km på Djursland · Løb 5km.\nEfterfølgende hygge\, grill og Kaløvig Havnefest.
+LOCATION:Skæring\, Aarhus\, Danmark
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Husk: Skæring Tri & Hygge i morgen!
+END:VALARM
+END:VEVENT
+END:VCALENDAR
