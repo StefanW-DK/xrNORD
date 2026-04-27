@@ -115,13 +115,13 @@ export default function InternalPage() {
         /* Monitor (≥1600px) — restore original large-screen scale */
         @media (min-width: 1600px) {
           .skt-hero            { height: auto; min-height: 100vh; }
-          .skt-hero-content    { padding: clamp(140px, 16vw, 220px) 12% clamp(120px, 14vw, 180px) 12%; }
-          .skt-hero-h1         { font-size: clamp(3.4rem, 9.35vw, 11rem); margin: 0 0 24px; }
+          .skt-hero-content    { padding: clamp(120px, 12vw, 160px) 12% 0 12%; }
+          .skt-hero-h1         { font-size: clamp(3.4rem, 9.35vw, 11rem); margin: 0 0 14px; }
           .skt-hero-byline     { font-size: clamp(1.15rem, 2.3vw, 2.19rem); }
-          .skt-hero-body       { font-size: clamp(1rem, 1.25vw, 1.2rem); line-height: 1.8; margin-top: 56px; max-width: clamp(360px, 50vw, 720px); }
-          .skt-hero-body p     { margin: 0 0 1.2em; }
-          .skt-hero-lead       { font-size: clamp(1.3rem, 1.8vw, 1.7rem) !important; margin-bottom: 1.4em !important; }
-          .skt-hero-calendar   { margin-top: clamp(48px, 5vw, 64px); }
+          .skt-hero-body       { font-size: clamp(1rem, 1.25vw, 1.2rem); line-height: 1.75; margin-top: 32px; max-width: clamp(360px, 48vw, 700px); }
+          .skt-hero-body p     { margin: 0 0 0.9em; }
+          .skt-hero-lead       { font-size: clamp(1.2rem, 1.6vw, 1.55rem) !important; margin-bottom: 0.9em !important; }
+          .skt-hero-calendar   { margin-top: clamp(32px, 3.5vw, 48px); }
         }
 
         /* Scroll indicator */
