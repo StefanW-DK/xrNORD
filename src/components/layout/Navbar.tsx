@@ -8,14 +8,14 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { trackCTAClick, trackLanguageSwitch } from "@/lib/analytics";
 
-export default function Navbar() {
+export default function Navbar({ forceTransparent = false }: { forceTransparent?: boolean }) {
   const t = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
   // On sub-pages (not homepage), always show solid/dark-text navbar
-  const isHomepage = pathname === `/${locale}` || pathname === `/${locale}/`;
+  const isHomepage = forceTransparent || pathname === `/${locale}` || pathname === `/${locale}/`;
   const [scrolled, setScrolled] = useState(!isHomepage);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
