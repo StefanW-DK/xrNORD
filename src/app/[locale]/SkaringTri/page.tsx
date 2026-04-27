@@ -145,15 +145,20 @@ export default function InternalPage() {
 
         /* Mobile large */
         @media (max-width: 767px) {
+          .skt-hero        { min-height: 130vh; }
           .skt-hero-bg    { background-position: 60% 30%; }
-          .skt-hero-content { padding-left: 6%; padding-right: 6%; }
+          .skt-hero-content { padding-left: 6%; padding-right: 6%; padding-top: 110px; }
           .skt-hero-h1    { line-height: 1.0; }
+          .skt-hero-body  { margin-top: 36px; margin-bottom: 0; }
+          .skt-hero-calendar { display: flex; justify-content: center; margin-top: 40px; }
         }
 
         /* Mobile small */
         @media (max-width: 480px) {
+          .skt-hero        { min-height: 140vh; }
           .skt-hero-content { padding-left: 5%; padding-right: 5%; }
           .skt-hero-h1    { letter-spacing: -0.03em; }
+          .skt-hero-calendar { margin-top: 44px; }
         }
 
         /* ── Split section ── */
@@ -386,6 +391,8 @@ export default function InternalPage() {
           <div className="skt-hero-body">
             <p style={{ fontSize: "clamp(1.3rem, 1.8vw, 1.7rem)", fontWeight: 600, color: "rgba(255,255,255,0.95)", marginBottom: "1.4em", hyphens: "manual" }}>Den 15 August 2026, bliver rammerne for en fantas&shy;tisk dag for dig og din familie sat.</p>
             <p>Sammen med en flok gode drenge får du mulighed for at prøve kræfter med triatlonens verden. Imens hygger vores familier sig med hinanden, som vi slutter os til bagefter til en mindeværdig dag. Der er også Kaløvig Havnefest samme dag, så måske tager vi et smut derover – ellers bliver vi og hygger og fester videre i haven.</p>
+          </div>
+          <div className="skt-hero-calendar">
             <CalendarButton />
           </div>
         </div>
