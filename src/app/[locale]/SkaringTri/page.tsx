@@ -531,7 +531,6 @@ export default function InternalPage() {
 
         <div className="racers-grid">
           {[
-            { name: "Christopher Vik",                  file: "Christopher Vik.png" },
             { name: "Jesper Bidstrup Andersen",        file: "Jesper Bidstrup Andersen.png" },
             { name: "Martin Edvardsen",                 file: "Martin Edvardsen.png" },
             { name: "Kristoffer Eilert Bæk Andersen",  file: "Kristoffer Eilert Bæk Andersen.png" },
@@ -543,6 +542,7 @@ export default function InternalPage() {
             { name: "Troels Strickersson",              file: "Troels Strickersson.png" },
             { name: "Thomas Guldsø Alsted",             file: "Thomas Guldsø Alsted.png" },
             { name: "Kaare Bro Wellnitz",               file: "Kaare Bro Wellnitz.png" },
+            { name: "Christopher Vik",                  file: "Christopher Vik.png" },
           ].map((p) => (
             <div key={p.name} className="racer-card">
               <div className="racer-photo-ring">
