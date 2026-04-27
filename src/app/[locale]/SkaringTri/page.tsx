@@ -112,6 +112,18 @@ export default function InternalPage() {
           }
         }
 
+        /* Monitor (≥1440px) — restore original large-screen scale */
+        @media (min-width: 1440px) {
+          .skt-hero            { height: auto; min-height: 100vh; }
+          .skt-hero-content    { padding: clamp(140px, 16vw, 220px) 12% clamp(120px, 14vw, 180px) 12%; }
+          .skt-hero-h1         { font-size: clamp(3.4rem, 9.35vw, 11rem); margin: 0 0 24px; }
+          .skt-hero-byline     { font-size: clamp(1.15rem, 2.3vw, 2.19rem); }
+          .skt-hero-body       { font-size: clamp(1rem, 1.25vw, 1.2rem); line-height: 1.8; margin-top: 56px; max-width: clamp(360px, 50vw, 720px); }
+          .skt-hero-body p     { margin: 0 0 1.2em; }
+          .skt-hero-lead       { font-size: clamp(1.3rem, 1.8vw, 1.7rem) !important; margin-bottom: 1.4em !important; }
+          .skt-hero-calendar   { margin-top: clamp(48px, 5vw, 64px); }
+        }
+
         /* Scroll indicator */
         @keyframes skt-bounce {
           0%, 100% { transform: translateY(0); }
@@ -392,7 +404,7 @@ export default function InternalPage() {
           <h1 className="skt-hero-h1">Skæring Tri<br />&amp; Hygge</h1>
           <p className="skt-hero-byline">By Werge</p>
           <div className="skt-hero-body">
-            <p style={{ fontSize: "clamp(1rem, 1.25vw, 1.25rem)", fontWeight: 600, color: "rgba(255,255,255,0.95)", marginBottom: "0.9em", hyphens: "manual" }}>Den 15 August 2026, bliver rammerne for en fantas&shy;tisk dag for dig og din familie sat.</p>
+            <p className="skt-hero-lead" style={{ fontSize: "clamp(1rem, 1.25vw, 1.25rem)", fontWeight: 600, color: "rgba(255,255,255,0.95)", marginBottom: "0.9em", hyphens: "manual" }}>Den 15 August 2026, bliver rammerne for en fantas&shy;tisk dag for dig og din familie sat.</p>
             <p>Sammen med en flok gode drenge får du mulighed for at prøve kræfter med triatlonens verden. Imens hygger vores familier sig med hinanden, som vi slutter os til bagefter til en mindeværdig dag. Der er også Kaløvig Havnefest samme dag, så måske tager vi et smut derover – ellers bliver vi og hygger og fester videre i haven.</p>
           </div>
           <div className="skt-hero-calendar">
