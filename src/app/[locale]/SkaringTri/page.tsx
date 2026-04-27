@@ -531,6 +531,7 @@ export default function InternalPage() {
 
         <div className="racers-grid">
           {[
+            { name: "Christopher Vik",                  file: "Christopher Vik.png" },
             { name: "Jesper Bidstrup Andersen",        file: "Jesper Bidstrup Andersen.png" },
             { name: "Martin Edvardsen",                 file: "Martin Edvardsen.png" },
             { name: "Kristoffer Eilert Bæk Andersen",  file: "Kristoffer Eilert Bæk Andersen.png" },
