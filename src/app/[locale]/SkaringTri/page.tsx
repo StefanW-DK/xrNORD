@@ -52,7 +52,7 @@ export default function InternalPage() {
           position: relative;
           z-index: 2;
           text-align: left;
-          padding: clamp(120px, 14vw, 200px) 0 0 12%;
+          padding: clamp(140px, 16vw, 220px) 12% clamp(120px, 14vw, 180px) 12%;
         }
 
         .skt-hero-h1 {
@@ -88,9 +88,13 @@ export default function InternalPage() {
           font-weight: 500;
           line-height: 1.8;
           color: rgba(255,255,255,0.80);
-          margin: 48px 0 0 0.55em;
-          max-width: clamp(360px, 50vw, 720px);
+          margin: 56px 0 0 0;
+          max-width: clamp(360px, 44vw, 680px);
           letter-spacing: 0.01em;
+        }
+
+        .skt-hero-calendar {
+          margin-top: clamp(48px, 5vw, 64px);
         }
 
         .skt-hero-body p {
@@ -147,31 +151,31 @@ export default function InternalPage() {
         @media (max-width: 767px) {
           .skt-hero        { min-height: 130vh; }
           .skt-hero-bg    { background-position: 60% 30%; }
-          .skt-hero-content { padding-left: 6%; padding-right: 6%; padding-top: 110px; }
+          .skt-hero-content { padding: 110px 6% clamp(100px, 14vw, 140px); }
           .skt-hero-h1    { line-height: 1.0; }
-          .skt-hero-body  { margin-top: 36px; margin-bottom: 0; }
+          .skt-hero-body  { margin-top: 32px; max-width: 100%; }
           .skt-hero-calendar { display: flex; justify-content: center; margin-top: 40px; }
         }
 
         /* Mobile small */
         @media (max-width: 480px) {
           .skt-hero        { min-height: 140vh; }
-          .skt-hero-content { padding-left: 5%; padding-right: 5%; }
+          .skt-hero-content { padding: 100px 5% clamp(100px, 14vw, 130px); }
           .skt-hero-h1    { letter-spacing: -0.03em; }
           .skt-hero-calendar { margin-top: 44px; }
         }
 
         /* ── Split section ── */
-        .skt-split { display: flex; min-height: 80vh; }
+        .skt-split { display: flex; min-height: 100vh; }
         .skt-split-text {
           width: 66.67%;
           background: #0a0f1a;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: clamp(48px,6vw,96px) clamp(48px,5vw,80px);
+          padding: clamp(80px,8vw,120px) clamp(60px,6vw,100px);
         }
-        .skt-split-inner { max-width: 62%; }
+        .skt-split-inner { max-width: 80%; }
         .skt-split-image {
           width: 33.33%;
           position: relative;
@@ -214,7 +218,6 @@ export default function InternalPage() {
         .racer-card {
           flex: 0 0 calc(33.33% - clamp(16px, 2vw, 32px));
           min-width: 180px;
-          max-width: 300px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -496,7 +499,7 @@ export default function InternalPage() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "clamp(60px, 8vw, 140px) clamp(5%, 8%, 12%)",
+        padding: "clamp(80px, 10vw, 160px) clamp(4%, 6%, 8%)",
       }}>
         <h2 style={{
           fontFamily: "var(--font-geist), 'Geist', system-ui, sans-serif",
