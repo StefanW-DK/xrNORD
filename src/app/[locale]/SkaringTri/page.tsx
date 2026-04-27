@@ -112,8 +112,8 @@ export default function InternalPage() {
           }
         }
 
-        /* Monitor (≥1440px) — restore original large-screen scale */
-        @media (min-width: 1440px) {
+        /* Monitor (≥1600px) — restore original large-screen scale */
+        @media (min-width: 1600px) {
           .skt-hero            { height: auto; min-height: 100vh; }
           .skt-hero-content    { padding: clamp(140px, 16vw, 220px) 12% clamp(120px, 14vw, 180px) 12%; }
           .skt-hero-h1         { font-size: clamp(3.4rem, 9.35vw, 11rem); margin: 0 0 24px; }
