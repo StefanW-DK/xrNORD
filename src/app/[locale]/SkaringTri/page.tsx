@@ -18,7 +18,7 @@ export default function InternalPage() {
         .skt-hero {
           position: relative;
           width: 100vw;
-          min-height: 100vh;
+          height: 100vh;
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
@@ -52,24 +52,24 @@ export default function InternalPage() {
           position: relative;
           z-index: 2;
           text-align: left;
-          padding: clamp(140px, 16vw, 220px) 12% clamp(120px, 14vw, 180px) 12%;
+          padding: clamp(100px, 11vw, 140px) 12% 0 12%;
         }
 
         .skt-hero-h1 {
           font-family: var(--font-geist), 'Geist', system-ui, sans-serif;
-          font-size: clamp(3.4rem, 9.35vw, 11rem);
+          font-size: clamp(3rem, 6.5vw, 8.5rem);
           font-weight: 800;
           letter-spacing: -0.05em;
           line-height: 0.95;
           color: #ffffff;
-          margin: 0 0 24px;
+          margin: 0 0 12px;
           text-shadow: 0 4px 60px rgba(0,0,0,0.35);
         }
 
         .skt-hero-byline {
           font-family: var(--font-geist), 'Geist', system-ui, sans-serif;
           font-style: normal;
-          font-size: clamp(1.15rem, 2.3vw, 2.19rem);
+          font-size: clamp(1rem, 1.5vw, 1.6rem);
           font-weight: 800;
           letter-spacing: -0.03em;
           background: linear-gradient(120deg, #00D4FF 0%, #7B5FFF 100%);
@@ -84,21 +84,21 @@ export default function InternalPage() {
 
         .skt-hero-body {
           font-family: var(--font-geist), 'Geist', system-ui, sans-serif;
-          font-size: clamp(1rem, 1.25vw, 1.2rem);
+          font-size: clamp(0.88rem, 1vw, 1rem);
           font-weight: 500;
-          line-height: 1.8;
+          line-height: 1.65;
           color: rgba(255,255,255,0.80);
-          margin: 56px 0 0 0;
-          max-width: clamp(360px, 44vw, 680px);
+          margin: 24px 0 0 0;
+          max-width: clamp(300px, 40vw, 600px);
           letter-spacing: 0.01em;
         }
 
         .skt-hero-calendar {
-          margin-top: clamp(48px, 5vw, 64px);
+          margin-top: clamp(28px, 3vw, 40px);
         }
 
         .skt-hero-body p {
-          margin: 0 0 1.2em;
+          margin: 0 0 0.8em;
         }
 
         .skt-hero-body p:last-child {
@@ -392,7 +392,7 @@ export default function InternalPage() {
           <h1 className="skt-hero-h1">Skæring Tri<br />&amp; Hygge</h1>
           <p className="skt-hero-byline">By Werge</p>
           <div className="skt-hero-body">
-            <p style={{ fontSize: "clamp(1.3rem, 1.8vw, 1.7rem)", fontWeight: 600, color: "rgba(255,255,255,0.95)", marginBottom: "1.4em", hyphens: "manual" }}>Den 15 August 2026, bliver rammerne for en fantas&shy;tisk dag for dig og din familie sat.</p>
+            <p style={{ fontSize: "clamp(1rem, 1.25vw, 1.25rem)", fontWeight: 600, color: "rgba(255,255,255,0.95)", marginBottom: "0.9em", hyphens: "manual" }}>Den 15 August 2026, bliver rammerne for en fantas&shy;tisk dag for dig og din familie sat.</p>
             <p>Sammen med en flok gode drenge får du mulighed for at prøve kræfter med triatlonens verden. Imens hygger vores familier sig med hinanden, som vi slutter os til bagefter til en mindeværdig dag. Der er også Kaløvig Havnefest samme dag, så måske tager vi et smut derover – ellers bliver vi og hygger og fester videre i haven.</p>
           </div>
           <div className="skt-hero-calendar">
