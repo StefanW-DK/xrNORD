@@ -722,6 +722,26 @@ export default function AiUseCasesPage() {
                 ? "Vi samarbejdede med Destination Fyn & EcoJoys om at bygge en AI-rejseledsager, der hjælper turister med at opdage skjulte perler, lokale favoritter og perfekte øjeblikke på Danmarks smukkeste ø."
                 : "We partnered with Destination Fyn & EcoJoys to build an AI travel companion, helping tourists discover hidden gems, local favourites, and perfect moments on Denmark's most beautiful island."}
             </p>
+            {/* Sponsorship */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                marginTop: 28,
+                flexWrap: "wrap",
+              }}
+            >
+              <span style={{ fontSize: 11, color: "#9ca3af", fontWeight: 400, letterSpacing: "0.01em" }}>
+                {locale === "da" ? "Udviklet i samarbejde med" : "Developed in a sponsorship with"}
+              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/cases/Danmarks Erhversfremmebestyrelse.svg"
+                alt="Danmarks Erhvervsfremmebestyrelse"
+                style={{ height: 24, width: "auto", display: "block", opacity: 0.7 }}
+              />
+            </div>
             <Link
               href={`/${locale}/case-studies/one-more-day-on-fyn`}
               style={{
