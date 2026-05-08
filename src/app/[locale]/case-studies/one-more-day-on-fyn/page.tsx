@@ -736,6 +736,46 @@ export default async function OneMoreDayPage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── Sponsorship ───────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: "#fff",
+          padding: "56px 9%",
+          borderTop: "1px solid rgba(0,0,0,0.06)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 820,
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
+            gap: 28,
+            flexWrap: "wrap",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "0.95rem",
+              fontWeight: 400,
+              color: "#6b7280",
+              margin: 0,
+              lineHeight: 1.6,
+            }}
+          >
+            {isDA
+              ? "Dette projekt er udviklet i samarbejde med"
+              : "This project has been developed in a sponsorship with"}
+          </p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/cases/Danmarks Erhversfremmebestyrelse.svg"
+            alt="Danmarks Erhvervsfremmebestyrelse"
+            style={{ height: 40, width: "auto", display: "block", flexShrink: 0 }}
+          />
+        </div>
+      </section>
+
       {/* ── Back link ─────────────────────────────────────────────────── */}
       <div
         style={{
