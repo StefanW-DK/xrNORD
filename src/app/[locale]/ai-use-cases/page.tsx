@@ -384,11 +384,11 @@ export default function AiUseCasesPage() {
                     key={cat.id}
                     onClick={() => scrollToSection(cat.id)}
                     style={{
-                      padding: "10px 20px",
+                      padding: "11px 24px",
                       borderRadius: 999,
-                      border: isActive ? "1px solid transparent" : "1px solid rgba(0,0,0,0.14)",
-                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "transparent",
-                      color: isActive ? "#fff" : "rgba(15,28,36,0.65)",
+                      border: isActive ? "1px solid transparent" : "1px solid rgba(0,0,0,0.22)",
+                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "rgba(0,0,0,0.025)",
+                      color: isActive ? "#fff" : "rgba(15,28,36,0.78)",
                       fontSize: 14,
                       fontWeight: 600,
                       cursor: "pointer",
@@ -405,9 +405,9 @@ export default function AiUseCasesPage() {
                     }}
                     onMouseLeave={(e) => {
                       if (!isActive) {
-                        e.currentTarget.style.background = "transparent";
-                        e.currentTarget.style.color = "rgba(15,28,36,0.65)";
-                        e.currentTarget.style.border = "1px solid rgba(0,0,0,0.14)";
+                        e.currentTarget.style.background = "rgba(0,0,0,0.025)";
+                        e.currentTarget.style.color = "rgba(15,28,36,0.78)";
+                        e.currentTarget.style.border = "1px solid rgba(0,0,0,0.22)";
                       }
                     }}
                   >
@@ -425,11 +425,11 @@ export default function AiUseCasesPage() {
                     key={cat.id}
                     onClick={() => scrollToSection(cat.id)}
                     style={{
-                      padding: "10px 20px",
+                      padding: "11px 24px",
                       borderRadius: 999,
-                      border: isActive ? "1px solid transparent" : "1px solid rgba(0,0,0,0.14)",
-                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "transparent",
-                      color: isActive ? "#fff" : "rgba(15,28,36,0.65)",
+                      border: isActive ? "1px solid transparent" : "1px solid rgba(0,0,0,0.22)",
+                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "rgba(0,0,0,0.025)",
+                      color: isActive ? "#fff" : "rgba(15,28,36,0.78)",
                       fontSize: 14,
                       fontWeight: 600,
                       cursor: "pointer",
@@ -446,9 +446,9 @@ export default function AiUseCasesPage() {
                     }}
                     onMouseLeave={(e) => {
                       if (!isActive) {
-                        e.currentTarget.style.background = "transparent";
-                        e.currentTarget.style.color = "rgba(15,28,36,0.65)";
-                        e.currentTarget.style.border = "1px solid rgba(0,0,0,0.14)";
+                        e.currentTarget.style.background = "rgba(0,0,0,0.025)";
+                        e.currentTarget.style.color = "rgba(15,28,36,0.78)";
+                        e.currentTarget.style.border = "1px solid rgba(0,0,0,0.22)";
                       }
                     }}
                   >
