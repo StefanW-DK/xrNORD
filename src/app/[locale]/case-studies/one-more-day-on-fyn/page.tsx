@@ -101,8 +101,46 @@ export default async function OneMoreDayPage({ params }: Props) {
     <main style={{ fontFamily: "var(--font-inter), system-ui, sans-serif", background: "#fff" }}>
       <Navbar />
 
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+@media (max-width: 768px) {
+  .csfyn-hero { height: auto !important; min-height: 520px !important; }
+  .csfyn-hero-content {
+    position: relative !important;
+    padding: 96px 24px 56px !important;
+  }
+  .csfyn-article-label { display: none !important; }
+  .csfyn-hero-h1 {
+    font-size: 2.4rem !important;
+    white-space: normal !important;
+    line-height: 1 !important;
+  }
+  .csfyn-hero-sub { font-size: 16px !important; }
+
+  .csfyn-areas { padding: 64px 24px !important; }
+  .csfyn-areas-grid {
+    grid-template-columns: 1fr !important;
+    border-radius: 16px !important;
+  }
+  .csfyn-area-card { padding: 36px 28px !important; border-radius: 0 !important; }
+  .csfyn-area-card:first-child { border-radius: 16px 16px 0 0 !important; }
+  .csfyn-area-card:last-child { border-radius: 0 0 16px 16px !important; }
+
+  .csfyn-perspective { padding: 72px 24px !important; }
+  .csfyn-perspective-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .csfyn-perspective-card { padding: 36px 28px !important; }
+}
+          `,
+        }}
+      />
+
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section
+        className="csfyn-hero"
         style={{
           position: "relative",
           height: "54vh",
@@ -161,6 +199,7 @@ export default async function OneMoreDayPage({ params }: Props) {
 
         {/* Content */}
         <div
+          className="csfyn-hero-content"
           style={{
             position: "absolute",
             bottom: 0,
@@ -172,6 +211,7 @@ export default async function OneMoreDayPage({ params }: Props) {
         >
           {/* Article label — large, pinned to far right */}
           <p
+            className="csfyn-article-label"
             style={{
               position: "absolute",
               right: "9%",
@@ -229,6 +269,7 @@ export default async function OneMoreDayPage({ params }: Props) {
 
           {/* H1 */}
           <h1
+            className="csfyn-hero-h1"
             style={{
               fontSize: "clamp(3rem, 6vw, 6rem)",
               fontWeight: 800,
@@ -249,6 +290,7 @@ export default async function OneMoreDayPage({ params }: Props) {
 
           {/* Subhead */}
           <p
+            className="csfyn-hero-sub"
             style={{
               fontSize: 18,
               fontWeight: 300,
@@ -450,7 +492,7 @@ export default async function OneMoreDayPage({ params }: Props) {
       </section>
 
       {/* ── Four focus areas ──────────────────────────────────────────── */}
-      <section style={{ background: "#f6f9fb", padding: "96px 9%" }}>
+      <section className="csfyn-areas" style={{ background: "#f6f9fb", padding: "96px 9%" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           {/* Header */}
           <div style={{ marginBottom: 64 }}>
@@ -483,6 +525,7 @@ export default async function OneMoreDayPage({ params }: Props) {
 
           {/* 2×2 grid */}
           <div
+            className="csfyn-areas-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
@@ -495,6 +538,7 @@ export default async function OneMoreDayPage({ params }: Props) {
             {areas.map((area, i) => (
               <div
                 key={area.number}
+                className="csfyn-area-card"
                 style={{
                   background: "#fff",
                   padding: "52px 48px",
@@ -627,12 +671,13 @@ export default async function OneMoreDayPage({ params }: Props) {
 
       {/* ── xrNORD perspective ────────────────────────────────────────── */}
       <section
+        className="csfyn-perspective"
         style={{
           background: "linear-gradient(135deg, #0B0F1A 0%, #141829 50%, #1A1040 100%)",
           padding: "100px 9%",
         }}
       >
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+        <div className="csfyn-perspective-grid" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
           {/* Left */}
           <div>
             <p
@@ -679,6 +724,7 @@ export default async function OneMoreDayPage({ params }: Props) {
 
           {/* Right — CTA card */}
           <div
+            className="csfyn-perspective-card"
             style={{
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.1)",
