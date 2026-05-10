@@ -290,7 +290,7 @@ export default function AiUseCasesPage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #0B0F1A 0%, #141829 50%, #1A1040 100%)",
+          background: "#ffffff",
           overflow: "hidden",
           padding: "clamp(100px, 12vw, 160px) 24px clamp(60px, 8vw, 100px)",
         }}
@@ -304,7 +304,7 @@ export default function AiUseCasesPage() {
             transform: "translateX(-50%)",
             width: 700,
             height: 700,
-            background: "radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(168,85,247,0.06) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -323,7 +323,7 @@ export default function AiUseCasesPage() {
               fontWeight: 700,
               letterSpacing: 3,
               textTransform: "uppercase",
-              color: "#C084FC",
+              color: "#A855F7",
               marginBottom: 20,
             }}
           >
@@ -337,7 +337,7 @@ export default function AiUseCasesPage() {
               fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)",
               fontWeight: 800,
               lineHeight: 1.12,
-              color: "#fff",
+              color: "#0f1c24",
               margin: "0 0 24px",
             }}
           >
@@ -360,7 +360,7 @@ export default function AiUseCasesPage() {
             style={{
               fontSize: 18,
               lineHeight: 1.7,
-              color: "rgba(255,255,255,0.65)",
+              color: "rgba(15,28,36,0.55)",
               maxWidth: 640,
               margin: "0 auto 40px",
             }}
@@ -384,11 +384,11 @@ export default function AiUseCasesPage() {
                     key={cat.id}
                     onClick={() => scrollToSection(cat.id)}
                     style={{
-                      padding: "10px 20px",
+                      padding: "11px 24px",
                       borderRadius: 999,
-                      border: isActive ? "1px solid transparent" : "1px solid rgba(255,255,255,0.2)",
-                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "transparent",
-                      color: isActive ? "#fff" : "rgba(255,255,255,0.7)",
+                      border: isActive ? "1px solid transparent" : "1px solid rgba(0,0,0,0.22)",
+                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "rgba(0,0,0,0.025)",
+                      color: isActive ? "#fff" : "rgba(15,28,36,0.78)",
                       fontSize: 14,
                       fontWeight: 600,
                       cursor: "pointer",
@@ -405,9 +405,9 @@ export default function AiUseCasesPage() {
                     }}
                     onMouseLeave={(e) => {
                       if (!isActive) {
-                        e.currentTarget.style.background = "transparent";
-                        e.currentTarget.style.color = "rgba(255,255,255,0.7)";
-                        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.2)";
+                        e.currentTarget.style.background = "rgba(0,0,0,0.025)";
+                        e.currentTarget.style.color = "rgba(15,28,36,0.78)";
+                        e.currentTarget.style.border = "1px solid rgba(0,0,0,0.22)";
                       }
                     }}
                   >
@@ -425,11 +425,11 @@ export default function AiUseCasesPage() {
                     key={cat.id}
                     onClick={() => scrollToSection(cat.id)}
                     style={{
-                      padding: "10px 20px",
+                      padding: "11px 24px",
                       borderRadius: 999,
-                      border: isActive ? "1px solid transparent" : "1px solid rgba(255,255,255,0.2)",
-                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "transparent",
-                      color: isActive ? "#fff" : "rgba(255,255,255,0.7)",
+                      border: isActive ? "1px solid transparent" : "1px solid rgba(0,0,0,0.22)",
+                      background: isActive ? "linear-gradient(135deg, #A855F7, #818CF8)" : "rgba(0,0,0,0.025)",
+                      color: isActive ? "#fff" : "rgba(15,28,36,0.78)",
                       fontSize: 14,
                       fontWeight: 600,
                       cursor: "pointer",
@@ -446,9 +446,9 @@ export default function AiUseCasesPage() {
                     }}
                     onMouseLeave={(e) => {
                       if (!isActive) {
-                        e.currentTarget.style.background = "transparent";
-                        e.currentTarget.style.color = "rgba(255,255,255,0.7)";
-                        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.2)";
+                        e.currentTarget.style.background = "rgba(0,0,0,0.025)";
+                        e.currentTarget.style.color = "rgba(15,28,36,0.78)";
+                        e.currentTarget.style.border = "1px solid rgba(0,0,0,0.22)";
                       }
                     }}
                   >
@@ -459,6 +459,428 @@ export default function AiUseCasesPage() {
             </div>
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* ─── Destination Fyn — Case Study Hero ─── */}
+      <section
+        style={{
+          position: "relative",
+          height: 748,
+          width: "100%",
+          overflow: "visible",
+          fontFamily: "Inter, -apple-system, sans-serif",
+        }}
+      >
+        {/* Background photo */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/assets/cases/Fyn 2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 40%",
+          }}
+        />
+        {/* White fade-in from top — blends into the white hero above */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "38%",
+            background: "linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%)",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Dark vignette overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.04) 40%, rgba(4,12,18,0.78) 100%)",
+          }}
+        />
+        {/* Side darkening for text legibility */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.05) 75%, transparent 100%)",
+          }}
+        />
+
+        {/* Text column */}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 3,
+            height: "100%",
+            paddingLeft: "13%",
+            paddingRight: "34%",
+            paddingTop: 0,
+            paddingBottom: 64,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            boxSizing: "border-box",
+          }}
+        >
+          {/* Visit Fyn logo (white) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/home/clients/destination-fyn.png"
+            alt="Visit Fyn"
+            style={{
+              height: 44,
+              width: "auto",
+              maxWidth: 160,
+              objectFit: "contain",
+              filter: "brightness(0) invert(1)",
+              opacity: 0.92,
+              marginBottom: 28,
+              display: "block",
+            }}
+          />
+
+          {/* Pills */}
+          <div style={{ display: "flex", gap: 8, marginBottom: 22 }}>
+            {[
+              locale === "da" ? "Case Study" : "Case Study",
+              locale === "da" ? "Turisme" : "Tourism",
+            ].map((tag) => (
+              <span
+                key={tag}
+                style={{
+                  padding: "8px 20px",
+                  borderRadius: 999,
+                  border: "1px solid rgba(255,255,255,0.5)",
+                  color: "rgba(255,255,255,0.95)",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  fontFamily: "inherit",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* H2 */}
+          <h2
+            style={{
+              fontSize: 120,
+              fontWeight: 800,
+              lineHeight: 0.95,
+              letterSpacing: "-0.04em",
+              color: "#fff",
+              margin: "0 0 24px",
+              fontFamily: "inherit",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {locale === "da" ? "Én Dag Mere" : "One More Day"}
+            <br />
+            <span style={{ fontWeight: 300, color: "rgba(255,255,255,0.85)" }}>
+              {locale === "da" ? "på Fyn" : "on Fyn"}
+            </span>
+          </h2>
+
+          {/* Subhead */}
+          <p
+            style={{
+              fontSize: 20,
+              fontWeight: 300,
+              color: "rgba(255,255,255,0.68)",
+              whiteSpace: "nowrap",
+              lineHeight: 1.45,
+              margin: "0 0 0",
+              fontFamily: "inherit",
+            }}
+          >
+            {locale === "da"
+              ? "Hvordan AI forvandlede en destinationsapp til en opdagelsesmaskine"
+              : "How AI turned a destination app into a discovery engine"}
+          </p>
+
+        </div>
+
+        {/* Phone surface shadow (under phone) */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            right: "calc(9% - 40px)",
+            bottom: -14,
+            width: 326,
+            height: 40,
+            background:
+              "radial-gradient(ellipse at center, rgba(0,0,0,0.22) 0%, transparent 70%)",
+            filter: "blur(8px)",
+            zIndex: 9,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* iPhone — floats, bleeds over fold */}
+        <div
+          style={{
+            position: "absolute",
+            right: "9%",
+            bottom: -50,
+            width: 246,
+            height: 496,
+            background: "#1c1c1e",
+            borderRadius: 50,
+            padding: 7,
+            boxSizing: "border-box",
+            boxShadow:
+              "0 48px 120px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.16), 0 0 60px rgba(200,220,240,0.12), 0 -8px 32px rgba(255,255,255,0.05)",
+            zIndex: 10,
+          }}
+        >
+          {/* Screen */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 7,
+              borderRadius: 44,
+              overflow: "hidden",
+              background: "#000",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/cases/VisitFyn_ENG.PNG"
+              alt="Visit Fyn app"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block",
+              }}
+            />
+            {/* Notch */}
+            <div
+              style={{
+                position: "absolute",
+                top: 8,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: 44,
+                height: 8,
+                background: "#141414",
+                borderRadius: 4,
+                zIndex: 5,
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Destination Fyn — Project Detail ─── */}
+      <section
+        style={{
+          background: "#f6f9fb",
+          padding: "120px 9% 100px",
+          fontFamily: "Inter, -apple-system, sans-serif",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "flex-start", width: "100%" }}>
+          {/* Left — body column */}
+          <div
+            style={{
+              flex: "0 0 32%",
+              paddingRight: 72,
+              borderRight: "1px solid #ebebeb",
+              boxSizing: "border-box",
+            }}
+          >
+            <p
+              style={{
+                fontSize: 20,
+                fontWeight: 600,
+                color: "#3a3a3a",
+                margin: "0 0 24px",
+              }}
+            >
+              {locale === "da" ? "Projektet" : "The Project"}
+            </p>
+            <p
+              style={{
+                fontSize: 16,
+                fontWeight: 300,
+                color: "#4a5a64",
+                lineHeight: 1.85,
+                margin: 0,
+              }}
+            >
+              {locale === "da"
+                ? "Vi samarbejdede med Destination Fyn & EcoJoys om at bygge en AI-rejseledsager, der hjælper turister med at opdage skjulte perler, lokale favoritter og perfekte øjeblikke på Danmarks smukkeste ø."
+                : "We partnered with Destination Fyn & EcoJoys to build an AI travel companion, helping tourists discover hidden gems, local favourites, and perfect moments on Denmark's most beautiful island."}
+            </p>
+            {/* Sponsorship */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                marginTop: 28,
+                flexWrap: "wrap",
+              }}
+            >
+              <span style={{ fontSize: 11, color: "#9ca3af", fontWeight: 400, letterSpacing: "0.01em" }}>
+                {locale === "da" ? "Udviklet i samarbejde med" : "Developed in a sponsorship with"}
+              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/cases/Danmarks Erhversfremmebestyrelse.svg"
+                alt="Danmarks Erhvervsfremmebestyrelse"
+                style={{ height: 24, width: "auto", display: "block", opacity: 0.7 }}
+              />
+            </div>
+            <Link
+              href={`/${locale}/case-studies/one-more-day-on-fyn`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                marginTop: 32,
+                padding: "13px 28px",
+                borderRadius: 999,
+                background: "#7C6FD4",
+                color: "#fff",
+                fontSize: 13,
+                fontWeight: 500,
+                textDecoration: "none",
+                fontFamily: "inherit",
+                transition: "background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = "#6a5ec4";
+                el.style.transform = "translateY(-2px)";
+                el.style.boxShadow = "0 8px 24px rgba(124,111,212,0.4)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = "#7C6FD4";
+                el.style.transform = "translateY(0)";
+                el.style.boxShadow = "none";
+              }}
+            >
+              {locale === "da" ? "Læs hele historien" : "Read the full story"} →
+            </Link>
+          </div>
+
+          {/* Right — capabilities */}
+          <div style={{ flex: 1, paddingLeft: 80 }}>
+            <p
+              style={{
+                fontSize: 20,
+                fontWeight: 600,
+                color: "#7C6FD4",
+                letterSpacing: "-0.01em",
+                margin: "0 0 40px",
+              }}
+            >
+              {locale === "da" ? "Kerneområder" : "Key Focus Areas"}
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+              }}
+            >
+              {[
+                {
+                  n: "01",
+                  t: { en: "Guided Visitor Journeys", da: "Guidede besøgsrejser" },
+                  s: {
+                    en: "Curated routes guiding visitors deep into Funen",
+                    da: "Kuraterede ruter dybt ind i Fyn",
+                  },
+                },
+                {
+                  n: "02",
+                  t: {
+                    en: "Visibility for Local Businesses",
+                    da: "Synlighed for lokale virksomheder",
+                  },
+                  s: {
+                    en: "Surfaced at the right moment of decision",
+                    da: "Vises i beslutningsøjeblikket",
+                  },
+                },
+                {
+                  n: "03",
+                  t: { en: "Real-Time Local Events", da: "Lokale events i realtid" },
+                  s: {
+                    en: "From scattered platforms to one connected experience",
+                    da: "Fra spredte platforme til én sammenhængende oplevelse",
+                  },
+                },
+                {
+                  n: "04",
+                  t: {
+                    en: "Reduced Costs Through AI",
+                    da: "Reducerede omkostninger via AI",
+                  },
+                  s: {
+                    en: "Content, translation and data automated",
+                    da: "Indhold, oversættelse og data automatiseret",
+                  },
+                },
+              ].map((item, idx) => (
+                <div
+                  key={item.n}
+                  style={{
+                    paddingRight: 40,
+                    paddingLeft: idx === 0 ? 0 : 40,
+                    borderLeft: idx === 0 ? "none" : "1px solid #ebebeb",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: 18,
+                      fontWeight: 700,
+                      color: "#7C6FD4",
+                      letterSpacing: "0.02em",
+                      margin: "0 0 14px",
+                    }}
+                  >
+                    {item.n}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 17,
+                      fontWeight: 600,
+                      color: "#0f1c24",
+                      lineHeight: 1.3,
+                      margin: "0 0 10px",
+                    }}
+                  >
+                    {t(item.t)}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 300,
+                      color: "#7a8f9a",
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
+                    {t(item.s)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ─── Category Sections ─── */}
