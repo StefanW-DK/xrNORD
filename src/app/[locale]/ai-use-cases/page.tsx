@@ -282,8 +282,74 @@ export default function AiUseCasesPage() {
     <main style={{ fontFamily: "var(--font-geist), sans-serif" }}>
       <Navbar />
 
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+@media (max-width: 768px) {
+  .aiuc-hero { padding: 96px 16px 56px !important; min-height: auto !important; }
+  .aiuc-hero-h1 { font-size: 1.85rem !important; line-height: 1.15 !important; }
+  .aiuc-hero-sub { font-size: 15px !important; margin-bottom: 28px !important; }
+  .aiuc-pills-row { flex-wrap: wrap !important; gap: 8px !important; }
+  .aiuc-pill { padding: 9px 14px !important; font-size: 12.5px !important; }
+
+  .fyn-hero { height: auto !important; min-height: 0 !important; }
+  .fyn-hero-text {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 88px !important;
+    padding-bottom: 440px !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+  }
+  .fyn-hero-h2 {
+    font-size: 52px !important;
+    white-space: normal !important;
+    line-height: 1 !important;
+    letter-spacing: -0.03em !important;
+  }
+  .fyn-hero-sub-line {
+    white-space: normal !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+  }
+  .fyn-phone {
+    right: 50% !important;
+    transform: translateX(50%) !important;
+    bottom: -28px !important;
+    width: 200px !important;
+    height: 404px !important;
+  }
+  .fyn-phone-shadow { display: none !important; }
+
+  .fyn-detail { padding: 72px 24px 80px !important; }
+  .fyn-detail-row { flex-direction: column !important; gap: 48px !important; }
+  .fyn-detail-left {
+    flex: 1 1 100% !important;
+    padding-right: 0 !important;
+    border-right: none !important;
+    padding-bottom: 36px !important;
+    border-bottom: 1px solid #ebebeb !important;
+    width: 100% !important;
+  }
+  .fyn-detail-right { padding-left: 0 !important; width: 100% !important; }
+  .fyn-detail-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .fyn-detail-grid-item {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left: none !important;
+    border-top: 1px solid #ebebeb !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .fyn-detail-grid-item:first-child { border-top: none !important; padding-top: 0 !important; }
+}
+          `,
+        }}
+      />
+
       {/* ─── Hero Section ─── */}
       <section
+        className="aiuc-hero"
         style={{
           position: "relative",
           minHeight: "clamp(520px, 85vh, 780px)",
@@ -333,6 +399,7 @@ export default function AiUseCasesPage() {
           {/* H1 */}
           <motion.h1
             variants={fadeUp}
+            className="aiuc-hero-h1"
             style={{
               fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)",
               fontWeight: 800,
@@ -357,6 +424,7 @@ export default function AiUseCasesPage() {
           {/* Subtext */}
           <motion.p
             variants={fadeUp}
+            className="aiuc-hero-sub"
             style={{
               fontSize: 18,
               lineHeight: 1.7,
@@ -376,13 +444,14 @@ export default function AiUseCasesPage() {
             style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}
           >
             {/* Row 1: first 3 */}
-            <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "nowrap" }}>
+            <div className="aiuc-pills-row" style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "nowrap" }}>
               {CATEGORIES.slice(0, 3).map((cat) => {
                 const isActive = activeCategory === cat.id;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => scrollToSection(cat.id)}
+                    className="aiuc-pill"
                     style={{
                       padding: "11px 24px",
                       borderRadius: 999,
@@ -417,13 +486,14 @@ export default function AiUseCasesPage() {
               })}
             </div>
             {/* Row 2: last 2 */}
-            <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "nowrap" }}>
+            <div className="aiuc-pills-row" style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "nowrap" }}>
               {CATEGORIES.slice(3).map((cat) => {
                 const isActive = activeCategory === cat.id;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => scrollToSection(cat.id)}
+                    className="aiuc-pill"
                     style={{
                       padding: "11px 24px",
                       borderRadius: 999,
@@ -463,6 +533,7 @@ export default function AiUseCasesPage() {
 
       {/* ─── Destination Fyn — Case Study Hero ─── */}
       <section
+        className="fyn-hero"
         style={{
           position: "relative",
           height: 748,
@@ -515,6 +586,7 @@ export default function AiUseCasesPage() {
 
         {/* Text column */}
         <div
+          className="fyn-hero-text"
           style={{
             position: "relative",
             zIndex: 3,
@@ -571,6 +643,7 @@ export default function AiUseCasesPage() {
 
           {/* H2 */}
           <h2
+            className="fyn-hero-h2"
             style={{
               fontSize: 120,
               fontWeight: 800,
@@ -591,6 +664,7 @@ export default function AiUseCasesPage() {
 
           {/* Subhead */}
           <p
+            className="fyn-hero-sub-line"
             style={{
               fontSize: 20,
               fontWeight: 300,
@@ -611,6 +685,7 @@ export default function AiUseCasesPage() {
         {/* Phone surface shadow (under phone) */}
         <div
           aria-hidden
+          className="fyn-phone-shadow"
           style={{
             position: "absolute",
             right: "calc(9% - 40px)",
@@ -627,6 +702,7 @@ export default function AiUseCasesPage() {
 
         {/* iPhone — floats, bleeds over fold */}
         <div
+          className="fyn-phone"
           style={{
             position: "absolute",
             right: "9%",
@@ -683,15 +759,17 @@ export default function AiUseCasesPage() {
 
       {/* ─── Destination Fyn — Project Detail ─── */}
       <section
+        className="fyn-detail"
         style={{
           background: "#f6f9fb",
           padding: "120px 9% 100px",
           fontFamily: "Inter, -apple-system, sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "flex-start", width: "100%" }}>
+        <div className="fyn-detail-row" style={{ display: "flex", alignItems: "flex-start", width: "100%" }}>
           {/* Left — body column */}
           <div
+            className="fyn-detail-left"
             style={{
               flex: "0 0 32%",
               paddingRight: 72,
@@ -777,7 +855,7 @@ export default function AiUseCasesPage() {
           </div>
 
           {/* Right — capabilities */}
-          <div style={{ flex: 1, paddingLeft: 80 }}>
+          <div className="fyn-detail-right" style={{ flex: 1, paddingLeft: 80 }}>
             <p
               style={{
                 fontSize: 20,
@@ -790,6 +868,7 @@ export default function AiUseCasesPage() {
               {locale === "da" ? "Kerneområder" : "Key Focus Areas"}
             </p>
             <div
+              className="fyn-detail-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
@@ -837,6 +916,7 @@ export default function AiUseCasesPage() {
               ].map((item, idx) => (
                 <div
                   key={item.n}
+                  className="fyn-detail-grid-item"
                   style={{
                     paddingRight: 40,
                     paddingLeft: idx === 0 ? 0 : 40,
