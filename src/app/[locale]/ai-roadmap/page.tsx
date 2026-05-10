@@ -377,7 +377,7 @@ export default function AIRoadmapPage() {
           variants={stagger}
           className="hero-content-wrap"
         >
-          <motion.p
+          <motion.h1
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -389,10 +389,10 @@ export default function AIRoadmapPage() {
               marginBottom: "28px",
             }}
           >
-            AI Roadmap
-          </motion.p>
+            {locale === "da" ? "AI Strategi & Roadmap" : "AI Strategy & Roadmap"}
+          </motion.h1>
 
-          <motion.h1
+          <motion.h2
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -429,7 +429,7 @@ export default function AIRoadmapPage() {
                 </span>
               </>
             )}
-          </motion.h1>
+          </motion.h2>
 
           <motion.p
             variants={fadeUp}
@@ -443,7 +443,7 @@ export default function AIRoadmapPage() {
           >
             {locale === "da"
               ? "Vi forstår jeres forretning og anvender en dyb forståelse af AI til at gentænke og styrke den."
-              : "We understand your business and apply a deep understanding of AI to rethink and strengthen it."}
+              : "We understand your business and apply deep AI expertise to rethink and strengthen it."}
           </motion.p>
 
           <motion.p
@@ -457,8 +457,8 @@ export default function AIRoadmapPage() {
             }}
           >
             {locale === "da"
-              ? "Så I forlader med en klar, handlingsrettet retning fremad."
-              : "So you leave with a clear, actionable direction forward."}
+              ? "Jeres strategi bliver udfordret, en AI strategi skabt. Forenet i en samlet retning."
+              : "Your strategy is challenged, an AI strategy is created, and unified into one clear direction."}
           </motion.p>
 
           <motion.div variants={fadeUp}>
