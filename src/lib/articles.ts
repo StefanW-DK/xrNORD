@@ -2621,7 +2621,7 @@ export const articles: Record<string, Record<string, Article>> = {
       category: "Case Study",
       categoryColor: "#7C6FD4",
       categoryBg: "rgba(124,111,212,0.08)",
-      title: "Den Ekstra Dag på Fyn: Hvordan AI forvandlede en destinationsapp til en mere spændende lokal oplevelse",
+      title: "Den Ekstra Dag på Fyn: Hvordan AI forvandlede en destinationsapp til en spændende lokal oplevelse",
       author: "xrNORD",
       date: "5. maj 2025",
       readTime: "5 min læsning",

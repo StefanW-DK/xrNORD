@@ -309,7 +309,7 @@ export default function AiUseCasesPage() {
   }
   .fyn-hero-sub-line {
     white-space: normal !important;
-    font-size: 15px !important;
+    font-size: 18px !important;
     line-height: 1.4 !important;
   }
   .fyn-phone {
@@ -676,7 +676,7 @@ export default function AiUseCasesPage() {
             }}
           >
             {locale === "da"
-              ? "Hvordan AI forvandlede en destinationsapp til en mere spændende lokal oplevelse"
+              ? "Hvordan AI forvandlede en destinationsapp til en spændende lokal oplevelse"
               : "How AI turned a destination app into a guided local experience"}
           </p>
 
