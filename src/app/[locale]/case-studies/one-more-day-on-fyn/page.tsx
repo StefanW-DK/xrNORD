@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: isDA ? "Den Ekstra Dag på Fyn" : "One More Day on Fyn",
       description: isDA
-        ? "Hvordan AI forvandlede en destinationsapp til en mere spændende lokal oplevelse"
+        ? "Hvordan AI forvandlede en destinationsapp til en spændende lokal oplevelse"
         : "How AI turned a destination app into a guided local experience",
       url,
       type: "article",
@@ -116,7 +116,7 @@ export default async function OneMoreDayPage({ params }: Props) {
     white-space: normal !important;
     line-height: 1 !important;
   }
-  .csfyn-hero-sub { font-size: 16px !important; }
+  .csfyn-hero-sub { font-size: 18px !important; line-height: 1.45 !important; }
 
   .csfyn-areas { padding: 64px 24px !important; }
   .csfyn-areas-grid {
@@ -301,7 +301,7 @@ export default async function OneMoreDayPage({ params }: Props) {
             }}
           >
             {isDA
-              ? "Hvordan AI forvandlede en destinationsapp til en mere spændende lokal oplevelse"
+              ? "Hvordan AI forvandlede en destinationsapp til en spændende lokal oplevelse"
               : "How AI turned a destination app into a guided local experience"}
           </p>
         </div>
