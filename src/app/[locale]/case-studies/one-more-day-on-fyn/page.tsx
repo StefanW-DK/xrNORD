@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: isDA ? "Den Ekstra Dag på Fyn" : "One More Day on Fyn",
       description: isDA
-        ? "Hvordan AI forvandlede en destinationsapp til en opdagelsesmaskine"
-        : "How AI turned a destination app into a discovery engine",
+        ? "Hvordan AI forvandlede en destinationsapp til en mere spændende lokal oplevelse"
+        : "How AI turned a destination app into a guided local experience",
       url,
       type: "article",
       siteName: "xrNORD",
@@ -301,8 +301,8 @@ export default async function OneMoreDayPage({ params }: Props) {
             }}
           >
             {isDA
-              ? "Hvordan AI forvandlede en destinationsapp til en opdagelsesmaskine"
-              : "How AI turned a destination app into a discovery engine"}
+              ? "Hvordan AI forvandlede en destinationsapp til en mere spændende lokal oplevelse"
+              : "How AI turned a destination app into a guided local experience"}
           </p>
         </div>
       </section>
