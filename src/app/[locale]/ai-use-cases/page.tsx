@@ -676,8 +676,8 @@ export default function AiUseCasesPage() {
             }}
           >
             {locale === "da"
-              ? "Hvordan AI forvandlede en destinationsapp til en opdagelsesmaskine"
-              : "How AI turned a destination app into a discovery engine"}
+              ? "Hvordan AI forvandlede en destinationsapp til en mere spændende lokal oplevelse"
+              : "How AI turned a destination app into a guided local experience"}
           </p>
 
         </div>
