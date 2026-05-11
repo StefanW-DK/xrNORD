@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? "Den Ekstra Dag på Fyn | xrNORD Case Study"
       : "One More Day on Fyn | xrNORD Case Study",
     description: isDA
-      ? "Hvordan xrNORD og Destination Fyn bruger AI til at skabe den ekstra dag — og forvandler en fragmenteret destinationsoplevelse til en sammenhængende rejse."
-      : "How xrNORD and Destination Fyn are using AI to create the extra day — turning a fragmented destination experience into a coherent, guided journey.",
+      ? "Hvordan xrNORD og Destination Fyn bruger AI til at skabe den ekstra dag, og forvandler en fragmenteret destinationsoplevelse til en sammenhængende rejse."
+      : "How xrNORD and Destination Fyn are using AI to create the extra day, turning a fragmented destination experience into a coherent, guided journey.",
     alternates: {
       canonical: url,
       languages: {
@@ -50,7 +50,7 @@ const focusAreas = {
     {
       number: "01",
       title: "Guided Visitor Journeys",
-      body: "Visitors are guided through the destination with contextual recommendations — curated bike routes and local experiences designed to create a coherent stay from day one.",
+      body: "Visitors are guided through the destination with contextual recommendations, curated bike routes and local experiences designed to create a coherent stay from day one.",
     },
     {
       number: "02",
@@ -60,19 +60,19 @@ const focusAreas = {
     {
       number: "03",
       title: "Real-Time Local Events",
-      body: "Events from Facebook and other platforms are integrated into one place — visible and accessible within the visitor's journey, not scattered across channels.",
+      body: "Events from Facebook and other platforms are integrated into one place, visible and accessible within the visitor's journey, not scattered across channels.",
     },
     {
       number: "04",
       title: "Reduced Costs Through AI",
-      body: "AI handles content structuring, text generation, translation and data processing — significantly cutting operational workload and time to market.",
+      body: "AI handles content structuring, text generation, translation and data processing, significantly cutting operational workload and time to market.",
     },
   ],
   da: [
     {
       number: "01",
       title: "Guidede oplevelser",
-      body: "Gæster guides gennem destinationen via kontekstuelle anbefalinger — kuraterede cykelruter og lokale oplevelser, der skaber en sammenhængende oplevelse fra dag ét.",
+      body: "Gæster guides gennem destinationen via kontekstuelle anbefalinger, kuraterede cykelruter og lokale oplevelser, der skaber en sammenhængende oplevelse fra dag ét.",
     },
     {
       number: "02",
@@ -82,12 +82,12 @@ const focusAreas = {
     {
       number: "03",
       title: "Lokale events i realtid",
-      body: "Events fra Facebook og andre platforme er samlet ét sted — synlige og tilgængelige i gæstens oplevelse, ikke spredt på tværs af kanaler.",
+      body: "Events fra Facebook og andre platforme er samlet ét sted, synlige og tilgængelige i gæstens oplevelse, ikke spredt på tværs af kanaler.",
     },
     {
       number: "04",
       title: "Reducerede omkostninger via AI",
-      body: "AI håndterer indholdsstrukturering, tekstgenerering, oversættelse og databehandling — og reducerer driftsarbejdet markant.",
+      body: "AI håndterer indholdsstrukturering, tekstgenerering, oversættelse og databehandling, og reducerer driftsarbejdet markant.",
     },
   ],
 };
@@ -417,7 +417,7 @@ export default async function OneMoreDayPage({ params }: Props) {
           <p style={{ fontSize: "1.075rem", fontWeight: 300, lineHeight: 1.85, color: "#374151", margin: "0 0 48px" }}>
             {isDA
               ? "Resultatet har været en destination rig på oplevelser, men ikke fuldt oplevet."
-              : "The result was — and is — a destination rich in experiences, but not fully experienced."}
+              : "The result was, and is, a destination rich in experiences, but not fully experienced."}
           </p>
 
           <h2
@@ -443,8 +443,8 @@ export default async function OneMoreDayPage({ params }: Props) {
 
           <p style={{ fontSize: "1.075rem", fontWeight: 300, lineHeight: 1.85, color: "#374151", margin: 0 }}>
             {isDA
-              ? "Første skridt var derfor ikke at tilføje features, men at gentænke og opbygge hele arkitekturen fra bunden — et fundament der understøtter struktureret data, integrationer og fremtidige AI-muligheder."
-              : "The first step was therefore not to add features, but to rebuild the system architecture from the ground up — establishing a foundation to support structured data, integrations, real-time logic, and future AI capabilities."}
+              ? "Første skridt var derfor ikke at tilføje features, men at gentænke og opbygge hele arkitekturen fra bunden, et fundament der understøtter struktureret data, integrationer og fremtidige AI-muligheder."
+              : "The first step was therefore not to add features, but to rebuild the system architecture from the ground up, establishing a foundation to support structured data, integrations, real-time logic, and future AI capabilities."}
           </p>
         </div>
       </section>
@@ -636,8 +636,8 @@ export default async function OneMoreDayPage({ params }: Props) {
 
           <p style={{ fontSize: "1.075rem", fontWeight: 300, lineHeight: 1.85, color: "#374151", margin: "0 0 48px" }}>
             {isDA
-              ? "AI implementeres ikke på én gang. Den introduceres der, hvor den skaber konkret værdi, og udvides i takt med, at platformen udvikler sig. Det sikrer et stabilt fundament, tidlige resultater og en klar vej mod avanceret personalisering og automatisering — uden at miste kontrol over kompleksitet og omkostninger."
-              : "AI is not introduced all at once. It is implemented where it creates immediate value and expanded as the system evolves. This approach ensures a stable foundation, early measurable impact, and a clear path toward more advanced personalization and automation — without losing control of complexity or cost."}
+              ? "AI implementeres ikke på én gang. Den introduceres der, hvor den skaber konkret værdi, og udvides i takt med, at platformen udvikler sig. Det sikrer et stabilt fundament, tidlige resultater og en klar vej mod avanceret personalisering og automatisering, uden at miste kontrol over kompleksitet og omkostninger."
+              : "AI is not introduced all at once. It is implemented where it creates immediate value and expanded as the system evolves. This approach ensures a stable foundation, early measurable impact, and a clear path toward more advanced personalization and automation, without losing control of complexity or cost."}
           </p>
 
           <h2
@@ -663,8 +663,8 @@ export default async function OneMoreDayPage({ params }: Props) {
 
           <p style={{ fontSize: "1.075rem", fontWeight: 300, lineHeight: 1.85, color: "#374151", margin: 0 }}>
             {isDA
-              ? "Målet er en destination, der forstår sine gæster og reagerer derefter. Den ekstra dag skabes ikke gennem kampagner, ikke gennem mere indhold. Den skabes gennem oplevelser — oplevelser, der hænger sammen, føles relevante og er værd at blive den ekstra dag for."
-              : "The long-term outcome is a destination that understands its visitors and responds accordingly. The extra day is not created through campaigns. Not through more content. It is created through experiences — experiences that feel coherent, relevant, and worth staying that extra day for."}
+              ? "Målet er en destination, der forstår sine gæster og reagerer derefter. Den ekstra dag skabes ikke gennem kampagner, ikke gennem mere indhold. Den skabes gennem oplevelser, oplevelser, der hænger sammen, føles relevante og er værd at blive den ekstra dag for."
+              : "The long-term outcome is a destination that understands its visitors and responds accordingly. The extra day is not created through campaigns. Not through more content. It is created through experiences, experiences that feel coherent, relevant, and worth staying that extra day for."}
           </p>
         </div>
       </section>
@@ -756,8 +756,8 @@ export default async function OneMoreDayPage({ params }: Props) {
               }}
             >
               {isDA
-                ? "Lad os udforske, hvad der er muligt for din virksomhed — fra vision til konkret eksekvering."
-                : "Let's explore what's possible for your organisation — from vision to real-world execution."}
+                ? "Lad os udforske, hvad der er muligt for din virksomhed, fra vision til konkret eksekvering."
+                : "Let's explore what's possible for your organisation, from vision to real-world execution."}
             </p>
             <Link
               href={`/${locale}/workshop`}
