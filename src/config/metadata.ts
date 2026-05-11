@@ -11,7 +11,7 @@ interface PageMeta {
   keywords: string[];
 }
 
-type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use";
+type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "execution" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use";
 
 const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey, PageMeta> }> = {
   en: {
@@ -34,6 +34,12 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         description:
           "We combine a deep understanding of AI and your business to strengthen your competitiveness and optimize how you operate, guided by a clear, actionable roadmap.",
         keywords: ["AI roadmap", "AI strategy", "AI adoption", "business AI roadmap"],
+      },
+      "execution": {
+        title: "AI Execution | Build Your Company AI Ecosystem | xrNORD",
+        description:
+          "AI is not a tool. It is your ecosystem. We design and build connected AI systems across your business so that over time it evolves into your own Company AI.",
+        keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementation", "AI integration", "Nordic AI"],
       },
       "ai-use-cases": {
         title: "AI Use Cases | How AI Creates Value in Real Businesses | xrNORD",
@@ -111,6 +117,12 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         description:
           "En klar retning for hvordan AI styrker jeres forretning og konkurrencekraft, omsat til en konkret handlingsplan.",
         keywords: ["AI roadmap", "AI strategi", "AI adoption", "forretnings AI roadmap"],
+      },
+      "execution": {
+        title: "AI Execution | Byg jeres eget AI Ecosystem | xrNORD",
+        description:
+          "AI er ikke et værktøj. Det er jeres ecosystem. Vi designer og bygger forbundne AI-systemer på tværs af jeres forretning, så det over tid udvikler sig til jeres eget Company AI.",
+        keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementering", "AI integration", "Nordisk AI"],
       },
       "ai-use-cases": {
         title: "AI Use Cases | Sådan skaber AI værdi i virksomheder | xrNORD",
