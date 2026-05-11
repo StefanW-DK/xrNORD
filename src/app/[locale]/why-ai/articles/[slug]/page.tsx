@@ -212,13 +212,14 @@ export default async function ArticlePage({ params }: Props) {
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "NewsArticle",
     headline: article.title,
     description: article.excerpt,
     image: `${BASE_URL}${article.image}`,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: article.author,
+      url: BASE_URL,
     },
     publisher: {
       "@type": "Organization",
@@ -235,6 +236,32 @@ export default async function ArticlePage({ params }: Props) {
       "@type": "WebPage",
       "@id": articleUrl,
     },
+    inLanguage: locale === "da" ? "da-DK" : "en-US",
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${BASE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Articles",
+        item: `${BASE_URL}/${locale}/why-ai/articles`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: articleUrl,
+      },
+    ],
   };
 
   return (
@@ -242,6 +269,10 @@ export default async function ArticlePage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <ArticleTracker slug={slug} title={article.title} locale={locale} />
       <Navbar />
