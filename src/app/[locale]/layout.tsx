@@ -10,8 +10,6 @@ import CookieBanner from "@/components/layout/CookieBanner";
 import RouteChangeTracker from "@/components/analytics/RouteChangeTracker";
 import "../globals.css";
 
-const GA_ID = "G-KZBPLJL8VK";
-
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -87,34 +85,25 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <>
-      {GA_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`
+      {/* Restore consent for returning visitors — GTM handles GA4/Ads initialization */}
+      <Script id="consent-restore" strategy="afterInteractive">
+        {`
+          try {
+            var c = localStorage.getItem('xrnord_cookie_consent');
+            if (c && c !== 'dismissed') {
+              var p = JSON.parse(c);
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', { 'send_page_view': true });
-              try {
-                var c = localStorage.getItem('xrnord_cookie_consent');
-                if (c && c !== 'dismissed') {
-                  var p = JSON.parse(c);
-                  gtag('consent', 'update', {
-                    'analytics_storage': (p.all || p.analytics) ? 'granted' : 'denied',
-                    'ad_storage': (p.all || p.marketing) ? 'granted' : 'denied',
-                    'ad_user_data': (p.all || p.marketing) ? 'granted' : 'denied',
-                    'ad_personalization': (p.all || p.marketing) ? 'granted' : 'denied'
-                  });
-                }
-              } catch(e) {}
-            `}
-          </Script>
-        </>
-      )}
+              gtag('consent', 'update', {
+                'analytics_storage': (p.all || p.analytics) ? 'granted' : 'denied',
+                'ad_storage': (p.all || p.marketing) ? 'granted' : 'denied',
+                'ad_user_data': (p.all || p.marketing) ? 'granted' : 'denied',
+                'ad_personalization': (p.all || p.marketing) ? 'granted' : 'denied'
+              });
+            }
+          } catch(e) {}
+        `}
+      </Script>
       <NextIntlClientProvider messages={messages}>
         <RouteChangeTracker />
         {children}
