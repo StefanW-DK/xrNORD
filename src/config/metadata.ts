@@ -1,7 +1,7 @@
 // Centralised per-locale metadata config.
 // Add new pages by extending PageMetaKey and siteMetadata.pages.
 
-export const BASE_URL = "https://xrnord.com";
+export const BASE_URL = "https://www.xrnord.com";
 
 export type Locale = "en" | "da";
 
@@ -30,7 +30,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI workshop", "AI kickstarter", "AI for business", "AI strategy workshop"],
       },
       "ai-roadmap": {
-        title: "AI Roadmap | Challenge & Reshape Your Business to Win | xrNORD",
+        title: "AI Roadmap | Reshape Your Business to Win | xrNORD",
         description:
           "We combine a deep understanding of AI and your business to strengthen your competitiveness and optimize how you operate, guided by a clear, actionable roadmap.",
         keywords: ["AI roadmap", "AI strategy", "AI adoption", "business AI roadmap"],
@@ -42,19 +42,19 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementation", "AI integration", "Nordic AI"],
       },
       "ai-use-cases": {
-        title: "AI Use Cases | How AI Creates Value in Real Businesses | xrNORD",
+        title: "AI Use Cases | Real Business Value | xrNORD",
         description:
           "Explore how AI is used across sales, media, education, and accounting. See concrete examples of how companies create value with AI in practice.",
         keywords: ["AI use cases", "AI examples", "AI business applications", "AI ROI"],
       },
       "why-ai": {
-        title: "Why AI Matters | Insights from Business & AI Leaders | xrNORD",
+        title: "Why AI Matters | Business & AI Leaders | xrNORD",
         description:
           "Hear how business and AI leaders think about AI today. Understand what matters, what works, and what it means for your business.",
         keywords: ["why AI", "AI insights", "AI interviews", "AI articles", "AI business"],
       },
       "why-ai-interviews": {
-        title: "Why AI Matters | Insights from Business & AI Leaders | xrNORD",
+        title: "Why AI Matters | Business & AI Leaders | xrNORD",
         description:
           "See how AI creates value in business, through leaders and experts.",
         keywords: ["AI interviews", "AI leaders", "AI insights", "business AI", "AI perspectives"],
@@ -101,13 +101,13 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
     siteName: "xrNORD",
     pages: {
       home: {
-        title: "Styrk jeres konkurrencekraft | Vi gør AI til en del af jeres forretning | xrNORD",
+        title: "AI i jeres forretning | Styrk konkurrencekraften | xrNORD",
         description:
           "Styrk jeres konkurrencekraft ved at gøre AI til en del af jeres måde at arbejde på. Vi bygger og integrerer AI i jeres produkter, processer og daglige arbejdsgange.",
         keywords: ["AI strategi", "AI implementering", "Skandinavisk AI", "AI roadmap", "AI workshop", "Nordisk AI"],
       },
       workshop: {
-        title: "AI Workshop | Hvad kan AI betyde for jeres forretning | xrNORD",
+        title: "AI Workshop | AI i jeres forretning | xrNORD",
         description:
           "Forstå hvad AI betyder for jeres forretning. Få klarhed over hvor det skaber værdi og hvad næste skridt er.",
         keywords: ["AI workshop", "AI kickstarter", "AI til forretningen", "AI strategi workshop"],
@@ -125,19 +125,19 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementering", "AI integration", "Nordisk AI"],
       },
       "ai-use-cases": {
-        title: "AI Use Cases | Sådan skaber AI værdi i virksomheder | xrNORD",
+        title: "AI Use Cases | AI-værdi i virksomheder | xrNORD",
         description:
           "Se hvordan AI bruges i salg, marketing, undervisning og økonomi. Få konkrete eksempler på hvordan virksomheder skaber reel værdi med AI.",
         keywords: ["AI use cases", "AI eksempler", "AI i forretningen", "AI ROI"],
       },
       "why-ai": {
-        title: "Hvorfor AI betyder noget | Lyt til erhvervs- og AI-ledere | xrNORD",
+        title: "Hvorfor AI betyder noget | AI-ledere | xrNORD",
         description:
           "Hør erhvervs- og AI-lederes erfaringer med AI i praksis, og hvorfor det er afgørende at tage teknologien seriøst.",
         keywords: ["hvorfor AI", "AI indsigt", "AI interviews", "AI artikler", "AI forretning"],
       },
       "why-ai-interviews": {
-        title: "Hvorfor AI betyder noget | Lyt til erhvervs- og AI-ledere | xrNORD",
+        title: "Hvorfor AI betyder noget | AI-ledere | xrNORD",
         description:
           "Få indblik i, hvordan AI skaber værdi i erhvervslivet, gennem ledere og eksperter.",
         keywords: ["AI interviews", "AI ledere", "AI indsigt", "erhvervs AI", "AI perspektiver"],
