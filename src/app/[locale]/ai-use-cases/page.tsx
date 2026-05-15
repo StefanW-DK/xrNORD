@@ -811,7 +811,7 @@ export default function AiUseCasesPage() {
               }}
             >
               <span style={{ fontSize: 11, color: "#9ca3af", fontWeight: 400, letterSpacing: "0.01em" }}>
-                {locale === "da" ? "Udviklet i samarbejde med" : "Developed in a sponsorship with"}
+                {locale === "da" ? "Projektet er støttet af Erhvervsfremmebestyrelsen" : "This project is supported by the Danish Business Promotion Board"}
               </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
