@@ -1,0 +1,28 @@
+# xrNORD
+
+> xrNORD is a Nordic AI consultancy that helps businesses stay competitive by building and integrating AI into their products, processes, and daily workflows. Based in Denmark, serving companies across Denmark, Sweden, Norway, and Finland.
+
+xrNORD works with business leaders who want to move beyond AI hype and into real, measurable impact. We combine deep AI expertise with hands-on implementation — from initial strategy to a fully operational Company AI ecosystem.
+
+## Services
+
+- [AI Workshop](https://www.xrnord.com/en/workshop): A structured session that gives leadership teams clarity on how AI will impact their specific business, where it creates value, and what the next steps should be.
+- [AI Roadmap](https://www.xrnord.com/en/ai-roadmap): A clear, actionable plan that combines deep understanding of AI and your business to strengthen competitiveness and reshape how you operate.
+- [AI Execution](https://www.xrnord.com/en/execution): Design and build of connected AI systems across your business — evolving over time into your own Company AI ecosystem.
+
+## Resources
+
+- [AI Use Cases](https://www.xrnord.com/en/ai-use-cases): Concrete examples of how AI creates value in sales, media, education, accounting, and data analysis.
+- [Articles](https://www.xrnord.com/en/why-ai/articles): In-depth articles on AI adoption, strategy, governance, data pipelines, and implementation best practices.
+- [Interviews](https://www.xrnord.com/en/why-ai/interviews): Real conversations with business leaders about AI adoption in practice.
+- [Case Study — One More Day on Fyn](https://www.xrnord.com/en/case-studies/one-more-day-on-fyn): How xrNORD and Destination Fyn used AI to turn a fragmented destination experience into a guided, intelligent visitor journey.
+
+## Company
+
+- [About xrNORD](https://www.xrnord.com/en/about): Who we are, our approach, and why we built xrNORD.
+- [Contact](https://www.xrnord.com/en/contact): Get in touch with xrNORD.
+- Location: Hægvej 11, 8250 Egå, Denmark
+- Email: info@xrNORD.com
+- Phone: +45 23 65 42 83
+- Markets: Denmark, Sweden, Norway, Finland
+- Languages: English, Danish
