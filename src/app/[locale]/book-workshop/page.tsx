@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
-import { trackLead } from "@/lib/analytics";
+import { trackLead, trackHighIntentPageView } from "@/lib/analytics";
 
 const COUNTRY_CODES = [
   { code: "+45", country: "DK", flag: "🇩🇰" },
@@ -96,6 +96,12 @@ export default function BookWorkshopPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+
+  // High-intent signal — fires once on mount, tells GTM/Google Ads this
+  // visitor reached the booking page (strong purchase intent even without submitting)
+  useEffect(() => {
+    trackHighIntentPageView("book_workshop", locale);
+  }, [locale]);
 
   const set = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));

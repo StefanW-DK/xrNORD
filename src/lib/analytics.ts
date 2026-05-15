@@ -1,6 +1,7 @@
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    dataLayer?: Record<string, unknown>[];
   }
 }
 
@@ -96,4 +97,20 @@ export function trackSocialClick(platform: string) {
  */
 export function trackContactInfoClick(type: "email" | "phone") {
   trackEvent("contact_info_click", { type });
+}
+
+/**
+ * Push a high-intent page view event directly to dataLayer.
+ * Fires on /book-workshop and /contact — signals strong purchase intent
+ * to GTM (and via GTM to Google Ads Smart Bidding) even when no form
+ * is submitted.
+ */
+export function trackHighIntentPageView(page: "book_workshop" | "contact", locale: string) {
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "high_intent_page_view",
+    page_type: page,
+    locale,
+  });
 }

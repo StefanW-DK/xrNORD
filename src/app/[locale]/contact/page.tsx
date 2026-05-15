@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
-import { trackLead } from "@/lib/analytics";
+import { trackLead, trackHighIntentPageView } from "@/lib/analytics";
 
 const gradientText = {
   backgroundImage: "linear-gradient(135deg, #22D3EE, #38BDF8, #818CF8)",
@@ -94,6 +94,12 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+
+  // High-intent signal — fires once on mount, tells GTM/Google Ads this
+  // visitor reached the contact page (strong purchase intent even without submitting)
+  useEffect(() => {
+    trackHighIntentPageView("contact", locale);
+  }, [locale]);
 
   const set = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
