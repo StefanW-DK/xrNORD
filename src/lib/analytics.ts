@@ -80,9 +80,13 @@ export function trackLanguageSwitch(fromLocale: string, toLocale: string) {
 
 /**
  * Track newsletter form submission (footer).
+ * Pushes to both gtag (GA4) and dataLayer (GTM) so either can trigger on it.
  */
 export function trackNewsletterSignup(locale: string) {
   trackEvent("newsletter_signup", { locale });
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "newsletter_signup", locale });
 }
 
 /**
