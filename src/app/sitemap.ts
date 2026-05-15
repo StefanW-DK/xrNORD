@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://xrnord.com";
+const BASE_URL = "https://www.xrnord.com";
 
 const ARTICLE_SLUGS = [
   "from-pilot-to-production",
@@ -30,6 +30,7 @@ const STATIC_PAGES = [
   { path: "/why-ai/interviews", priority: 0.7 },
   { path: "/why-ai/articles", priority: 0.7 },
   { path: "/about", priority: 0.6 },
+  { path: "/case-studies/one-more-day-on-fyn", priority: 0.7 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
