@@ -13,6 +13,17 @@ interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
 
+// Truncate at last word boundary to keep titles/descriptions within SEO limits
+function seoTitle(text: string, max = 55): string {
+  if (text.length <= max) return text;
+  return text.slice(0, text.lastIndexOf(" ", max)) + "…";
+}
+
+function seoDescription(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  return text.slice(0, text.lastIndexOf(" ", max)) + "…";
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const article = getArticle(locale, slug);
@@ -21,10 +32,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `${BASE_URL}/${locale}/why-ai/articles/${slug}`;
   const otherLocale = locale === "en" ? "da" : "en";
   const otherUrl = `${BASE_URL}/${otherLocale}/why-ai/articles/${slug}`;
+  const metaTitle = `${seoTitle(article.title)} | xrNORD`;
+  const metaDescription = seoDescription(article.excerpt);
 
   return {
-    title: `${article.title} | xrNORD`,
-    description: article.excerpt,
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: url,
       languages: {
@@ -34,16 +47,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: article.title,
-      description: article.excerpt,
+      title: seoTitle(article.title, 60),
+      description: seoDescription(article.excerpt, 155),
       url,
       type: "article",
       siteName: "xrNORD",
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title,
-      description: article.excerpt,
+      title: seoTitle(article.title, 60),
+      description: seoDescription(article.excerpt, 155),
     },
   };
 }
