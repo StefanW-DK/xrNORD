@@ -54,7 +54,12 @@ const nextConfig: NextConfig = {
       { source: "/da/reinvent",           destination: "/da/ai-roadmap",        permanent: true },
       { source: "/da/the3steps",          destination: "/da/ai-roadmap",        permanent: true },
       { source: "/da/ai-financialauditing", destination: "/da/ai-use-cases",   permanent: true },
+      { source: "/da/finance-auditing",   destination: "/da/ai-use-cases",      permanent: true },
       { source: "/da/mainold",            destination: "/da",                   permanent: true },
+      { source: "/da/newmain2",           destination: "/da",                   permanent: true },
+
+      // ── Root-level legacy pages ──────────────────────────────────────────────
+      { source: "/home",                  destination: "/en",                   permanent: true },
 
       // ── Article posts EN ────────────────────────────────────────────────────
       { source: "/post/scaling-ai-from-pilot-to-production",                          destination: "/en/why-ai/articles/from-pilot-to-production",                            permanent: true },
