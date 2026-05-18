@@ -61,8 +61,8 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* H1 */}
-        <motion.h1
+        {/* Visual headline — H2 for design, SEO weight carried by H1 below */}
+        <motion.h2
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
@@ -80,23 +80,25 @@ export default function Hero() {
           <br />
           <span style={gradientStyle}>{t("headlineHighlight2")}</span>{" "}
           {t("headlineEnd")}
-        </motion.h1>
+        </motion.h2>
 
-        {/* Subline */}
-        <motion.p
+        {/* H1 — SEO primary heading, styled as supporting subline */}
+        <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
-          className="max-w-2xl mx-auto mb-12"
+          className="mx-auto mb-12"
           style={{
             fontFamily: "var(--font-inter), system-ui, sans-serif",
             fontSize: "1.125rem",
+            fontWeight: 400,
             lineHeight: 1.65,
             color: "rgba(255,255,255,0.65)",
+            maxWidth: "500px",
           }}
         >
           {t("subtext")}
-        </motion.p>
+        </motion.h1>
 
         {/* CTAs */}
         <motion.div

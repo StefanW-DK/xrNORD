@@ -208,7 +208,8 @@ export default function WorkshopPage() {
             AI Workshop
           </motion.p>
 
-          <motion.h1
+          {/* Visual headline — H2 for design, SEO weight carried by H1 below */}
+          <motion.h2
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -251,37 +252,25 @@ export default function WorkshopPage() {
                 </span>
               </>
             )}
-          </motion.h1>
+          </motion.h2>
 
-          <motion.p
+          {/* H1 — SEO primary heading, styled as supporting subline */}
+          <motion.h1
             variants={fadeUp}
             className="hero-subtitle"
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
-              lineHeight: 1.65,
-              color: "rgba(220,216,232,0.9)",
-              marginBottom: "8px",
-            }}
-          >
-            {locale === "da"
-              ? "Få klarhed over hvad AI betyder for jeres forretning - og hvad næste skridt er."
-              : "In one day, you get clarity on what AI means for your business - and what to do next."}
-          </motion.p>
-
-          <motion.p
-            variants={fadeUp}
-            className="hero-subtitle"
-            style={{
-              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontWeight: 400,
               lineHeight: 1.65,
               color: "rgba(220,216,232,0.9)",
               marginBottom: "clamp(32px, 6vw, 64px)",
+              maxWidth: "720px",
             }}
           >
             {locale === "da"
-              ? "Fra effektivisering til stærkere produkter og langsigtet konkurrencekraft."
-              : "From productivity gains to stronger products and long-term competitiveness."}
-          </motion.p>
+              ? "Vores AI Workshop hjælper jer med at forstå, hvad AI betyder for jeres forretning, og hvad næste skridt er. Fra effektivisering til stærkere produkter og langsigtet konkurrencekraft."
+              : "Our AI Workshop helps your business understand what AI means for your operations and what to do next. From productivity gains to stronger products and long-term competitiveness."}
+          </motion.h1>
 
           <motion.div variants={fadeUp}>
             <Link

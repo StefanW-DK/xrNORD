@@ -396,8 +396,8 @@ export default function AiUseCasesPage() {
             AI USE CASES
           </motion.p>
 
-          {/* H1 */}
-          <motion.h1
+          {/* Visual headline — H2 for design */}
+          <motion.h2
             variants={fadeUp}
             className="aiuc-hero-h1"
             style={{
@@ -419,14 +419,15 @@ export default function AiUseCasesPage() {
             >
               {locale === "da" ? "p\u00e5 tv\u00e6rs af brancher" : "Across Industries"}
             </span>
-          </motion.h1>
+          </motion.h2>
 
-          {/* Subtext */}
-          <motion.p
+          {/* H1 \u2014 SEO primary heading, styled as subline */}
+          <motion.h1
             variants={fadeUp}
             className="aiuc-hero-sub"
             style={{
               fontSize: 18,
+              fontWeight: 400,
               lineHeight: 1.7,
               color: "rgba(15,28,36,0.55)",
               maxWidth: 640,
@@ -436,7 +437,7 @@ export default function AiUseCasesPage() {
             {locale === "da"
               ? "Udforsk hvordan AI skaber m\u00e5lbar v\u00e6rdi inden for salg, marketing, uddannelse, data og finans."
               : "Explore how AI creates measurable impact across sales, marketing, education, data, and finance."}
-          </motion.p>
+          </motion.h1>
 
           {/* Filter Pills */}
           <motion.div

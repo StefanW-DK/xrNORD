@@ -377,7 +377,7 @@ export default function AIRoadmapPage() {
           variants={stagger}
           className="hero-content-wrap"
         >
-          <motion.h1
+          <motion.p
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -390,7 +390,7 @@ export default function AIRoadmapPage() {
             }}
           >
             {locale === "da" ? "AI Strategi & Roadmap" : "AI Strategy & Roadmap"}
-          </motion.h1>
+          </motion.p>
 
           <motion.h2
             variants={fadeUp}
@@ -431,35 +431,23 @@ export default function AIRoadmapPage() {
             )}
           </motion.h2>
 
-          <motion.p
+          {/* H1 — SEO primary heading, styled as supporting subline */}
+          <motion.h1
             variants={fadeUp}
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: "1.35rem",
-              lineHeight: 1.65,
-              color: "rgba(220,216,232,0.9)",
-              marginBottom: "8px",
-            }}
-          >
-            {locale === "da"
-              ? "Vi forstår jeres forretning og anvender en dyb forståelse af AI til at gentænke og styrke den."
-              : "We understand your business and apply deep AI expertise to rethink and strengthen it."}
-          </motion.p>
-
-          <motion.p
-            variants={fadeUp}
-            style={{
-              fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: "1.35rem",
-              lineHeight: 1.65,
+              fontWeight: 400,
+              lineHeight: 1.75,
               color: "rgba(220,216,232,0.9)",
               marginBottom: "64px",
+              maxWidth: "800px",
             }}
           >
             {locale === "da"
-              ? "Jeres strategi bliver udfordret, en AI strategi skabt. Forenet i en samlet retning."
-              : "Your strategy is challenged, an AI strategy is created, and unified into one clear direction."}
-          </motion.p>
+              ? "Med en dyb forståelse for jeres forretning og AI gentænker vi sammen jeres arbejdsgange og produkter. Jeres strategi bliver udfordret. En AI strategi bliver skabt. Samlet i én retning. En retning der styrker jeres fremtidige konkurrencekraft."
+              : "With a deep understanding of your business and AI, we rethink your workflows and products together. Your current strategy is challenged. An AI strategy is created. Unified into one direction. A direction that strengthens your future competitiveness."}
+          </motion.h1>
 
           <motion.div variants={fadeUp}>
             <Link

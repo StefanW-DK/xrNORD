@@ -390,8 +390,8 @@ export default function ExecutionPage() {
                 {da ? "Jeres fremtidige differentiator" : "Your Future Differentiator"}
               </motion.p>
 
-              {/* H1 */}
-              <motion.h1
+              {/* Visual headline — H2 for design, SEO weight carried by H1 below */}
+              <motion.h2
                 variants={fadeUp}
                 style={{
                   fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -424,9 +424,9 @@ export default function ExecutionPage() {
                     <span style={accentStyle}>{"Ecosystem"}</span>
                   </>
                 )}
-              </motion.h1>
+              </motion.h2>
 
-              {/* Body */}
+              {/* Body — first paragraph tagged H1 for SEO */}
               <motion.div
                 variants={fadeUp}
                 style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "580px" }}
@@ -439,20 +439,24 @@ export default function ExecutionPage() {
                   "Most companies approach AI as a tool or a solution.",
                   "But real impact comes from how AI is connected across your business, systems, data, and workflows working together.",
                   "Over time, this evolves into your own Company AI, built around how you operate.",
-                ]).map((para, i) => (
-                  <p
-                    key={i}
-                    style={{
-                      fontFamily: "var(--font-inter), system-ui, sans-serif",
-                      fontSize: "clamp(0.93rem, 1.05vw, 1.06rem)",
-                      lineHeight: 1.85,
-                      color: "#4A4640",
-                      margin: 0,
-                    }}
-                  >
-                    {para}
-                  </p>
-                ))}
+                ]).map((para, i) => {
+                  const Tag = i === 0 ? "h1" : "p";
+                  return (
+                    <Tag
+                      key={i}
+                      style={{
+                        fontFamily: "var(--font-inter), system-ui, sans-serif",
+                        fontSize: "clamp(0.93rem, 1.05vw, 1.06rem)",
+                        fontWeight: 400,
+                        lineHeight: 1.85,
+                        color: "#4A4640",
+                        margin: 0,
+                      }}
+                    >
+                      {para}
+                    </Tag>
+                  );
+                })}
               </motion.div>
             </motion.div>
           </div>
