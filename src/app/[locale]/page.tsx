@@ -8,7 +8,6 @@ import Capabilities from "@/components/sections/Capabilities";
 import WorkshopResults from "@/components/sections/WorkshopResults";
 import Articles from "@/components/sections/Articles";
 import News from "@/components/sections/News";
-import SiteLinks from "@/components/sections/SiteLinks";
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
       <WhyAI />
       <Capabilities />
       <Articles />
-      <SiteLinks />
       <News />
     </main>
   );
