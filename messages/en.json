@@ -334,5 +334,20 @@
       "content": "If you have questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about our privacy practices, please contact us:\n\nxrNORD ApS\nHægvej 11\n8250 Egå, Denmark\n\nEmail: info@xrnord.com\nPhone: +45 23 65 42 83\n\nData Protection Officer:\nFor GDPR-related inquiries, you can also reach out to our Data Protection Officer at: dpo@xrnord.com\n\nYou also have the right to lodge a complaint with your local data protection authority if you believe our processing of your personal data violates applicable laws."
     },
     "lastUpdated": "Last Updated"
+  },
+  "siteLinks": {
+    "workshopLabel": "AI Workshop",
+    "workshopDesc": "One focused day to map where AI creates value in your business.",
+    "roadmapLabel": "AI Roadmap",
+    "roadmapDesc": "A clear, actionable plan for making AI part of how you compete.",
+    "executionLabel": "AI Execution",
+    "executionDesc": "We design and build your connected AI ecosystem end-to-end.",
+    "useCasesLabel": "AI Use Cases",
+    "useCasesDesc": "See real examples of how companies create value with AI.",
+    "aboutLabel": "About xrNORD",
+    "aboutDesc": "Who we are and why we exist — to help companies win with AI.",
+    "contactLabel": "Get in Touch",
+    "contactDesc": "Start a conversation about AI and your business.",
+    "navAriaLabel": "Site navigation"
   }
 }

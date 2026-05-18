@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 /* ── Types ──────────────────────────────────────────────── */
 interface IndustryBlockProps {
@@ -155,6 +155,7 @@ const headlineGradient = {
 /* ── Main Section ───────────────────────────────────────── */
 export default function Industries() {
   const t = useTranslations("industries");
+  const locale = useLocale();
   return (
     <section
       className="py-20 lg:py-28 relative overflow-hidden"
@@ -318,7 +319,7 @@ export default function Industries() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Link
-              href="/usecases"
+              href={`/${locale}/ai-use-cases`}
               style={{
                 display: "inline-flex",
                 alignItems: "center",

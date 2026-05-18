@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import Clients from "@/components/sections/Clients";
 import Opportunity from "@/components/sections/Opportunity";
 import Industries from "@/components/sections/Industries";
+import SiteLinks from "@/components/sections/SiteLinks";
 import WhyAI from "@/components/sections/WhyAI";
 import Capabilities from "@/components/sections/Capabilities";
 import WorkshopResults from "@/components/sections/WorkshopResults";
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Clients />
       <Opportunity />
+      <SiteLinks />
       <Industries />
       <WorkshopResults />
       <WhyAI />
