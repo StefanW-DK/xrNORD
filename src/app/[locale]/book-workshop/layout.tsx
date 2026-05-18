@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
       googleBot: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
       },
     },
     openGraph: {
