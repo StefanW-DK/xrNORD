@@ -21,11 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? ["book AI workshop", "AI workshop Danmark", "AI workshop virksomheder", "AI strategi workshop"]
       : ["book AI workshop", "AI workshop Denmark", "AI workshop for business", "AI strategy session"],
     alternates: {
-      canonical: `${BASE_URL}/${locale}/book-workshop`,
+      // Canonical points to /workshop so Google shows that page in organic
+      // results — but /book-workshop remains crawlable for Google Ads quality scoring
+      canonical: `${BASE_URL}/${locale}/workshop`,
       languages: {
-        en: `${BASE_URL}/en/book-workshop`,
-        da: `${BASE_URL}/da/book-workshop`,
-        "x-default": `${BASE_URL}/en/book-workshop`,
+        en: `${BASE_URL}/en/workshop`,
+        da: `${BASE_URL}/da/workshop`,
+        "x-default": `${BASE_URL}/en/workshop`,
       },
     },
     robots: {
