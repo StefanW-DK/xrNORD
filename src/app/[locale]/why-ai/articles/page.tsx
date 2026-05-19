@@ -66,7 +66,8 @@ export default async function ArticlesPage({ params }: Props) {
           >
             {locale === "da" ? "Artikler" : "Articles"}
           </p>
-          <h1
+          {/* Visual headline — H2 for design, SEO weight carried by H1 below */}
+          <h2
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "clamp(3rem, 5.2vw, 4.4rem)",
@@ -109,20 +110,22 @@ export default async function ArticlesPage({ params }: Props) {
                 </span>
               </>
             )}
-          </h1>
-          <p
+          </h2>
+          {/* H1 — SEO primary heading, styled as supporting subline */}
+          <h1
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: "1.15rem",
+              fontWeight: 400,
               lineHeight: 1.7,
               color: "#94A3B8",
               maxWidth: "780px",
             }}
           >
             {locale === "da"
-              ? "Udforsk hvordan vi sammen med virksomheder bruger AI i praksis - én brugssituation ad gangen. Vores artikler giver jer konkret viden, brugbare indsigter og modeller, der hjælper jer med at implementere AI med tillid og overblik."
-              : "AI can reshape how your company operates and competes. But turning potential into real results requires understanding."}
-          </p>
+              ? "Udforsk hvordan virksomheder bruger AI i praksis - ét område ad gangen. Vores artikler giver jer konkret viden, brugbare indsigter og modeller, der hjælper jer med at implementere AI med tillid og overblik."
+              : "Explore how businesses apply AI in practice - one use case at a time. Our articles provide practical insights, proven models, and real-world perspectives that help you implement AI with confidence and clarity."}
+          </h1>
         </div>
       </div>
 
