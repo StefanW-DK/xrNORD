@@ -413,7 +413,8 @@ export default function InterviewsPage() {
             </motion.p>
 
             {/* H1 */}
-            <motion.h1
+            {/* Visual headline — H2 for design, SEO weight carried by H1 below */}
+            <motion.h2
               variants={fadeUp}
               style={{
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -457,14 +458,15 @@ export default function InterviewsPage() {
                   </span>
                 </>
               )}
-            </motion.h1>
+            </motion.h2>
 
-            {/* P */}
-            <motion.p
+            {/* H1 — SEO primary heading, styled as supporting subline */}
+            <motion.h1
               variants={fadeUp}
               style={{
                 fontFamily: "var(--font-geist), system-ui, sans-serif",
                 fontSize: "1.15rem",
+                fontWeight: 400,
                 color: "rgba(255,255,255,0.65)",
                 lineHeight: 1.7,
                 maxWidth: "860px",
@@ -472,9 +474,9 @@ export default function InterviewsPage() {
               }}
             >
               {locale === "da"
-                ? "Få indblik i, hvordan AI skaber værdi i erhvervslivet, gennem ledere og eksperter."
-                : "See how AI creates value in business, through leaders and experts."}
-            </motion.p>
+                ? "Få indsigt i hvordan ledere og AI eksperter gentænker arbejdsgange, produkter og fremtidens virksomheder gennem AI."
+                : "Explore how business leaders and AI experts are rethinking operations, products, and the future of business through AI."}
+            </motion.h1>
 
             {/* CTA */}
             <motion.div variants={fadeUp}>

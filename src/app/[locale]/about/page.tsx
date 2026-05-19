@@ -119,7 +119,7 @@ export default function AboutPage() {
               {da ? "Det Nordiske Forspring med AI" : "The Nordic Edge in AI"}
             </motion.p>
 
-            <motion.h1 variants={fadeUp} style={{
+            <motion.h2 variants={fadeUp} style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "clamp(3.8rem, 8vw, 7rem)",
               fontWeight: 800,
@@ -161,7 +161,7 @@ export default function AboutPage() {
                   }}>{"with AI"}</span>
                 </>
               )}
-            </motion.h1>
+            </motion.h2>
 
             <motion.p variants={fadeUp} style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -175,18 +175,20 @@ export default function AboutPage() {
               {da ? "Forankret i Danmark. Formet af verden." : "Rooted in Denmark. Shaped by the world."}
             </motion.p>
 
-            <motion.p variants={fadeUp} style={{
+            {/* H1 — SEO primary heading, styled as supporting subline */}
+            <motion.h1 variants={fadeUp} style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: "1.1rem",
+              fontWeight: 400,
               lineHeight: 1.75,
               color: "rgba(148,163,184,0.8)",
               maxWidth: "780px",
               marginBottom: "48px",
             }}>
               {da
-                ? "Vi hjælper nordiske virksomheder med at omsætte AI til reel fordel — ikke som et værktøj, men som måden de opererer og konkurrerer på."
-                : "We help Nordic companies turn AI into real advantage — not as a tool, but as how they operate and compete."}
-            </motion.p>
+                ? "Vi hjælper nordiske virksomheder med at omsætte AI til reel fordel — ikke blot som et værktøj, men som en del af måden de opererer og konkurrerer på."
+                : "We help Nordic companies turn AI into real advantage - not as a tool, but as part of how they operate and compete."}
+            </motion.h1>
 
             <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", flexWrap: "wrap" as const }}>
               <Link href={`/${locale}/contact`} style={{
