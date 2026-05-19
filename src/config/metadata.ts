@@ -18,63 +18,63 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
     siteName: "xrNORD",
     pages: {
       home: {
-        title: "Stay Competitive | We Build AI Into Your Business | xrNORD",
+        title: "Build AI Into Your Business | Stay Competitive | xrNORD",
         description:
-          "Stay competitive by making AI part of how your business operates. We build and integrate AI into your products, processes, and daily workflows.",
+          "Build AI into your business operations, products, and workflows. xrNORD helps companies turn AI into real competitive advantage.",
         keywords: ["AI strategy", "AI implementation", "Scandinavian AI", "AI roadmap", "AI workshop", "Nordic AI"],
       },
       workshop: {
-        title: "AI Workshop | How will AI transform your business | xrNORD",
+        title: "AI Workshop | Understand AI in Your Business | xrNORD",
         description:
-          "Understand how AI will impact your business. Get clarity on where it creates value and what your next steps should be.",
+          "Understand what AI means for your business, where it creates value, and what your next steps should be.",
         keywords: ["AI workshop", "AI kickstarter", "AI for business", "AI strategy workshop"],
       },
       "ai-roadmap": {
-        title: "AI Roadmap | Reshape Your Business to Win | xrNORD",
+        title: "AI Strategy & Roadmap | Define Your New Future | xrNORD",
         description:
-          "We combine a deep understanding of AI and your business to strengthen your competitiveness and optimize how you operate, guided by a clear, actionable roadmap.",
+          "Define how AI strengthens your business, products, and operations through a clear and actionable AI Strategy.",
         keywords: ["AI roadmap", "AI strategy", "AI adoption", "business AI roadmap"],
       },
       "execution": {
-        title: "AI Execution | Build Your Company AI Ecosystem | xrNORD",
+        title: "AI Execution | Implement AI Across Your Business | xrNORD",
         description:
-          "AI is not a tool. It is your ecosystem. We design and build connected AI systems across your business so that over time it evolves into your own Company AI.",
+          "We design and implement connected AI systems across workflows, data, and operations to build your AI ecosystem.",
         keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementation", "AI integration", "Nordic AI"],
       },
       "ai-use-cases": {
-        title: "AI Use Cases | Real Business Value | xrNORD",
+        title: "AI Use Cases | Real AI Value in Business | xrNORD",
         description:
-          "Explore how AI is used across sales, media, education, and accounting. See concrete examples of how companies create value with AI in practice.",
+          "Explore how businesses use AI across sales, marketing, education, finance, and operations to create real value.",
         keywords: ["AI use cases", "AI examples", "AI business applications", "AI ROI"],
       },
       "why-ai": {
         title: "Why AI Matters | Business & AI Leaders | xrNORD",
         description:
-          "Hear how business and AI leaders think about AI today. Understand what matters, what works, and what it means for your business.",
+          "Hear how business leaders and AI experts think about AI, business transformation, and the future of operations.",
         keywords: ["why AI", "AI insights", "AI interviews", "AI articles", "AI business"],
       },
       "why-ai-interviews": {
         title: "Why AI Matters | Business & AI Leaders | xrNORD",
         description:
-          "See how AI creates value in business, through leaders and experts.",
+          "Hear how business leaders and AI experts think about AI, business transformation, and the future of operations.",
         keywords: ["AI interviews", "AI leaders", "AI insights", "business AI", "AI perspectives"],
       },
       "why-ai-articles": {
         title: "Articles & Insights on AI in Practice | xrNORD",
         description:
-          "From strategy and data to implementation and scaling. Gain insight into how companies work with AI and what it takes to succeed.",
+          "Explore practical insights on AI strategy, implementation, operations, and how businesses create value with AI.",
         keywords: ["AI articles", "AI insights", "AI strategy", "AI implementation", "AI in practice"],
       },
       about: {
-        title: "About | We Build Companies That Win with AI",
+        title: "About xrNORD | We Build Companies That Win with AI",
         description:
-          "Most companies explore AI. Very few build it into how they operate. xrNORD helps you become AI-first and turn AI into real business advantage.",
+          "xrNORD helps Nordic companies integrate AI into operations, products, and workflows to strengthen competitiveness.",
         keywords: ["xrNORD", "Nordic AI company", "Scandinavian AI", "AI consultancy Denmark"],
       },
       contact: {
         title: "AI in Your Business | Start the Conversation | xrNORD",
         description:
-          "Talk to xrNORD about your business and AI. A focused conversation on where it creates value and what your next steps are.",
+          "Talk with xrNORD about how AI can strengthen your business, operations, products, and future competitiveness.",
         keywords: ["contact xrNORD", "AI consultancy contact", "start AI journey"],
       },
       "privacy-policy": {
@@ -101,63 +101,63 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
     siteName: "xrNORD",
     pages: {
       home: {
-        title: "AI i jeres forretning | Styrk konkurrencekraften | xrNORD",
+        title: "Styrk konkurrencekraften | AI i jeres forretning | xrNORD",
         description:
-          "Styrk jeres konkurrencekraft ved at gøre AI til en del af jeres måde at arbejde på. Vi bygger og integrerer AI i jeres produkter, processer og daglige arbejdsgange.",
+          "Gør AI til en del af jeres arbejdsgange, produkter og processer. xrNORD hjælper virksomheder med at styrke konkurrencekraften.",
         keywords: ["AI strategi", "AI implementering", "Skandinavisk AI", "AI roadmap", "AI workshop", "Nordisk AI"],
       },
       workshop: {
-        title: "AI Workshop | AI i jeres forretning | xrNORD",
+        title: "AI Workshop | Forstå AI i jeres forretning | xrNORD",
         description:
-          "Forstå hvad AI betyder for jeres forretning. Få klarhed over hvor det skaber værdi og hvad næste skridt er.",
+          "Få klarhed over hvad AI betyder for jeres forretning, hvor det skaber værdi, og hvad næste skridt bør være.",
         keywords: ["AI workshop", "AI kickstarter", "AI til forretningen", "AI strategi workshop"],
       },
       "ai-roadmap": {
-        title: "AI Roadmap | Gentænk og styrk jeres forretning | xrNORD",
+        title: "AI Strategi & Roadmap | Styrk jeres forretning | xrNORD",
         description:
-          "En klar retning for hvordan AI styrker jeres forretning og konkurrencekraft, omsat til en konkret handlingsplan.",
+          "Definér hvordan AI styrker jeres forretning, produkter og arbejdsgange gennem en klar og handlingsorienteret strategi.",
         keywords: ["AI roadmap", "AI strategi", "AI adoption", "forretnings AI roadmap"],
       },
       "execution": {
-        title: "AI Execution | Byg jeres eget AI Ecosystem | xrNORD",
+        title: "AI Execution | Implementer AI i jeres forretning | xrNORD",
         description:
-          "AI er ikke et værktøj. Det er jeres ecosystem. Vi designer og bygger forbundne AI-systemer på tværs af jeres forretning, så det over tid udvikler sig til jeres eget Company AI.",
+          "Vi designer og implementerer forbundne AI-systemer på tværs af data, arbejdsgange og processer — og bygger det over tid til jeres eget Company AI.",
         keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementering", "AI integration", "Nordisk AI"],
       },
       "ai-use-cases": {
         title: "AI Use Cases | AI-værdi i virksomheder | xrNORD",
         description:
-          "Se hvordan AI bruges i salg, marketing, undervisning og økonomi. Få konkrete eksempler på hvordan virksomheder skaber reel værdi med AI.",
+          "Se hvordan virksomheder bruger AI i salg, marketing, undervisning og økonomi til at skabe reel værdi.",
         keywords: ["AI use cases", "AI eksempler", "AI i forretningen", "AI ROI"],
       },
       "why-ai": {
-        title: "Hvorfor AI betyder noget | AI-ledere | xrNORD",
+        title: "Hvorfor AI betyder noget | Ledere & AI eksperter | xrNORD",
         description:
-          "Hør erhvervs- og AI-lederes erfaringer med AI i praksis, og hvorfor det er afgørende at tage teknologien seriøst.",
+          "Hør hvordan ledere og AI eksperter arbejder med AI, forretning og fremtidens arbejdsgange.",
         keywords: ["hvorfor AI", "AI indsigt", "AI interviews", "AI artikler", "AI forretning"],
       },
       "why-ai-interviews": {
-        title: "Hvorfor AI betyder noget | AI-ledere | xrNORD",
+        title: "Hvorfor AI betyder noget | Ledere & AI eksperter | xrNORD",
         description:
-          "Få indblik i, hvordan AI skaber værdi i erhvervslivet, gennem ledere og eksperter.",
+          "Hør hvordan ledere og AI eksperter arbejder med AI, forretning og fremtidens arbejdsgange.",
         keywords: ["AI interviews", "AI ledere", "AI indsigt", "erhvervs AI", "AI perspektiver"],
       },
       "why-ai-articles": {
-        title: "Artikler og indsigter om AI i praksis | xrNORD",
+        title: "AI-viden og artikler fra virkeligheden | xrNORD",
         description:
-          "Fra strategi og data til implementering og skalering. Få indsigt i hvordan virksomheder arbejder med AI og hvad det kræver at lykkes.",
+          "Få indsigt i hvordan virksomheder arbejder med AI i praksis gennem konkrete erfaringer, modeller og perspektiver.",
         keywords: ["AI artikler", "AI indsigt", "AI strategi", "AI implementering", "AI i praksis"],
       },
       about: {
-        title: "Om | Vi hjælper virksomheder med at vinde med AI",
+        title: "Om xrNORD | Vi bygger virksomheder der vinder med AI",
         description:
-          "De fleste arbejder med AI. De færreste bygger det ind i deres forretning. xrNORD hjælper jer med at blive AI-first og skabe reel konkurrencekraft.",
+          "xrNORD hjælper nordiske virksomheder med at integrere AI i arbejdsgange, produkter og processer.",
         keywords: ["xrNORD", "Nordisk AI virksomhed", "Skandinavisk AI", "AI rådgivning Danmark"],
       },
       contact: {
         title: "AI i jeres forretning | Lad os tage en snak | xrNORD",
         description:
-          "Klar til at udforske potentialet og sikre jeres fremtid? Lad os starte med en snak.",
+          "Lad os tage en snak om hvordan AI kan styrke jeres forretning, produkter og fremtidige konkurrencekraft.",
         keywords: ["kontakt xrNORD", "AI rådgivning kontakt", "start AI-rejse"],
       },
       "privacy-policy": {
