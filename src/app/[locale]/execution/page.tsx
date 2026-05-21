@@ -433,11 +433,11 @@ export default function ExecutionPage() {
               >
                 {(da ? [
                   "De fleste virksomheder bruger AI som et værktøj eller en løsning.",
-                  "Men reel effekt opstår, når AI er forbundet på tværs af virksomheden. Systemer, data og arbejdsgange der virker sammen.",
+                  "Men reel effekt opstår gennem implementering af AI ved at forbinde systemer, data og arbejdsgange på tværs af jeres forretning, så de virker sammen.",
                   "Over tid udvikler dette sig til jeres eget Company AI, bygget til den måde I opererer på.",
                 ] : [
                   "Most companies approach AI as a tool or a solution.",
-                  "But real impact comes from how AI is connected across your business, systems, data, and workflows working together.",
+                  "But real impact comes from AI implementation, connecting systems, data, and workflows across your business so they work together.",
                   "Over time, this evolves into your own Company AI, built around how you operate.",
                 ]).map((para, i) => {
                   const Tag = i === 0 ? "h1" : "p";
