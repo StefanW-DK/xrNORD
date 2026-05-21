@@ -941,32 +941,34 @@ export default function WorkshopPage() {
             <div className="workshop-steps-grid">
               {STEPS.map((step, idx) => {
                 const isFirst = idx === 0;
-                return (
-                  <React.Fragment key={step.num}>
-                    <motion.div
-                      variants={fadeUp}
-                      style={{
-                        padding: "40px 36px",
-                        borderRadius: "20px",
-                        background: isFirst
-                          ? "rgba(192,38,211,0.08)"
-                          : "rgba(255,255,255,0.03)",
-                        border: isFirst
-                          ? "1px solid rgba(192,38,211,0.25)"
-                          : "1px solid rgba(255,255,255,0.06)",
-                        backdropFilter: "blur(8px)",
-                        transition: "border-color 0.3s, background 0.3s",
-                        position: "relative",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = isFirst ? "rgba(192,38,211,0.45)" : "rgba(124,58,237,0.25)";
-                        e.currentTarget.style.background = isFirst ? "rgba(192,38,211,0.12)" : "rgba(255,255,255,0.05)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = isFirst ? "rgba(192,38,211,0.25)" : "rgba(255,255,255,0.06)";
-                        e.currentTarget.style.background = isFirst ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)";
-                      }}
-                    >
+                const stepHrefs: (string | null)[] = [null, `/${locale}/ai-roadmap`, null];
+                const stepHref = stepHrefs[idx];
+                const card = (
+                  <motion.div
+                    variants={fadeUp}
+                    style={{
+                      padding: "40px 36px",
+                      borderRadius: "20px",
+                      background: isFirst
+                        ? "rgba(192,38,211,0.08)"
+                        : "rgba(255,255,255,0.03)",
+                      border: isFirst
+                        ? "1px solid rgba(192,38,211,0.25)"
+                        : "1px solid rgba(255,255,255,0.06)",
+                      backdropFilter: "blur(8px)",
+                      transition: "border-color 0.3s, background 0.3s",
+                      position: "relative",
+                      cursor: stepHref ? "pointer" : "default",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = isFirst ? "rgba(192,38,211,0.45)" : "rgba(124,58,237,0.25)";
+                      e.currentTarget.style.background = isFirst ? "rgba(192,38,211,0.12)" : "rgba(255,255,255,0.05)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = isFirst ? "rgba(192,38,211,0.25)" : "rgba(255,255,255,0.06)";
+                      e.currentTarget.style.background = isFirst ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)";
+                    }}
+                  >
                       {/* Active indicator for first card */}
                       {isFirst && (
                         <div style={{
@@ -1030,7 +1032,15 @@ export default function WorkshopPage() {
                       >
                         {step.desc}
                       </p>
-                    </motion.div>
+                  </motion.div>
+                );
+                return (
+                  <React.Fragment key={step.num}>
+                    {stepHref ? (
+                      <Link href={stepHref} style={{ display: "contents", textDecoration: "none" }}>
+                        {card}
+                      </Link>
+                    ) : card}
 
                     {/* Flow arrow between cards */}
                     {idx < STEPS.length - 1 && (

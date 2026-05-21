@@ -759,9 +759,9 @@ export default function AIRoadmapPage() {
                 </>
               ) : (
                 <>
-                  Your second step toward securing{" "}
+                  Your second step toward a clear{" "}
                   <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                    your future business.
+                    AI strategy and roadmap.
                   </span>
                 </>
               )}
@@ -772,6 +772,7 @@ export default function AIRoadmapPage() {
               {[
                 {
                   num: "01",
+                  href: `/${locale}/workshop`,
                   title: "Discovery Workshop",
                   desc: locale === "da"
                     ? "Vores AI Workshop er det første skridt på jeres AI-rejse. Her får I ekspertvejledning i, hvordan AI kan skabe konkret værdi for jeres virksomhed."
@@ -786,6 +787,7 @@ export default function AIRoadmapPage() {
                 },
                 {
                   num: "02",
+                  href: null,
                   title: locale === "da" ? "Analyse, Planlægning & Business Case" : "Define Your Future Direction",
                   desc: locale === "da"
                     ? "Hvis vi sammen ser, at AI kan gavne jeres forretning, har I mulighed for at gå videre med en detaljeret, handlingsorienteret plan og et understøttende business case."
@@ -800,6 +802,7 @@ export default function AIRoadmapPage() {
                 },
                 {
                   num: "03",
+                  href: null,
                   title: locale === "da" ? "Udvikling & Eksekvering" : "Execution & Implementation",
                   desc: locale === "da"
                     ? "En plan vi kan hjælpe jer med at realisere — fra proof-of-concept til produktionsklar implementering med lokal forankring."
@@ -812,83 +815,91 @@ export default function AIRoadmapPage() {
                 },
               ].map((step, idx) => {
                 const isActive = idx === 1;
+                const card = (
+                  <motion.div
+                    variants={fadeUp}
+                    style={{
+                      padding: "40px 36px",
+                      borderRadius: "20px",
+                      background: isActive ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)",
+                      border: isActive ? "1px solid rgba(192,38,211,0.25)" : "1px solid rgba(255,255,255,0.06)",
+                      backdropFilter: "blur(8px)",
+                      transition: "border-color 0.3s, background 0.3s",
+                      position: "relative",
+                      cursor: step.href ? "pointer" : "default",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = isActive ? "rgba(192,38,211,0.45)" : "rgba(124,58,237,0.25)";
+                      e.currentTarget.style.background = isActive ? "rgba(192,38,211,0.12)" : "rgba(255,255,255,0.05)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = isActive ? "rgba(192,38,211,0.25)" : "rgba(255,255,255,0.06)";
+                      e.currentTarget.style.background = isActive ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)";
+                    }}
+                  >
+                    {isActive && (
+                      <div style={{
+                        position: "absolute",
+                        top: "-1px",
+                        left: "36px",
+                        right: "36px",
+                        height: "2px",
+                        background: "linear-gradient(90deg, #C026D3, #9333EA)",
+                        borderRadius: "0 0 2px 2px",
+                      }} />
+                    )}
+                    <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}>
+                      <div style={{
+                        width: "52px",
+                        height: "52px",
+                        borderRadius: "14px",
+                        background: isActive
+                          ? "linear-gradient(135deg, rgba(192,38,211,0.25) 0%, rgba(147,51,234,0.2) 100%)"
+                          : "linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.15) 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: isActive ? "#C026D3" : "#7C3AED",
+                      }}>
+                        {step.icon}
+                      </div>
+                      <span style={{
+                        fontFamily: "var(--font-geist), system-ui, sans-serif",
+                        fontSize: "0.7rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.12em",
+                        color: isActive ? "rgba(192,38,211,0.8)" : "rgba(124,58,237,0.6)",
+                      }}>
+                        {locale === "da" ? `TRIN ${step.num}` : `STEP ${step.num}`}
+                      </span>
+                    </div>
+                    <h3 style={{
+                      fontFamily: "var(--font-geist), system-ui, sans-serif",
+                      fontSize: "1.15rem",
+                      fontWeight: 700,
+                      letterSpacing: "-0.02em",
+                      color: "#FFFFFF",
+                      marginBottom: "16px",
+                    }}>
+                      {step.title}
+                    </h3>
+                    <p style={{
+                      fontFamily: "var(--font-inter), system-ui, sans-serif",
+                      fontSize: "0.92rem",
+                      lineHeight: 1.7,
+                      color: "#94A3B8",
+                    }}>
+                      {step.desc}
+                    </p>
+                  </motion.div>
+                );
                 return (
                   <React.Fragment key={step.num}>
-                    <motion.div
-                      variants={fadeUp}
-                      style={{
-                        padding: "40px 36px",
-                        borderRadius: "20px",
-                        background: isActive ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)",
-                        border: isActive ? "1px solid rgba(192,38,211,0.25)" : "1px solid rgba(255,255,255,0.06)",
-                        backdropFilter: "blur(8px)",
-                        transition: "border-color 0.3s, background 0.3s",
-                        position: "relative",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = isActive ? "rgba(192,38,211,0.45)" : "rgba(124,58,237,0.25)";
-                        e.currentTarget.style.background = isActive ? "rgba(192,38,211,0.12)" : "rgba(255,255,255,0.05)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = isActive ? "rgba(192,38,211,0.25)" : "rgba(255,255,255,0.06)";
-                        e.currentTarget.style.background = isActive ? "rgba(192,38,211,0.08)" : "rgba(255,255,255,0.03)";
-                      }}
-                    >
-                      {isActive && (
-                        <div style={{
-                          position: "absolute",
-                          top: "-1px",
-                          left: "36px",
-                          right: "36px",
-                          height: "2px",
-                          background: "linear-gradient(90deg, #C026D3, #9333EA)",
-                          borderRadius: "0 0 2px 2px",
-                        }} />
-                      )}
-                      <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}>
-                        <div style={{
-                          width: "52px",
-                          height: "52px",
-                          borderRadius: "14px",
-                          background: isActive
-                            ? "linear-gradient(135deg, rgba(192,38,211,0.25) 0%, rgba(147,51,234,0.2) 100%)"
-                            : "linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.15) 100%)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          color: isActive ? "#C026D3" : "#7C3AED",
-                        }}>
-                          {step.icon}
-                        </div>
-                        <span style={{
-                          fontFamily: "var(--font-geist), system-ui, sans-serif",
-                          fontSize: "0.7rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.12em",
-                          color: isActive ? "rgba(192,38,211,0.8)" : "rgba(124,58,237,0.6)",
-                        }}>
-                          {locale === "da" ? `TRIN ${step.num}` : `STEP ${step.num}`}
-                        </span>
-                      </div>
-                      <h3 style={{
-                        fontFamily: "var(--font-geist), system-ui, sans-serif",
-                        fontSize: "1.15rem",
-                        fontWeight: 700,
-                        letterSpacing: "-0.02em",
-                        color: "#FFFFFF",
-                        marginBottom: "16px",
-                      }}>
-                        {step.title}
-                      </h3>
-                      <p style={{
-                        fontFamily: "var(--font-inter), system-ui, sans-serif",
-                        fontSize: "0.92rem",
-                        lineHeight: 1.7,
-                        color: "#94A3B8",
-                      }}>
-                        {step.desc}
-                      </p>
-                    </motion.div>
+                    {step.href ? (
+                      <Link href={step.href} style={{ display: "contents", textDecoration: "none" }}>
+                        {card}
+                      </Link>
+                    ) : card}
 
                     {idx < 2 && (
                       <div className="workshop-step-arrow" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 8px", alignSelf: "center" }}>
