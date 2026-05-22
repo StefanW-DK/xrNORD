@@ -18,6 +18,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Layout({ children }: Props) {
-  return children;
+export default async function Layout({ children, params }: Props) {
+  const { locale } = await params;
+  const da = locale === "da";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "xrNORD", "item": `${BASE_URL}/${locale}` },
+      { "@type": "ListItem", "position": 2, "name": da ? "Om xrNORD" : "About xrNORD", "item": `${BASE_URL}/${locale}/about` },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {children}
+    </>
+  );
 }

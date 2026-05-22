@@ -83,8 +83,34 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages();
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "xrNORD",
+    "url": BASE_URL,
+    "logo": `${BASE_URL}/images/logos/logo-dark.png`,
+    "description": locale === "da"
+      ? "xrNORD hjælper nordiske virksomheder med at integrere AI i arbejdsgange, produkter og processer for at styrke konkurrencekraften."
+      : "xrNORD helps Nordic companies build AI into their business operations, products, and workflows to strengthen competitiveness.",
+    "areaServed": ["Denmark", "Sweden", "Norway", "Finland", "Nordic"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@xrnord.com",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Danish"],
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DK",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       {/* Restore consent for returning visitors — GTM handles GA4/Ads initialization */}
       <Script id="consent-restore" strategy="afterInteractive">
         {`
