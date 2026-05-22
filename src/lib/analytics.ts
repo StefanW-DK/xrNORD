@@ -51,10 +51,10 @@ export function trackArticleRead(slug: string, title: string, locale: string) {
  */
 export function trackLead(type: "contact" | "workshop", locale: string) {
   trackEvent(`generate_lead_${type}`, { locale }); // GA4 via gtag — Secondary (analytics/reporting)
-  // Push to dataLayer so GTM Custom Event trigger can fire the Primary Google Ads conversion tag
+  // Push a GTM-specific event name to avoid colliding with the gtag() dataLayer push
   if (typeof window !== "undefined") {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: `generate_lead_${type}`, locale });
+    window.dataLayer.push({ event: `gtm_lead_${type}`, locale });
   }
 }
 
