@@ -18,6 +18,37 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Layout({ children }: Props) {
-  return children;
+export default async function Layout({ children, params }: Props) {
+  const { locale } = await params;
+  const da = locale === "da";
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": da ? "AI Workshop" : "AI Workshop",
+    "provider": { "@type": "Organization", "name": "xrNORD", "url": BASE_URL },
+    "description": da
+      ? "En fokuseret AI-workshop der hjælper virksomheder med at forstå hvad AI betyder for deres forretning, og hvad næste skridt bør være."
+      : "A focused AI workshop that helps businesses understand what AI means for their operations and what steps to take next.",
+    "areaServed": ["Denmark", "Sweden", "Norway", "Nordic"],
+    "serviceType": da ? "AI Workshop" : "AI Workshop",
+    "url": `${BASE_URL}/${locale}/workshop`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "xrNORD", "item": `${BASE_URL}/${locale}` },
+      { "@type": "ListItem", "position": 2, "name": da ? "AI Workshop" : "AI Workshop", "item": `${BASE_URL}/${locale}/workshop` },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {children}
+    </>
+  );
 }
