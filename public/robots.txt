@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /SkæringTriByWerge
+Disallow: /Sk%C3%A6ringTriByWerge
+Disallow: /skaring-internal
+
+Sitemap: https://www.xrnord.com/sitemap.xml
