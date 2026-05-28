@@ -302,7 +302,7 @@ export default function InterviewsPage() {
         .interviews-hero-content { padding: 80px clamp(16px, 6.25vw, 80px) 80px; }
         @media (max-width: 767px) {
           .interviews-hero-section { align-items: flex-start; }
-          .interviews-hero-content { padding: 120px clamp(16px, 5vw, 32px) 60px; }
+          .interviews-hero-content { padding: 150px clamp(16px, 5vw, 32px) 60px; }
         }
       `}</style>
       <Navbar />

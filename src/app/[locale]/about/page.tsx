@@ -40,6 +40,23 @@ export default function AboutPage() {
     <>
       <Navbar />
 
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 639px) {
+          .about-hero-h2 {
+            font-size: clamp(2.2rem, 9vw, 3.8rem) !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+          }
+          .about-hero-tagline {
+            font-size: 1.05rem !important;
+            overflow-wrap: break-word !important;
+          }
+          .about-hero-wrap {
+            padding-top: 130px !important;
+          }
+        }
+      ` }} />
+
       {/* ═══════════════════════════════════════
           HERO
       ═══════════════════════════════════════ */}
@@ -103,7 +120,7 @@ export default function AboutPage() {
         }} />
 
         {/* Content */}
-        <div className="page-container" style={{ paddingTop: "clamp(100px, 13vw, 160px)", paddingBottom: "clamp(72px, 10vw, 120px)", position: "relative", zIndex: 2 }}>
+        <div className="page-container about-hero-wrap" style={{ paddingTop: "clamp(100px, 13vw, 160px)", paddingBottom: "clamp(72px, 10vw, 120px)", position: "relative", zIndex: 2 }}>
           <motion.div
             initial="hidden"
             animate="visible"
@@ -119,7 +136,7 @@ export default function AboutPage() {
               {da ? "Det Nordiske Forspring med AI" : "The Nordic Edge in AI"}
             </motion.p>
 
-            <motion.h2 variants={fadeUp} style={{
+            <motion.h2 variants={fadeUp} className="about-hero-h2" style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "clamp(3.8rem, 8vw, 7rem)",
               fontWeight: 800,
@@ -163,7 +180,7 @@ export default function AboutPage() {
               )}
             </motion.h2>
 
-            <motion.p variants={fadeUp} style={{
+            <motion.p variants={fadeUp} className="about-hero-tagline" style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "1.35rem",
               fontWeight: 500,

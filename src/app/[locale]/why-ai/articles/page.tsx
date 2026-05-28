@@ -22,7 +22,7 @@ export default async function ArticlesPage({ params }: Props) {
         style={{
           background: "linear-gradient(160deg, #0A0F1E 0%, #111827 100%)",
           minHeight: "60vh",
-          paddingTop: "220px",
+          paddingTop: "clamp(140px, 18vw, 220px)",
           paddingBottom: "140px",
           position: "relative",
           overflow: "hidden",
@@ -56,7 +56,7 @@ export default async function ArticlesPage({ params }: Props) {
           <p
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
-              fontSize: "11px",
+              fontSize: "13px",
               fontWeight: 600,
               letterSpacing: "0.3em",
               textTransform: "uppercase",
