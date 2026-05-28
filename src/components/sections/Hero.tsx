@@ -72,6 +72,8 @@ export default function Hero() {
             fontSize: "clamp(2rem, 8vw, 5.5rem)",
             lineHeight: 1.04,
             letterSpacing: "-0.02em",
+            overflowWrap: "break-word",
+            wordBreak: "break-word",
           }}
         >
           {t("headlinePre")}{" "}

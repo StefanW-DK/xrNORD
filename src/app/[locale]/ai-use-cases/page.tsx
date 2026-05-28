@@ -286,7 +286,7 @@ export default function AiUseCasesPage() {
         dangerouslySetInnerHTML={{
           __html: `
 @media (max-width: 768px) {
-  .aiuc-hero { padding: 96px 16px 56px !important; min-height: auto !important; }
+  .aiuc-hero { padding: 150px 16px 56px !important; min-height: auto !important; }
   .aiuc-hero-h1 { font-size: 1.85rem !important; line-height: 1.15 !important; }
   .aiuc-hero-sub { font-size: 15px !important; margin-bottom: 28px !important; }
   .aiuc-pills-row { flex-wrap: wrap !important; gap: 8px !important; }

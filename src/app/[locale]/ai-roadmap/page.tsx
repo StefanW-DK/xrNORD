@@ -288,7 +288,7 @@ export default function AIRoadmapPage() {
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 639px) {
           .roadmap-hero-eyebrow { font-size: 13px !important; margin-bottom: 16px !important; }
-          .roadmap-hero-h2 { font-size: clamp(1.9rem, 8vw, 3rem) !important; margin-bottom: 24px !important; }
+          .roadmap-hero-h2 { font-size: clamp(2.6rem, 7.5vw, 5.8rem) !important; margin-bottom: 28px !important; }
           .roadmap-hero-h1 { font-size: 0.95rem !important; margin-bottom: 32px !important; line-height: 1.65 !important; }
         }
       ` }} />
