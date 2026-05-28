@@ -462,7 +462,7 @@ export default function AIRoadmapPage() {
 
           <motion.div variants={fadeUp}>
             <Link
-              href={`/${locale}/workshop`}
+              href={`/${locale}/contact`}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -489,7 +489,7 @@ export default function AIRoadmapPage() {
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
-              {locale === "da" ? "Start med en workshop" : "Start With a Workshop"}
+              {locale === "da" ? "Lad os tale om jeres AI-muligheder" : "Let's Talk About Your AI Opportunities"}
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
               </svg>
@@ -1340,12 +1340,12 @@ export default function AIRoadmapPage() {
               }}
             >
               {locale === "da"
-                ? "Start med klarhed. Vores AI Workshop er det f\u00f8rste skridt mod en struktureret AI-strategi, der skaber reel v\u00e6rdi."
-                : "Start with clarity. Our AI Workshop is the first step toward a structured AI strategy that creates real value."}
+                ? "Vil I vide, om AI kan styrke jeres konkurrenceevne? Lad os starte med en uforpligtende samtale om jeres forretning og muligheder."
+                : "Want to know if AI can strengthen your competitiveness? Let's start with a no-obligation conversation about your business and possibilities."}
             </motion.p>
             <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
               <Link
-                href={`/${locale}/workshop`}
+                href={`/${locale}/contact`}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -1362,7 +1362,7 @@ export default function AIRoadmapPage() {
                   boxShadow: "0 8px 32px rgba(124,58,237,0.3)",
                 }}
               >
-                {locale === "da" ? "Book en AI Workshop" : "Book an AI Workshop"}
+                {locale === "da" ? "Start dialogen om jeres AI-roadmap" : "Start the Conversation About Your AI Roadmap"}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
