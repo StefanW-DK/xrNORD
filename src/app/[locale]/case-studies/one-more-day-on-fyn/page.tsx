@@ -108,7 +108,7 @@ export default async function OneMoreDayPage({ params }: Props) {
   .csfyn-hero { height: auto !important; min-height: 520px !important; }
   .csfyn-hero-content {
     position: relative !important;
-    padding: 96px 24px 56px !important;
+    padding: 150px 24px 56px !important;
   }
   .csfyn-article-label { display: none !important; }
   .csfyn-hero-h1 {
