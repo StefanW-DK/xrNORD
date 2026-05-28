@@ -1326,8 +1326,8 @@ export default function AIRoadmapPage() {
               }}
             >
               {locale === "da"
-                ? "Klar til at bygge jeres AI-strategi?"
-                : "Ready to Build Your AI Strategy?"}
+                ? <>Klar til at bygge jeres <br />AI-strategi?</>
+                : <>Ready to Build Your <br />AI Strategy?</>}
             </motion.h2>
             <motion.p
               variants={fadeUp}
