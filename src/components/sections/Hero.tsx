@@ -47,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="inline-flex items-center mb-20 cursor-default"
+          className="inline-flex items-center mb-6 sm:mb-20 cursor-default"
         >
           <span
             className="font-semibold uppercase"
@@ -69,7 +69,7 @@ export default function Hero() {
           className="font-bold mb-7"
           style={{
             fontFamily: "var(--font-geist), system-ui, sans-serif",
-            fontSize: "clamp(2.8rem, 8vw, 5.5rem)",
+            fontSize: "clamp(2rem, 8vw, 5.5rem)",
             lineHeight: 1.04,
             letterSpacing: "-0.02em",
           }}

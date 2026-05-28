@@ -285,6 +285,14 @@ export default function AIRoadmapPage() {
     <>
       <Navbar />
 
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 639px) {
+          .roadmap-hero-eyebrow { font-size: 13px !important; margin-bottom: 16px !important; }
+          .roadmap-hero-h2 { font-size: clamp(1.9rem, 8vw, 3rem) !important; margin-bottom: 24px !important; }
+          .roadmap-hero-h1 { font-size: 0.95rem !important; margin-bottom: 32px !important; line-height: 1.65 !important; }
+        }
+      ` }} />
+
       {/* ═══════════ HERO ═══════════ */}
       <section
         suppressHydrationWarning
@@ -379,6 +387,7 @@ export default function AIRoadmapPage() {
         >
           <motion.p
             variants={fadeUp}
+            className="roadmap-hero-eyebrow"
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "20px",
@@ -394,6 +403,7 @@ export default function AIRoadmapPage() {
 
           <motion.h2
             variants={fadeUp}
+            className="roadmap-hero-h2"
             style={{
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               fontSize: "clamp(2.8rem, 6vw, 5.8rem)",
@@ -434,6 +444,7 @@ export default function AIRoadmapPage() {
           {/* H1 — SEO primary heading, styled as supporting subline */}
           <motion.h1
             variants={fadeUp}
+            className="roadmap-hero-h1"
             style={{
               fontFamily: "var(--font-inter), system-ui, sans-serif",
               fontSize: "1.35rem",

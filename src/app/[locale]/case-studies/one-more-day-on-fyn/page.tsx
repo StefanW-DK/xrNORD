@@ -118,6 +118,7 @@ export default async function OneMoreDayPage({ params }: Props) {
   }
   .csfyn-hero-sub { font-size: 18px !important; line-height: 1.45 !important; }
 
+  .csfyn-intro { padding: 48px 0 60px !important; }
   .csfyn-areas { padding: 64px 24px !important; }
   .csfyn-areas-grid {
     grid-template-columns: 1fr !important;
@@ -308,7 +309,7 @@ export default async function OneMoreDayPage({ params }: Props) {
       </section>
 
       {/* ── Intro section ─────────────────────────────────────────────── */}
-      <section style={{ background: "#fff", padding: "96px 0 80px" }}>
+      <section className="csfyn-intro" style={{ background: "#fff", padding: "96px 0 80px" }}>
         <div style={{ maxWidth: 820, margin: "0 auto", padding: "0 32px" }}>
           {/* Eyebrow */}
           <p

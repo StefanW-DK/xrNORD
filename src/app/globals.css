@@ -354,6 +354,13 @@ html {
   text-align: left;
 }
 
+@media (max-width: 639px) {
+  .hero-content-wrap {
+    padding-top: 110px;
+    justify-content: flex-start;
+  }
+}
+
 /* ── Hero subtitle — responsive font size ───────────────── */
 .hero-subtitle {
   font-size: 1.35rem;
