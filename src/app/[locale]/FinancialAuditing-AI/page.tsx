@@ -1048,8 +1048,11 @@ function BarriersSection({ locale }: { locale: string }) {
    narrative will be built around this anchor in a future iteration.
    ════════════════════════════════════════════════════════════════════════ */
 function CaseStudy({ locale }: { locale: string }) {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-15% 0px" });
   return (
     <section
+      ref={ref}
       style={{
         position: "relative",
         padding: "clamp(100px, 12vw, 160px) clamp(24px, 6vw, 160px)",
@@ -1211,8 +1214,7 @@ function CaseStudy({ locale }: { locale: string }) {
                 points="100,490 380,490 332,340 148,340"
                 fill="url(#pyr-tier3)"
                 initial={{ opacity: 0, y: 24, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.95 }}
                 transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 style={{ filter: "drop-shadow(0 4px 24px rgba(232,121,249,0.30))", transformOrigin: "240px 415px" }}
               />
@@ -1221,8 +1223,7 @@ function CaseStudy({ locale }: { locale: string }) {
                 x1="148" y1="340" x2="332" y2="340"
                 stroke="url(#pyr-highlight)" strokeWidth="1.5"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               />
 
@@ -1231,8 +1232,7 @@ function CaseStudy({ locale }: { locale: string }) {
                 points="158,325 322,325 285,200 195,200"
                 fill="url(#pyr-tier2)"
                 initial={{ opacity: 0, y: 24, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.95 }}
                 transition={{ duration: 0.7, delay: 0.40, ease: [0.22, 1, 0.36, 1] }}
                 style={{ filter: "drop-shadow(0 4px 20px rgba(129,140,248,0.30))", transformOrigin: "240px 262px" }}
               />
@@ -1240,8 +1240,7 @@ function CaseStudy({ locale }: { locale: string }) {
                 x1="195" y1="200" x2="285" y2="200"
                 stroke="url(#pyr-highlight)" strokeWidth="1.5"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.75 }}
               />
 
@@ -1250,8 +1249,7 @@ function CaseStudy({ locale }: { locale: string }) {
                 points="205,185 275,185 240,60"
                 fill="url(#pyr-tier1)"
                 initial={{ opacity: 0, y: 24, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.95 }}
                 transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
                 style={{ filter: "drop-shadow(0 4px 18px rgba(34,211,238,0.35))", transformOrigin: "240px 122px" }}
               />
@@ -1263,14 +1261,12 @@ function CaseStudy({ locale }: { locale: string }) {
                 x1="265" y1="120" x2="430" y2="120"
                 stroke="rgba(255,255,255,0.30)" strokeWidth="1"
                 initial={{ pathLength: 0, opacity: 0 }}
-                whileInView={{ pathLength: 1, opacity: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
                 transition={{ duration: 0.7, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
               />
               <motion.g
                 initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                 transition={{ duration: 0.4, delay: 1.4, ease: [0.34, 1.56, 0.64, 1] }}
                 style={{ transformOrigin: "430px 120px" }}
               >
@@ -1282,8 +1278,7 @@ function CaseStudy({ locale }: { locale: string }) {
               </motion.g>
               <motion.g
                 initial={{ opacity: 0, x: 8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 8 }}
                 transition={{ duration: 0.5, delay: 1.55 }}
               >
                 <text x="455" y="115" fill="#fff" fontSize="22" fontWeight="800" letterSpacing="-0.02em"
@@ -1301,14 +1296,12 @@ function CaseStudy({ locale }: { locale: string }) {
                 x1="310" y1="262" x2="430" y2="262"
                 stroke="rgba(255,255,255,0.30)" strokeWidth="1"
                 initial={{ pathLength: 0, opacity: 0 }}
-                whileInView={{ pathLength: 1, opacity: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
                 transition={{ duration: 0.7, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
               />
               <motion.g
                 initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                 transition={{ duration: 0.4, delay: 1.55, ease: [0.34, 1.56, 0.64, 1] }}
                 style={{ transformOrigin: "430px 262px" }}
               >
@@ -1320,8 +1313,7 @@ function CaseStudy({ locale }: { locale: string }) {
               </motion.g>
               <motion.g
                 initial={{ opacity: 0, x: 8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 8 }}
                 transition={{ duration: 0.5, delay: 1.7 }}
               >
                 <text x="455" y="257" fill="#fff" fontSize="22" fontWeight="800" letterSpacing="-0.02em"
@@ -1343,14 +1335,12 @@ function CaseStudy({ locale }: { locale: string }) {
                 x1="360" y1="415" x2="430" y2="415"
                 stroke="rgba(255,255,255,0.30)" strokeWidth="1"
                 initial={{ pathLength: 0, opacity: 0 }}
-                whileInView={{ pathLength: 1, opacity: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
                 transition={{ duration: 0.7, delay: 1.25, ease: [0.22, 1, 0.36, 1] }}
               />
               <motion.g
                 initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                 transition={{ duration: 0.4, delay: 1.7, ease: [0.34, 1.56, 0.64, 1] }}
                 style={{ transformOrigin: "430px 415px" }}
               >
@@ -1362,8 +1352,7 @@ function CaseStudy({ locale }: { locale: string }) {
               </motion.g>
               <motion.g
                 initial={{ opacity: 0, x: 8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 8 }}
                 transition={{ duration: 0.5, delay: 1.85 }}
               >
                 <text x="455" y="410" fill="#fff" fontSize="22" fontWeight="800" letterSpacing="-0.02em"
@@ -1388,7 +1377,7 @@ function CaseStudy({ locale }: { locale: string }) {
             {/* Bottom insight line */}
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: 2.0 }}
               style={{
@@ -1991,15 +1980,15 @@ function FutureUsps({ locale }: { locale: string }) {
             }}
           >
             {locale === "da"
-              ? "Rejsen til jeres nye niveau - kræver en klar strategi"
-              : "The journey to your next level - requires a clear strategy"}
+              ? "Jeres fremtid skabes ikke tilfældigt. Den kræver en plan"
+              : "Your future isn't created by chance. It requires a plan"}
           </motion.h3>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.65, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            style={{ marginTop: 28 }}
+            style={{ marginTop: "clamp(28px, 3.5vw, 56px)" }}
           >
             <Link
               href={`/${locale}/ai-roadmap`}
@@ -2017,8 +2006,8 @@ function FutureUsps({ locale }: { locale: string }) {
               }}
             >
               {locale === "da"
-                ? "Lad os starte jeres AI rejse med Jeres Plan"
-                : "Let's start your AI journey with Your Plan"}
+                ? "Start jeres AI-rejse med jeres plan"
+                : "Start your AI journey with your plan"}
               <span style={{ fontSize: "1.1em" }}>→</span>
             </Link>
           </motion.div>
