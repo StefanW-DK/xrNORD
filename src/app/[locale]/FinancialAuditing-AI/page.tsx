@@ -1086,7 +1086,7 @@ function CaseStudy({ locale }: { locale: string }) {
           className="fa-case-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
+            gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr)",
             gap: "clamp(40px, 5vw, 80px)",
             alignItems: "start",
           }}
@@ -1097,6 +1097,7 @@ function CaseStudy({ locale }: { locale: string }) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
+            style={{ paddingLeft: "clamp(0px, 7vw, 180px)" }}
           >
             <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
               <span style={{
@@ -1114,19 +1115,35 @@ function CaseStudy({ locale }: { locale: string }) {
             <motion.h2
               variants={fadeUp}
               style={{
-                fontSize: "clamp(2.4rem, 5vw, 4.4rem)",
-                fontWeight: 800, lineHeight: 1.05,
+                fontSize: "clamp(2.2rem, 3.8vw, 4.4rem)",
+                fontWeight: 800, lineHeight: 1.15,
                 letterSpacing: "-0.03em", color: "#fff", margin: "0 0 24px",
+                maxWidth: 540,
               }}
             >
-              {locale === "da" ? "Et regnestykke der" : "A calculation that"}
-              <br />
-              <span style={{
-                background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-              }}>
-                {locale === "da" ? "ændrer alt" : "changes everything"}
-              </span>
+              {locale === "da" ? (
+                <>
+                  I dag fakturerer I for stikprøver.
+                  <br />
+                  <span style={{
+                    background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
+                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                  }}>
+                    Om få år forventer jeres kunder, at det er gratis.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Today you bill for sampling.
+                  <br />
+                  <span style={{
+                    background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
+                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                  }}>
+                    In a few years, your clients will expect it for free.
+                  </span>
+                </>
+              )}
             </motion.h2>
 
             <motion.p
@@ -1152,7 +1169,7 @@ function CaseStudy({ locale }: { locale: string }) {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             className="fa-case-right"
-            style={{ paddingTop: 0, marginTop: 60 }}
+            style={{ paddingTop: 0, marginTop: 60, paddingLeft: "clamp(0px, 10vw, 200px)" }}
           >
             {/* Title */}
             <h3 style={{
