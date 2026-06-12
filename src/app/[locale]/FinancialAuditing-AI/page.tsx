@@ -818,7 +818,7 @@ function ReportMetrics({ locale }: { locale: string }) {
 function BarriersSection({ locale }: { locale: string }) {
   const fadeUp = {
     hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
   };
   const stagger = {
     hidden: {},
@@ -1445,7 +1445,7 @@ function XrNordOffering({ locale }: { locale: string }) {
     hidden: { opacity: 0, y: 32 },
     visible: (i: number) => ({
       opacity: 1, y: 0,
-      transition: { duration: 0.65, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.65, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] as const },
     }),
   };
 
