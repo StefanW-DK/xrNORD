@@ -398,7 +398,7 @@ function Hero({ locale }: { locale: string }) {
           <motion.h2
             variants={fadeUp}
             style={{
-              fontSize: "clamp(3rem, 6.8vw, 6rem)",
+              fontSize: "clamp(3rem, 5vw, 6rem)",
               fontWeight: 800, lineHeight: 1.0,
               letterSpacing: "-0.03em", color: "#fff", margin: "0 0 28px",
             }}
@@ -471,7 +471,7 @@ function Hero({ locale }: { locale: string }) {
 
             {/* 2. Big 76% — the hero stat */}
             <p style={{
-              fontSize: "clamp(8rem, 15vw, 14rem)",
+              fontSize: "clamp(7rem, 11.7vw, 14rem)",
               fontWeight: 800, lineHeight: 0.9, letterSpacing: "-0.06em",
               margin: "0 0 28px",
               background: "linear-gradient(135deg, rgba(168,85,247,0.95) 0%, rgba(129,140,248,0.90) 50%, rgba(34,211,238,0.88) 100%)",
@@ -600,7 +600,7 @@ function MetricColumn({
           display: "flex", alignItems: "center", justifyContent: "center",
         }}>
           <span style={{
-            fontSize: "clamp(3rem, 4.2vw, 4rem)",
+            fontSize: "clamp(2.5rem, 3.3vw, 4rem)",
             fontWeight: 800, letterSpacing: "-0.05em", lineHeight: 1,
             background: numberGradient,
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
@@ -875,7 +875,7 @@ function BarriersSection({ locale }: { locale: string }) {
           <motion.h2
             variants={fadeUp}
             style={{
-              fontSize: "clamp(2rem, 4.2vw, 3.4rem)",
+              fontSize: "clamp(1.8rem, 2.8vw, 3.4rem)",
               fontWeight: 800, lineHeight: 1.05,
               letterSpacing: "-0.03em", color: "#fff", margin: 0,
               maxWidth: 920,
@@ -917,7 +917,7 @@ function BarriersSection({ locale }: { locale: string }) {
           <div style={{ display: "flex", flexDirection: "column", gap: "clamp(56px, 7vw, 88px)" }}>
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}>
               <p style={{
-                fontSize: "clamp(4.5rem, 8vw, 7rem)",
+                fontSize: "clamp(4rem, 5.8vw, 7rem)",
                 fontWeight: 800, lineHeight: 0.95, letterSpacing: "-0.05em", margin: "0 0 20px",
                 background: "linear-gradient(135deg, #818CF8, #22D3EE, #7DD3FC)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
@@ -937,7 +937,7 @@ function BarriersSection({ locale }: { locale: string }) {
 
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ delay: 0.12 }}>
               <p style={{
-                fontSize: "clamp(4.5rem, 8vw, 7rem)",
+                fontSize: "clamp(4rem, 5.8vw, 7rem)",
                 fontWeight: 800, lineHeight: 0.95, letterSpacing: "-0.05em", margin: "0 0 20px",
                 background: "linear-gradient(135deg, #22D3EE, #7DD3FC, #A5F3FC)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
@@ -1169,11 +1169,11 @@ function CaseStudy({ locale }: { locale: string }) {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             className="fa-case-right"
-            style={{ paddingTop: 0, marginTop: 60, paddingLeft: "clamp(0px, 10vw, 200px)" }}
+            style={{ paddingTop: 0, marginTop: 60, paddingLeft: "clamp(0px, 8vw, 160px)" }}
           >
             {/* Title */}
             <h3 style={{
-              fontSize: "clamp(3rem, 5vw, 4.8rem)",
+              fontSize: "clamp(2rem, 3.5vw, 4rem)",
               fontWeight: 800, lineHeight: 1.0,
               letterSpacing: "-0.035em",
               color: "#fff", margin: "0 0 14px",
@@ -1635,7 +1635,7 @@ function XrNordOffering({ locale }: { locale: string }) {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontSize: "clamp(2.2rem, 4.5vw, 4rem)",
+            fontSize: "clamp(2rem, 3.3vw, 4rem)",
             fontWeight: 800, lineHeight: 1.08,
             letterSpacing: "-0.03em",
             color: "#fff",
@@ -1918,7 +1918,7 @@ function FutureUsps({ locale }: { locale: string }) {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              fontSize: "clamp(2.4rem, 4.8vw, 4.8rem)",
+              fontSize: "clamp(2.4rem, 4vw, 4.8rem)",
               fontWeight: 800, lineHeight: 1.04,
               letterSpacing: "-0.035em",
               color: "#F5F5F7",
