@@ -258,12 +258,12 @@ function Hero({ locale }: { locale: string }) {
           className="lab-stat-col"
         >
           {/* Vertical accent line */}
-          <div aria-hidden style={{
+          <div aria-hidden className="lab-stat-vline" style={{
             position: "absolute", left: 0, top: "5%", bottom: "5%", width: 1,
             background: "linear-gradient(180deg, transparent 0%, rgba(168,85,247,0.7) 25%, rgba(34,211,238,0.7) 75%, transparent 100%)",
           }} />
 
-          <div style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ position: "relative", zIndex: 1 }} className="lab-stat-inner">
             {/* Label */}
             <p style={{
               fontSize: 11, fontWeight: 700, letterSpacing: "0.18em",
@@ -312,6 +312,7 @@ function Hero({ locale }: { locale: string }) {
                 <img
                   src="/images/logos/logo-white.png"
                   alt="xrNORD"
+                  className="lab-hosted-logo"
                   style={{ height: "auto", width: "clamp(64px, 6vw, 88px)", opacity: 0.80 }}
                 />
                 <span style={{
@@ -327,6 +328,7 @@ function Hero({ locale }: { locale: string }) {
                   <img
                     src="/assets/AILABs/Nomtek_logo.png"
                     alt="Nomtek"
+                    className="lab-hosted-logo"
                     style={{ height: "auto", width: "clamp(64px, 6vw, 88px)", opacity: 0.80 }}
                   />
                 </a>
@@ -341,6 +343,7 @@ function Hero({ locale }: { locale: string }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.8 }}
+        className="lab-scroll-indicator"
         style={{
           position: "absolute", bottom: "clamp(20px, 3vw, 40px)", left: "50%", transform: "translateX(-50%)",
           display: "flex", flexDirection: "column", alignItems: "center", gap: 10,
@@ -394,9 +397,16 @@ function Hero({ locale }: { locale: string }) {
   .lab-grid { gap: clamp(32px, 4vw, 60px) !important; }
 }
 @media (max-width: 900px) {
-  .lab-grid { grid-template-columns: 1fr !important; padding-left: 0 !important; }
+  .lab-grid { grid-template-columns: 1fr !important; padding-left: 0 !important; gap: 0 !important; }
   .lab-hero-left { padding-left: 0 !important; }
-  .lab-stat-col { padding-left: 0 !important; padding-top: 48px !important; border-top: 1px solid rgba(168,85,247,0.3) !important; }
+  .lab-stat-col { padding-left: 0 !important; padding-top: 64px !important; border-top: 1px solid rgba(168,85,247,0.3) !important; margin-top: 48px !important; }
+  .lab-stat-inner > p:first-child { margin-bottom: 32px !important; }
+  .lab-stat-inner > p:nth-child(2) { margin-bottom: 48px !important; }
+  .lab-stat-inner > p:nth-child(3) { margin-bottom: 0 !important; }
+  .lab-stat-inner > div:last-child { margin-top: 52px !important; }
+  .lab-stat-vline { display: none !important; }
+  .lab-scroll-indicator { display: none !important; }
+  .lab-hosted-logo { width: 88px !important; }
 }
       ` }} />
     </section>
@@ -604,6 +614,7 @@ function FutureUsps({ locale }: { locale: string }) {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="lab-usp-body"
             style={{
               fontSize: "clamp(1rem, 1.15vw, 1.1rem)",
               lineHeight: 1.8,
@@ -695,39 +706,10 @@ function FutureUsps({ locale }: { locale: string }) {
             )}
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.65, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            style={{ marginTop: "clamp(28px, 3.5vw, 48px)" }}
-            className="lab-usp-cta-wrap"
-          >
-            <Link
-              href={`/${locale}/ai-labs-apply`}
-              className="lab-usp-cta"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: 10,
-                padding: "17px 44px", borderRadius: 999,
-                background: "rgba(99,102,241,0.12)",
-                color: "rgba(255,255,255,0.95)",
-                border: "1px solid rgba(129,140,248,0.45)",
-                fontSize: 15,
-                fontWeight: 500,
-                textDecoration: "none",
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-                boxShadow: "0 0 28px rgba(99,102,241,0.18), inset 0 1px 0 rgba(255,255,255,0.08)",
-                transition: "background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease",
-              }}
-            >
-              {locale === "da" ? "Bliv en del af det!" : "Become part of it!"}
-              <span aria-hidden> →</span>
-            </Link>
-          </motion.div>
-
         </div>
 
         {/* ── Right: animated 4-curve graph ── */}
-        <div className="lab-usp-graph" style={{ position: "relative", width: "100%", display: "flex", justifyContent: "flex-start", alignSelf: "start", marginTop: "clamp(-40px, -4vw, -80px)", marginLeft: "clamp(-120px, -12vw, -220px)" }}>
+        <div className="lab-usp-graph" style={{ position: "relative", width: "100%", display: "flex", justifyContent: "flex-start", alignSelf: "start", marginTop: "clamp(-40px, -4vw, -80px)", marginLeft: "clamp(-120px, -12vw, -220px)", gridColumn: 2, gridRow: "1 / 3" }}>
           <svg
             viewBox="0 0 800 600"
             preserveAspectRatio="xMidYMid meet"
@@ -840,6 +822,37 @@ function FutureUsps({ locale }: { locale: string }) {
             </motion.text>
           </svg>
         </div>
+
+        {/* ── CTA — separate grid child so mobile can reorder it after the graph ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.65, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          className="lab-usp-cta-wrap"
+          style={{ gridColumn: 1, gridRow: 2, paddingLeft: "clamp(80px, 14vw, 260px)" }}
+        >
+          <Link
+            href={`/${locale}/ai-labs-apply`}
+            className="lab-usp-cta"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 10,
+              padding: "17px 44px", borderRadius: 999,
+              background: "rgba(99,102,241,0.12)",
+              color: "rgba(255,255,255,0.95)",
+              border: "1px solid rgba(129,140,248,0.45)",
+              fontSize: 15,
+              fontWeight: 500,
+              textDecoration: "none",
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+              boxShadow: "0 0 28px rgba(99,102,241,0.18), inset 0 1px 0 rgba(255,255,255,0.08)",
+              transition: "background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease",
+            }}
+          >
+            {locale === "da" ? "Bliv en del af det!" : "Become part of it!"}
+            <span aria-hidden> →</span>
+          </Link>
+        </motion.div>
+
       </div>
 
       <style>{`
@@ -855,18 +868,21 @@ function FutureUsps({ locale }: { locale: string }) {
           .lab-usp-graph { margin-left: clamp(-80px, -3vw, -40px) !important; }
           .lab-usp-text { padding-left: clamp(60px, 11vw, 175px) !important; }
           .lab-usp-intro { display: none !important; }
-          .lab-usp-cta-wrap { margin-top: clamp(48px, 6vw, 80px) !important; }
+          .lab-usp-cta-wrap { margin-top: clamp(48px, 6vw, 80px) !important; padding-left: clamp(60px, 11vw, 175px) !important; }
         }
         @media (max-width: 1100px) {
           .lab-usp-text { padding-left: clamp(24px, 6vw, 80px) !important; }
         }
         @media (max-width: 900px) {
           .lab-usp-layout {
-            grid-template-columns: 1fr !important;
-            gap: 56px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 48px !important;
           }
-          .lab-usp-text { padding-left: 0 !important; }
-          .lab-usp-graph { margin-left: 0 !important; margin-top: 0 !important; }
+          .lab-usp-text { padding-left: 0 !important; order: 1 !important; }
+          .lab-usp-graph { margin-left: -30px !important; margin-top: 0 !important; display: flex !important; justify-content: flex-start !important; order: 2 !important; }
+          .lab-usp-cta-wrap { padding-left: 0 !important; width: 100% !important; display: flex !important; justify-content: center !important; order: 3 !important; }
+          .lab-usp-body { gap: 28px !important; }
         }
       `}</style>
     </section>
@@ -1831,7 +1847,7 @@ function HowWhenWhere({ locale }: { locale: string }) {
         </div>
 
         {/* ── RIGHT: stats ── */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "clamp(24px, 3vw, 40px)" }}>
+        <div className="lab-hww-stats" style={{ display: "flex", flexDirection: "column", gap: "clamp(24px, 3vw, 40px)" }}>
           {[
             { value: locale === "da" ? "4 gange om året" : "4 Times a Year", sub: locale === "da" ? "Regelmæssige sessioner" : "Regular sessions" },
             { value: locale === "da" ? "Ingen rejse" : "No Travel", sub: locale === "da" ? "100% online format" : "100% online format" },
@@ -1887,6 +1903,8 @@ function HowWhenWhere({ locale }: { locale: string }) {
         @media (max-width: 900px) {
           .lab-hww-layout { grid-template-columns: 1fr !important; }
           .lab-hww-text { padding-left: 0 !important; }
+          .lab-hww-stats { align-items: center !important; text-align: center !important; }
+          .lab-hww-stats > div { border-left: none !important; border-top: 2px solid rgba(129,140,248,0.35) !important; padding-left: 0 !important; padding-top: clamp(16px, 2vw, 24px) !important; width: 100% !important; }
         }
       `}</style>
     </section>
@@ -2081,8 +2099,9 @@ function Closing({ locale }: { locale: string }) {
           .lab-closing-text { padding-left: clamp(60px, 8vw, 140px) !important; }
         }
         @media (max-width: 900px) {
-          .lab-closing-layout { grid-template-columns: 1fr !important; }
-          .lab-closing-text { padding-left: 0 !important; }
+          .lab-closing-layout { grid-template-columns: 1fr !important; justify-items: center !important; }
+          .lab-closing-text { padding-left: 0 !important; text-align: center !important; width: 100% !important; }
+          .lab-closing-photos { justify-content: center !important; margin-right: 0 !important; }
         }
       `}</style>
     </section>
