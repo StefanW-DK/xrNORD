@@ -2072,7 +2072,7 @@ function Closing({ locale }: { locale: string }) {
            Monitor (1920) keeps the base 1fr 1fr + clamp(200px,22vw,400px). */
         @media (max-width: 1700px) {
           .lab-closing-section { padding-left: clamp(16px, 3vw, 50px) !important; }
-          .lab-closing-layout { grid-template-columns: 1.25fr 0.75fr !important; }
+          .lab-closing-layout { grid-template-columns: 1fr 1fr !important; }
           .lab-closing-text { padding-left: clamp(60px, 8vw, 130px) !important; }
           .lab-closing-photos { margin-right: auto !important; }
         }
