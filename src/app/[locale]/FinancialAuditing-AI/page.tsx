@@ -1099,7 +1099,7 @@ function CaseStudy({ locale }: { locale: string }) {
             viewport={{ once: true, margin: "-100px" }}
             style={{ paddingLeft: "clamp(0px, 7vw, 180px)" }}
           >
-            <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
+            <motion.div variants={fadeUp} style={{ marginBottom: "clamp(28px, 3.5vw, 48px)" }}>
               <span style={{
                 display: "inline-flex", alignItems: "center", gap: 9,
                 padding: "7px 16px", borderRadius: 999,
@@ -1115,32 +1115,30 @@ function CaseStudy({ locale }: { locale: string }) {
             <motion.h2
               variants={fadeUp}
               style={{
-                fontSize: "clamp(2.2rem, 3.8vw, 4.4rem)",
-                fontWeight: 800, lineHeight: 1.15,
-                letterSpacing: "-0.03em", color: "#fff", margin: "0 0 24px",
+                fontSize: "clamp(2.4rem, 4vw, 4.8rem)",
+                fontWeight: 800, lineHeight: 1.1,
+                letterSpacing: "-0.03em", color: "#fff", margin: "0 0 clamp(28px, 3.5vw, 48px)",
                 maxWidth: 540,
               }}
             >
               {locale === "da" ? (
                 <>
-                  I dag fakturerer I for stikprøver.
-                  <br />
+                  Giv det væk, tjen på det nye<br />
                   <span style={{
                     background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
                     WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                   }}>
-                    Om få år forventer jeres kunder, at det er gratis.
+                    - forbliv relevante
                   </span>
                 </>
               ) : (
                 <>
-                  Today you bill for sampling.
-                  <br />
+                  Give it away, profit from the new{" "}
                   <span style={{
                     background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
                     WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                   }}>
-                    In a few years, your clients will expect it for free.
+                    - stay relevant
                   </span>
                 </>
               )}
@@ -1155,9 +1153,32 @@ function CaseStudy({ locale }: { locale: string }) {
               }}
             >
               {locale === "da"
-                ? "Lad os tage ét konkret område, stikprøver, og vise, hvad det reelt betyder for jeres timeforbrug, jeres marginer og jeres muligheder for vækst."
-                : "Take one concrete area, sampling, and see what it really means for your hours, your margins, and your room to grow."}
+                ? "Stikprøvekontrol er blot ét eksempel på en proces, hvor AI kan flytte tusindvis af timer fra operationelt arbejde til nye muligheder. Forestil jer effekten, når den samme udvikling rammer resten af virksomheden."
+                : "Sampling control is just one example of a process where AI can shift thousands of hours from operational work to new opportunities. Imagine the impact when the same shift hits the rest of the business."}
             </motion.p>
+
+            <motion.div variants={fadeUp} style={{ marginTop: "clamp(28px, 3vw, 44px)" }}>
+              <Link
+                href={`/${locale}/contact`}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 10,
+                  padding: "14px 26px", borderRadius: 999,
+                  background: "linear-gradient(135deg, #E879F9 0%, #A855F7 50%, #818CF8 100%)",
+                  color: "#fff", fontWeight: 600,
+                  fontSize: "clamp(0.9rem, 1vw, 1rem)",
+                  letterSpacing: "-0.005em",
+                  textDecoration: "none",
+                  fontFamily: "var(--font-geist), system-ui, sans-serif",
+                  boxShadow: "0 10px 32px rgba(168,85,247,0.30)",
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                }}
+              >
+                {locale === "da"
+                  ? "Lad os mødes hos jer - find jeres nye kerne"
+                  : "Let's meet at your place - find your new core"}
+                <span style={{ fontSize: "1.1em" }}>→</span>
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* ════════════════════════════════════════════════════════════ */}
@@ -1173,19 +1194,19 @@ function CaseStudy({ locale }: { locale: string }) {
           >
             {/* Title */}
             <h3 style={{
-              fontSize: "clamp(2rem, 3.5vw, 4rem)",
+              fontSize: "clamp(1.6rem, 2.8vw, 3.2rem)",
               fontWeight: 800, lineHeight: 1.0,
               letterSpacing: "-0.035em",
               color: "#fff", margin: "0 0 14px",
               fontFamily: "var(--font-geist), system-ui, sans-serif",
             }}>
+              {locale === "da" ? "Én proces - " : "One process - "}
               <span style={{
                 background: "linear-gradient(135deg, #22D3EE 0%, #818CF8 50%, #E879F9 100%)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
               }}>
-                3.450
+                {locale === "da" ? "3.450 timer om året." : "3,450 hours a year."}
               </span>
-              {locale === "da" ? " timer — årligt" : " hours — annually"}
             </h3>
             <p style={{
               fontSize: "clamp(1rem, 1.2vw, 1.15rem)", fontWeight: 600, letterSpacing: "0.04em",
