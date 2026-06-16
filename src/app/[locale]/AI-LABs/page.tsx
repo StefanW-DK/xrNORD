@@ -1136,6 +1136,7 @@ function Purpose({ locale }: { locale: string }) {
             initial={{ opacity: 0, y: 28 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
+            className="lab-purpose-text"
             style={{ paddingLeft: "clamp(0px, 7vw, 180px)" }}
           >
             {/* Eyebrow pill */}
@@ -1262,6 +1263,9 @@ function Purpose({ locale }: { locale: string }) {
         }
         @media (max-width: 700px) {
           .lab-purpose-bullets { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 900px) {
+          .lab-purpose-text { padding-left: 0 !important; }
         }
       `}</style>
     </section>
