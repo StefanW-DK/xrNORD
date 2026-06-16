@@ -324,8 +324,8 @@ function Hero({ locale }: { locale: string }) {
                 </span>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/logos/logo-white.png"
-                  alt="Partner logo"
+                  src="/assets/AILABs/Nomtek_logo.png"
+                  alt="Nomtek"
                   style={{ height: "auto", width: "clamp(64px, 6vw, 88px)", opacity: 0.80 }}
                 />
               </div>
@@ -2019,18 +2019,13 @@ function Closing({ locale }: { locale: string }) {
               background: "rgba(168,85,247,0.06)",
               border: "1px solid rgba(168,85,247,0.15)",
               boxShadow: "0 24px 60px rgba(0,0,0,0.40)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
             }}>
-              <span style={{
-                fontSize: 13, fontWeight: 500, letterSpacing: "0.08em",
-                color: "rgba(255,255,255,0.20)",
-                fontFamily: "var(--font-inter), system-ui, sans-serif",
-                textTransform: "uppercase" as const,
-              }}>
-                Photo coming
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/AILABs/Krzysztof.jpg"
+                alt="Krzysztof"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+              />
             </div>
             <div style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
               <div style={{ fontSize: "clamp(0.85rem, 0.95vw, 0.95rem)", color: "rgba(245,245,247,0.85)", fontWeight: 500 }}>
