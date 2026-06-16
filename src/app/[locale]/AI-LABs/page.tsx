@@ -307,7 +307,7 @@ function Hero({ locale }: { locale: string }) {
               }}>
                 {locale === "da" ? "Hostet af" : "Hosted by"}
               </span>
-              <div style={{ display: "flex", alignItems: "center", gap: "clamp(10px, 1.2vw, 18px)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "clamp(6px, 0.6vw, 10px)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/logos/logo-white.png"
