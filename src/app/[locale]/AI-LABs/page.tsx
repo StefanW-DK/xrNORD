@@ -655,25 +655,27 @@ function FutureUsps({ locale }: { locale: string }) {
               </>
             ) : (
               <>
-                <p style={{ margin: 0, color: "#F5F5F7", fontWeight: 400 }}>
-                  Companies are currently exploring the same opportunities.
-                </p>
-                <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 4 }}>
-                  {[
-                    "How to become more efficient.",
-                    "How to unlock more value from data.",
-                    "How to build AI into products, services, and daily operations.",
-                    "And ultimately, how to create the next generation of competitive advantage.",
-                  ].map((item) => (
-                    <li key={item} style={{ display: "flex", gap: 10 }}>
-                      <span style={{ opacity: 0.4, flexShrink: 0 }}>-</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p style={{ margin: 0, color: "#F5F5F7", fontWeight: 400 }}>
-                  The challenge is that all of this is happening simultaneously.
-                </p>
+                <div className="lab-usp-intro">
+                  <p style={{ margin: 0, color: "#F5F5F7", fontWeight: 400 }}>
+                    Companies are currently exploring the same opportunities.
+                  </p>
+                  <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 4 }}>
+                    {[
+                      "How to become more efficient.",
+                      "How to unlock more value from data.",
+                      "How to build AI into products, services, and daily operations.",
+                      "And ultimately, how to create the next generation of competitive advantage.",
+                    ].map((item) => (
+                      <li key={item} style={{ display: "flex", gap: 10 }}>
+                        <span style={{ opacity: 0.4, flexShrink: 0 }}>-</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p style={{ margin: 0, color: "#F5F5F7", fontWeight: 400 }}>
+                    The challenge is that all of this is happening simultaneously.
+                  </p>
+                </div>
                 <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 4 }}>
                   {[
                     "No company can experiment with everything.",
@@ -698,6 +700,7 @@ function FutureUsps({ locale }: { locale: string }) {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.65, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
             style={{ marginTop: "clamp(28px, 3.5vw, 48px)" }}
+            className="lab-usp-cta-wrap"
           >
             <Link
               href={`/${locale}/ai-labs-apply`}
@@ -845,6 +848,14 @@ function FutureUsps({ locale }: { locale: string }) {
           border-color: rgba(129,140,248,0.70) !important;
           box-shadow: 0 0 40px rgba(99,102,241,0.30), 0 0 12px rgba(168,85,247,0.18), inset 0 1px 0 rgba(255,255,255,0.12) !important;
           transform: translateY(-2px);
+        }
+        /* Desktop (≤1700px) — ease the graph's negative pull so it no longer
+           overlaps the body text. Monitor (1920) keeps the base -120px. */
+        @media (max-width: 1700px) {
+          .lab-usp-graph { margin-left: clamp(-80px, -3vw, -40px) !important; }
+          .lab-usp-text { padding-left: clamp(60px, 11vw, 175px) !important; }
+          .lab-usp-intro { display: none !important; }
+          .lab-usp-cta-wrap { margin-top: clamp(48px, 6vw, 80px) !important; }
         }
         @media (max-width: 1100px) {
           .lab-usp-text { padding-left: clamp(24px, 6vw, 80px) !important; }
@@ -1641,6 +1652,11 @@ function Terms({ locale }: { locale: string }) {
       </div>
 
       <style>{`
+        /* Desktop (901–1700px, e.g. 1440) — slightly smaller column headings.
+           Monitor (>1700) keeps the base clamp(2.6rem,3.8vw,4.8rem). */
+        @media (min-width: 901px) and (max-width: 1700px) {
+          .lab-terms-cols h2 { font-size: clamp(2.3rem, 3.4vw, 4.2rem) !important; }
+        }
         @media (max-width: 900px) {
           .lab-terms-cols { flex-direction: column !important; min-height: auto !important; }
           .lab-terms-left, .lab-terms-middle, .lab-terms-right {
@@ -1859,6 +1875,12 @@ function HowWhenWhere({ locale }: { locale: string }) {
       </div>
 
       <style>{`
+        /* Desktop (≤1700px, e.g. 1440) — pull the heading left so it aligns
+           with section 4's body text edge and the empty band shrinks.
+           Monitor (1920) keeps the base clamp(200px,22vw,400px). */
+        @media (max-width: 1700px) {
+          .lab-hww-text { padding-left: clamp(80px, 11vw, 175px) !important; }
+        }
         @media (max-width: 1200px) {
           .lab-hww-text { padding-left: clamp(60px, 8vw, 140px) !important; }
         }
@@ -1881,6 +1903,7 @@ function Closing({ locale }: { locale: string }) {
   return (
     <section
       ref={ref}
+      className="lab-closing-section"
       style={{
         position: "relative",
         width: "100%",
@@ -1973,7 +1996,7 @@ function Closing({ locale }: { locale: string }) {
         </motion.div>
 
         {/* ── RIGHT: two photos side by side ── */}
-        <div style={{ display: "flex", gap: "clamp(12px, 1.8vw, 24px)", alignItems: "flex-end", maxWidth: "clamp(280px, 36vw, 540px)" }}>
+        <div className="lab-closing-photos" style={{ display: "flex", gap: "clamp(12px, 1.8vw, 24px)", alignItems: "flex-end", maxWidth: "clamp(280px, 36vw, 540px)" }}>
 
           {/* Stefan */}
           <motion.div
@@ -2043,7 +2066,18 @@ function Closing({ locale }: { locale: string }) {
       </div>
 
       <style>{`
+        /* Desktop (≤1700px, e.g. 1440) — widen the heading column and pull the
+           H2 left so "We are looking forward to meeting you" wraps to a few
+           clean lines instead of one word per line.
+           Monitor (1920) keeps the base 1fr 1fr + clamp(200px,22vw,400px). */
+        @media (max-width: 1700px) {
+          .lab-closing-section { padding-left: clamp(16px, 3vw, 50px) !important; }
+          .lab-closing-layout { grid-template-columns: 1.25fr 0.75fr !important; }
+          .lab-closing-text { padding-left: clamp(60px, 8vw, 130px) !important; }
+          .lab-closing-photos { margin-right: auto !important; }
+        }
         @media (max-width: 1200px) {
+          .lab-closing-layout { grid-template-columns: 1.2fr 0.8fr !important; }
           .lab-closing-text { padding-left: clamp(60px, 8vw, 140px) !important; }
         }
         @media (max-width: 900px) {
