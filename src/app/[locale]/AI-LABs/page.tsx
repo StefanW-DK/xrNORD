@@ -322,12 +322,14 @@ function Hero({ locale }: { locale: string }) {
                 }}>
                   &amp;
                 </span>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/assets/AILABs/Nomtek_logo.png"
-                  alt="Nomtek"
-                  style={{ height: "auto", width: "clamp(64px, 6vw, 88px)", opacity: 0.80 }}
-                />
+                <a href="https://www.nomtek.com/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/assets/AILABs/Nomtek_logo.png"
+                    alt="Nomtek"
+                    style={{ height: "auto", width: "clamp(64px, 6vw, 88px)", opacity: 0.80 }}
+                  />
+                </a>
               </div>
             </div>
           </div>
