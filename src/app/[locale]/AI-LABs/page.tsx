@@ -551,7 +551,7 @@ function FutureUsps({ locale }: { locale: string }) {
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           style={{ marginBottom: "clamp(16px, 2vw, 24px)" }}
         >
-          <span style={{
+          <span className="lab-usp-eyebrow" style={{
             fontSize: 12, fontWeight: 700, letterSpacing: "0.20em", textTransform: "uppercase" as const,
             color: "rgba(255,255,255,0.45)",
             fontFamily: "var(--font-inter), system-ui, sans-serif",
@@ -868,7 +868,7 @@ function FutureUsps({ locale }: { locale: string }) {
           .lab-usp-graph { margin-left: clamp(-80px, -3vw, -40px) !important; }
           .lab-usp-text { padding-left: clamp(60px, 11vw, 175px) !important; }
           .lab-usp-intro { display: none !important; }
-          .lab-usp-cta-wrap { margin-top: clamp(48px, 6vw, 80px) !important; padding-left: clamp(60px, 11vw, 175px) !important; }
+          .lab-usp-cta-wrap { margin-top: clamp(12px, 1.5vw, 24px) !important; padding-left: clamp(60px, 11vw, 175px) !important; }
         }
         @media (max-width: 1100px) {
           .lab-usp-text { padding-left: clamp(24px, 6vw, 80px) !important; }
@@ -880,6 +880,7 @@ function FutureUsps({ locale }: { locale: string }) {
             gap: 48px !important;
           }
           .lab-usp-text { padding-left: 0 !important; order: 1 !important; }
+          .lab-usp-eyebrow { letter-spacing: 0.10em !important; white-space: nowrap !important; }
           .lab-usp-graph { margin-left: -30px !important; margin-top: 0 !important; display: flex !important; justify-content: flex-start !important; order: 2 !important; }
           .lab-usp-cta-wrap { padding-left: 0 !important; width: 100% !important; display: flex !important; justify-content: center !important; order: 3 !important; }
           .lab-usp-body { gap: 28px !important; }
@@ -1266,6 +1267,7 @@ function Purpose({ locale }: { locale: string }) {
         }
         @media (max-width: 900px) {
           .lab-purpose-text { padding-left: 0 !important; }
+          .lab-purpose-bullets { padding-left: 0 !important; }
         }
       `}</style>
     </section>
@@ -1906,7 +1908,7 @@ function HowWhenWhere({ locale }: { locale: string }) {
         }
         @media (max-width: 900px) {
           .lab-hww-layout { grid-template-columns: 1fr !important; }
-          .lab-hww-text { padding-left: 0 !important; }
+          .lab-hww-text { padding-left: 0 !important; text-align: center !important; }
           .lab-hww-stats { align-items: center !important; text-align: center !important; }
           .lab-hww-stats > div { border-left: none !important; border-top: 2px solid rgba(129,140,248,0.35) !important; padding-left: 0 !important; padding-top: clamp(16px, 2vw, 24px) !important; width: 100% !important; }
         }
