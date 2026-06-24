@@ -281,7 +281,7 @@ function Hero({ locale }: { locale: string }) {
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
               fontFamily: "var(--font-geist), system-ui, sans-serif",
             }}>
-              5 Seats
+              {locale === "da" ? "5 Pladser" : "5 Seats"}
             </p>
 
             {/* Description */}
@@ -1867,7 +1867,7 @@ function HowWhenWhere({ locale }: { locale: string }) {
           {[
             { value: locale === "da" ? "4 gange om året" : "4 Times a Year", sub: locale === "da" ? "Regelmæssige sessioner" : "Regular sessions" },
             { value: locale === "da" ? "Ingen rejse" : "No Travel", sub: locale === "da" ? "100% online format" : "100% online format" },
-            { value: "2-3 hours", sub: locale === "da" ? "Pr. session" : "Per session" },
+            { value: locale === "da" ? "2-3 Timer" : "2-3 hours", sub: locale === "da" ? "Pr. session" : "Per session" },
           ].map((stat, i) => (
             <motion.div
               key={stat.value}
