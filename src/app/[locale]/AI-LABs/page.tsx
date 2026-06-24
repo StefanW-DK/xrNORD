@@ -556,7 +556,7 @@ function FutureUsps({ locale }: { locale: string }) {
             color: "rgba(255,255,255,0.45)",
             fontFamily: "var(--font-inter), system-ui, sans-serif",
           }}>
-            {locale === "da" ? "Sammen kan Europa vinde" : "Together Europe Can Win"}
+            {locale === "da" ? "Ingen virksomhed har hele playbooken, endnu" : "No Company Has the Full Playbook, Yet"}
           </span>
         </motion.div>
         <motion.h2
