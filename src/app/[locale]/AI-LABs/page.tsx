@@ -683,22 +683,24 @@ function FutureUsps({ locale }: { locale: string }) {
                       </li>
                     ))}
                   </ul>
-                  <p style={{ margin: 0, color: "#F5F5F7", fontWeight: 400 }}>
+                </div>
+                <div className="lab-usp-s2">
+                  <p className="lab-usp-s2-header" style={{ margin: 0, color: "#F5F5F7", fontWeight: 400 }}>
                     The challenge is that all of this is happening simultaneously.
                   </p>
+                  <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 4 }}>
+                    {[
+                      "No company can experiment with everything.",
+                      "No leadership team can see every opportunity.",
+                      "And no organization has a complete playbook.",
+                    ].map((item) => (
+                      <li key={item} style={{ display: "flex", gap: 10 }}>
+                        <span style={{ opacity: 0.4, flexShrink: 0 }}>-</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 4 }}>
-                  {[
-                    "No company can experiment with everything.",
-                    "No leadership team can see every opportunity.",
-                    "And no organization has a complete playbook.",
-                  ].map((item) => (
-                    <li key={item} style={{ display: "flex", gap: 10 }}>
-                      <span style={{ opacity: 0.4, flexShrink: 0 }}>-</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
                 <p style={{ margin: 0, color: "#F5F5F7", fontWeight: 400 }}>
                   That is why sharing experiences, lessons learned, and perspectives with other forward-thinking companies has become one of the fastest ways to accelerate progress.
                 </p>
@@ -862,12 +864,19 @@ function FutureUsps({ locale }: { locale: string }) {
           box-shadow: 0 0 40px rgba(99,102,241,0.30), 0 0 12px rgba(168,85,247,0.18), inset 0 1px 0 rgba(255,255,255,0.12) !important;
           transform: translateY(-2px);
         }
+        /* Monitor (≥1701px) */
+        @media (min-width: 1701px) {
+          .lab-usp-body { gap: 48px !important; }
+          .lab-usp-intro { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+          .lab-usp-s2 { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+        }
         /* Desktop (≤1700px) — ease the graph's negative pull so it no longer
            overlaps the body text. Monitor (1920) keeps the base -120px. */
         @media (max-width: 1700px) {
           .lab-usp-graph { margin-left: clamp(-80px, -3vw, -40px) !important; }
           .lab-usp-text { padding-left: clamp(60px, 11vw, 175px) !important; }
           .lab-usp-intro { display: none !important; }
+          .lab-usp-s2-header { display: none !important; }
           .lab-usp-layout { row-gap: 0 !important; }
           .lab-usp-cta-wrap { margin-top: clamp(20px, 2vw, 32px) !important; padding-left: clamp(60px, 11vw, 175px) !important; }
         }
