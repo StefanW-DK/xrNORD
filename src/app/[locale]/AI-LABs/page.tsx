@@ -868,7 +868,8 @@ function FutureUsps({ locale }: { locale: string }) {
           .lab-usp-graph { margin-left: clamp(-80px, -3vw, -40px) !important; }
           .lab-usp-text { padding-left: clamp(60px, 11vw, 175px) !important; }
           .lab-usp-intro { display: none !important; }
-          .lab-usp-cta-wrap { margin-top: clamp(12px, 1.5vw, 24px) !important; padding-left: clamp(60px, 11vw, 175px) !important; }
+          .lab-usp-layout { row-gap: 0 !important; }
+          .lab-usp-cta-wrap { margin-top: clamp(20px, 2vw, 32px) !important; padding-left: clamp(60px, 11vw, 175px) !important; }
         }
         @media (max-width: 1100px) {
           .lab-usp-text { padding-left: clamp(24px, 6vw, 80px) !important; }
