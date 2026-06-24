@@ -230,7 +230,7 @@ function Hero({ locale }: { locale: string }) {
           {/* Single CTA */}
           <motion.div variants={fadeUp}>
             <Link
-              href={`/${locale}/contact`}
+              href={`/${locale}/ai-labs-apply`}
               className="lab-cta-btn"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 10,
@@ -2076,7 +2076,7 @@ function Closing({ locale }: { locale: string }) {
             </div>
             <div style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
               <div style={{ fontSize: "clamp(0.85rem, 0.95vw, 0.95rem)", color: "rgba(245,245,247,0.85)", fontWeight: 500 }}>
-                Krzysztof
+                Krzysztof Choma
               </div>
               <div style={{ fontSize: "clamp(0.75rem, 0.82vw, 0.82rem)", color: "rgba(245,245,247,0.40)", fontWeight: 400, marginTop: 2 }}>
                 CEO Nomtek
