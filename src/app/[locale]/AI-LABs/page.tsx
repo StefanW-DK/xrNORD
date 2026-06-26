@@ -285,14 +285,14 @@ function Hero({ locale }: { locale: string }) {
             </p>
 
             {/* Description */}
-            <p style={{
+            <p className="lab-hero-desc" style={{
               fontSize: "clamp(1.05rem, 1.3vw, 1.2rem)", lineHeight: 1.6,
               color: "rgba(255,255,255,0.95)", maxWidth: 380, margin: "0 0 24px",
               fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
             }}>
               {locale === "da"
-                ? "Kom ind i rummet, hvor de førende virksomheder finder ud af, hvordan AI vil omforme deres forretning."
-                : "Get inside the room where leading companies are figuring out how AI will reshape their business."}
+                ? <>Kom ind i rummet, hvor de førende virksomheder<br className="lab-hero-desc-br" />{" deler, hvordan AI omformer deres forretning."}</>
+                : <>Get inside the room where leading companies<br className="lab-hero-desc-br" />{" share how AI reshape & optimize their business."}</>}
             </p>
 
             {/* Hosted by logos */}
@@ -392,6 +392,11 @@ function Hero({ locale }: { locale: string }) {
   border-color: rgba(255,255,255,0.45) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 24px rgba(168,85,247,0.20) !important;
+}
+.lab-hero-desc-br { display: none; }
+@media (min-width: 1701px) {
+  .lab-hero-desc { max-width: none !important; }
+  .lab-hero-desc-br { display: inline; }
 }
 @media (max-width: 1024px) {
   .lab-grid { gap: clamp(32px, 4vw, 60px) !important; }
@@ -1073,22 +1078,22 @@ function Purpose({ locale }: { locale: string }) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
-  const bullets = locale === "da"
+  const benefits = locale === "da"
     ? [
-        "Lær af virkelige AI-initiativer",
-        "Forstå hvad der virker, og hvad der ikke gør",
-        "Udforsk hvordan organisationer udvikler sig",
-        "Benchmarket jeres egen AI-rejse",
-        "Opbyg et betroet netværk af ligesindede",
-        "Modtag de nyeste AI-teknologiopdateringer",
+        { title: "Konkrete use cases, ikke teori", sub: "Virkelige eksempler på AI anvendt i rigtige forretningsprocesser." },
+        { title: "Forstå omkostninger & risici", sub: "Hvad AI reelt koster, og de praktiske risici I bør veje, før I forpligter jer." },
+        { title: "AI-strategier & roadmaps", sub: "Hvordan griber andre virksomheder AI-strategier & roadmaps an?" },
+        { title: "Hvad virkede, og hvad gjorde ikke", sub: "Ærlige erfaringer med både gevinster og blindgyder, så I springer de dyre omveje over." },
+        { title: "Datakrav", sub: "Er jeres nuværende data klar til AI-brug - hvad gør jeres peers?" },
+        { title: "Lavpraktisk anvendelse", sub: "Hvordan AI passer ind i økonomi, drift, salg og support, skridt for skridt." },
       ]
     : [
-        "Learn From Real-World AI Initiatives",
-        "Understand What Is Working And What Isn't",
-        "Explore How Organizations Are Evolving",
-        "Benchmark Your Own Journey",
-        "Build A Trusted Network Of Peers",
-        "Receive Newest AI Tech Updates",
+        { title: "Concrete use cases, not theory", sub: "Real examples of AI applied to actual business processes." },
+        { title: "Understand Cost & Risks", sub: "What AI really costs, and the practical risks to weigh before you commit." },
+        { title: "Building AI Strategies & Roadmaps", sub: "How does other companies approach AI strategies & roadmaps?" },
+        { title: "What worked, and what didn't", sub: "Honest accounts of wins and dead ends, so you skip the costly detours." },
+        { title: "Data Requirements", sub: "Is your current data ready for AI usage - What are your peers doing?" },
+        { title: "Hands-on, practical application", sub: "How AI fits into finance, operations, sales and support, step by step." },
       ];
 
   return (
@@ -1173,8 +1178,8 @@ function Purpose({ locale }: { locale: string }) {
               fontFamily: "var(--font-geist), system-ui, sans-serif",
             }}>
               {locale === "da"
-                ? <>Hvad får vi ud af det<br /><span style={{ background: "linear-gradient(135deg, #22D3EE 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Hvorfor bruge tiden?</span></>
-                : <>{"What's in it for us"}<br /><span style={{ background: "linear-gradient(135deg, #22D3EE 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Why spend the time?</span></>
+                ? <>Reel implementeringserfaring<br /><span style={{ background: "linear-gradient(135deg, #22D3EE 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>delt mellem virksomheder</span></>
+                : <>Real implementation<br className="lab-purpose-h2-br" />{" experience "}<span style={{ background: "linear-gradient(135deg, #22D3EE 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>shared<br className="lab-purpose-h2-br" />{" between companies"}</span></>
               }
             </h2>
 
@@ -1203,8 +1208,8 @@ function Purpose({ locale }: { locale: string }) {
               fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
             }}>
               {locale === "da"
-                ? "Formålet er at skabe et fortroligt, praksisorienteret miljø, hvor seniorledere åbent kan diskutere, hvordan AI faktisk implementeres, styres og operationaliseres i rigtige organisationer."
-                : "The purpose is to create a confidential, practice-oriented environment where senior leaders can openly discuss how AI is actually being implemented, governed, and operationalized inside real organizations."}
+                ? "Formålet er at skabe et fortroligt, praksisorienteret miljø, hvor virksomheder åbent diskuterer og deler, hvordan AI faktisk implementeres, styres og operationaliseres i rigtige organisationer."
+                : "The purpose is to create a confidential, practice-oriented environment where companies openly discuss and share, how AI is actually being implemented, governed, and operationalized inside real organizations."}
             </p>
           </motion.div>
 
@@ -1219,7 +1224,7 @@ function Purpose({ locale }: { locale: string }) {
           </motion.div>
         </div>
 
-        {/* ── Bottom row: 6 bullet cards ── */}
+        {/* ── Bottom row: 3 clustered columns ── */}
         <div
           className="lab-purpose-bullets"
           style={{
@@ -1229,41 +1234,105 @@ function Purpose({ locale }: { locale: string }) {
             paddingLeft: "clamp(0px, 7vw, 180px)",
           }}
         >
-          {bullets.map((text, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.6 + i * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
+          {[
+            {
+              label: locale === "da" ? "Deling af use cases" : "Sharing Use Cases",
+              color: "#22D3EE",
+              cards: [benefits[0], benefits[3]],
+              base: 0,
+            },
+            {
+              label: locale === "da" ? "Omkostninger & krav" : "Costs & Requirements",
+              color: "#818CF8",
+              cards: [benefits[1], benefits[4]],
+              base: 2,
+            },
+            {
+              label: locale === "da" ? "Planlægning & drift" : "How we plan & drive",
+              color: "#A78BFA",
+              cards: [benefits[2], benefits[5]],
+              base: 4,
+            },
+          ].map((cluster, ci) => (
+            <div
+              key={ci}
               style={{
-                display: "flex", alignItems: "flex-start", gap: 12,
-                padding: "clamp(14px, 1.5vw, 20px) clamp(16px, 1.8vw, 24px)",
-                borderRadius: 12,
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(34,211,238,0.10)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "clamp(8px, 0.9vw, 12px)",
               }}
             >
               <span style={{
-                flexShrink: 0, marginTop: 2,
-                width: 22, height: 22, borderRadius: "50%",
-                background: "rgba(34,211,238,0.08)",
-                border: "1px solid rgba(34,211,238,0.25)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-              }}>
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M1.5 5L4 7.5L8.5 2.5" stroke="#22D3EE" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <span style={{
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
-                fontSize: "clamp(0.88rem, 0.95vw, 0.95rem)",
-                fontWeight: 500,
-                color: "rgba(245,245,247,0.85)",
-                lineHeight: 1.45,
+                fontSize: "clamp(0.72rem, 0.82vw, 0.88rem)",
+                fontWeight: 600,
+                color: cluster.color,
+                textTransform: "uppercase",
+                letterSpacing: "0.13em",
+                textAlign: "center",
               }}>
-                {text}
+                {cluster.label}
               </span>
-            </motion.div>
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "clamp(8px, 0.9vw, 12px)",
+                padding: "clamp(10px, 1.1vw, 16px)",
+                borderRadius: 16,
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,0.045)",
+                flex: 1,
+              }}>
+              {cluster.cards.map((b, j) => (
+                <motion.div
+                  key={j}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.6 + (cluster.base + j) * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
+                  style={{
+                    display: "flex", alignItems: "flex-start", gap: 12,
+                    padding: "clamp(14px, 1.5vw, 20px) clamp(14px, 1.6vw, 22px)",
+                    borderRadius: 10,
+                    background: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(34,211,238,0.10)",
+                    flex: 1,
+                  }}
+                >
+                  <span style={{
+                    flexShrink: 0, marginTop: 2,
+                    width: 22, height: 22, borderRadius: "50%",
+                    background: "rgba(34,211,238,0.08)",
+                    border: "1px solid rgba(34,211,238,0.25)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M1.5 5L4 7.5L8.5 2.5" stroke="#22D3EE" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+                    <span style={{
+                      fontFamily: "var(--font-inter), system-ui, sans-serif",
+                      fontSize: "clamp(0.92rem, 1vw, 1rem)",
+                      fontWeight: 600,
+                      color: "#F5F5F7",
+                      lineHeight: 1.35,
+                    }}>
+                      {b.title}
+                    </span>
+                    <span style={{
+                      fontFamily: "var(--font-inter), system-ui, sans-serif",
+                      fontSize: "clamp(0.82rem, 0.88vw, 0.9rem)",
+                      fontWeight: 300,
+                      color: "rgba(245,245,247,0.60)",
+                      lineHeight: 1.5,
+                    }}>
+                      {b.sub}
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -1278,6 +1347,7 @@ function Purpose({ locale }: { locale: string }) {
         @media (max-width: 900px) {
           .lab-purpose-text { padding-left: 0 !important; }
           .lab-purpose-bullets { padding-left: 0 !important; }
+          .lab-purpose-h2-br { display: none !important; }
         }
       `}</style>
     </section>
