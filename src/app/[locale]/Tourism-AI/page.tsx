@@ -1025,6 +1025,7 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
         }
         @media (min-width: 900px) and (max-width: 1700px) {
           .tr-chB-spotlight > div { margin-top: 20px !important; }
+          .tr-chB-pin-wrap [style*="flex-direction: column"] { padding-top: 60px !important; }
         }
       `}</style>
     </section>
