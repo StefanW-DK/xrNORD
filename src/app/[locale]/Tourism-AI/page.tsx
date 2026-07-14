@@ -856,8 +856,8 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
             </motion.div>
 
             {/* ── 2. Spotlight — swapped to the right side (where the list used to live) ── */}
-            <div style={{ flex: 1, display: "flex", alignItems: "flex-start", justifyContent: "flex-end", minHeight: 0 }}>
-              <div style={{ maxWidth: "min(58%, 760px)", marginRight: "clamp(10px, 5vw, 130px)", marginTop: "clamp(10px, 3vw, 50px)" }}>
+            <div className="tr-chB-spotlight" style={{ flex: 1, display: "flex", alignItems: "flex-start", justifyContent: "flex-end", minHeight: 0, overflow: "hidden" }}>
+              <div style={{ maxWidth: "min(58%, 760px)", marginRight: "clamp(10px, 5vw, 130px)", marginTop: "clamp(-70px, -3.5vw, -20px)" }}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeIndex}
@@ -1020,6 +1020,9 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
         @media (max-width: 899px) {
           .tr-chB-pin-wrap { display: none !important; }
           .tr-chB-mobile-list { display: flex !important; }
+        }
+        @media (min-width: 900px) and (max-width: 1700px) {
+          .tr-chB-spotlight > div { margin-top: 20px !important; }
         }
       `}</style>
     </section>
