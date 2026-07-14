@@ -1025,7 +1025,8 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
         }
         @media (min-width: 900px) and (max-width: 1700px) {
           .tr-chB-spotlight > div { margin-top: 20px !important; }
-          .tr-chB-pin-wrap [style*="flex-direction: column"] { padding-top: 60px !important; }
+          .tr-chB-spotlight { overflow: hidden !important; }
+          .tr-chB-pin-wrap [style*="flex-direction: column"] { padding-top: 60px !important; padding-bottom: 100px !important; }
         }
       `}</style>
     </section>
@@ -1806,6 +1807,7 @@ function SolutionSection({ locale }: { locale: string }) {
       <style>{`
         @media (min-width: 1101px) and (max-width: 1700px) {
           .tr-solution-phone-col { margin-right: clamp(60px, 8vw, 120px) !important; }
+          .tr-solution-copy { margin-left: clamp(30px, 4vw, 60px) !important; }
         }
         @media (max-width: 1100px) {
           .tr-solution-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
