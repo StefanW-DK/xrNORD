@@ -904,7 +904,6 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
             zIndex: 2, display: "flex",
             gap: "clamp(8px, 1.2vw, 20px)",
             padding: "clamp(50px, 6vh, 80px) clamp(24px, 6vw, 160px) clamp(12px, 2vh, 24px)",
-            background: "linear-gradient(to top, rgba(11,8,25,1) 45%, rgba(11,8,25,0.98) 65%, rgba(11,8,25,0.88) 82%, rgba(11,8,25,0.5) 93%, transparent 100%)",
           }}>
             {gaps.map((g, i) => (
               <motion.button
@@ -1024,6 +1023,9 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
         @media (max-width: 899px) {
           .tr-chB-pin-wrap { display: none !important; }
           .tr-chB-mobile-list { display: flex !important; }
+        }
+        @media (min-width: 1701px) {
+          .tr-chB-tab-row { bottom: clamp(30px, 4vh, 60px) !important; padding-top: clamp(24px, 3vh, 40px) !important; }
         }
         @media (min-width: 900px) and (max-width: 1700px) {
           .tr-chB-spotlight > div { margin-top: 10px !important; }
