@@ -1404,33 +1404,59 @@ function ProfilesSection({ locale }: { locale: string }) {
 
 /* ────────────────────────────────────────────────────────────────────────
    The AI Travel Companion, shown in the hand — phone mockup for The Solution
+   Rotates through 11 visitor situations every few seconds.
    ──────────────────────────────────────────────────────────────────────── */
+type PhoneSituation = {
+  lines: string[];
+  transaction: { label: string; price: string } | null;
+  primaryBtn: string;
+  secondaryBtn: string;
+  confirms: string[];
+};
+
 function CompanionPhone({ isInView, locale }: { isInView: boolean; locale: string }) {
+  const [activeIndex, setActiveIndex] = useState(0);
   const accentGrad = "linear-gradient(135deg, #22D3EE 0%, #818CF8 50%, #E879F9 100%)";
 
-  const lines = locale === "da"
+  const situations: PhoneSituation[] = locale === "da"
     ? [
-        "Du har allerede oplevet Odense og Egeskov.",
-        "I morgen er det bedste vejr i hele dit ophold.",
-        "Ærøs madfestival starter kl. 16:00, og der er stadig færgebilletter tilbage.",
-        "Det er værd at blive én dag mere.",
-        "Vil du have, at jeg flytter din hotelreservation og booker færgen?",
+        { lines: ["Du har allerede oplevet Odense og Egeskov.", "I morgen er det bedste vejr i hele dit ophold.", "Ærøs madfestival starter kl. 16:00, og der er stadig færgebilletter tilbage.", "Det er værd at blive én dag mere.", "Vil du have, at jeg flytter din hotelreservation og booker færgen?"], transaction: { label: "Én nat mere", price: "134" }, primaryBtn: "Ja", secondaryBtn: "Nej", confirms: ["Hotel forlænget", "Madfestival reserveret", "Cykeludlejning flyttet til i morgen"] },
+        { lines: ["Jeg ved, du normalt kigger efter lokale kafferisterier.", "Risteriet No. 7 holder en lille kaffefestival i eftermiddag med smagninger fra fem danske risterier.", "Der er kun 12 minutters gang.", "Vil du have, at jeg reserverer to billetter?"], transaction: { label: "2 billetter", price: "36" }, primaryBtn: "Reservér", secondaryBtn: "Ikke nu", confirms: ["Kaffefestival reserveret", "Rutevejledning klar", "Tilføjet til dagens plan"] },
+        { lines: ["Solnedgang er kl. 21:14 i aften.", "Jeg har fundet en stille havnerestaurant med ét bord tilbage med udsigt over vandet.", "Bagefter er der en 20-minutters kystvandring, som de lokale elsker.", "Skal jeg reservere bordet?"], transaction: { label: "Bord for to", price: "25" }, primaryBtn: "Reservér", secondaryBtn: "Nej", confirms: ["Havnebord reserveret", "Depositum bekræftet", "Solnedgangsvandring tilføjet"] },
+        { lines: ["Regnen starter om ca. en time.", "I stedet for stranden vil jeg anbefale Søfartsmuseet i eftermiddag.", "Jeres børn kan bygge deres eget vikingeskib, og caféen har ledige pladser kl. 15:30.", "Skal jeg booke begge dele?"], transaction: { label: "Familieadgang + café", price: "68" }, primaryBtn: "Book begge", secondaryBtn: "Nej", confirms: ["Museumsbilletter booket", "Vikinge-værksted reserveret", "Cafébord bekræftet"] },
+        { lines: ["Du har besøgt tre slotte.", "Jeg tror, du ville nyde noget anderledes.", "En lokal keramiker åbner sit værksted i eftermiddag. De fleste besøgende finder det aldrig.", "Vil du have rutevejledning?"], transaction: null, primaryBtn: "Vis ruten", secondaryBtn: "Ikke nu", confirms: ["Værksted tilføjet", "Gårute klar", "Åbningstider bekræftet"] },
+        { lines: ["Du sagde, du ville et sted, hvor de lokale faktisk kommer.", "Et lille bryggeri lancerer en limited summer-øl i aften med livemusik fra kl. 19:00.", "Der er ti minutters gang fra dit hotel.", "Skal jeg reservere et bord?"], transaction: { label: "Borddeposit", price: "40" }, primaryBtn: "Reservér", secondaryBtn: "Nej", confirms: ["Bord reserveret", "Livemusik tilføjet", "Gårute klar"] },
+        { lines: ["Vejret er perfekt til at cykle i dag.", "Jeg har lavet en stille rute langs kysten med tre steder, der er værd at stoppe.", "Den ender ved en lille havnecafé inden solnedgang.", "Start navigation?"], transaction: null, primaryBtn: "Start rute", secondaryBtn: "Ikke nu", confirms: ["Cykelrute startet", "Tre stop tilføjet", "Havnecafé gemt"] },
+        { lines: ["Dit møde slutter kl. 15:00.", "Du har tre timer før middag.", "Jeg har fundet en flodvandring, et lokalt bageri og en udstilling, alt inden for gåafstand.", "Vil du have ruten?"], transaction: { label: "Udstillingsbillet", price: "14" }, primaryBtn: "Opret rute", secondaryBtn: "Nej", confirms: ["Udstillingsbillet booket", "Tre-timers rute oprettet", "Retur sat til kl. 18:30"] },
+        { lines: ["I morgen er den eneste solskinsdag i denne uge.", "Jeg ville flytte din øtur til i morgen og besøge museerne i dag i stedet.", "Skal jeg opdatere dine reservationer?"], transaction: null, primaryBtn: "Opdatér mine planer", secondaryBtn: "Behold nuværende", confirms: ["Øtur flyttet til i morgen", "Museumsbilletter flyttet til i dag", "Transport opdateret"] },
+        { lines: ["Du har gemt tre fiskerestauranter.", "Én af dem har netop frigivet to terrasseborde med udsigt over havnen.", "Skal jeg booke et?"], transaction: { label: "Borddeposit", price: "30" }, primaryBtn: "Book bord", secondaryBtn: "Nej", confirms: ["Terrassebord reserveret", "Depositum bekræftet", "Rutevejledning klar"] },
       ]
     : [
-        "You’ve already experienced Odense and Egeskov.",
-        "Tomorrow is the best weather of your stay.",
-        "Ærø’s food festival starts at 16:00 and there are still ferry tickets available.",
-        "It’s worth staying one more day.",
-        "Would you like me to move your hotel reservation and book the ferry?",
+        { lines: ["You’ve already experienced Odense and Egeskov.", "Tomorrow is the best weather of your stay.", "Ærø’s food festival starts at 16:00 and there are still ferry tickets available.", "It’s worth staying one more day.", "Would you like me to move your hotel reservation and book the ferry?"], transaction: { label: "One more night", price: "134" }, primaryBtn: "Yes", secondaryBtn: "No", confirms: ["Hotel extended", "Food festival reserved", "Bike rental moved to tomorrow"] },
+        { lines: ["I know you usually look for local coffee roasters.", "Risteriet No. 7 is hosting a small coffee festival this afternoon, with tastings from five Danish roasters.", "It’s only 12 minutes away.", "Would you like me to reserve two tickets?"], transaction: { label: "2 tickets", price: "36" }, primaryBtn: "Reserve", secondaryBtn: "Not now", confirms: ["Coffee festival reserved", "Directions ready", "Added to today’s plan"] },
+        { lines: ["Sunset is at 21:14 tonight.", "I found a quiet harbour restaurant with one table left overlooking the water.", "Afterwards, there’s a 20-minute coastal walk locals love.", "Shall I reserve the table?"], transaction: { label: "Table for two", price: "25" }, primaryBtn: "Reserve", secondaryBtn: "No", confirms: ["Harbour table reserved", "Deposit confirmed", "Sunset walk added"] },
+        { lines: ["The rain starts in about an hour.", "Instead of the beach, I’d recommend the Maritime Museum this afternoon.", "Your children can build their own Viking ship, and the café has availability at 15:30.", "Want me to book both?"], transaction: { label: "Family admission + café", price: "68" }, primaryBtn: "Book both", secondaryBtn: "No", confirms: ["Museum tickets booked", "Viking workshop reserved", "Café table confirmed"] },
+        { lines: ["You’ve visited three castles.", "I think you’d enjoy something different.", "A local ceramic artist is opening her workshop this afternoon. Most visitors never find it.", "Would you like directions?"], transaction: null, primaryBtn: "Show directions", secondaryBtn: "Not now", confirms: ["Workshop added", "Walking route ready", "Opening hours confirmed"] },
+        { lines: ["You said you wanted somewhere locals actually go.", "A small brewery is releasing a limited summer beer tonight, with live music from 19:00.", "It’s a ten-minute walk from your hotel.", "Want me to save you a table?"], transaction: { label: "Table deposit", price: "40" }, primaryBtn: "Reserve", secondaryBtn: "No", confirms: ["Table reserved", "Live music added", "Walking route ready"] },
+        { lines: ["The weather is perfect for cycling today.", "I created a quiet route along the coast with three places worth stopping.", "It ends at a small harbour café before sunset.", "Start navigation?"], transaction: null, primaryBtn: "Start route", secondaryBtn: "Not now", confirms: ["Cycling route started", "Three stops added", "Harbour café saved"] },
+        { lines: ["Your meeting ends at 15:00.", "You have three hours before dinner.", "I found a riverside walk, a local bakery and an exhibition, all within walking distance.", "Would you like the route?"], transaction: { label: "Exhibition ticket", price: "14" }, primaryBtn: "Create route", secondaryBtn: "No", confirms: ["Exhibition ticket booked", "Three-hour route created", "Return time set for 18:30"] },
+        { lines: ["Tomorrow is the only sunny day this week.", "I’d move your island trip to tomorrow and visit the museums today instead.", "Want me to update your reservations?"], transaction: null, primaryBtn: "Update my plans", secondaryBtn: "Keep current plans", confirms: ["Island trip moved to tomorrow", "Museum tickets moved to today", "Transport updated"] },
+        { lines: ["You saved three seafood restaurants.", "One of them has just released two terrace tables overlooking the harbour.", "Would you like me to book one?"], transaction: { label: "Table deposit", price: "30" }, primaryBtn: "Book table", secondaryBtn: "No", confirms: ["Terrace table reserved", "Deposit confirmed", "Directions ready"] },
       ];
 
-  const confirms = locale === "da"
-    ? ["Hotel forlænget", "Madfestival reserveret", "Cykeludlejning flyttet til i morgen"]
-    : ["Hotel extended", "Food festival reserved", "Bike rental moved to tomorrow"];
+  useEffect(() => {
+    if (!isInView) return;
+    let intervalId: ReturnType<typeof setInterval>;
+    const startDelay = setTimeout(() => {
+      intervalId = setInterval(() => {
+        setActiveIndex(prev => (prev + 1) % situations.length);
+      }, 6000);
+    }, 3500);
+    return () => { clearTimeout(startDelay); if (intervalId) clearInterval(intervalId); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInView, situations.length]);
 
-  const questionEnd = 0.55 + lines.length * 0.18;
-  const priceDelay = questionEnd + 0.2;
-  const confirmBase = questionEnd + 0.85;
+  const s = situations[activeIndex];
 
   return (
     <motion.div
@@ -1507,112 +1533,102 @@ function CompanionPhone({ isInView, locale }: { isInView: boolean; locale: strin
             </div>
           </div>
 
-          {/* Conversation */}
+          {/* Conversation — crossfades between situations */}
           <div style={{
-            flexGrow: 1, padding: "20px 18px", display: "flex", flexDirection: "column", gap: 14,
-            overflow: "hidden",
+            flexGrow: 1, padding: "20px 18px", display: "flex", flexDirection: "column",
+            justifyContent: "center",
+            overflow: "hidden", position: "relative",
           }}>
-            {/* AI proactive message */}
-            <div style={{
-              alignSelf: "flex-start", maxWidth: "90%",
-              padding: "15px 17px", borderRadius: "6px 20px 20px 20px",
-              background: "rgba(255,255,255,0.055)", border: "1px solid rgba(255,255,255,0.09)",
-              display: "flex", flexDirection: "column", gap: 9,
-              backdropFilter: "blur(6px)",
-            }}>
-              {lines.map((l, i) => (
-                <motion.p
-                  key={i}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.45, delay: 0.55 + i * 0.18 }}
-                  style={{
-                    margin: 0, fontSize: 13.5, lineHeight: 1.42,
-                    color: i === lines.length - 1 ? "#fff" : "rgba(255,255,255,0.82)",
-                    fontWeight: i === lines.length - 1 ? 600 : 400,
-                  }}
-                >
-                  {l}
-                </motion.p>
-              ))}
-            </div>
-
-            {/* Price + decision buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: priceDelay }}
-              style={{ alignSelf: "stretch", display: "flex", flexDirection: "column", gap: 11 }}
-            >
-              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", padding: "0 3px" }}>
-                <span style={{ fontSize: 12.5, color: "rgba(255,255,255,0.55)" }}>
-                  {locale === "da" ? "Én nat mere" : "One more night"}
-                </span>
-                <span style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.02em" }}>
-                  134 <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(255,255,255,0.6)" }}>{locale === "da" ? "Euro" : "Euros"}</span>
-                </span>
-              </div>
-              <div style={{ display: "flex", gap: 10 }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.45 }}
+                style={{ display: "flex", flexDirection: "column", gap: 18, marginTop: -12 }}
+              >
+                {/* AI proactive message */}
                 <div style={{
-                  flex: 1, height: 42, borderRadius: 13, background: accentGrad,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 14, fontWeight: 700, color: "#0c0920", letterSpacing: "-0.01em",
-                  boxShadow: "0 8px 20px rgba(129,140,248,0.28)",
+                  alignSelf: "flex-start", maxWidth: "90%",
+                  padding: "15px 17px", borderRadius: "6px 20px 20px 20px",
+                  background: "rgba(255,255,255,0.055)", border: "1px solid rgba(255,255,255,0.09)",
+                  display: "flex", flexDirection: "column", gap: 9,
+                  backdropFilter: "blur(6px)",
                 }}>
-                  {locale === "da" ? "Ja" : "Yes"}
+                  {s.lines.map((l, i) => (
+                    <p
+                      key={i}
+                      style={{
+                        margin: 0, fontSize: 13.5, lineHeight: 1.42,
+                        color: i === s.lines.length - 1 ? "#fff" : "rgba(255,255,255,0.82)",
+                        fontWeight: i === s.lines.length - 1 ? 600 : 400,
+                      }}
+                    >
+                      {l}
+                    </p>
+                  ))}
                 </div>
+
+                {/* Price + decision buttons */}
+                <div style={{ alignSelf: "stretch", display: "flex", flexDirection: "column", gap: 11 }}>
+                  {s.transaction && (
+                    <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", padding: "0 3px" }}>
+                      <span style={{ fontSize: 12.5, color: "rgba(255,255,255,0.55)" }}>
+                        {s.transaction.label}
+                      </span>
+                      <span style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.02em" }}>
+                        {s.transaction.price} <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(255,255,255,0.6)" }}>{locale === "da" ? "Euro" : "Euros"}</span>
+                      </span>
+                    </div>
+                  )}
+                  <div style={{ display: "flex", gap: 10 }}>
+                    <div style={{
+                      flex: 1, height: 42, borderRadius: 13, background: accentGrad,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontSize: 14, fontWeight: 700, color: "#0c0920", letterSpacing: "-0.01em",
+                      boxShadow: "0 8px 20px rgba(129,140,248,0.28)",
+                    }}>
+                      {s.primaryBtn}
+                    </div>
+                    <div style={{
+                      flex: 1, height: 42, borderRadius: 13,
+                      background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.16)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.8)", letterSpacing: "-0.01em",
+                    }}>
+                      {s.secondaryBtn}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Divider */}
                 <div style={{
-                  flex: 1, height: 42, borderRadius: 13,
-                  background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.16)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.8)", letterSpacing: "-0.01em",
+                  height: 1, width: "100%",
+                  background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)",
+                }} />
+
+                {/* Confirmations */}
+                <div style={{
+                  alignSelf: "stretch", padding: "13px 15px", borderRadius: 16,
+                  background: "rgba(52,211,153,0.07)", border: "1px solid rgba(52,211,153,0.22)",
+                  display: "flex", flexDirection: "column", gap: 11,
                 }}>
-                  {locale === "da" ? "Nej" : "No"}
+                  {s.confirms.map((c, i) => (
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <span style={{
+                        width: 19, height: 19, borderRadius: "50%", background: "#34D399", flexShrink: 0,
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        boxShadow: "0 0 10px rgba(52,211,153,0.5)",
+                      }}>
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-4.8" stroke="#07130d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </span>
+                      <span style={{ fontSize: 13, color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>{c}</span>
+                    </div>
+                  ))}
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Divider */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={isInView ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.6, delay: confirmBase - 0.15 }}
-              style={{
-                height: 1, width: "100%", transformOrigin: "left center",
-                background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)",
-              }}
-            />
-
-            {/* Confirmations */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: confirmBase }}
-              style={{
-                alignSelf: "stretch", marginTop: 22, padding: "13px 15px", borderRadius: 16,
-                background: "rgba(52,211,153,0.07)", border: "1px solid rgba(52,211,153,0.22)",
-                display: "flex", flexDirection: "column", gap: 11,
-              }}
-            >
-              {confirms.map((c, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -8 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.4, delay: confirmBase + 0.2 + i * 0.16 }}
-                  style={{ display: "flex", alignItems: "center", gap: 10 }}
-                >
-                  <span style={{
-                    width: 19, height: 19, borderRadius: "50%", background: "#34D399", flexShrink: 0,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 0 10px rgba(52,211,153,0.5)",
-                  }}>
-                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-4.8" stroke="#07130d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </span>
-                  <span style={{ fontSize: 13, color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>{c}</span>
-                </motion.div>
-              ))}
-            </motion.div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Branded footer */}
