@@ -1028,6 +1028,8 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
           .tr-chB-tab-row { bottom: clamp(30px, 4vh, 60px) !important; padding-top: clamp(24px, 3vh, 40px) !important; }
         }
         @media (min-width: 900px) and (max-width: 1700px) {
+          .tr-chB-pin-wrap > div[style*="sticky"] { height: 105vh !important; }
+          .tr-chB-tab-row { bottom: 0 !important; }
           .tr-chB-spotlight > div { margin-top: 10px !important; }
           .tr-chB-spotlight span[style*="font-size"] { font-size: clamp(2.6rem, 4.2vw, 5.4rem) !important; }
           .tr-chB-spotlight h3 { font-size: clamp(1.6rem, 2.4vw, 2.8rem) !important; }
