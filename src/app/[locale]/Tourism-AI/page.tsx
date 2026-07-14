@@ -816,7 +816,7 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
 
           <div style={{
             position: "relative", zIndex: 1, height: "100%",
-            padding: "clamp(90px, 11vh, 152px) clamp(24px, 6vw, 160px) clamp(100px, 13vh, 168px)",
+            padding: "clamp(90px, 11vh, 152px) clamp(24px, 6vw, 160px) clamp(120px, 16vh, 200px)",
             display: "flex", flexDirection: "column",
           }}>
             {/* ── 1. Headline anchor — top-left, unchanged ── */}
@@ -856,7 +856,7 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
             </motion.div>
 
             {/* ── 2. Spotlight — swapped to the right side (where the list used to live) ── */}
-            <div className="tr-chB-spotlight" style={{ flex: 1, display: "flex", alignItems: "flex-start", justifyContent: "flex-end", minHeight: 0, overflow: "hidden" }}>
+            <div className="tr-chB-spotlight" style={{ flex: 1, display: "flex", alignItems: "flex-start", justifyContent: "flex-end", minHeight: 0 }}>
               <div style={{ maxWidth: "min(58%, 760px)", marginRight: "clamp(10px, 5vw, 130px)", marginTop: "clamp(-70px, -3.5vw, -20px)" }}>
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -895,47 +895,49 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
               </div>
             </div>
 
-            {/* ── 3. List — converted to a horizontal row of equal-size tabs, above the progress line ── */}
-            <div style={{
-              position: "relative", zIndex: 1, display: "flex", width: "100%",
-              gap: "clamp(8px, 1.2vw, 20px)", marginTop: "clamp(24px, 3.4vw, 40px)",
-            }}>
-              {gaps.map((g, i) => (
-                <motion.button
-                  key={g.n}
-                  onClick={() => jumpTo(i)}
-                  animate={{ opacity: activeIndex === i ? 1 : 0.38 }}
-                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  style={{
-                    flex: 1, minWidth: 0,
-                    display: "flex", flexDirection: "column", gap: 9,
-                    background: "none", cursor: "pointer", textAlign: "left",
-                    padding: "14px 4px 0 0",
-                    borderTop: `2px solid ${activeIndex === i ? accents[i] : "rgba(255,255,255,0.10)"}`,
-                    transition: "border-color 0.35s ease",
-                  }}
-                >
-                  <span style={{
-                    fontSize: "clamp(0.85rem, 0.95vw, 1rem)", fontWeight: 800,
-                    color: activeIndex === i ? accents[i] : "rgba(255,255,255,0.35)",
-                    fontFamily: "var(--font-geist), system-ui, sans-serif",
-                    transition: "color 0.35s ease",
-                  }}>
-                    {g.n}
-                  </span>
-                  <span style={{
-                    fontSize: "clamp(0.72rem, 0.82vw, 0.86rem)", lineHeight: 1.3,
-                    fontWeight: activeIndex === i ? 600 : 400,
-                    color: activeIndex === i ? "#fff" : "rgba(255,255,255,0.40)",
-                    fontFamily: "var(--font-inter), system-ui, sans-serif",
-                    transition: "color 0.35s ease",
-                  }}>
-                    {g.title}
-                  </span>
-                </motion.button>
-              ))}
-            </div>
 
+          </div>
+
+          {/* ── 3. Tab row — absolutely pinned to bottom of sticky viewport ── */}
+          <div style={{
+            position: "absolute", bottom: "clamp(28px, 4vh, 48px)", left: "clamp(24px, 6vw, 160px)", right: "clamp(24px, 6vw, 160px)",
+            zIndex: 2, display: "flex",
+            gap: "clamp(8px, 1.2vw, 20px)",
+          }}>
+            {gaps.map((g, i) => (
+              <motion.button
+                key={g.n}
+                onClick={() => jumpTo(i)}
+                animate={{ opacity: activeIndex === i ? 1 : 0.38 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                style={{
+                  flex: 1, minWidth: 0,
+                  display: "flex", flexDirection: "column", gap: 9,
+                  background: "none", cursor: "pointer", textAlign: "left",
+                  padding: "14px 4px 0 0",
+                  borderTop: `2px solid ${activeIndex === i ? accents[i] : "rgba(255,255,255,0.10)"}`,
+                  transition: "border-color 0.35s ease",
+                }}
+              >
+                <span style={{
+                  fontSize: "clamp(0.85rem, 0.95vw, 1rem)", fontWeight: 800,
+                  color: activeIndex === i ? accents[i] : "rgba(255,255,255,0.35)",
+                  fontFamily: "var(--font-geist), system-ui, sans-serif",
+                  transition: "color 0.35s ease",
+                }}>
+                  {g.n}
+                </span>
+                <span style={{
+                  fontSize: "clamp(0.72rem, 0.82vw, 0.86rem)", lineHeight: 1.3,
+                  fontWeight: activeIndex === i ? 600 : 400,
+                  color: activeIndex === i ? "#fff" : "rgba(255,255,255,0.40)",
+                  fontFamily: "var(--font-inter), system-ui, sans-serif",
+                  transition: "color 0.35s ease",
+                }}>
+                  {g.title}
+                </span>
+              </motion.button>
+            ))}
           </div>
         </div>
       </div>
