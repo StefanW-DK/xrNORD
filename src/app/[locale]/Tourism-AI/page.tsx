@@ -25,8 +25,8 @@ const stagger = {
 };
 
 /* ─── Shared CTA pair ──────────────────────────────────────────────────── */
-function CtaPair({ locale }: { locale: string }) {
-  const primaryLabel = locale === "da" ? "Udforsk Travel Companion" : "Explore the Travel Companion";
+function CtaPair({ locale, label }: { locale: string; label?: string }) {
+  const primaryLabel = label ?? (locale === "da" ? "Udforsk Travel Companion" : "Explore the Travel Companion");
 
   const primaryStyle: React.CSSProperties = {
     display: "inline-flex",
@@ -857,7 +857,7 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
 
             {/* ── 2. Spotlight — swapped to the right side (where the list used to live) ── */}
             <div style={{ flex: 1, display: "flex", alignItems: "flex-start", justifyContent: "flex-end", minHeight: 0 }}>
-              <div style={{ maxWidth: "min(58%, 760px)", marginRight: "clamp(10px, 5vw, 130px)", marginTop: "clamp(-90px, -4vw, -20px)" }}>
+              <div style={{ maxWidth: "min(58%, 760px)", marginRight: "clamp(10px, 5vw, 130px)", marginTop: "clamp(-50px, -1.5vw, 10px)" }}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeIndex}
@@ -1932,6 +1932,38 @@ function DataPillarsSection({ locale }: { locale: string }) {
 /* ════════════════════════════════════════════════════════════════════════
    SECTION — CLOSING CTA
    ════════════════════════════════════════════════════════════════════════ */
+function StrategyDocMockup({ isInView }: { isInView: boolean }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      style={{ flexShrink: 0, width: "clamp(340px, 32vw, 500px)", position: "relative" }}
+      className="tr-closing-doc"
+    >
+      <div aria-hidden style={{
+        position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)",
+        width: "130%", height: "120%",
+        background: "radial-gradient(ellipse, rgba(129,140,248,0.18) 0%, rgba(168,85,247,0.1) 35%, transparent 65%)",
+        pointerEvents: "none", zIndex: 0,
+      }} />
+      <div style={{
+        position: "relative", zIndex: 1, borderRadius: 12, overflow: "hidden",
+        boxShadow: "0 30px 80px rgba(0,0,0,0.55), 0 0 80px rgba(129,140,248,0.12), 0 0 40px rgba(168,85,247,0.08)",
+        border: "1px solid rgba(129,140,248,0.25)",
+      }}>
+        <img
+          src="/assets/Tourism/Tourism Streategy Document.png"
+          alt="One More Day - Strategic proposal for Destination Fyn"
+          style={{
+            width: "100%", height: "auto", display: "block",
+          }}
+        />
+      </div>
+    </motion.div>
+  );
+}
+
 function ClosingSection({ locale }: { locale: string }) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
@@ -1940,10 +1972,10 @@ function ClosingSection({ locale }: { locale: string }) {
     <section
       ref={ref}
       style={{
-        position: "relative", width: "100%",
+        position: "relative", width: "100%", minHeight: "100vh",
         padding: "clamp(110px, 13vw, 180px) clamp(24px, 6vw, 160px)",
         background: "linear-gradient(160deg, #100A26 0%, #0F0D28 45%, #04060F 100%)",
-        overflow: "hidden", textAlign: "center",
+        overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center",
       }}
     >
       <div aria-hidden style={{
@@ -1953,49 +1985,75 @@ function ClosingSection({ locale }: { locale: string }) {
         pointerEvents: "none",
       }} />
 
-      <motion.div
-        initial={{ opacity: 0, y: 28 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-        style={{ position: "relative", zIndex: 1, maxWidth: 880, margin: "0 auto" }}
+      <div
+        className="tr-closing-layout"
+        style={{
+          position: "relative", zIndex: 1, maxWidth: 1400,
+          margin: "0 auto",
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          gap: "clamp(40px, 5vw, 80px)",
+        }}
       >
-        <p style={{
-          fontSize: 12.5, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase" as const,
-          color: "#22D3EE", marginBottom: 24, fontFamily: "var(--font-inter), system-ui, sans-serif",
-        }}>
-          {locale === "da" ? "Lad os bygge det sammen" : "Let us build it together"}
-        </p>
-        <h2 style={{
-          fontSize: "clamp(2rem, 3.6vw, 4.2rem)", fontWeight: 800, lineHeight: 1.08,
-          letterSpacing: "-0.03em", color: "#fff", margin: "0 auto 28px",
-          fontFamily: "var(--font-geist), system-ui, sans-serif",
-        }}>
-          {locale === "da" ? "En destination rig på oplevelser." : "A destination rich in experiences."}
-          <br />
-          <span style={{ fontWeight: 300, color: "rgba(255,255,255,0.42)" }}>
-            {locale === "da" ? "Endnu ikke fuldt " : "Not yet fully "}
-          </span>
-          <span style={{
-            background: "linear-gradient(135deg, #22D3EE 0%, #818CF8 50%, #E879F9 100%)",
-            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-            fontWeight: 800,
+        {/* left: text + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          style={{ flex: 1, minWidth: 0, maxWidth: 600 }}
+        >
+          <p style={{
+            fontSize: 12.5, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase" as const,
+            color: "#22D3EE", marginBottom: 24, fontFamily: "var(--font-inter), system-ui, sans-serif",
           }}>
-            {locale === "da" ? "oplevet." : "experienced."}
-          </span>
-        </h2>
-        <p style={{
-          fontSize: "clamp(1.05rem, 1.3vw, 1.25rem)", lineHeight: 1.65,
-          color: "rgba(255,255,255,0.68)", maxWidth: 640, margin: "0 auto 44px",
-          fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
-        }}>
-          {locale === "da"
-            ? "Infrastrukturen af gæstfrihed, kultur og natur er der allerede. Det, en Travel Companion tilføjer, er det intelligenslag, der gør den opdagbar, fuldt ud, personligt og for enhver gæst."
-            : "The infrastructure of hospitality, culture, and natural beauty is already here. What the Travel Companion adds is the intelligence layer that makes it discoverable, fully, personally, and for every kind of visitor."}
-        </p>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <CtaPair locale={locale} />
-        </div>
-      </motion.div>
+            {locale === "da" ? "Lad os fortsætte samtalen" : "Let’s Continue the Conversation"}
+          </p>
+          <h2 style={{
+            fontSize: "clamp(2rem, 3.6vw, 4.2rem)", fontWeight: 800, lineHeight: 1.08,
+            letterSpacing: "-0.03em", color: "#fff", margin: "0 0 28px",
+            fontFamily: "var(--font-geist), system-ui, sans-serif",
+          }}>
+            {locale === "da" ? "Kunne dette virke for jeres destination?" : "Could this work for your destination?"}
+          </h2>
+          <p style={{
+            fontSize: "clamp(1.05rem, 1.3vw, 1.25rem)", lineHeight: 1.65,
+            color: "rgba(255,255,255,0.68)", maxWidth: 540, margin: "0 0 20px",
+            fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
+          }}>
+            {locale === "da"
+              ? "Vi har udarbejdet et omfattende strategipapir, der beskriver visionen, arkitekturen, implementeringstilgangen og forretningsmulighederne bag AI Travel Companion."
+              : "We’ve prepared a comprehensive strategy paper describing the vision, architecture, implementation approach and business opportunities behind the AI Travel Companion."}
+          </p>
+          <p style={{
+            fontSize: "clamp(1.05rem, 1.3vw, 1.25rem)", lineHeight: 1.65,
+            color: "rgba(255,255,255,0.92)", maxWidth: 540, margin: "0 0 44px",
+            fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 400,
+          }}>
+            {locale === "da"
+              ? "Kontakt os for at modtage strategibriefet og drøfte, hvordan det kunne se ud for jeres destination."
+              : "Contact us to receive the strategy brief and discuss what it could look like for your destination."}
+          </p>
+          <div style={{ display: "flex" }}>
+            <CtaPair locale={locale} label={locale === "da" ? "Anmod om strategibriefet" : "Request the Strategy Brief"} />
+          </div>
+        </motion.div>
+
+        {/* right: strategy document mockup */}
+        <StrategyDocMockup isInView={isInView} />
+      </div>
+
+      <style>{`
+        @media (max-width: 1000px) {
+          .tr-closing-layout { flex-direction: column !important; align-items: center !important; text-align: center !important; }
+          .tr-closing-layout > div:first-child { max-width: 640px !important; }
+          .tr-closing-layout > div:first-child p,
+          .tr-closing-layout > div:first-child h2 { max-width: 100% !important; }
+          .tr-closing-layout > div:first-child > div:last-child { justify-content: center !important; }
+          .tr-closing-doc { width: clamp(280px, 55vw, 380px) !important; }
+        }
+        @media (max-width: 560px) {
+          .tr-closing-doc { width: clamp(260px, 80vw, 340px) !important; }
+        }
+      `}</style>
     </section>
   );
 }
