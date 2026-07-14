@@ -899,10 +899,12 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
           </div>
 
           {/* ── 3. Tab row — absolutely pinned to bottom of sticky viewport ── */}
-          <div style={{
-            position: "absolute", bottom: "clamp(12px, 2vh, 24px)", left: "clamp(24px, 6vw, 160px)", right: "clamp(24px, 6vw, 160px)",
+          <div className="tr-chB-tab-row" style={{
+            position: "absolute", bottom: 0, left: 0, right: 0,
             zIndex: 2, display: "flex",
             gap: "clamp(8px, 1.2vw, 20px)",
+            padding: "clamp(50px, 6vh, 80px) clamp(24px, 6vw, 160px) clamp(12px, 2vh, 24px)",
+            background: "linear-gradient(to top, rgba(11,8,25,1) 45%, rgba(11,8,25,0.98) 65%, rgba(11,8,25,0.88) 82%, rgba(11,8,25,0.5) 93%, transparent 100%)",
           }}>
             {gaps.map((g, i) => (
               <motion.button
@@ -1024,9 +1026,11 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
           .tr-chB-mobile-list { display: flex !important; }
         }
         @media (min-width: 900px) and (max-width: 1700px) {
-          .tr-chB-spotlight > div { margin-top: 20px !important; }
-          .tr-chB-spotlight { overflow: hidden !important; }
-          .tr-chB-pin-wrap [style*="flex-direction: column"] { padding-top: 60px !important; padding-bottom: 100px !important; }
+          .tr-chB-spotlight > div { margin-top: 10px !important; }
+          .tr-chB-spotlight span[style*="font-size"] { font-size: clamp(2.6rem, 4.2vw, 5.4rem) !important; }
+          .tr-chB-spotlight h3 { font-size: clamp(1.6rem, 2.4vw, 2.8rem) !important; }
+          .tr-chB-spotlight p { font-size: clamp(0.88rem, 1vw, 1.05rem) !important; }
+          .tr-chB-pin-wrap [style*="flex-direction: column"] { padding-top: 50px !important; padding-bottom: 40px !important; }
         }
       `}</style>
     </section>
