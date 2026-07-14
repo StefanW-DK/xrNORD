@@ -1804,6 +1804,9 @@ function SolutionSection({ locale }: { locale: string }) {
       </div>
 
       <style>{`
+        @media (min-width: 1101px) and (max-width: 1700px) {
+          .tr-solution-phone-col { margin-right: clamp(30px, 4vw, 60px) !important; }
+        }
         @media (max-width: 1100px) {
           .tr-solution-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
           .tr-solution-hero { flex-direction: column !important; align-items: center !important; text-align: center; gap: clamp(48px, 8vw, 72px) !important; }
