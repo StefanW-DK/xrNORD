@@ -857,7 +857,7 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
 
             {/* ── 2. Spotlight — swapped to the right side (where the list used to live) ── */}
             <div style={{ flex: 1, display: "flex", alignItems: "flex-start", justifyContent: "flex-end", minHeight: 0 }}>
-              <div style={{ maxWidth: "min(58%, 760px)", marginRight: "clamp(10px, 5vw, 130px)", marginTop: "clamp(-50px, -1.5vw, 10px)" }}>
+              <div style={{ maxWidth: "min(58%, 760px)", marginRight: "clamp(10px, 5vw, 130px)", marginTop: "clamp(10px, 3vw, 50px)" }}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeIndex}
