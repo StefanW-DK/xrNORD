@@ -1034,7 +1034,7 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
           .tr-chB-spotlight span[style*="font-size"] { font-size: clamp(2.6rem, 4.2vw, 5.4rem) !important; }
           .tr-chB-spotlight h3 { font-size: clamp(1.6rem, 2.4vw, 2.8rem) !important; }
           .tr-chB-spotlight p { font-size: clamp(0.88rem, 1vw, 1.05rem) !important; }
-          .tr-chB-pin-wrap [style*="flex-direction"] > div:first-child p:last-child { font-size: clamp(1rem, 1.3vw, 1.15rem) !important; }
+          .tr-chB-pin-wrap [style*="flex-direction"] > div:first-child p:last-child { font-size: clamp(1rem, 1.3vw, 1.15rem) !important; max-width: clamp(500px, 42vw, 600px) !important; }
           .tr-chB-pin-wrap [style*="flex-direction"] { padding-top: 50px !important; padding-bottom: 40px !important; }
         }
       `}</style>
