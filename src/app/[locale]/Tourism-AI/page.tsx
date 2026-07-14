@@ -900,7 +900,7 @@ function ChallengeSectionVersionB({ locale }: { locale: string }) {
 
           {/* ── 3. Tab row — absolutely pinned to bottom of sticky viewport ── */}
           <div style={{
-            position: "absolute", bottom: "clamp(28px, 4vh, 48px)", left: "clamp(24px, 6vw, 160px)", right: "clamp(24px, 6vw, 160px)",
+            position: "absolute", bottom: "clamp(12px, 2vh, 24px)", left: "clamp(24px, 6vw, 160px)", right: "clamp(24px, 6vw, 160px)",
             zIndex: 2, display: "flex",
             gap: "clamp(8px, 1.2vw, 20px)",
           }}>
