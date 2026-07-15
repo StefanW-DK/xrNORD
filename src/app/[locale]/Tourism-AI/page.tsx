@@ -2095,13 +2095,18 @@ function ClosingSection({ locale }: { locale: string }) {
               ? "Kontakt os for at modtage strategibriefet og drøfte, hvordan det kunne se ud for jeres destination."
               : "Contact us to receive the strategy brief and discuss what it could look like for your destination."}
           </p>
-          <div style={{ display: "flex" }}>
+          <div className="tr-closing-cta-inline" style={{ display: "flex" }}>
             <CtaPair locale={locale} label={locale === "da" ? "Anmod om strategibriefet" : "Request the Strategy Brief"} />
           </div>
         </motion.div>
 
         {/* right: strategy document mockup */}
         <StrategyDocMockup isInView={isInView} />
+
+        {/* CTA below mockup on mobile/tablet */}
+        <div className="tr-closing-cta-mobile" style={{ display: "none" }}>
+          <CtaPair locale={locale} label={locale === "da" ? "Anmod om strategibriefet" : "Request the Strategy Brief"} />
+        </div>
       </div>
 
       <style>{`
@@ -2110,7 +2115,8 @@ function ClosingSection({ locale }: { locale: string }) {
           .tr-closing-layout > div:first-child { max-width: 640px !important; }
           .tr-closing-layout > div:first-child p,
           .tr-closing-layout > div:first-child h2 { max-width: 100% !important; }
-          .tr-closing-layout > div:first-child > div:last-child { justify-content: center !important; }
+          .tr-closing-cta-inline { display: none !important; }
+          .tr-closing-cta-mobile { display: flex !important; justify-content: center !important; }
           .tr-closing-doc { width: clamp(280px, 55vw, 380px) !important; }
         }
         @media (max-width: 560px) {
