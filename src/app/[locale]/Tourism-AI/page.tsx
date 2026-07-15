@@ -25,8 +25,10 @@ const stagger = {
 };
 
 /* ─── Shared CTA pair ──────────────────────────────────────────────────── */
-function CtaPair({ locale, label }: { locale: string; label?: string }) {
+function CtaPair({ locale, label, href }: { locale: string; label?: string; href?: string }) {
   const primaryLabel = label ?? (locale === "da" ? "Udforsk Travel Companion" : "Explore the Travel Companion");
+  const resolvedHref = href ?? `/${locale}/contact`;
+  const isHash = resolvedHref.startsWith("#");
 
   const primaryStyle: React.CSSProperties = {
     display: "inline-flex",
@@ -43,13 +45,32 @@ function CtaPair({ locale, label }: { locale: string; label?: string }) {
     border: "1px solid rgba(168,85,247,0.50)",
     boxShadow: "0 8px 26px rgba(124,111,212,0.20)",
     backdropFilter: "blur(6px)",
+    cursor: "pointer",
   };
+
+  const handleHashClick = isHash ? (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.querySelector(resolvedHref);
+    if (!el) return;
+    const lenis = (window as unknown as { __lenis?: { scrollTo: (t: HTMLElement, o?: object) => void } }).__lenis;
+    if (lenis?.scrollTo) {
+      lenis.scrollTo(el as HTMLElement, { duration: 1.4 });
+    } else {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  } : undefined;
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: 14, alignItems: "center" }}>
-      <Link href={`/${locale}/contact`} style={primaryStyle} className="tr-cta">
-        {primaryLabel} <span aria-hidden className="tr-cta-arrow">→</span>
-      </Link>
+      {isHash ? (
+        <a href={resolvedHref} onClick={handleHashClick} style={primaryStyle} className="tr-cta">
+          {primaryLabel} <span aria-hidden className="tr-cta-arrow">→</span>
+        </a>
+      ) : (
+        <Link href={resolvedHref} style={primaryStyle} className="tr-cta">
+          {primaryLabel} <span aria-hidden className="tr-cta-arrow">→</span>
+        </Link>
+      )}
       <style dangerouslySetInnerHTML={{ __html: `
         .tr-cta { transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
         .tr-cta .tr-cta-arrow { transition: transform 0.25s ease; display: inline-block; }
@@ -289,7 +310,7 @@ function Hero({ locale }: { locale: string }) {
           </motion.h1>
 
           <motion.div variants={fadeUp}>
-            <CtaPair locale={locale} />
+            <CtaPair locale={locale} href="#strategy-brief" />
           </motion.div>
         </div>
 
@@ -1446,13 +1467,10 @@ function CompanionPhone({ isInView, locale }: { isInView: boolean; locale: strin
 
   useEffect(() => {
     if (!isInView) return;
-    let intervalId: ReturnType<typeof setInterval>;
-    const startDelay = setTimeout(() => {
-      intervalId = setInterval(() => {
-        setActiveIndex(prev => (prev + 1) % situations.length);
-      }, 6000);
-    }, 3500);
-    return () => { clearTimeout(startDelay); if (intervalId) clearInterval(intervalId); };
+    const intervalId = setInterval(() => {
+      setActiveIndex(prev => (prev + 1) % situations.length);
+    }, 6000);
+    return () => clearInterval(intervalId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView, situations.length]);
 
@@ -1833,6 +1851,14 @@ function SolutionSection({ locale }: { locale: string }) {
         @media (min-width: 1101px) and (max-width: 1700px) {
           .tr-solution-phone-col { margin-right: clamp(60px, 8vw, 120px) !important; }
           .tr-solution-copy { margin-left: clamp(30px, 4vw, 60px) !important; }
+          .tr-companion-phone p { font-size: clamp(10px, 0.9vw, 13.5px) !important; line-height: 1.38 !important; }
+          .tr-companion-phone span[style*="font-size: 12.5px"] { font-size: clamp(9px, 0.8vw, 12.5px) !important; }
+          .tr-companion-phone span[style*="font-size: 20"] { font-size: clamp(14px, 1.3vw, 20px) !important; }
+          .tr-companion-phone span[style*="font-size: 13px"] { font-size: clamp(9.5px, 0.85vw, 13px) !important; }
+          .tr-companion-phone div[style*="height: 42px"] { height: clamp(32px, 2.8vw, 42px) !important; font-size: clamp(10px, 0.9vw, 14px) !important; }
+          .tr-companion-phone div[style*="padding: 13px 15px"] { padding: clamp(8px, 0.9vw, 13px) clamp(10px, 0.95vw, 15px) !important; }
+          .tr-companion-phone div[style*="gap: 18"] { gap: clamp(10px, 1.1vw, 18px) !important; }
+          .tr-companion-phone div[style*="padding: 15px 17px"] { padding: clamp(10px, 0.95vw, 15px) clamp(12px, 1vw, 17px) !important; }
         }
         @media (max-width: 1100px) {
           .tr-solution-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
@@ -2006,6 +2032,7 @@ function ClosingSection({ locale }: { locale: string }) {
 
   return (
     <section
+      id="strategy-brief"
       ref={ref}
       style={{
         position: "relative", width: "100%", minHeight: "100vh",
@@ -2145,6 +2172,7 @@ function DataFoundationSection({ locale }: { locale: string }) {
         accent="#818CF8"
         isInView={isInView}
         maxWidth={960}
+        subtitleMaxWidth={860}
         title={locale === "da" ? <>Ingen companion<br />uden dataen.</> : <>No companion<br />without the data.</>}
         subtitle={locale === "da"
           ? "Alt i dette hviler på én betingelse: at destinationens data findes, er tilgængelig, og er struktureret på en måde, AI rent faktisk kan bruge. I dag er den spredt på tværs af systemer og organisationer. Det første leverance er ikke en funktion, det er fundamentet."
