@@ -241,14 +241,14 @@ function CapabilityBridge() {
     hidden: { opacity: 0, scale: 0.7 },
     visible: (d: number) => ({
       opacity: 1, scale: 1,
-      transition: { delay: d, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+      transition: { delay: d, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as number[] },
     }),
   };
   const fadeIn = {
     hidden: { opacity: 0, y: 12 },
     visible: (d: number) => ({
       opacity: 1, y: 0,
-      transition: { delay: d, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+      transition: { delay: d, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as number[] },
     }),
   };
 
