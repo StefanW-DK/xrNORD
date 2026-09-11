@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-const VIDEO_SRC = "/assets/home/why/xrNORD_interview.mp4";
+const VIDEO_SRC = "https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/xrNORD_interview.mp4";
 
 /* ── Preview card ──────────────────────────────────────── */
 interface CardProps {

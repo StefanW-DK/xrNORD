@@ -217,7 +217,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("educationTitle")}
               metric={t("educationMetric")}
-              videoSrc="/assets/home/industries/education.mp4"
+              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/education.mp4"
               tintRgb="59, 130, 246"
               delay={0.1}
               dominant
@@ -230,7 +230,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("accountingTitle")}
               metric={t("accountingMetric")}
-              videoSrc="/assets/home/industries/accounting.mp4"
+              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/accounting.mp4"
               tintRgb="124, 58, 237"
               delay={0.18}
               style={{ width: "min(272px, 45%)", minHeight: "200px", flexShrink: 0 }}
@@ -238,7 +238,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("softwareTitle")}
               metric={t("softwareMetric")}
-              videoSrc="/assets/home/industries/software.mp4"
+              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/software.mp4"
               tintRgb="6, 182, 212"
               delay={0.26}
               style={{ flex: 1, minHeight: "200px" }}
@@ -250,7 +250,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("travelTitle")}
               metric={t("travelMetric")}
-              videoSrc="/assets/home/industries/travel.mp4"
+              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/travel.mp4"
               tintRgb="20, 184, 166"
               delay={0.34}
               style={{ width: "min(400px, 100%)", minHeight: "200px" }}

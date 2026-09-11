@@ -31,6 +31,9 @@ const STATIC_PAGES = [
   { path: "/why-ai/articles", priority: 0.7 },
   { path: "/about", priority: 0.6 },
   { path: "/case-studies/one-more-day-on-fyn", priority: 0.7 },
+  { path: "/Future-of-Auditing", priority: 0.85 },
+  { path: "/One-More-Day", priority: 0.85 },
+  { path: "/Compliance", priority: 0.85 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

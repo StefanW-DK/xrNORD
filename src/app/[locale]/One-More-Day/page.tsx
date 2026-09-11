@@ -178,7 +178,7 @@ function Hero({ locale }: { locale: string }) {
           objectFit: "cover", opacity: 0.62, pointerEvents: "none",
         }}
       >
-        <source src="/assets/home/industries/travel.mp4" type="video/mp4" />
+        <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/travel.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}

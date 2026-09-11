@@ -157,7 +157,7 @@ export default function BookWorkshopPage() {
             opacity: 0.55,
           }}
         >
-          <source src="/assets/home/Workshop/workshop_hero_movie.mp4" type="video/mp4" />
+          <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
         </video>
         {/* Heavy dark overlay — almost blacked out */}
         <div

@@ -11,7 +11,7 @@ interface PageMeta {
   keywords: string[];
 }
 
-type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "execution" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use";
+type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "execution" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use" | "future-of-auditing" | "one-more-day" | "compliance";
 
 const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey, PageMeta> }> = {
   en: {
@@ -95,6 +95,24 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
           "The Terms of Use for xrnord.com. By using our website, you agree to these terms governing intellectual property, acceptable use, and liability.",
         keywords: ["terms of use", "terms and conditions", "legal", "website terms"],
       },
+      "future-of-auditing": {
+        title: "AI for Financial Auditing — Lead the Change | xrNORD",
+        description:
+          "76% of auditors expect AI to fundamentally reshape the profession within 10 years. See how AI transforms financial auditing and how your firm stays competitive.",
+        keywords: ["AI auditing", "AI financial auditing", "future of auditing", "AI audit firms", "IDC audit report 2026", "audit AI transformation", "xrNORD"],
+      },
+      "one-more-day": {
+        title: "AI Travel Companion for Destinations — One More Day | xrNORD",
+        description:
+          "Help every visitor discover more, stay longer, and return. An intelligent AI Travel Companion built for destinations, hotels, restaurants, museums, and tourism organisations.",
+        keywords: ["AI travel companion", "AI tourism", "destination management AI", "smart tourism", "AI for destinations", "tourist experience AI", "xrNORD"],
+      },
+      "compliance": {
+        title: "Compliance as a Living Capability — Continuous Security Compliance | xrNORD",
+        description:
+          "Compliance is a state, not a document. xrNORD helps organisations turn compliance from a periodic audit into a continuous, built-in capability with agentic security compliance.",
+        keywords: ["continuous compliance", "agentic compliance", "security compliance", "compliance automation", "IT compliance", "compliance capability", "xrNORD"],
+      },
     },
   },
   da: {
@@ -177,6 +195,24 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         description:
           "Vilkårene for brug af xrnord.com. Ved at bruge vores website accepterer du disse vilkår for intellektuel ejendomsret, acceptabel brug og ansvar.",
         keywords: ["vilkår for brug", "betingelser", "juridisk", "webstedsvilkår"],
+      },
+      "future-of-auditing": {
+        title: "AI til revision — Forbliv konkurrencedygtig | xrNORD",
+        description:
+          "76 % af revisorer forventer, at AI fundamentalt ændrer revision inden for 10 år. Se hvordan AI forvandler revisionsbranchen, og hvordan jeres firma tager førertrøjen.",
+        keywords: ["AI revision", "kunstig intelligens revision", "fremtidens revision", "AI revisionshus", "IDC rapport revision 2026", "xrNORD"],
+      },
+      "one-more-day": {
+        title: "AI Travel Companion til destinationer — Én dag mere | xrNORD",
+        description:
+          "Hjælp gæsterne med at opdage mere, blive længere og vende tilbage. En intelligent AI Travel Companion til destinationer, hoteller, restauranter og turistattraktioner.",
+        keywords: ["AI travel companion", "AI turisme", "destinationsledelse AI", "smart turisme", "AI til destinationer", "turistoplevelse AI", "xrNORD"],
+      },
+      "compliance": {
+        title: "Compliance som en levende kapabilitet — Kontinuerlig sikkerhedscompliance | xrNORD",
+        description:
+          "Compliance er en tilstand, ikke et dokument. xrNORD hjælper organisationer med at gøre compliance til en kontinuerlig, indbygget kapabilitet med agentbaseret sikkerhedscompliance.",
+        keywords: ["kontinuerlig compliance", "agentbaseret compliance", "sikkerhedscompliance", "compliance automatisering", "IT compliance", "compliance kapabilitet", "xrNORD"],
       },
     },
   },

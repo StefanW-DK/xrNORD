@@ -122,7 +122,7 @@ export default function AILabsApplyPage() {
             opacity: 0.41,
           }}
         >
-          <source src="/assets/home/Workshop/workshop_hero_movie.mp4" type="video/mp4" />
+          <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
         </video>
         {/* AI-LABs gradient overlay — keeps the purple/indigo brand tone */}
         <div style={{

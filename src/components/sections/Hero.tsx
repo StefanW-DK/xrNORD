@@ -28,7 +28,7 @@ export default function Hero() {
         style={{
           objectPosition: "80% center",
         }}
-        src="/assets/home/hero/hero-video.mp4"
+        src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/hero-video.mp4"
       />
 
       {/* Dark overlay for text readability */}

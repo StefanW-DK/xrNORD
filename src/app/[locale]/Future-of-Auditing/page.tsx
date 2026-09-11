@@ -290,7 +290,7 @@ function Hero({ locale }: { locale: string }) {
         }}
       >
         {/* TODO: swap to bespoke Kling video once delivered */}
-        <source src="/assets/home/Workshop/workshop_hero_movie.mp4" type="video/mp4" />
+        <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay — keeps text sharp, adds deep purple tint */}
