@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 import { useLocale } from "next-intl";
 
 const fadeUp = {
@@ -230,25 +230,25 @@ function CapabilityBridge() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const draw = {
+  const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (d: number) => ({
       pathLength: 1, opacity: 1,
       transition: { pathLength: { delay: d, duration: 1.2, ease: "easeInOut" }, opacity: { delay: d, duration: 0.3 } },
     }),
   };
-  const pop = {
+  const pop: Variants = {
     hidden: { opacity: 0, scale: 0.7 },
     visible: (d: number) => ({
       opacity: 1, scale: 1,
-      transition: { delay: d, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as number[] },
+      transition: { delay: d, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
     }),
   };
-  const fadeIn = {
+  const fadeIn: Variants = {
     hidden: { opacity: 0, y: 12 },
     visible: (d: number) => ({
       opacity: 1, y: 0,
-      transition: { delay: d, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as number[] },
+      transition: { delay: d, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
     }),
   };
 
