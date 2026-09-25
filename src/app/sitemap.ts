@@ -49,7 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const page of STATIC_PAGES) {
       entries.push({
         url: `${BASE_URL}/${locale}${page.path}`,
-        lastModified: new Date(),
         changeFrequency: "weekly",
         priority: page.priority,
         alternates: {
@@ -67,7 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const slug of ARTICLE_SLUGS) {
       entries.push({
         url: `${BASE_URL}/${locale}/why-ai/articles/${slug}`,
-        lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.65,
         alternates: {
