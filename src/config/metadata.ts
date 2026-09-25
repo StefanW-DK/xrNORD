@@ -108,7 +108,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI travel companion", "AI tourism", "destination management AI", "smart tourism", "AI for destinations", "tourist experience AI", "xrNORD"],
       },
       "compliance": {
-        title: "Compliance as a Living Capability — Continuous Security Compliance | xrNORD",
+        title: "Compliance as a Living Capability - Continuous Security Compliance | xrNORD",
         description:
           "Compliance is a state, not a document. xrNORD helps organisations turn compliance from a periodic audit into a continuous, built-in capability with agentic security compliance.",
         keywords: ["continuous compliance", "agentic compliance", "security compliance", "compliance automation", "IT compliance", "compliance capability", "xrNORD"],
@@ -209,7 +209,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI travel companion", "AI turisme", "destinationsledelse AI", "smart turisme", "AI til destinationer", "turistoplevelse AI", "xrNORD"],
       },
       "compliance": {
-        title: "Compliance som en levende kapabilitet — Kontinuerlig sikkerhedscompliance | xrNORD",
+        title: "Compliance som en levende kapabilitet - Kontinuerlig sikkerhedscompliance | xrNORD",
         description:
           "Compliance er en tilstand, ikke et dokument. xrNORD hjælper organisationer med at gøre compliance til en kontinuerlig, indbygget kapabilitet med agentbaseret sikkerhedscompliance.",
         keywords: ["kontinuerlig compliance", "agentbaseret compliance", "sikkerhedscompliance", "compliance automatisering", "IT compliance", "compliance kapabilitet", "xrNORD"],

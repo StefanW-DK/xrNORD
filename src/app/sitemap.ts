@@ -33,7 +33,8 @@ const STATIC_PAGES = [
   { path: "/case-studies/one-more-day-on-fyn", priority: 0.7 },
   { path: "/Future-of-Auditing", priority: 0.85 },
   { path: "/One-More-Day", priority: 0.85 },
-  { path: "/Compliance", priority: 0.85 },
+  // Compliance is under development (noindex) - add back at launch:
+  // { path: "/Compliance", priority: 0.85 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
