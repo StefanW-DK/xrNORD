@@ -11,7 +11,7 @@ interface PageMeta {
   keywords: string[];
 }
 
-type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "execution" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use" | "future-of-auditing" | "one-more-day" | "compliance" | "ai-labs";
+type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "execution" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use" | "future-of-auditing" | "one-more-day" | "compliance" | "ai-labs" | "ai-labs-apply";
 
 const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey, PageMeta> }> = {
   en: {
@@ -119,6 +119,12 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
           "AI-LABs is a confidential forum where leading EU companies share how they implement, govern and scale AI in practice. Peer-to-peer, under NDA, no membership fee.",
         keywords: ["AI forum", "AI peer network", "AI leadership forum", "AI implementation", "confidential AI forum", "xrNORD"],
       },
+      "ai-labs-apply": {
+        title: "Apply for AI-LABs - xrNORD",
+        description:
+          "Request to join AI-LABs, xrNORD's confidential forum where leading companies share how AI is implemented in practice.",
+        keywords: [],
+      },
     },
   },
   da: {
@@ -225,6 +231,12 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         description:
           "AI-LABs er et fortroligt forum, hvor førende virksomheder i EU deler, hvordan de implementerer, styrer og skalerer AI i praksis. Peer-to-peer, under NDA, intet kontingent.",
         keywords: ["AI-forum", "AI netværk", "AI ledelse", "AI implementering", "fortroligt AI-forum", "xrNORD"],
+      },
+      "ai-labs-apply": {
+        title: "Anmod om deltagelse i AI-LABs - xrNORD",
+        description:
+          "Anmod om deltagelse i AI-LABs, xrNORDs fortrolige forum, hvor førende virksomheder deler, hvordan AI implementeres i praksis.",
+        keywords: [],
       },
     },
   },
