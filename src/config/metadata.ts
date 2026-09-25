@@ -116,7 +116,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
       "ai-labs": {
         title: "AI-LABs - Confidential AI Forum for Leading Companies | xrNORD",
         description:
-          "AI-LABs is a confidential forum where leading EU companies share how they implement, govern and scale AI in practice. Peer-to-peer, under NDA, no membership fee.",
+          "A confidential forum where EU companies share how they implement, govern and scale AI in practice. Peer-to-peer, under NDA, no membership fee.",
         keywords: ["AI forum", "AI peer network", "AI leadership forum", "AI implementation", "confidential AI forum", "xrNORD"],
       },
       "ai-labs-apply": {
@@ -229,7 +229,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
       "ai-labs": {
         title: "AI-LABs - Fortroligt AI-forum for førende virksomheder | xrNORD",
         description:
-          "AI-LABs er et fortroligt forum, hvor førende virksomheder i EU deler, hvordan de implementerer, styrer og skalerer AI i praksis. Peer-to-peer, under NDA, intet kontingent.",
+          "Et fortroligt forum, hvor virksomheder i EU deler, hvordan de implementerer, styrer og skalerer AI i praksis. Peer-to-peer, under NDA, intet kontingent.",
         keywords: ["AI-forum", "AI netværk", "AI ledelse", "AI implementering", "fortroligt AI-forum", "xrNORD"],
       },
       "ai-labs-apply": {
