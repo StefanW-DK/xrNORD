@@ -46,9 +46,9 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center text-white">
-        {/* Badge */}
+        {/* Badge — starts in its final state (no entrance animation) */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="inline-flex items-center mb-6 sm:mb-20 cursor-default"
@@ -65,9 +65,10 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Visual headline — H2 for design, SEO weight carried by H1 below */}
+        {/* Visual headline — H2 for design, SEO weight carried by H1 below.
+            Starts in its final state (no entrance animation). */}
         <motion.h2
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           className="font-bold mb-7"
@@ -107,9 +108,9 @@ export default function Hero() {
           {t("subtext")}
         </motion.h1>
 
-        {/* CTAs */}
+        {/* CTAs — start in their final state (no entrance animation) */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
