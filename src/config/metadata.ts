@@ -11,7 +11,7 @@ interface PageMeta {
   keywords: string[];
 }
 
-type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "execution" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use" | "future-of-auditing" | "one-more-day" | "compliance";
+type PageMetaKey = "home" | "workshop" | "ai-roadmap" | "execution" | "ai-use-cases" | "why-ai" | "why-ai-interviews" | "why-ai-articles" | "about" | "contact" | "privacy-policy" | "cookie-policy" | "terms-of-use" | "future-of-auditing" | "one-more-day" | "compliance" | "ai-labs";
 
 const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey, PageMeta> }> = {
   en: {
@@ -113,6 +113,12 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
           "Compliance is a state, not a document. xrNORD helps organisations turn compliance from a periodic audit into a continuous, built-in capability with agentic security compliance.",
         keywords: ["continuous compliance", "agentic compliance", "security compliance", "compliance automation", "IT compliance", "compliance capability", "xrNORD"],
       },
+      "ai-labs": {
+        title: "AI-LABs - Confidential AI Forum for Leading Companies | xrNORD",
+        description:
+          "AI-LABs is a confidential forum where leading EU companies share how they implement, govern and scale AI in practice. Peer-to-peer, under NDA, no membership fee.",
+        keywords: ["AI forum", "AI peer network", "AI leadership forum", "AI implementation", "confidential AI forum", "xrNORD"],
+      },
     },
   },
   da: {
@@ -213,6 +219,12 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         description:
           "Compliance er en tilstand, ikke et dokument. xrNORD hjælper organisationer med at gøre compliance til en kontinuerlig, indbygget kapabilitet med agentbaseret sikkerhedscompliance.",
         keywords: ["kontinuerlig compliance", "agentbaseret compliance", "sikkerhedscompliance", "compliance automatisering", "IT compliance", "compliance kapabilitet", "xrNORD"],
+      },
+      "ai-labs": {
+        title: "AI-LABs - Fortroligt AI-forum for førende virksomheder | xrNORD",
+        description:
+          "AI-LABs er et fortroligt forum, hvor førende virksomheder i EU deler, hvordan de implementerer, styrer og skalerer AI i praksis. Peer-to-peer, under NDA, intet kontingent.",
+        keywords: ["AI-forum", "AI netværk", "AI ledelse", "AI implementering", "fortroligt AI-forum", "xrNORD"],
       },
     },
   },
