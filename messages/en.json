@@ -219,11 +219,11 @@
     },
     "whatAreCookies": {
       "title": "What Are Cookies?",
-      "content": "Cookies are small text files placed on your device (computer, tablet, or mobile) when you visit a website. They are widely used to make websites work efficiently and to provide useful information to website owners.\n\nCookies can be:\n\n• Session cookies — temporary cookies that are deleted when you close your browser.\n\n• Persistent cookies — cookies that remain on your device for a set period or until you delete them.\n\n• First-party cookies — set by xrNORD directly.\n\n• Third-party cookies — set by external services we use (e.g. analytics providers).\n\nWe also use similar tracking technologies such as web beacons and pixels, which function in a comparable way to cookies."
+      "content": "Cookies are small text files placed on your device (computer, tablet, or mobile) when you visit a website. They are widely used to make websites work efficiently and to provide useful information to website owners.\n\nCookies can be:\n\n• Session cookies - temporary cookies that are deleted when you close your browser.\n\n• Persistent cookies - cookies that remain on your device for a set period or until you delete them.\n\n• First-party cookies - set by xrNORD directly.\n\n• Third-party cookies - set by external services we use (e.g. analytics providers).\n\nWe also use similar tracking technologies such as web beacons and pixels, which function in a comparable way to cookies."
     },
     "necessary": {
       "title": "Necessary Cookies",
-      "content": "These cookies are essential for the website to function properly. Without them, certain features — such as remembering your cookie preferences — would not work.\n\nNecessary cookies cannot be disabled through our cookie settings, as they are required for core functionality.\n\nExamples of what necessary cookies do:\n\n• Remember your cookie consent choice (stored as xrnord_cookie_consent in localStorage).\n\n• Maintain session state for server-side features.\n\n• Ensure security features function correctly.\n\nRetention: Session-based or up to 12 months for consent records."
+      "content": "These cookies are essential for the website to function properly. Without them, certain features - such as remembering your cookie preferences - would not work.\n\nNecessary cookies cannot be disabled through our cookie settings, as they are required for core functionality.\n\nExamples of what necessary cookies do:\n\n• Remember your cookie consent choice (stored as xrnord_cookie_consent in localStorage).\n\n• Maintain session state for server-side features.\n\n• Ensure security features function correctly.\n\nRetention: Session-based or up to 12 months for consent records."
     },
     "analytics": {
       "title": "Analytics Cookies",
@@ -239,7 +239,7 @@
     },
     "thirdparty": {
       "title": "Third-Party Services",
-      "content": "Some cookies on our site are set by third-party services we integrate. These services have their own privacy and cookie policies which we encourage you to review:\n\n• Google Analytics (analytics.google.com) — web analytics\n• Google Fonts (fonts.google.com) — typography delivery\n• Vercel (vercel.com) — website hosting and performance\n\nWe are not responsible for the content or privacy practices of third-party services. If you have concerns about how they use data, please review their respective policies directly."
+      "content": "Some cookies on our site are set by third-party services we integrate. These services have their own privacy and cookie policies which we encourage you to review:\n\n• Google Analytics (analytics.google.com) - web analytics\n• Google Fonts (fonts.google.com) - typography delivery\n• Vercel (vercel.com) - website hosting and performance\n\nWe are not responsible for the content or privacy practices of third-party services. If you have concerns about how they use data, please review their respective policies directly."
     },
     "changes": {
       "title": "Changes to This Policy",
@@ -265,11 +265,11 @@
     },
     "services": {
       "title": "Our Services",
-      "content": "xrNORD provides AI strategy consulting, workshops, implementation services, and related content through our website and direct client engagements.\n\nThe information published on xrnord.com is provided for general informational and marketing purposes only. It does not constitute professional advice. Before making decisions based on content found on our site, we recommend consulting with a qualified professional.\n\nService-specific terms — such as scope, deliverables, pricing, timelines, and confidentiality obligations — are governed by separate written agreements between xrNORD and individual clients. In the event of any conflict between these Terms and a client-specific agreement, the client-specific agreement shall take precedence."
+      "content": "xrNORD provides AI strategy consulting, workshops, implementation services, and related content through our website and direct client engagements.\n\nThe information published on xrnord.com is provided for general informational and marketing purposes only. It does not constitute professional advice. Before making decisions based on content found on our site, we recommend consulting with a qualified professional.\n\nService-specific terms - such as scope, deliverables, pricing, timelines, and confidentiality obligations - are governed by separate written agreements between xrNORD and individual clients. In the event of any conflict between these Terms and a client-specific agreement, the client-specific agreement shall take precedence."
     },
     "ip": {
       "title": "Intellectual Property",
-      "content": "All content published on xrnord.com — including but not limited to text, graphics, logos, images, video, audio, and software — is the property of xrNORD ApS or its content providers and is protected by applicable Danish and international intellectual property laws.\n\nYou may:\n\n• View and print content from the site for personal, non-commercial reference.\n\n• Share links to our pages on social media or in written communications.\n\nYou may NOT:\n\n• Reproduce, modify, distribute, or republish any content without prior written consent from xrNORD.\n\n• Use our branding, logos, or trademarked materials for any purpose without explicit permission.\n\n• Scrape, crawl, or extract data from the site using automated means.\n\nFor licensing enquiries, please contact info@xrnord.com."
+      "content": "All content published on xrnord.com - including but not limited to text, graphics, logos, images, video, audio, and software - is the property of xrNORD ApS or its content providers and is protected by applicable Danish and international intellectual property laws.\n\nYou may:\n\n• View and print content from the site for personal, non-commercial reference.\n\n• Share links to our pages on social media or in written communications.\n\nYou may NOT:\n\n• Reproduce, modify, distribute, or republish any content without prior written consent from xrNORD.\n\n• Use our branding, logos, or trademarked materials for any purpose without explicit permission.\n\n• Scrape, crawl, or extract data from the site using automated means.\n\nFor licensing enquiries, please contact info@xrnord.com."
     },
     "conduct": {
       "title": "Acceptable Use",
@@ -281,7 +281,7 @@
     },
     "liability": {
       "title": "Limitation of Liability",
-      "content": "To the maximum extent permitted by Danish and EU law, xrNORD ApS shall not be liable for any:\n\n• Indirect, incidental, special, consequential, or punitive damages.\n\n• Loss of profits, revenue, data, or goodwill.\n\n• Business interruption or loss of business opportunity.\n\nThis applies whether the claim arises from contract, tort (including negligence), strict liability, or any other legal theory — even if xrNORD has been advised of the possibility of such damages.\n\nOur total aggregate liability to you for any and all claims arising from your use of the website shall not exceed €100 (one hundred euros).\n\nSome jurisdictions do not allow the exclusion or limitation of liability for certain types of damages. In such jurisdictions, our liability is limited to the maximum extent permitted by law."
+      "content": "To the maximum extent permitted by Danish and EU law, xrNORD ApS shall not be liable for any:\n\n• Indirect, incidental, special, consequential, or punitive damages.\n\n• Loss of profits, revenue, data, or goodwill.\n\n• Business interruption or loss of business opportunity.\n\nThis applies whether the claim arises from contract, tort (including negligence), strict liability, or any other legal theory - even if xrNORD has been advised of the possibility of such damages.\n\nOur total aggregate liability to you for any and all claims arising from your use of the website shall not exceed €100 (one hundred euros).\n\nSome jurisdictions do not allow the exclusion or limitation of liability for certain types of damages. In such jurisdictions, our liability is limited to the maximum extent permitted by law."
     },
     "governingLaw": {
       "title": "Governing Law & Jurisdiction",
@@ -349,7 +349,7 @@
     "useCasesLabel": "AI Use Cases",
     "useCasesDesc": "See real examples of how companies create value with AI.",
     "aboutLabel": "About xrNORD",
-    "aboutDesc": "Who we are and why we exist — to help companies win with AI.",
+    "aboutDesc": "Who we are and why we exist - to help companies win with AI.",
     "contactLabel": "Get in Touch",
     "contactDesc": "Start a conversation about AI and your business.",
     "navAriaLabel": "Site navigation"

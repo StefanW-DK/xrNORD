@@ -34,7 +34,7 @@ function Hero({ locale }: { locale: string }) {
         alignItems: "center",
       }}
       className="lab-hero"
-      aria-label="AI-LABs — confidential AI forum"
+      aria-label="AI-LABs - confidential AI forum"
     >
       {/* Background video */}
       <video poster="/media/posters/workshop_hero_movie.webp" preload="metadata"

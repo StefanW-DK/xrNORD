@@ -219,7 +219,7 @@
     },
     "whatAreCookies": {
       "title": "Hvad er cookies?",
-      "content": "Cookies er små tekstfiler, der placeres på din enhed (computer, tablet eller mobil), når du besøger et website. De bruges bredt til at gøre websites mere effektive og til at give nyttige oplysninger til websiteejere.\n\nCookies kan være:\n\n• Sessionscookies — midlertidige cookies, der slettes, når du lukker din browser.\n\n• Vedvarende cookies — cookies, der forbliver på din enhed i en bestemt periode eller indtil du sletter dem.\n\n• Førstepartscookies — sat direkte af xrNORD.\n\n• Tredjepartscookies — sat af eksterne tjenester, vi bruger (f.eks. analyseplatforme).\n\nVi bruger også lignende sporingsteknikker som web beacons og pixels, der fungerer på en sammenlignelig måde."
+      "content": "Cookies er små tekstfiler, der placeres på din enhed (computer, tablet eller mobil), når du besøger et website. De bruges bredt til at gøre websites mere effektive og til at give nyttige oplysninger til websiteejere.\n\nCookies kan være:\n\n• Sessionscookies - midlertidige cookies, der slettes, når du lukker din browser.\n\n• Vedvarende cookies - cookies, der forbliver på din enhed i en bestemt periode eller indtil du sletter dem.\n\n• Førstepartscookies - sat direkte af xrNORD.\n\n• Tredjepartscookies - sat af eksterne tjenester, vi bruger (f.eks. analyseplatforme).\n\nVi bruger også lignende sporingsteknikker som web beacons og pixels, der fungerer på en sammenlignelig måde."
     },
     "necessary": {
       "title": "Nødvendige cookies",
@@ -239,7 +239,7 @@
     },
     "thirdparty": {
       "title": "Tredjepartstjenester",
-      "content": "Nogle cookies på vores website sættes af tredjepartstjenester, vi integrerer. Disse tjenester har deres egne privatlivs- og cookiepolitikker, som vi opfordrer dig til at gennemgå:\n\n• Google Analytics (analytics.google.com) — webanalyse\n• Google Fonts (fonts.google.com) — typografilevering\n• Vercel (vercel.com) — webhosting og performance\n\nVi er ikke ansvarlige for indholdet eller privatlivspraksis hos tredjepartstjenester. Har du bekymringer om, hvordan de bruger data, bedes du gennemgå deres respektive politikker direkte."
+      "content": "Nogle cookies på vores website sættes af tredjepartstjenester, vi integrerer. Disse tjenester har deres egne privatlivs- og cookiepolitikker, som vi opfordrer dig til at gennemgå:\n\n• Google Analytics (analytics.google.com) - webanalyse\n• Google Fonts (fonts.google.com) - typografilevering\n• Vercel (vercel.com) - webhosting og performance\n\nVi er ikke ansvarlige for indholdet eller privatlivspraksis hos tredjepartstjenester. Har du bekymringer om, hvordan de bruger data, bedes du gennemgå deres respektive politikker direkte."
     },
     "changes": {
       "title": "Ændringer i denne politik",
@@ -349,7 +349,7 @@
     "useCasesLabel": "AI Use Cases",
     "useCasesDesc": "Se konkrete eksempler på, hvordan virksomheder skaber værdi med AI.",
     "aboutLabel": "Om xrNORD",
-    "aboutDesc": "Hvem vi er og hvorfor vi eksisterer — for at hjælpe virksomheder med at vinde med AI.",
+    "aboutDesc": "Hvem vi er og hvorfor vi eksisterer - for at hjælpe virksomheder med at vinde med AI.",
     "contactLabel": "Kontakt os",
     "contactDesc": "Start en samtale om AI og jeres forretning.",
     "navAriaLabel": "Sidenavigation"

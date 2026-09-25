@@ -54,8 +54,8 @@ export default function WorkshopProcess() {
       title: locale === "da" ? "Udvikling & Eksekvering" : "Execution & Implementation",
       desc:
         locale === "da"
-          ? "En plan vi kan hjælpe jer med at realisere — fra proof-of-concept til produktionsklar implementering med lokal forankring."
-          : "We bring your roadmap to life — implementing solutions into your business and turning strategy into real operational impact.",
+          ? "En plan vi kan hjælpe jer med at realisere - fra proof-of-concept til produktionsklar implementering med lokal forankring."
+          : "We bring your roadmap to life - implementing solutions into your business and turning strategy into real operational impact.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />

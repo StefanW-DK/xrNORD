@@ -203,7 +203,7 @@ export default function AboutPage() {
               marginBottom: "48px",
             }}>
               {da
-                ? "Vi hjælper nordiske virksomheder med at omsætte AI til reel fordel — ikke blot som et værktøj, men som en del af måden de opererer og konkurrerer på."
+                ? "Vi hjælper nordiske virksomheder med at omsætte AI til reel fordel - ikke blot som et værktøj, men som en del af måden de opererer og konkurrerer på."
                 : "We help Nordic companies turn AI into real advantage - not as a tool, but as part of how they operate and compete."}
             </motion.h1>
 
@@ -615,8 +615,8 @@ export default function AboutPage() {
                 icon: "◈",
                 title: da ? "Forretningsforståelse" : "Business Understanding",
                 desc: da
-                  ? "Vi forstår de virksomheder, vi arbejder med — ikke bare deres teknologi, men deres drift, marked og mennesker."
-                  : "We understand the companies we work with — not just their technology, but their operations, market, and people.",
+                  ? "Vi forstår de virksomheder, vi arbejder med - ikke bare deres teknologi, men deres drift, marked og mennesker."
+                  : "We understand the companies we work with - not just their technology, but their operations, market, and people.",
               },
               {
                 icon: "⬡",
@@ -636,8 +636,8 @@ export default function AboutPage() {
                 icon: "⟁",
                 title: da ? "Lokal forankring" : "Local Accountability",
                 desc: da
-                  ? "Strategi og implementering med mennesker, der kender jeres marked — og er ansvarlige over for jer lokalt."
-                  : "Strategy and implementation by people who know your market — and are accountable to you locally.",
+                  ? "Strategi og implementering med mennesker, der kender jeres marked - og er ansvarlige over for jer lokalt."
+                  : "Strategy and implementation by people who know your market - and are accountable to you locally.",
               },
             ].map((pillar, i) => (
               <motion.div key={i} variants={fadeUp} style={{
@@ -725,8 +725,8 @@ export default function AboutPage() {
                 color: "rgba(148,163,184,0.65)",
               }}>
                 {da
-                  ? "Vi stopper ikke ved slides eller strategidokumenter. Vi hjælper med at definere, hvor AI skaber værdi, forme en klar plan — og bygge de AI-systemer, der faktisk eksekverer den."
-                  : "We do not stop at slides or strategy documents. We help define where AI creates value, shape a clear roadmap — and build the AI systems that actually execute it."}
+                  ? "Vi stopper ikke ved slides eller strategidokumenter. Vi hjælper med at definere, hvor AI skaber værdi, forme en klar plan - og bygge de AI-systemer, der faktisk eksekverer den."
+                  : "We do not stop at slides or strategy documents. We help define where AI creates value, shape a clear roadmap - and build the AI systems that actually execute it."}
               </motion.p>
             </motion.div>
 
@@ -743,8 +743,8 @@ export default function AboutPage() {
                   num: "01",
                   title: da ? "Forstå & Definér" : "Understand & Define",
                   desc: da
-                    ? "Vi går i dybden med jeres forretning — processer, data, udfordringer og muligheder — og identificerer præcist, hvor AI kan skabe størst effekt."
-                    : "We go deep into your business — processes, data, challenges, and opportunities — and identify precisely where AI can create the greatest impact.",
+                    ? "Vi går i dybden med jeres forretning - processer, data, udfordringer og muligheder - og identificerer præcist, hvor AI kan skabe størst effekt."
+                    : "We go deep into your business - processes, data, challenges, and opportunities - and identify precisely where AI can create the greatest impact.",
                   color: "#06B6D4",
                 },
                 {
@@ -759,8 +759,8 @@ export default function AboutPage() {
                   num: "03",
                   title: da ? "Byg & Implementér" : "Build & Implement",
                   desc: da
-                    ? "Vi udvikler og implementerer AI-systemer i jeres forretning — fra proof of concept til produktionsklar løsning med lokal ansvarlighed."
-                    : "We develop and implement AI systems into your business — from proof of concept to production-ready solution with local accountability.",
+                    ? "Vi udvikler og implementerer AI-systemer i jeres forretning - fra proof of concept til produktionsklar løsning med lokal ansvarlighed."
+                    : "We develop and implement AI systems into your business - from proof of concept to production-ready solution with local accountability.",
                   color: "#8B5CF6",
                 },
               ].map((phase, i) => (
@@ -874,8 +874,8 @@ export default function AboutPage() {
                   name: "Stefan Werge",
                   role: da ? "CEO & Grundlægger" : "CEO & Founder",
                   bio: da
-                    ? "Stefan bringer erhvervsforståelse og strategisk ledelse til xrNORD. Hans styrke er at forbinde AI-kapabilitet med reel forretningsværdi — og navigere komplekse organisationer mod konkrete resultater."
-                    : "Stefan brings business understanding and strategic leadership to xrNORD. His strength is connecting AI capability with real business value — and navigating complex organisations toward concrete outcomes.",
+                    ? "Stefan bringer erhvervsforståelse og strategisk ledelse til xrNORD. Hans styrke er at forbinde AI-kapabilitet med reel forretningsværdi - og navigere komplekse organisationer mod konkrete resultater."
+                    : "Stefan brings business understanding and strategic leadership to xrNORD. His strength is connecting AI capability with real business value - and navigating complex organisations toward concrete outcomes.",
                   img: "/assets/about/Stefan.png",
                   color: "#06B6D4",
                 },
@@ -883,8 +883,8 @@ export default function AboutPage() {
                   name: "Jerzy B",
                   role: da ? "AI Lead" : "AI Lead",
                   bio: da
-                    ? "Jerzy er den tekniske rygrad bag xrNORDs AI-løsninger. Han designer og implementerer AI-systemer med et klart fokus på det, der faktisk virker i produktion — ikke bare i teorien."
-                    : "Jerzy is the technical backbone behind xrNORD's AI solutions. He designs and implements AI systems with a clear focus on what actually works in production — not just in theory.",
+                    ? "Jerzy er den tekniske rygrad bag xrNORDs AI-løsninger. Han designer og implementerer AI-systemer med et klart fokus på det, der faktisk virker i produktion - ikke bare i teorien."
+                    : "Jerzy is the technical backbone behind xrNORD's AI solutions. He designs and implements AI systems with a clear focus on what actually works in production - not just in theory.",
                   img: "/assets/about/Jerzy.png",
                   color: "#8B5CF6",
                 },

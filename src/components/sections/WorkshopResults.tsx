@@ -20,17 +20,17 @@ export default function WorkshopResults() {
     {
       stat: "3,500",
       unit: locale === "da" ? "Timer" : "Hours",
-      desc: locale === "da" ? "Optimeret årligt — Revision" : "Optimized yearly — Revision",
+      desc: locale === "da" ? "Optimeret årligt - Revision" : "Optimized yearly - Revision",
     },
     {
       stat: "+200K",
       unit: "EUR",
-      desc: locale === "da" ? "Øget omsætning — Rejser" : "Increased Revenue — Travel",
+      desc: locale === "da" ? "Øget omsætning - Rejser" : "Increased Revenue - Travel",
     },
     {
       stat: locale === "da" ? "Disruptiv" : "Disruptive",
       unit: "",
-      desc: locale === "da" ? "AI Tutor — Uddannelse" : "AI Tutor — Education",
+      desc: locale === "da" ? "AI Tutor - Uddannelse" : "AI Tutor - Education",
     },
     {
       stat: locale === "da" ? "Fremtiden" : "The Future",

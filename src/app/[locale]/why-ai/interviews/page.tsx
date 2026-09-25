@@ -43,9 +43,9 @@ const INTERVIEWS = [
     headlineEn: "When accounting software becomes a personal AI CFO",
     headlineDa: "Når regnskabssoftware bliver en personlig AI-CFO",
     descEn:
-      "A practical view on how AI can move from standard tools to more intelligent, high-value business support — reshaping how companies handle their finances.",
+      "A practical view on how AI can move from standard tools to more intelligent, high-value business support - reshaping how companies handle their finances.",
     descDa:
-      "Et praktisk blik på, hvordan AI kan gå fra standardværktøj til mere intelligent, værdiskabende forretningsstøtte — og forme, hvordan virksomheder håndterer deres økonomi.",
+      "Et praktisk blik på, hvordan AI kan gå fra standardværktøj til mere intelligent, værdiskabende forretningsstøtte - og forme, hvordan virksomheder håndterer deres økonomi.",
     tag: "Finance & SaaS",
   },
   {
@@ -56,9 +56,9 @@ const INTERVIEWS = [
     headlineEn: "How AI is reshaping marketing work",
     headlineDa: "Hvordan AI omformer marketingarbejdet",
     descEn:
-      "A conversation about how AI changes delivery, creativity, and value creation inside a modern digital business — and what that means for teams and clients.",
+      "A conversation about how AI changes delivery, creativity, and value creation inside a modern digital business - and what that means for teams and clients.",
     descDa:
-      "En samtale om, hvordan AI forandrer leverance, kreativitet og værdiskabelse i en moderne digital virksomhed — og hvad det betyder for teams og kunder.",
+      "En samtale om, hvordan AI forandrer leverance, kreativitet og værdiskabelse i en moderne digital virksomhed - og hvad det betyder for teams og kunder.",
     tag: "Digital & Marketing",
   },
   {
@@ -82,9 +82,9 @@ const INTERVIEWS = [
     headlineEn: "How AI may reshape business and the future of work",
     headlineDa: "Hvordan AI kan omforme forretning og fremtidens arbejde",
     descEn:
-      "A broader perspective on what AI changes across organisations, work structures, and decision-making — from one of Denmark's leading research institutions.",
+      "A broader perspective on what AI changes across organisations, work structures, and decision-making - from one of Denmark's leading research institutions.",
     descDa:
-      "Et bredere perspektiv på, hvad AI forandrer på tværs af organisationer, arbejdsstrukturer og beslutningstagning — fra en af Danmarks ledende forskningsinstitutioner.",
+      "Et bredere perspektiv på, hvad AI forandrer på tværs af organisationer, arbejdsstrukturer og beslutningstagning - fra en af Danmarks ledende forskningsinstitutioner.",
     tag: "Research & Futures",
   },
 ];
@@ -97,9 +97,9 @@ const FEATURED = {
   headlineEn: "How AI may reshape business and the future of work",
   headlineDa: "Hvordan AI kan omforme forretning og fremtidens arbejde",
   descEn:
-    "A broader perspective on what AI changes across organisations, work structures, and decision-making — from one of Denmark's leading research institutions. A conversation that reaches beyond tools and into the deeper questions every business leader is starting to ask.",
+    "A broader perspective on what AI changes across organisations, work structures, and decision-making - from one of Denmark's leading research institutions. A conversation that reaches beyond tools and into the deeper questions every business leader is starting to ask.",
   descDa:
-    "Et bredere perspektiv på, hvad AI forandrer på tværs af organisationer, arbejdsstrukturer og beslutningstagning — fra en af Danmarks ledende forskningsinstitutioner. En samtale, der rækker ud over værktøjer og ind i de dybere spørgsmål, som enhver virksomhedsleder begynder at stille.",
+    "Et bredere perspektiv på, hvad AI forandrer på tværs af organisationer, arbejdsstrukturer og beslutningstagning - fra en af Danmarks ledende forskningsinstitutioner. En samtale, der rækker ud over værktøjer og ind i de dybere spørgsmål, som enhver virksomhedsleder begynder at stille.",
   tag: "Research & Futures",
 };
 
@@ -857,7 +857,7 @@ export default function InterviewsPage() {
                     letterSpacing: "0.05em",
                   }}
                 >
-                  {FEATURED.company} — {FEATURED.tag}
+                  {FEATURED.company} - {FEATURED.tag}
                 </div>
               </a>
             </motion.div>

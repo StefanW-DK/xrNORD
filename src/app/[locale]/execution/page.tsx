@@ -261,7 +261,7 @@ export default function ExecutionPage() {
            ─────────────────────────────────────────────────────────── */
         .exec-flow {
           position: absolute;
-          top: 29vh;          /* LOCKED — desktop (1024–1440px) */
+          top: 29vh;          /* LOCKED - desktop (1024–1440px) */
           height: 34.3vw;     /* = SVG aspect ratio, no letterboxing */
           left: 0;
           right: 0;

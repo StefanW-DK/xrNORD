@@ -78,31 +78,31 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["contact xrNORD", "AI consultancy contact", "start AI journey"],
       },
       "privacy-policy": {
-        title: "Privacy Policy — xrNORD",
+        title: "Privacy Policy - xrNORD",
         description:
           "Our Privacy Policy explains how xrNORD collects, uses, and protects your personal data in compliance with GDPR and international standards.",
         keywords: ["privacy policy", "data protection", "GDPR", "personal data", "privacy"],
       },
       "cookie-policy": {
-        title: "Cookie Policy — xrNORD",
+        title: "Cookie Policy - xrNORD",
         description:
           "Learn how xrNORD uses cookies on its website, including necessary, analytics, and marketing cookies, and how to manage your preferences.",
         keywords: ["cookie policy", "cookies", "tracking", "analytics", "GDPR cookies"],
       },
       "terms-of-use": {
-        title: "Terms of Use — xrNORD",
+        title: "Terms of Use - xrNORD",
         description:
           "The Terms of Use for xrnord.com. By using our website, you agree to these terms governing intellectual property, acceptable use, and liability.",
         keywords: ["terms of use", "terms and conditions", "legal", "website terms"],
       },
       "future-of-auditing": {
-        title: "AI for Financial Auditing — Lead the Change | xrNORD",
+        title: "AI for Financial Auditing - Lead the Change | xrNORD",
         description:
           "76% of auditors expect AI to fundamentally reshape the profession within 10 years. See how AI transforms financial auditing and how your firm stays competitive.",
         keywords: ["AI auditing", "AI financial auditing", "future of auditing", "AI audit firms", "IDC audit report 2026", "audit AI transformation", "xrNORD"],
       },
       "one-more-day": {
-        title: "AI Travel Companion for Destinations — One More Day | xrNORD",
+        title: "AI Travel Companion for Destinations - One More Day | xrNORD",
         description:
           "Help every visitor discover more, stay longer, and return. An intelligent AI Travel Companion built for destinations, hotels, restaurants, museums, and tourism organisations.",
         keywords: ["AI travel companion", "AI tourism", "destination management AI", "smart tourism", "AI for destinations", "tourist experience AI", "xrNORD"],
@@ -139,7 +139,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
       "execution": {
         title: "AI Execution | Implementer AI i jeres forretning | xrNORD",
         description:
-          "Vi designer og implementerer forbundne AI-systemer på tværs af data, arbejdsgange og processer — og bygger det over tid til jeres eget Company AI.",
+          "Vi designer og implementerer forbundne AI-systemer på tværs af data, arbejdsgange og processer - og bygger det over tid til jeres eget Company AI.",
         keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementering", "AI integration", "Nordisk AI"],
       },
       "ai-use-cases": {
@@ -179,31 +179,31 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["kontakt xrNORD", "AI rådgivning kontakt", "start AI-rejse"],
       },
       "privacy-policy": {
-        title: "Privatlivspolitik — xrNORD",
+        title: "Privatlivspolitik - xrNORD",
         description:
           "Vores privatlivspolitik forklarer, hvordan xrNORD indsamler, bruger og beskytter dine personlige data i overensstemmelse med GDPR og internationale standarder.",
         keywords: ["privatlivspolitik", "databeskyttelse", "GDPR", "personlige data", "privatliv"],
       },
       "cookie-policy": {
-        title: "Cookiepolitik — xrNORD",
+        title: "Cookiepolitik - xrNORD",
         description:
           "Lær hvordan xrNORD bruger cookies på sit website, herunder nødvendige, analytiske og marketingcookies, samt hvordan du administrerer dine præferencer.",
         keywords: ["cookiepolitik", "cookies", "sporing", "analyse", "GDPR cookies"],
       },
       "terms-of-use": {
-        title: "Vilkår for brug — xrNORD",
+        title: "Vilkår for brug - xrNORD",
         description:
           "Vilkårene for brug af xrnord.com. Ved at bruge vores website accepterer du disse vilkår for intellektuel ejendomsret, acceptabel brug og ansvar.",
         keywords: ["vilkår for brug", "betingelser", "juridisk", "webstedsvilkår"],
       },
       "future-of-auditing": {
-        title: "AI til revision — Forbliv konkurrencedygtig | xrNORD",
+        title: "AI til revision - Forbliv konkurrencedygtig | xrNORD",
         description:
           "76 % af revisorer forventer, at AI fundamentalt ændrer revision inden for 10 år. Se hvordan AI forvandler revisionsbranchen, og hvordan jeres firma tager førertrøjen.",
         keywords: ["AI revision", "kunstig intelligens revision", "fremtidens revision", "AI revisionshus", "IDC rapport revision 2026", "xrNORD"],
       },
       "one-more-day": {
-        title: "AI Travel Companion til destinationer — Én dag mere | xrNORD",
+        title: "AI Travel Companion til destinationer - Én dag mere | xrNORD",
         description:
           "Hjælp gæsterne med at opdage mere, blive længere og vende tilbage. En intelligent AI Travel Companion til destinationer, hoteller, restauranter og turistattraktioner.",
         keywords: ["AI travel companion", "AI turisme", "destinationsledelse AI", "smart turisme", "AI til destinationer", "turistoplevelse AI", "xrNORD"],

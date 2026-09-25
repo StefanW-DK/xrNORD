@@ -1435,8 +1435,8 @@ function CaseStudy({ locale }: { locale: string }) {
                 fontStyle: "italic",
               }}>
                 {locale === "da"
-                  ? <>Den operationelle kontrol slår de andre med <span style={{ color: "#E879F9", fontWeight: 600, fontStyle: "normal" }}>20×</span> — og det er præcis dér, AI flytter mest værdi.</>
-                  : <>Operational control outweighs the rest by <span style={{ color: "#E879F9", fontWeight: 600, fontStyle: "normal" }}>20×</span> — and that's exactly where AI moves the most value.</>}
+                  ? <>Den operationelle kontrol slår de andre med <span style={{ color: "#E879F9", fontWeight: 600, fontStyle: "normal" }}>20×</span> - og det er præcis dér, AI flytter mest værdi.</>
+                  : <>Operational control outweighs the rest by <span style={{ color: "#E879F9", fontWeight: 600, fontStyle: "normal" }}>20×</span> - and that's exactly where AI moves the most value.</>}
               </p>
             </motion.div>
           </motion.div>

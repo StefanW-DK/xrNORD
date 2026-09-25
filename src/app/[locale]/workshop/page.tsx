@@ -60,8 +60,8 @@ export default function WorkshopPage() {
           : "Execution & Implementation",
       desc:
         locale === "da"
-          ? "En plan vi kan hjælpe jer med at realisere — fra proof-of-concept til produktionsklar implementering med lokal forankring."
-          : "We bring your roadmap to life — implementing solutions into your business and turning strategy into real operational impact.",
+          ? "En plan vi kan hjælpe jer med at realisere - fra proof-of-concept til produktionsklar implementering med lokal forankring."
+          : "We bring your roadmap to life - implementing solutions into your business and turning strategy into real operational impact.",
       icon: (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -83,17 +83,17 @@ export default function WorkshopPage() {
     {
       stat: "3,500",
       unit: locale === "da" ? "Timer" : "Hours",
-      desc: locale === "da" ? "Optimeret årligt — Revision" : "Optimized yearly — Revision",
+      desc: locale === "da" ? "Optimeret årligt - Revision" : "Optimized yearly - Revision",
     },
     {
       stat: "+200K",
       unit: "EUR",
-      desc: locale === "da" ? "Øget omsætning — Rejser" : "Increased Revenue — Travel",
+      desc: locale === "da" ? "Øget omsætning - Rejser" : "Increased Revenue - Travel",
     },
     {
       stat: locale === "da" ? "Disruptiv" : "Disruptive",
       unit: "",
-      desc: locale === "da" ? "AI Tutor — Uddannelse" : "AI Tutor — Education",
+      desc: locale === "da" ? "AI Tutor - Uddannelse" : "AI Tutor - Education",
     },
     {
       stat: locale === "da" ? "Fremtiden" : "The Future",

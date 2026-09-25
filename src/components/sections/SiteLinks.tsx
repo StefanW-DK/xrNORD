@@ -38,7 +38,7 @@ export default async function SiteLinks() {
         {links.map((l) => (
           <li key={l.href}>
             <Link href={l.href}>
-              {l.label} — {l.description}
+              {l.label} - {l.description}
             </Link>
           </li>
         ))}

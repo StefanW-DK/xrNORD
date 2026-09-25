@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `${BASE_URL}/images/logos/logo-dark.png`,
           width: 1200,
           height: 630,
-          alt: "xrNORD — The Nordic Edge in AI",
+          alt: "xrNORD - The Nordic Edge in AI",
         },
       ],
     },

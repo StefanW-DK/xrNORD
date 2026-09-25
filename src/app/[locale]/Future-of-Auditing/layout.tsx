@@ -43,7 +43,7 @@ export default async function Layout({ children, params }: Props) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": da ? "AI til finansiel revision — xrNORD" : "AI for Financial Auditing — xrNORD",
+    "name": da ? "AI til finansiel revision - xrNORD" : "AI for Financial Auditing - xrNORD",
     "provider": {
       "@type": "Organization",
       "name": "xrNORD",

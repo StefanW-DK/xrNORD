@@ -43,7 +43,7 @@ export default async function Layout({ children, params }: Props) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": da ? "One More Day — AI Travel Companion til destinationer" : "One More Day — AI Travel Companion for Destinations",
+    "name": da ? "One More Day - AI Travel Companion til destinationer" : "One More Day - AI Travel Companion for Destinations",
     "provider": {
       "@type": "Organization",
       "name": "xrNORD",
@@ -71,7 +71,7 @@ export default async function Layout({ children, params }: Props) {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": da ? "One More Day — AI til turisme" : "One More Day — AI for Tourism",
+        "name": da ? "One More Day - AI til turisme" : "One More Day - AI for Tourism",
         "item": `${BASE_URL}/${locale}/One-More-Day`,
       },
     ],
