@@ -88,9 +88,10 @@ export default function Hero() {
           {t("headlineEnd")}
         </motion.h2>
 
-        {/* H1 — SEO primary heading, styled as supporting subline */}
+        {/* H1 — SEO primary heading, styled as supporting subline.
+            Starts in its final state, so the entrance animation no longer hides it. */}
         <motion.h1
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
           className="mx-auto mb-12"
