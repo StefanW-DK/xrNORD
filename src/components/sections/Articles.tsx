@@ -12,7 +12,7 @@ const ARTICLES = [
     categoryColor: "#DC2626",
     categoryBg: "rgba(220,38,38,0.08)",
     image: "/assets/home/articles/from-pilot-to-production.png",
-    href: "#",
+    slug: "from-pilot-to-production",
   },
   {
     key: "data",
@@ -20,7 +20,7 @@ const ARTICLES = [
     categoryColor: "#D97706",
     categoryBg: "rgba(217,119,6,0.08)",
     image: "/assets/home/articles/the-role-of-data.png",
-    href: "#",
+    slug: "the-role-of-data",
   },
   {
     key: "governance",
@@ -28,7 +28,7 @@ const ARTICLES = [
     categoryColor: "#0891B2",
     categoryBg: "rgba(8,145,178,0.08)",
     image: "/assets/home/articles/ai-governance.png",
-    href: "#",
+    slug: "ai-governance",
   },
 ];
 
@@ -168,7 +168,7 @@ export default function Articles() {
           {ARTICLES.map((article, i) => (
             <motion.a
               key={article.key}
-              href={article.href}
+              href={`/${locale}/why-ai/articles/${article.slug}`}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}

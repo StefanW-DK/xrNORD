@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import LazyVideo from "@/components/ui/LazyVideo";
 
 /* ── Preview card ──────────────────────────────────────── */
@@ -97,6 +97,7 @@ function PreviewCard({ name, role, topic, imageSrc, href, delay }: CardProps) {
 /* ── Main Section ──────────────────────────────────────── */
 export default function WhyAI() {
   const t = useTranslations("whyai");
+  const locale = useLocale();
   return (
     <section
       className="py-20 lg:py-44 relative"
@@ -214,7 +215,7 @@ export default function WhyAI() {
           </div>
 
           <Link
-            href="/why-ai/interviews"
+            href={`/${locale}/why-ai/interviews`}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -244,7 +245,7 @@ export default function WhyAI() {
         >
           {/* Main video */}
           <Link
-            href="/why-ai/interviews#interviews"
+            href={`/${locale}/why-ai/interviews#interviews`}
             style={{ display: "block", textDecoration: "none" }}
           >
           <div style={{

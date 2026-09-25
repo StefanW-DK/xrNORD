@@ -78,6 +78,16 @@ const nextConfig: NextConfig = {
       { source: "/post/history-of-software-development",                              destination: "/en/why-ai/articles/history-of-software-development",                    permanent: true },
       { source: "/post/software-development-framework-definition-importance",         destination: "/en/why-ai/articles/software-development-framework-definition-importance", permanent: true },
 
+      // ── Legacy Wix article URLs EN (404 until now) ──────────────────────────
+      // Runs before the locale middleware, which otherwise sends /post/* to /en/post/* and a 404.
+      // The /en/post/* variants cover that intermediate URL directly.
+      { source: "/post/the-history-of-software-development-from-early-days-to-modern-times",                        destination: "/en/why-ai/articles/history-of-software-development",       permanent: true },
+      { source: "/en/post/the-history-of-software-development-from-early-days-to-modern-times",                     destination: "/en/why-ai/articles/history-of-software-development",       permanent: true },
+      { source: "/post/back-end-the-technologies-tools-and-frame-works-and-how-they-have-evolved-through-time",     destination: "/en/why-ai/articles/backend-development-technologies-tools", permanent: true },
+      { source: "/en/post/back-end-the-technologies-tools-and-frame-works-and-how-they-have-evolved-through-time",  destination: "/en/why-ai/articles/backend-development-technologies-tools", permanent: true },
+      { source: "/post/the-role-of-data-fueling-intelligent-systems",                                               destination: "/en/why-ai/articles/the-role-of-data",                      permanent: true },
+      { source: "/en/post/the-role-of-data-fueling-intelligent-systems",                                            destination: "/en/why-ai/articles/the-role-of-data",                      permanent: true },
+
       // ── Article posts DA ────────────────────────────────────────────────────
       { source: "/da/post/fra-pilot-til-produktion-ai-skalering-i-praksis",           destination: "/da/why-ai/articles/from-pilot-to-production",                           permanent: true },
       { source: "/da/post/ai-datapipelines-etl-fundament-skalerbar-ai",              destination: "/da/why-ai/articles/ai-pipelines",                                       permanent: true },
@@ -94,6 +104,10 @@ const nextConfig: NextConfig = {
       { source: "/da/post/front-end-softwareudvikling-teknologier-udvikling",        destination: "/da/why-ai/articles/front-end-software-development-technologies-evolution", permanent: true },
       { source: "/da/post/virtuelle-remote-softwareteams-arbejdsform",               destination: "/da/why-ai/articles/history-of-software-development",                    permanent: true },
       { source: "/da/post/softwareudviklingens-historie-fra-start-til-nutidens-metoder", destination: "/da/why-ai/articles/history-of-software-development",                 permanent: true },
+
+      // ── Legacy Wix article URLs DA (404 until now) ──────────────────────────
+      { source: "/da/post/back-end-what-is-it-best-practices-the-cloud-services-and-the-future-1", destination: "/da/why-ai/articles/back-end-software-development-best-practices-cloud-future", permanent: true },
+      { source: "/da/post/software-development-framework-what-it-is-and-why-it-matters-1",         destination: "/da/why-ai/articles/software-development-framework-definition-importance",       permanent: true },
     ];
   },
 };
