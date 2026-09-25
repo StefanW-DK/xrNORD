@@ -7,6 +7,8 @@ declare global {
 
 type EventParams = Record<string, string | number | boolean>;
 
+const GA4_MEASUREMENT_ID = "G-KZBPLJL8VK";
+
 /**
  * Fire a GA4 custom event. Safe to call server-side (no-ops in SSR).
  */
@@ -50,7 +52,8 @@ export function trackArticleRead(slug: string, title: string, locale: string) {
  * Event names: generate_lead_contact / generate_lead_workshop
  */
 export function trackLead(type: "contact" | "workshop", locale: string) {
-  trackEvent(`generate_lead_${type}`, { locale }); // GA4 via gtag — Secondary (analytics/reporting)
+  // Explicit send_to: a controlled test showed it is required for this event to reach GA4 in our current GTM setup
+  trackEvent(`generate_lead_${type}`, { locale, send_to: GA4_MEASUREMENT_ID });
   // Push a GTM-specific event name to avoid colliding with the gtag() dataLayer push
   if (typeof window !== "undefined") {
     window.dataLayer = window.dataLayer || [];
