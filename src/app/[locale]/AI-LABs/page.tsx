@@ -127,7 +127,7 @@ function Hero({ locale }: { locale: string }) {
 
       <motion.div
         variants={stagger}
-        initial="hidden"
+        initial={false}
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         style={{

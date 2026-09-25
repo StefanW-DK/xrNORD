@@ -151,7 +151,7 @@ export default function ContactPage() {
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px" }}>
             {/* Visual headline — H2 for design, SEO weight carried by H1 below */}
             <motion.h2
-              initial={{ opacity: 0, y: 24 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               style={{
@@ -168,7 +168,7 @@ export default function ContactPage() {
             </motion.h2>
             {/* H1 — SEO primary heading, styled as supporting subline */}
             <motion.h1
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
               style={{

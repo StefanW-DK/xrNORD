@@ -380,7 +380,7 @@ export default function AIRoadmapPage() {
 
         {/* Content */}
         <motion.div
-          initial="hidden"
+          initial={false}
           animate="visible"
           variants={stagger}
           className="hero-content-wrap"
@@ -500,7 +500,7 @@ export default function AIRoadmapPage() {
 
         {/* Step indicator — absolute bottom center */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           style={{ position: "absolute", bottom: "48px", left: 0, right: 0, zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px" }}

@@ -177,7 +177,7 @@ export default function BookWorkshopPage() {
         <section style={{ paddingTop: "clamp(100px, 14vw, 180px)", paddingBottom: "40px", textAlign: "center" }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px" }}>
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               style={{
@@ -194,7 +194,7 @@ export default function BookWorkshopPage() {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 24 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
               style={{
@@ -221,7 +221,7 @@ export default function BookWorkshopPage() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.18, ease: "easeOut" }}
               style={{

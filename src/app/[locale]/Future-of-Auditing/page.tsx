@@ -364,7 +364,7 @@ function Hero({ locale }: { locale: string }) {
 
       <motion.div
         variants={stagger}
-        initial="hidden"
+        initial={false}
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         style={{
@@ -1456,7 +1456,7 @@ function CaseStudy({ locale }: { locale: string }) {
 
 /* ════════════════════════════════════════════════════════════════════════
    PAGE — Financial Auditing × AI
-   Private sales landing page — noindex via layout.tsx.
+   Public landing page - indexable and listed in the sitemap.
    Subsequent sections (pain points, urgency, offering, vision, CTA) will
    be added below the hero in future iterations.
    ════════════════════════════════════════════════════════════════════════ */

@@ -377,7 +377,7 @@ export default function AiUseCasesPage() {
 
         <motion.div
           variants={stagger}
-          initial="hidden"
+          initial={false}
           animate="visible"
           style={{ position: "relative", zIndex: 1, maxWidth: 1100, textAlign: "center" }}
         >

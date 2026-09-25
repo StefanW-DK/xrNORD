@@ -369,7 +369,7 @@ export default function ExecutionPage() {
           <div className="exec-hero-inner">
             <motion.div
               className="exec-hero-col"
-              initial="hidden"
+              initial={false}
               animate="visible"
               variants={stagger}
             >

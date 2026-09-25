@@ -122,7 +122,7 @@ export default function AboutPage() {
         {/* Content */}
         <div className="page-container about-hero-wrap" style={{ paddingTop: "clamp(100px, 13vw, 160px)", paddingBottom: "clamp(72px, 10vw, 120px)", position: "relative", zIndex: 2 }}>
           <motion.div
-            initial="hidden"
+            initial={false}
             animate="visible"
             variants={stagger}
             style={{ maxWidth: "980px" }}

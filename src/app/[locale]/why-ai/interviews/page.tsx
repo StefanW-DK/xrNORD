@@ -393,7 +393,7 @@ export default function InterviewsPage() {
           }}
         >
           <motion.div
-            initial="hidden"
+            initial={false}
             animate="visible"
             variants={stagger}
           >
