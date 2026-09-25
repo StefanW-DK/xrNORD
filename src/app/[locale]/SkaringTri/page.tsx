@@ -2,8 +2,20 @@ import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import CalendarButton from "@/components/internal/CalendarButton";
 
+// Internal page: never indexed. Override the locale layout, which would
+// otherwise leak the homepage's title, keywords, canonical and hreflang.
 export const metadata: Metadata = {
-  robots: { index: false, follow: false },
+  title: "SkæringTri | xrNORD",
+  description: null,
+  keywords: null,
+  alternates: {},
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
+  },
+  openGraph: { title: "SkæringTri | xrNORD", siteName: "xrNORD", type: "website" },
+  twitter: { card: "summary", title: "SkæringTri | xrNORD" },
 };
 
 export default function InternalPage() {
