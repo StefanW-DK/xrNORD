@@ -243,7 +243,6 @@ export default async function ArticlePage({ params }: Props) {
       },
     },
     datePublished: article.date,
-    dateModified: article.date,
     url: articleUrl,
     mainEntityOfPage: {
       "@type": "WebPage",
