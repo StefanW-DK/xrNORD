@@ -101,7 +101,8 @@
     "termsOfUse": "Vilkår for brug",
     "copyright": "© 2026 xrNORD · All rights reserved · CVR: 43396323",
     "tagline": "Skandinavisk AI-strategi & udvikling",
-    "successMessage": "Du er på listen. Vi vender tilbage."
+    "successMessage": "Du er på listen. Vi vender tilbage.",
+    "cookieSettings": "Cookieindstillinger"
   },
   "cookies": {
     "message": "Vi bruger cookies til at se, hvordan du interagerer med vores side og forbedre din oplevelse. Ved at acceptere accepterer du vores brug af cookies.",
@@ -117,7 +118,10 @@
     "marketingDesc": "Bruges til at levere personaliseret indhold og annoncer.",
     "savePreferences": "Gem indstillinger",
     "noSpam": "Ingen spam. Afmeld når som helst.",
-    "successMessage": "Du er på listen. Vi vender tilbage."
+    "successMessage": "Du er på listen. Vi vender tilbage.",
+    "close": "Luk",
+    "saveErrorRemoved": "Dit valg kunne ikke gemmes i din browser. Det gælder, indtil du genindlæser siden eller åbner websitet på ny. Derefter bruges kun nødvendige cookies, indtil du vælger igen.",
+    "saveErrorFailed": "Dit valg kunne ikke gemmes, og et tidligere valg kunne ikke fjernes fra din browser. Dit nye valg gælder, indtil du genindlæser siden eller åbner websitet på ny. Derefter kan det tidligere valg blive brugt igen. Du kan fjerne det ved at slette webstedsdata for xrnord.com i din browsers indstillinger."
   },
   "news": {
     "label": "Seneste nyt",
@@ -231,7 +235,7 @@
     },
     "manage": {
       "title": "Håndtering af dine cookiepræferencer",
-      "content": "Du har fuld kontrol over, hvilke cookiekategorier du giver samtykke til (med undtagelse af nødvendige cookies).\n\n• Cookie-banner: Når du første gang besøger vores website, vises et cookie-banner, der giver dig mulighed for at acceptere alle cookies eller tilpasse dine præferencer.\n\n• Cookieindstillinger: Du kan ændre dine præferencer til enhver tid ved at rydde din browsers localStorage for xrnord.com og opdatere siden – banneret vises igen.\n\n• Browserindstillinger: De fleste browsere giver dig mulighed for at blokere eller slette cookies via deres indstillinger. Bemærk, at blokering af alle cookies kan påvirke, hvordan vores website fungerer. Almindelige browserindstillinger:\n  – Chrome: Indstillinger → Privatliv og sikkerhed → Cookies og andre webstedsdata\n  – Firefox: Indstillinger → Privatliv og sikkerhed → Cookies og webstedsdata\n  – Safari: Indstillinger → Privatliv → Administrer webstedsdata\n  – Edge: Indstillinger → Cookies og webstedstilladelser\n\n• Google Analytics fravalg: Installer Google Analytics Opt-out Browser-tilføjelse (tilgængelig på tools.google.com/dlpage/gaoptout) for at forhindre, at dine data bruges af Google Analytics på tværs af alle websites."
+      "content": "Du har fuld kontrol over, hvilke cookiekategorier du giver samtykke til (med undtagelse af nødvendige cookies).\n\n• Cookie-banner: Når du første gang besøger vores website, vises et cookie-banner, der giver dig mulighed for at acceptere alle cookies eller tilpasse dine præferencer. Analyse og marketing er slået fra, indtil du selv slår dem til. Lukker du banneret med krydset, bruges kun nødvendige cookies.\n\n• Cookieindstillinger: Du kan til enhver tid ændre eller trække dit samtykke tilbage via knappen \"Cookieindstillinger\" nederst på alle sider. Panelet viser dit nuværende valg, og ændringer træder i kraft, så snart du trykker \"Gem indstillinger\". Lukker du panelet uden at gemme, bevares dit tidligere valg.\n\n• Tilbagetrækning: Du kan trække samtykket til analyse og marketing tilbage hver for sig. Slår du marketing fra, ændrer det ikke dit samtykke til analyse, og omvendt. Når du gemmer, giver vi straks vores Google-tags besked om dit nye valg. Cookies, der allerede er gemt på din enhed, slettes ikke automatisk. Du kan slette dem via din browsers indstillinger som beskrevet nedenfor.\n\n• Hvis dit valg ikke kan gemmes: Tillader din browser ikke, at vi gemmer dit valg, gælder det nye valg, indtil du genindlæser siden eller åbner websitet på ny. Panelet viser i så fald en besked om, hvad der sker derefter.\n\n• Browserindstillinger: De fleste browsere giver dig mulighed for at blokere eller slette cookies via deres indstillinger. Bemærk, at blokering af alle cookies kan påvirke, hvordan vores website fungerer. Almindelige browserindstillinger:\n  – Chrome: Indstillinger → Privatliv og sikkerhed → Cookies og andre webstedsdata\n  – Firefox: Indstillinger → Privatliv og sikkerhed → Cookies og webstedsdata\n  – Safari: Indstillinger → Privatliv → Administrer webstedsdata\n  – Edge: Indstillinger → Cookies og webstedstilladelser\n\n• Google Analytics fravalg: Installer Google Analytics Opt-out Browser-tilføjelse (tilgængelig på tools.google.com/dlpage/gaoptout) for at forhindre, at dine data bruges af Google Analytics på tværs af alle websites."
     },
     "thirdparty": {
       "title": "Tredjepartstjenester",
@@ -319,7 +323,7 @@
     },
     "cookies": {
       "title": "Cookies og sporingsteknikker",
-      "content": "Vores website bruger cookies og lignende sporingsteknikker for at forbedre din oplevelse og indsamle analysedata. Cookies er små filer, der opbevares på din enhed, som gør det muligt for os at genkende dig og huske dine præferencer.\n\n• Nødvendige cookies: Disse er påkrævet for at webstedet fungerer korrekt og kan ikke deaktiveres.\n\n• Analytiske cookies: Vi bruger disse til at forstå, hvordan du interagerer med vores websted, hvilket hjælper os med at forbedre vores tjenester.\n\n• Marketingcookies: Vi bruger disse til at levere personaliseret indhold og måle effektiviteten af vores marketingkampagner.\n\nDu kan håndtere dine cookie-præferencer gennem dine browserindstillinger eller vores cookie-præferencecenter på vores websted. Hvis du deaktiverer visse cookies, kan det dog påvirke din oplevelse på vores websted.\n\nVi bruger også lignende teknologier som webbeacons og pixels til at spore engagement med vores kommunikation."
+      "content": "Vores website bruger cookies og lignende sporingsteknikker for at forbedre din oplevelse og indsamle analysedata. Cookies er små filer, der opbevares på din enhed, som gør det muligt for os at genkende dig og huske dine præferencer.\n\n• Nødvendige cookies: Disse er påkrævet for at webstedet fungerer korrekt og kan ikke deaktiveres.\n\n• Analytiske cookies: Vi bruger disse til at forstå, hvordan du interagerer med vores websted, hvilket hjælper os med at forbedre vores tjenester.\n\n• Marketingcookies: Vi bruger disse til at levere personaliseret indhold og måle effektiviteten af vores marketingkampagner.\n\nDu kan til enhver tid ændre eller trække dit samtykke tilbage via knappen \"Cookieindstillinger\" nederst på alle sider på vores websted eller gennem dine browserindstillinger. Hvis du deaktiverer visse cookies, kan det dog påvirke din oplevelse på vores websted.\n\nVi bruger også lignende teknologier som webbeacons og pixels til at spore engagement med vores kommunikation."
     },
     "thirdparty": {
       "title": "Tredjepartstjenester",

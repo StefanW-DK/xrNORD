@@ -101,7 +101,8 @@
     "termsOfUse": "Terms of Use",
     "copyright": "© 2026 xrNORD · All rights reserved · CVR: 43396323",
     "tagline": "Scandinavian AI Strategy & Development",
-    "successMessage": "You're on the list. We'll be in touch."
+    "successMessage": "You're on the list. We'll be in touch.",
+    "cookieSettings": "Cookie settings"
   },
   "cookies": {
     "message": "We use cookies to see how you interact with our site and improve your experience. By accepting, you agree to our use of cookies.",
@@ -117,7 +118,10 @@
     "marketingDesc": "Used to deliver personalised content and ads.",
     "savePreferences": "Save preferences",
     "noSpam": "No spam. Unsubscribe at any time.",
-    "successMessage": "You're on the list. We'll be in touch."
+    "successMessage": "You're on the list. We'll be in touch.",
+    "close": "Close",
+    "saveErrorRemoved": "Your choice could not be saved in your browser. It applies until you reload the page or open the website again. After that, only necessary cookies are used until you choose again.",
+    "saveErrorFailed": "Your choice could not be saved, and an earlier choice could not be removed from your browser. Your new choice applies until you reload the page or open the website again. After that, the earlier choice may be used again. You can remove it by clearing site data for xrnord.com in your browser settings."
   },
   "news": {
     "label": "Latest News",
@@ -231,7 +235,7 @@
     },
     "manage": {
       "title": "Managing Your Cookie Preferences",
-      "content": "You have full control over which cookie categories you consent to (with the exception of necessary cookies).\n\n• Cookie Banner: When you first visit our site, a cookie banner will appear allowing you to accept all cookies or customise your preferences.\n\n• Cookie Settings: You can change your preferences at any time by clearing your browser's localStorage for xrnord.com and refreshing the page — the banner will reappear.\n\n• Browser Settings: Most browsers allow you to block or delete cookies through their settings. Please note that blocking all cookies may affect how our website functions. Common browser settings:\n  – Chrome: Settings → Privacy and security → Cookies and other site data\n  – Firefox: Settings → Privacy & Security → Cookies and Site Data\n  – Safari: Preferences → Privacy → Manage Website Data\n  – Edge: Settings → Cookies and site permissions\n\n• Google Analytics Opt-out: Install the Google Analytics Opt-out Browser Add-on (available at tools.google.com/dlpage/gaoptout) to prevent your data from being used by Google Analytics across all websites."
+      "content": "You have full control over which cookie categories you consent to (with the exception of necessary cookies).\n\n• Cookie Banner: When you first visit our site, a cookie banner will appear allowing you to accept all cookies or customise your preferences. Analytics and marketing are switched off until you choose to switch them on. If you close the banner with the cross, only necessary cookies are used.\n\n• Cookie Settings: You can change or withdraw your consent at any time using the \"Cookie settings\" button at the bottom of every page. The panel shows your current choice, and changes take effect as soon as you press \"Save preferences\". If you close the panel without saving, your previous choice is kept.\n\n• Withdrawing consent: You can withdraw consent to analytics and marketing separately. Switching off marketing does not change your consent to analytics, and vice versa. When you save, we immediately notify our Google tags of your new choice. Cookies already stored on your device are not deleted automatically. You can delete them in your browser settings as described below.\n\n• If your choice cannot be saved: If your browser does not allow us to save your choice, your new choice applies until you reload the page or open the website again. In that case the panel shows a message explaining what happens next.\n\n• Browser Settings: Most browsers allow you to block or delete cookies through their settings. Please note that blocking all cookies may affect how our website functions. Common browser settings:\n  – Chrome: Settings → Privacy and security → Cookies and other site data\n  – Firefox: Settings → Privacy & Security → Cookies and Site Data\n  – Safari: Preferences → Privacy → Manage Website Data\n  – Edge: Settings → Cookies and site permissions\n\n• Google Analytics Opt-out: Install the Google Analytics Opt-out Browser Add-on (available at tools.google.com/dlpage/gaoptout) to prevent your data from being used by Google Analytics across all websites."
     },
     "thirdparty": {
       "title": "Third-Party Services",
@@ -319,7 +323,7 @@
     },
     "cookies": {
       "title": "Cookies & Tracking Technologies",
-      "content": "Our website uses cookies and similar tracking technologies to enhance your experience and collect analytics data. Cookies are small files stored on your device that allow us to recognize you and remember your preferences.\n\n• Necessary Cookies: These are required for the website to function properly and cannot be disabled.\n\n• Analytics Cookies: We use these to understand how you interact with our site, which helps us improve our services.\n\n• Marketing Cookies: We use these to deliver personalized content and measure the effectiveness of our marketing campaigns.\n\nYou can manage your cookie preferences through your browser settings or our cookie preference center on our website. However, disabling certain cookies may affect your experience on our site.\n\nWe also use similar technologies like web beacons and pixels to track engagement with our communications."
+      "content": "Our website uses cookies and similar tracking technologies to enhance your experience and collect analytics data. Cookies are small files stored on your device that allow us to recognize you and remember your preferences.\n\n• Necessary Cookies: These are required for the website to function properly and cannot be disabled.\n\n• Analytics Cookies: We use these to understand how you interact with our site, which helps us improve our services.\n\n• Marketing Cookies: We use these to deliver personalized content and measure the effectiveness of our marketing campaigns.\n\nYou can change or withdraw your consent at any time using the \"Cookie settings\" button at the bottom of every page on our website, or through your browser settings. However, disabling certain cookies may affect your experience on our site.\n\nWe also use similar technologies like web beacons and pixels to track engagement with our communications."
     },
     "thirdparty": {
       "title": "Third-Party Services",

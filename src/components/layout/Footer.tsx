@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { trackNewsletterSignup, trackSocialClick, trackContactInfoClick } from "@/lib/analytics";
+import { openCookieSettings } from "@/components/layout/CookieBanner";
 
 /* ── Social icons ──────────────────────────────────────── */
 const LinkedIn = () => (
@@ -267,6 +268,20 @@ export default function Footer() {
               >
                 {t("cookiePolicy")}
               </Link>
+              <button
+                type="button"
+                onClick={e => openCookieSettings(e.currentTarget)}
+                style={{
+                  fontFamily: "var(--font-inter), system-ui, sans-serif",
+                  fontSize: "0.84rem", color: "rgba(148,163,184,0.7)",
+                  background: "none", border: "none", padding: 0,
+                  textAlign: "left" as const, cursor: "pointer", transition: "color 0.2s ease",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#F1F5F9")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(148,163,184,0.7)")}
+              >
+                {t("cookieSettings")}
+              </button>
               <Link href={`/${locale}/terms-of-use`} style={{
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: "0.84rem", color: "rgba(148,163,184,0.7)",
