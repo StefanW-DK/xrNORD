@@ -24,6 +24,34 @@ function seoDescription(text: string, max = 155): string {
   return text.slice(0, text.lastIndexOf(" ", max)) + "…";
 }
 
+// Article dates are display text ("May 14, 2025" / "14. maj 2025"). Convert them to
+// ISO 8601 (YYYY-MM-DD) for JSON-LD with explicit month tables, never free-text parsing.
+const EN_MONTHS: Record<string, number> = {
+  jan: 1, january: 1, feb: 2, february: 2, mar: 3, march: 3, apr: 4, april: 4,
+  may: 5, jun: 6, june: 6, jul: 7, july: 7, aug: 8, august: 8,
+  sep: 9, sept: 9, september: 9, oct: 10, october: 10, nov: 11, november: 11, dec: 12, december: 12,
+};
+const DA_MONTHS: Record<string, number> = {
+  jan: 1, januar: 1, feb: 2, februar: 2, mar: 3, marts: 3, apr: 4, april: 4,
+  maj: 5, jun: 6, juni: 6, jul: 7, juli: 7, aug: 8, august: 8,
+  sep: 9, sept: 9, september: 9, okt: 10, oktober: 10, nov: 11, november: 11, dec: 12, december: 12,
+};
+
+/** Returns YYYY-MM-DD, or undefined if the date is not in a known, valid format. */
+function toIsoDate(display: string, locale: string): string | undefined {
+  const m = locale === "da"
+    ? /^(\d{1,2})\. ([a-zæøå]+)\.? (\d{4})$/i.exec(display.trim())
+    : /^([a-z]+)\.? (\d{1,2}), (\d{4})$/i.exec(display.trim());
+  if (!m) return undefined;
+  const [day, monthName, year] = locale === "da" ? [m[1], m[2], m[3]] : [m[2], m[1], m[3]];
+  const month = (locale === "da" ? DA_MONTHS : EN_MONTHS)[monthName.toLowerCase()];
+  const y = Number(year), d = Number(day);
+  if (!month) return undefined;
+  // Reject impossible days (e.g. 31. apr.) by round-tripping the numeric components
+  if (new Date(Date.UTC(y, month - 1, d)).getUTCDate() !== d) return undefined;
+  return `${year}-${String(month).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const article = getArticle(locale, slug);
@@ -222,6 +250,7 @@ export default async function ArticlePage({ params }: Props) {
 
   const messages = await getMessages();
   const articleUrl = `${BASE_URL}/${locale}/why-ai/articles/${slug}`;
+  const datePublished = toIsoDate(article.date, locale);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -242,7 +271,7 @@ export default async function ArticlePage({ params }: Props) {
         url: `${BASE_URL}/images/logos/logo-dark.png`,
       },
     },
-    datePublished: article.date,
+    ...(datePublished ? { datePublished } : {}),
     url: articleUrl,
     mainEntityOfPage: {
       "@type": "WebPage",
