@@ -3,13 +3,15 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import LazyVideo from "@/components/ui/LazyVideo";
 import { useTranslations, useLocale } from "next-intl";
 
 /* ── Types ──────────────────────────────────────────────── */
 interface IndustryBlockProps {
   title: string;
   metric: string;
-  videoSrc: string;
+  /** File name in /public/media/video (without extension) */
+  video: string;
   tintRgb: string;
   delay: number;
   dominant?: boolean;
@@ -17,7 +19,7 @@ interface IndustryBlockProps {
 }
 
 /* ── Industry Block ─────────────────────────────────────── */
-function IndustryBlock({ title, metric, videoSrc, tintRgb, delay, dominant, style }: IndustryBlockProps) {
+function IndustryBlock({ title, metric, video, tintRgb, delay, dominant, style }: IndustryBlockProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -43,11 +45,9 @@ function IndustryBlock({ title, metric, videoSrc, tintRgb, delay, dominant, styl
       }}
     >
       {/* Background video — real environment behind glass */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      <LazyVideo
+        src={`/media/video/${video}`}
+        poster={`/media/posters/${video}.webp`}
         style={{
           position: "absolute",
           inset: 0,
@@ -58,9 +58,7 @@ function IndustryBlock({ title, metric, videoSrc, tintRgb, delay, dominant, styl
           opacity: hovered ? 0.78 : (dominant ? 0.68 : 0.62),
           transition: "opacity 0.6s ease",
         }}
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
+      />
 
       {/* Minimal text-area gradient only — not a full wash */}
       <div
@@ -217,7 +215,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("educationTitle")}
               metric={t("educationMetric")}
-              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/education.mp4"
+              video="education"
               tintRgb="59, 130, 246"
               delay={0.1}
               dominant
@@ -230,7 +228,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("accountingTitle")}
               metric={t("accountingMetric")}
-              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/accounting.mp4"
+              video="accounting"
               tintRgb="124, 58, 237"
               delay={0.18}
               style={{ width: "min(272px, 45%)", minHeight: "200px", flexShrink: 0 }}
@@ -238,7 +236,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("softwareTitle")}
               metric={t("softwareMetric")}
-              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/software.mp4"
+              video="software"
               tintRgb="6, 182, 212"
               delay={0.26}
               style={{ flex: 1, minHeight: "200px" }}
@@ -250,7 +248,7 @@ export default function Industries() {
             <IndustryBlock
               title={t("travelTitle")}
               metric={t("travelMetric")}
-              videoSrc="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/travel.mp4"
+              video="travel-card"
               tintRgb="20, 184, 166"
               delay={0.34}
               style={{ width: "min(400px, 100%)", minHeight: "200px" }}

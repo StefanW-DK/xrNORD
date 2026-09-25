@@ -20,6 +20,8 @@ export default function Hero() {
     <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <video
+        poster="/media/posters/hero-video.webp"
+        preload="metadata"
         autoPlay
         muted
         loop
@@ -28,8 +30,10 @@ export default function Hero() {
         style={{
           objectPosition: "80% center",
         }}
-        src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/hero-video.mp4"
-      />
+      >
+        <source src="/media/video/hero-video.webm" type="video/webm" />
+        <source src="/media/video/hero-video.mp4" type="video/mp4" />
+      </video>
 
       {/* Dark overlay for text readability */}
       <div

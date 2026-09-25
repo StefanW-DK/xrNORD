@@ -143,7 +143,7 @@ export default function BookWorkshopPage() {
     <main style={{ position: "relative", minHeight: "100vh", background: "#060410" }}>
       {/* ── Video background — very subtly darkened ── */}
       <div style={{ position: "fixed", inset: 0, zIndex: 0, overflow: "hidden" }}>
-        <video
+        <video poster="/media/posters/workshop_hero_movie.webp" preload="metadata"
           autoPlay
           muted
           loop
@@ -157,7 +157,7 @@ export default function BookWorkshopPage() {
             opacity: 0.55,
           }}
         >
-          <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
+          <source src="/media/video/workshop_hero_movie.mp4" type="video/mp4" />
         </video>
         {/* Heavy dark overlay — almost blacked out */}
         <div

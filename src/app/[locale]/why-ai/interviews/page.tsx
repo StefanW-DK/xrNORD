@@ -319,7 +319,7 @@ export default function InterviewsPage() {
         }}
       >
         {/* Background video */}
-        <video
+        <video poster="/media/posters/xrNORD_interview.webp" preload="metadata"
           autoPlay
           muted
           loop
@@ -334,7 +334,8 @@ export default function InterviewsPage() {
             filter: "saturate(0.6) brightness(0.7)",
           }}
         >
-          <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/xrNORD_interview.mp4" type="video/mp4" />
+          <source src="/media/video/xrNORD_interview.webm" type="video/webm" />
+          <source src="/media/video/xrNORD_interview.mp4" type="video/mp4" />
         </video>
 
         {/* Multi-layer overlay for depth */}

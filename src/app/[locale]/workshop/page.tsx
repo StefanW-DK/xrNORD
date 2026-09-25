@@ -132,7 +132,7 @@ export default function WorkshopPage() {
         />
 
         {/* Video background — reduced opacity for calmer presence */}
-        <video
+        <video poster="/media/posters/workshop_hero_movie.webp" preload="metadata"
           autoPlay
           muted
           loop
@@ -146,7 +146,7 @@ export default function WorkshopPage() {
             opacity: 0.88,
           }}
         >
-          <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
+          <source src="/media/video/workshop_hero_movie.mp4" type="video/mp4" />
         </video>
 
         {/* Dark overlay — deeper, more focused presence */}

@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-
-const VIDEO_SRC = "https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/xrNORD_interview.mp4";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 /* ── Preview card ──────────────────────────────────────── */
 interface CardProps {
@@ -258,11 +257,9 @@ export default function WhyAI() {
             background: "#0F172A",
             cursor: "pointer",
           }}>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
+            <LazyVideo
+              src="/media/video/xrNORD_interview"
+              poster="/media/posters/xrNORD_interview.webp"
               style={{
                 position: "absolute",
                 inset: 0,
@@ -270,9 +267,7 @@ export default function WhyAI() {
                 height: "100%",
                 objectFit: "cover",
               }}
-            >
-              <source src={VIDEO_SRC} type="video/mp4" />
-            </video>
+            />
 
             {/* Bottom gradient for label */}
             <div style={{

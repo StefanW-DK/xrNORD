@@ -171,14 +171,15 @@ function Hero({ locale }: { locale: string }) {
       aria-label={locale === "da" ? "Turisme og AI - introduktion" : "Tourism and AI - introduction"}
     >
       {/* Background video */}
-      <video
+      <video poster="/media/posters/travel.webp" preload="metadata"
         autoPlay muted loop playsInline aria-hidden
         style={{
           position: "absolute", inset: 0, width: "100%", height: "100%",
           objectFit: "cover", opacity: 0.62, pointerEvents: "none",
         }}
       >
-        <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/travel.mp4" type="video/mp4" />
+        <source src="/media/video/travel.webm" type="video/webm" />
+        <source src="/media/video/travel.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}

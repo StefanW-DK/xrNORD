@@ -35,11 +35,11 @@ function Hero({ locale }: { locale: string }) {
       className="cc-hero"
       aria-label="Compliance as a Living Capability"
     >
-      <video autoPlay muted loop playsInline aria-hidden style={{
+      <video poster="/media/posters/workshop_hero_movie.webp" preload="metadata" autoPlay muted loop playsInline aria-hidden style={{
         position: "absolute", inset: 0, width: "100%", height: "100%",
         objectFit: "cover", opacity: 0.35, pointerEvents: "none",
       }}>
-        <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
+        <source src="/media/video/workshop_hero_movie.mp4" type="video/mp4" />
       </video>
 
       <div aria-hidden style={{

@@ -110,7 +110,7 @@ export default function AILabsApplyPage() {
     }}>
       {/* ── Video background — AI-LABs color scheme overlay ── */}
       <div aria-hidden style={{ position: "fixed", inset: 0, zIndex: 0, overflow: "hidden" }}>
-        <video
+        <video poster="/media/posters/workshop_hero_movie.webp" preload="metadata"
           autoPlay
           muted
           loop
@@ -122,7 +122,7 @@ export default function AILabsApplyPage() {
             opacity: 0.41,
           }}
         >
-          <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
+          <source src="/media/video/workshop_hero_movie.mp4" type="video/mp4" />
         </video>
         {/* AI-LABs gradient overlay — keeps the purple/indigo brand tone */}
         <div style={{

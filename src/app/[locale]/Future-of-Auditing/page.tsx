@@ -273,7 +273,7 @@ function Hero({ locale }: { locale: string }) {
       aria-label={locale === "da" ? "Finansiel revision og AI - introduktion" : "Financial auditing and AI - introduction"}
     >
       {/* Background video — subtle, layered under dark overlay */}
-      <video
+      <video poster="/media/posters/workshop_hero_movie.webp" preload="metadata"
         autoPlay
         muted
         loop
@@ -290,7 +290,7 @@ function Hero({ locale }: { locale: string }) {
         }}
       >
         {/* TODO: swap to bespoke Kling video once delivered */}
-        <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
+        <source src="/media/video/workshop_hero_movie.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay — keeps text sharp, adds deep purple tint */}

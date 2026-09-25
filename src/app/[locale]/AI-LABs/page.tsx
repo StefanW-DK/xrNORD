@@ -37,7 +37,7 @@ function Hero({ locale }: { locale: string }) {
       aria-label="AI-LABs — confidential AI forum"
     >
       {/* Background video */}
-      <video
+      <video poster="/media/posters/workshop_hero_movie.webp" preload="metadata"
         autoPlay
         muted
         loop
@@ -53,7 +53,7 @@ function Hero({ locale }: { locale: string }) {
           pointerEvents: "none",
         }}
       >
-        <source src="https://gxindv0bhghyyyfv.public.blob.vercel-storage.com/workshop_hero_movie.mp4" type="video/mp4" />
+        <source src="/media/video/workshop_hero_movie.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
