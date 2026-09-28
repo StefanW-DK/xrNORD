@@ -26,6 +26,8 @@ interface Category {
   title: { en: string; da: string };
   description: { en: string; da: string };
   useCases: UseCase[];
+  // Optional text link shown after the use cases (path without locale)
+  link?: { path: string; label: { en: string; da: string } };
 }
 
 const CATEGORIES: Category[] = [
@@ -258,6 +260,10 @@ const CATEGORIES: Category[] = [
         ],
       },
     ],
+    link: {
+      path: "/Future-of-Auditing",
+      label: { en: "Explore the future of auditing", da: "L\u00e6s om fremtidens revisionsvirksomhed" },
+    },
   },
 ];
 
@@ -1128,6 +1134,26 @@ export default function AiUseCasesPage() {
                 </motion.div>
               ))}
             </motion.div>
+
+            {cat.link && (
+              <Link
+                href={`/${locale}${cat.link.path}`}
+                style={{
+                  display: "inline-block",
+                  marginTop: 32,
+                  paddingLeft: 18,
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: "#7C6FD4",
+                  textDecoration: "none",
+                  textUnderlineOffset: 4,
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.textDecoration = "underline"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.textDecoration = "none"; }}
+              >
+                {t(cat.link.label)}{" "}→
+              </Link>
+            )}
           </div>
         </section>
       ))}
