@@ -25,7 +25,6 @@ const STATIC_PAGES = [
   { path: "/workshop", priority: 0.9 },
   { path: "/contact", priority: 0.8 },
   { path: "/ai-roadmap", priority: 0.8 },
-  { path: "/execution", priority: 0.8 },
   { path: "/ai-use-cases", priority: 0.8 },
   { path: "/why-ai/interviews", priority: 0.7 },
   { path: "/why-ai/articles", priority: 0.7 },
@@ -37,6 +36,8 @@ const STATIC_PAGES = [
   { path: "/privacy-policy", priority: 0.3 },
   { path: "/cookie-policy", priority: 0.3 },
   { path: "/terms-of-use", priority: 0.3 },
+  // Execution is not finished (noindex) - add back when it is ready:
+  // { path: "/execution", priority: 0.8 },
   // Compliance is under development (noindex) - add back at launch:
   // { path: "/Compliance", priority: 0.85 },
 ];

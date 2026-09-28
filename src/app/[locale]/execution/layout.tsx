@@ -23,6 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: meta.description,
       url: `${BASE_URL}/${locale}/execution`,
     },
+    // Not finished yet: keep out of search results but crawlable, and reachable by direct link.
+    // Both keys are set so the locale layout's index/googleBot values are fully overridden.
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: { index: false, follow: true },
+    },
   };
 }
 
