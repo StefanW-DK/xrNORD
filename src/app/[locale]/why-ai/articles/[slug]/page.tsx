@@ -58,6 +58,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
 
   const url = `${BASE_URL}/${locale}/why-ai/articles/${slug}`;
+  // Articles that duplicate a case study point search engines to the case-study version
+  // and carry no hreflang of their own (the case study holds the language links)
+  const isCaseStudyDuplicate = slug === "one-more-day-on-fyn";
+  const canonical = isCaseStudyDuplicate
+    ? `${BASE_URL}/${locale}/case-studies/one-more-day-on-fyn`
+    : url;
   const otherLocale = locale === "en" ? "da" : "en";
   const otherUrl = `${BASE_URL}/${otherLocale}/why-ai/articles/${slug}`;
   const metaTitle = `${seoTitle(article.title)} | xrNORD`;
@@ -66,14 +72,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: metaTitle,
     description: metaDescription,
-    alternates: {
-      canonical: url,
-      languages: {
-        en: locale === "en" ? url : otherUrl,
-        da: locale === "da" ? url : otherUrl,
-        "x-default": `${BASE_URL}/en/why-ai/articles/${slug}`,
-      },
-    },
+    // Setting alternates here replaces the layouts' alternates, so no language links are inherited
+    alternates: isCaseStudyDuplicate
+      ? { canonical }
+      : {
+          canonical,
+          languages: {
+            en: locale === "en" ? url : otherUrl,
+            da: locale === "da" ? url : otherUrl,
+            "x-default": `${BASE_URL}/en/why-ai/articles/${slug}`,
+          },
+        },
     openGraph: {
       title: seoTitle(article.title, 60),
       description: seoDescription(article.excerpt, 155),
