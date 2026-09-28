@@ -85,6 +85,8 @@ const nextConfig: NextConfig = {
       { source: "/en/post/the-history-of-software-development-from-early-days-to-modern-times",                     destination: "/en/why-ai/articles/history-of-software-development",       permanent: true },
       { source: "/post/back-end-the-technologies-tools-and-frame-works-and-how-they-have-evolved-through-time",     destination: "/en/why-ai/articles/backend-development-technologies-tools", permanent: true },
       { source: "/en/post/back-end-the-technologies-tools-and-frame-works-and-how-they-have-evolved-through-time",  destination: "/en/why-ai/articles/backend-development-technologies-tools", permanent: true },
+      { source: "/post/back-end-the-technologies-tools-and-frameworks-and-how-they-have-evolved-through-time",       destination: "/en/why-ai/articles/backend-development-technologies-tools", permanent: true },
+      { source: "/en/post/back-end-the-technologies-tools-and-frameworks-and-how-they-have-evolved-through-time",    destination: "/en/why-ai/articles/backend-development-technologies-tools", permanent: true },
       { source: "/post/the-role-of-data-fueling-intelligent-systems",                                               destination: "/en/why-ai/articles/the-role-of-data",                      permanent: true },
       { source: "/en/post/the-role-of-data-fueling-intelligent-systems",                                            destination: "/en/why-ai/articles/the-role-of-data",                      permanent: true },
 
