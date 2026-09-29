@@ -27,8 +27,7 @@ export default async function Layout({ children, params }: Props) {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "xrNORD", "item": `${BASE_URL}/${locale}` },
-      { "@type": "ListItem", "position": 2, "name": da ? "Hvorfor AI" : "Why AI", "item": `${BASE_URL}/${locale}/why-ai` },
-      { "@type": "ListItem", "position": 3, "name": da ? "Artikler" : "Articles", "item": `${BASE_URL}/${locale}/why-ai/articles` },
+      { "@type": "ListItem", "position": 2, "name": da ? "Artikler" : "Articles", "item": `${BASE_URL}/${locale}/why-ai/articles` },
     ],
   };
 
