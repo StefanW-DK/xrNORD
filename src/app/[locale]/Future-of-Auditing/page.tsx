@@ -1779,7 +1779,7 @@ function XrNordOffering({ locale }: { locale: string }) {
         }}
       >
         <Link
-          href={locale === "da" ? "/da/kontakt" : "/en/contact"}
+          href={`/${locale}/contact`}
           style={{
             display: "inline-flex", alignItems: "center", gap: 10,
             padding: "16px 36px", borderRadius: 999,
