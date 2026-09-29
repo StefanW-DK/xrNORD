@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { useState, useEffect, useCallback, useRef } from "react";
 
@@ -519,8 +520,8 @@ export default function Opportunity() {
             className="flex justify-center sm:justify-start"
             style={{ marginTop: "72px" }}
           >
-            <a
-              href="#"
+            <Link
+              href={`/${locale}/ai-use-cases`}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -555,7 +556,7 @@ export default function Opportunity() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-5.25-5.25M19.5 12l-5.25 5.25" />
               </svg>
-            </a>
+            </Link>
           </motion.div>
         </div>
 

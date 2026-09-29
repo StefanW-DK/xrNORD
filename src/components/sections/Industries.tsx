@@ -16,10 +16,12 @@ interface IndustryBlockProps {
   delay: number;
   dominant?: boolean;
   style?: React.CSSProperties;
+  /** Optional destination; the whole card becomes one link */
+  href?: string;
 }
 
 /* ── Industry Block ─────────────────────────────────────── */
-function IndustryBlock({ title, metric, video, tintRgb, delay, dominant, style }: IndustryBlockProps) {
+function IndustryBlock({ title, metric, video, tintRgb, delay, dominant, style, href }: IndustryBlockProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -138,6 +140,16 @@ function IndustryBlock({ title, metric, video, tintRgb, delay, dominant, style }
           {metric}
         </motion.p>
       </div>
+
+      {/* Full-card link layer: one link per card, above the content, no visual change */}
+      {href && (
+        <Link
+          href={href}
+          aria-label={title}
+          className="rounded-[20px] focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#7C3AED]"
+          style={{ position: "absolute", inset: 0, zIndex: 2 }}
+        />
+      )}
     </motion.div>
   );
 }
@@ -216,6 +228,7 @@ export default function Industries() {
               title={t("educationTitle")}
               metric={t("educationMetric")}
               video="education"
+              href={`/${locale}/ai-use-cases#education`}
               tintRgb="59, 130, 246"
               delay={0.1}
               dominant
@@ -229,6 +242,7 @@ export default function Industries() {
               title={t("accountingTitle")}
               metric={t("accountingMetric")}
               video="accounting"
+              href={`/${locale}/ai-use-cases#accounting`}
               tintRgb="124, 58, 237"
               delay={0.18}
               style={{ width: "min(272px, 45%)", minHeight: "200px", flexShrink: 0 }}
@@ -249,6 +263,7 @@ export default function Industries() {
               title={t("travelTitle")}
               metric={t("travelMetric")}
               video="travel-card"
+              href={`/${locale}/ai-use-cases#destination-fyn`}
               tintRgb="20, 184, 166"
               delay={0.34}
               style={{ width: "min(400px, 100%)", minHeight: "200px" }}

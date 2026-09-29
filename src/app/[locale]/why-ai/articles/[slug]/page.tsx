@@ -126,6 +126,27 @@ function renderSection(section: ArticleSection, i: number) {
         </p>
       );
 
+    case "link":
+      return (
+        <p
+          key={i}
+          style={{
+            fontFamily: "var(--font-inter), system-ui, sans-serif",
+            fontSize: "1.075rem",
+            lineHeight: 1.8,
+            marginBottom: "1.5rem",
+          }}
+        >
+          <Link
+            href={section.href}
+            className="hover:underline underline-offset-4"
+            style={{ color: "#7C3AED", fontWeight: 600, textDecoration: "none" }}
+          >
+            {section.label}{"\u00a0"}→
+          </Link>
+        </p>
+      );
+
     case "heading":
       return (
         <h2

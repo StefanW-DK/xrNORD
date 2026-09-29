@@ -540,6 +540,7 @@ export default function AiUseCasesPage() {
 
       {/* ─── Destination Fyn — Case Study Hero ─── */}
       <section
+        id="destination-fyn"
         className="fyn-hero"
         style={{
           position: "relative",
@@ -807,6 +808,24 @@ export default function AiUseCasesPage() {
                 ? "Vi samarbejdede med Destination Fyn & EcoJoys om at bygge en AI-rejseledsager, der hjælper turister med at opdage skjulte perler, lokale favoritter og perfekte øjeblikke på Danmarks smukkeste ø."
                 : "We partnered with Destination Fyn & EcoJoys to build an AI travel companion, helping tourists discover hidden gems, local favourites, and perfect moments on Denmark's most beautiful island."}
             </p>
+            <Link
+              href={`/${locale}/One-More-Day`}
+              style={{
+                display: "inline-block",
+                marginTop: 20,
+                fontSize: 15,
+                fontWeight: 600,
+                color: "#7C6FD4",
+                textDecoration: "none",
+                textUnderlineOffset: 4,
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.textDecoration = "underline"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.textDecoration = "none"; }}
+            >
+              {locale === "da"
+                ? "Udforsk AI-rejseledsageren til destinationer"
+                : "Explore the AI travel companion for destinations"}{"\u00a0"}→
+            </Link>
             {/* Sponsorship */}
             <div
               style={{
@@ -978,6 +997,8 @@ export default function AiUseCasesPage() {
           style={{
             background: catIdx % 2 === 0 ? "#FFFFFF" : "#FAFAFA",
             padding: "100px 24px",
+            // Anchor target: keep the heading clear of the fixed navbar
+            scrollMarginTop: 32,
           }}
         >
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>

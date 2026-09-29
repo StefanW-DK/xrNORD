@@ -2,7 +2,8 @@ export type ArticleSection =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
   | { type: "bullets"; items: string[] }
-  | { type: "cta"; headline: string; body: string; linkLabel: string; href: string };
+  | { type: "cta"; headline: string; body: string; linkLabel: string; href: string }
+  | { type: "link"; label: string; href: string };
 
 export interface Article {
   slug: string;
@@ -1294,6 +1295,7 @@ export const articles: Record<string, Record<string, Article>> = {
         { type: "paragraph", text: "This is the ambition shaping the digital evolution of Destination Fyn. Not just to attract visitors, but to make them stay longer, explore deeper, and come back. Utilizing AI together with a clear digitalization approach are some of the answers to how Fyn is giving visitors the experiences that nudge them to stay one more day." },
         { type: "heading", text: "From Vision to Reality" },
         { type: "paragraph", text: "This initiative is not a future concept. It is already in motion. A first version of the platform is now going live, establishing the foundation for a more intelligent and connected experience. What is being built is not a static solution, but a system that evolves step by step, guiding visitors deeper into what Fyn has to offer." },
+        { type: "link", label: "Explore the project on our AI use cases page", href: "/en/ai-use-cases#destination-fyn" },
         { type: "heading", text: "The Challenge to Experience" },
         { type: "paragraph", text: "The challenge was never a lack of content. There are places to visit, restaurants to discover, and events happening across the island. But the experience itself is fragmented. Visitors have to search across platforms, piece together their own journeys, and often miss what was happening right around them." },
         { type: "paragraph", text: "At the same time, local businesses struggle with visibility, while the operational efforts required to manage and update content across parties continued to grow. The result was, and is, a destination rich in experiences, but not fully experienced." },
@@ -2632,6 +2634,7 @@ export const articles: Record<string, Record<string, Article>> = {
         { type: "paragraph", text: "Det er netop denne ambition, der driver den digitale udvikling hos Destination Fyn. Fokus er ikke blot på at tiltrække besøgende, men at få dem til at blive længere, opleve mere, og komme igen. Her spiller AI og en målrettet digital tilgang en central rolle i at skabe de oplevelser, der får gæster til at blive den ekstra dag." },
         { type: "heading", text: "Fra vision til virkelighed" },
         { type: "paragraph", text: "Dette er ikke en fremtidsidé. Det er allerede i gang. Første version af platformen går nu live og danner fundamentet for en mere sammenhængende og intelligent destinationsoplevelse. Det, der bygges, er ikke en statisk løsning, men et system, der udvikler sig løbende og gradvist guider gæsterne dybere ind i det, Fyn har at tilbyde." },
+        { type: "link", label: "Se projektet på vores side med AI-anvendelser", href: "/da/ai-use-cases#destination-fyn" },
         { type: "heading", text: "Udfordringen var ikke indhold" },
         { type: "paragraph", text: "Der har aldrig manglet oplevelser. Der er steder at besøge, restauranter at opdage og events på hele øen. Men oplevelsen har været fragmenteret. Gæster har skullet søge på tværs af platforme, sammensætte deres egne forløb, og har ofte overset det, der foregik lige omkring dem." },
         { type: "paragraph", text: "Samtidig kæmper lokale aktører med synlighed, og arbejdet med at opdatere og vedligeholde indhold på diverse hjemmesider har været tidskrævende og komplekst. Resultatet har været en destination rig på oplevelser, men ikke fuldt oplevet." },
