@@ -16,7 +16,7 @@ const organizationSchema = {
     "@type": "ContactPoint",
     telephone: "+45-23654283",
     contactType: "customer service",
-    email: "info@xrNORD.com",
+    email: "info@xrnord.com",
     areaServed: ["DK", "SE", "NO", "FI"],
     availableLanguage: ["en", "da"],
   },

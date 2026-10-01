@@ -101,6 +101,9 @@ export default async function LocaleLayout({ children, params }: Props) {
     },
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Hægvej 11",
+      "addressLocality": "Egå",
+      "postalCode": "8250",
       "addressCountry": "DK",
     },
   };
