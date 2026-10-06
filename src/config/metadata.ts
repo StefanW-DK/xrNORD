@@ -24,9 +24,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI strategy", "AI implementation", "Scandinavian AI", "AI roadmap", "AI workshop", "Nordic AI"],
       },
       workshop: {
-        title: "AI Workshop | Understand AI in Your Business | xrNORD",
+        title: "AI Workshop for Business Leaders | xrNORD",
         description:
-          "Understand what AI means for your business, where it creates value, and what your next steps should be.",
+          "Explore how AI can improve your products, workflows and help your people achieve more. Identify practical opportunities and next steps for your business.",
         keywords: ["AI workshop", "AI kickstarter", "AI for business", "AI strategy workshop"],
       },
       "ai-roadmap": {
@@ -137,9 +137,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI strategi", "AI implementering", "Skandinavisk AI", "AI roadmap", "AI workshop", "Nordisk AI"],
       },
       workshop: {
-        title: "AI Workshop | Forstå AI i jeres forretning | xrNORD",
+        title: "AI Workshop for virksomheder og ledelse | xrNORD",
         description:
-          "Få klarhed over hvad AI betyder for jeres forretning, hvor det skaber værdi, og hvad næste skridt bør være.",
+          "Udforsk, hvordan AI kan styrke jeres produkter, arbejdsgange og medarbejdere. Få konkrete muligheder og anbefalede næste skridt for jeres virksomhed.",
         keywords: ["AI workshop", "AI kickstarter", "AI til forretningen", "AI strategi workshop"],
       },
       "ai-roadmap": {
