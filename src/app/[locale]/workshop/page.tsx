@@ -223,7 +223,7 @@ export default function WorkshopPage() {
           >
             {locale === "da" ? (
               <>
-                Hvad kan AI betyde
+                Hvordan kan AI styrke
                 <br />
                 <span
                   style={{
@@ -233,12 +233,12 @@ export default function WorkshopPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  for jeres forretning?
+                  jeres forretning?
                 </span>
               </>
             ) : (
               <>
-                How will AI transform
+                How can AI strengthen
                 <br />
                 <span
                   style={{
@@ -248,7 +248,7 @@ export default function WorkshopPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  Your Business?
+                  your business?
                 </span>
               </>
             )}
@@ -268,8 +268,8 @@ export default function WorkshopPage() {
             }}
           >
             {locale === "da"
-              ? "Vores AI Workshop hjælper jer med at forstå, hvad AI betyder for jeres forretning, og hvad næste skridt er. Fra effektivisering til stærkere produkter og langsigtet konkurrencekraft."
-              : "Our AI Workshop helps your business understand what AI means for your operations and what to do next. From productivity gains to stronger products and long-term competitiveness."}
+              ? "Vores AI Workshop hjælper jer med at forstå, hvad AI kan betyde for jeres forretning. Fra effektivisering til stærkere produkter og langsigtet konkurrencekraft."
+              : "Our AI Workshop helps you understand what AI can mean for your business. From greater efficiency to stronger products and long-term competitiveness."}
           </motion.h1>
 
           <motion.div variants={fadeUp}>
@@ -722,8 +722,22 @@ export default function WorkshopPage() {
                 }}
               >
                 {locale === "da"
-                  ? "Under workshoppen guider vi jer igennem essentielle AI-koncepter og forbinder dem direkte til jeres forretning, processer, systemer og datalandskab."
-                  : "During the workshop, we guide you through essential AI concepts and connect them directly to your business, processes, systems, and data landscape."}
+                  ? "I får en forståelse af AI som teknologi og indsigt i, hvordan den allerede bruges i jeres branche."
+                  : "You gain an understanding of AI as a technology and insight into how it is already being used in your industry."}
+              </motion.p>
+              <motion.p
+                variants={fadeUp}
+                style={{
+                  fontFamily: "var(--font-inter), system-ui, sans-serif",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.75,
+                  color: "#374151",
+                  marginBottom: "16px",
+                }}
+              >
+                {locale === "da"
+                  ? "Med afsæt i jeres forretning undersøger vi, hvad der gør jer særlige, og hvordan AI kan styrke jeres konkurrencefordele, skabe nye muligheder og forbedre jeres produkter og arbejdsgange."
+                  : "Starting with your business, we explore what makes you distinctive and how AI can strengthen your competitive advantages, create new opportunities and improve your products and workflows."}
               </motion.p>
               <motion.p
                 variants={fadeUp}
@@ -736,8 +750,8 @@ export default function WorkshopPage() {
                 }}
               >
                 {locale === "da"
-                  ? "Sammen konkluderer vi, om AI kan skabe reel værdi for jeres virksomhed."
-                  : "Together, we conclude whether AI can create real value for your company."}
+                  ? "Vi ser også på, hvordan medarbejdernes viden og erfaring kan spille sammen med AI, så de tilsammen skaber mere værdi, end mennesket eller teknologien kan alene."
+                  : "We also explore how your employees' knowledge and experience can work together with AI, creating more value than people or technology could achieve alone."}
               </motion.p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
@@ -810,8 +824,8 @@ export default function WorkshopPage() {
                   }}
                 >
                   {locale === "da"
-                    ? "Medbring teammedlemmer med viden om jeres produkter, forretning, systemer og datalandskab. Beslutningstagere, der søger indsigt, er også meget relevante og velkomne."
-                    : "Bring team members with knowledge of your products, business, systems, and data landscape. Decision-makers seeking insights are also highly relevant and welcome to join."}
+                    ? "Medbring gerne kolleger med viden om jeres produkter, forretning, systemer og datalandskab. Deres indsigt hjælper os med at gøre mulighederne konkrete for jer."
+                    : "Feel free to bring colleagues who know your products, business, systems and data landscape. Their insight helps us turn AI possibilities into concrete opportunities for your business."}
                 </p>
               </motion.div>
 
@@ -870,6 +884,39 @@ export default function WorkshopPage() {
                     </p>
                   </div>
                 </div>
+              </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                style={{
+                  marginTop: "32px",
+                  padding: "28px 32px",
+                  borderRadius: "16px",
+                  background: "linear-gradient(135deg, rgba(124,58,237,0.04) 0%, rgba(6,182,212,0.04) 100%)",
+                  border: "1px solid rgba(124,58,237,0.10)",
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--font-geist), system-ui, sans-serif",
+                    fontSize: "1.1rem",
+                    fontWeight: 700,
+                    color: "#0A0F1E",
+                    marginBottom: "10px",
+                  }}
+                >
+                  {locale === "da" ? "Varighed" : "Duration"}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "var(--font-inter), system-ui, sans-serif",
+                    fontSize: "0.95rem",
+                    lineHeight: 1.7,
+                    color: "#64748B",
+                  }}
+                >
+                  {locale === "da" ? "Én dag" : "One day"}
+                </p>
               </motion.div>
             </div>
           </motion.div>
