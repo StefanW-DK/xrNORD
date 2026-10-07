@@ -1109,14 +1109,14 @@ export default function WorkshopPage() {
             >
               {locale === "da" ? (
                 <>
-                  Jeres første skridt mod en klar{" "}
+                  Fra AI-muligheder til en klar{" "}
                   <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                     handlingsplan og business case.
                   </span>
                 </>
               ) : (
                 <>
-                  Your first step toward a clear{" "}
+                  From AI opportunities to a clear{" "}
                   <span style={{ background: "linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                     action plan and business case.
                   </span>
