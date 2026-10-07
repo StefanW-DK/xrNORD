@@ -32,7 +32,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
       "ai-roadmap": {
         title: "AI Strategy & Roadmap | Define Your New Future | xrNORD",
         description:
-          "Define how AI strengthens your business, products, and operations through a clear and actionable AI Strategy.",
+          "Turn AI opportunities into a strategy for your business. Prioritise initiatives, develop business cases and build a roadmap for implementation.",
         keywords: ["AI roadmap", "AI strategy", "AI adoption", "business AI roadmap"],
       },
       "execution": {
@@ -145,7 +145,7 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
       "ai-roadmap": {
         title: "AI Strategi & Roadmap | Styrk jeres forretning | xrNORD",
         description:
-          "Definér hvordan AI styrker jeres forretning, produkter og arbejdsgange gennem en klar og handlingsorienteret strategi.",
+          "Omsæt AI-muligheder til en strategi for jeres virksomhed. Prioritér indsatser, udvikl business cases og få et roadmap for gennemførelsen.",
         keywords: ["AI roadmap", "AI strategi", "AI adoption", "forretnings AI roadmap"],
       },
       "execution": {
