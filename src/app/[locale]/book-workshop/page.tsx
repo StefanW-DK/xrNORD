@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
 import { trackLead, trackHighIntentPageView } from "@/lib/analytics";
+import { useSpamGuard } from "@/components/forms/useSpamGuard";
 
 const COUNTRY_CODES = [
   { code: "+45", country: "DK", flag: "🇩🇰" },
@@ -96,6 +97,7 @@ export default function BookWorkshopPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const { honeypotField, fields: spamGuardFields } = useSpamGuard();
 
   // High-intent signal — fires once on mount, tells GTM/Google Ads this
   // visitor reached the booking page (strong purchase intent even without submitting)
@@ -122,7 +124,7 @@ export default function BookWorkshopPage() {
       const res = await fetch("/api/book-workshop", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, phone: phoneWithCode, preferredDate }),
+        body: JSON.stringify({ ...form, phone: phoneWithCode, preferredDate, ...spamGuardFields() }),
       });
       if (res.ok) {
         setSubmitted(true);
@@ -386,8 +388,10 @@ export default function BookWorkshopPage() {
                     background: "rgba(255,255,255,0.03)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     backdropFilter: "blur(16px)",
+                    position: "relative",
                   }}
                 >
+                  {honeypotField}
                   {error && (
                     <div
                       style={{

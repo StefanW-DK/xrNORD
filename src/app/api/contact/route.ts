@@ -1,5 +1,19 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
+import {
+  botTrapReason,
+  clientIp,
+  containsUrl,
+  escapeHtml,
+  hasNoLetters,
+  isRateLimited,
+  isValidEmail,
+  looksLikeRandomString,
+  readBody,
+  oneLine,
+  str,
+  tooLongField,
+} from "@/lib/formGuard";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.gmail.com",
@@ -13,21 +27,75 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, subject, message } = await request.json();
+    const body = await readBody(request);
+
+    // Bot traps: answer as if it worked, send nothing
+    const trap = botTrapReason(body);
+    if (trap) {
+      console.warn(`Contact form: dropped submission (${trap})`);
+      return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
+    }
+
+    if (isRateLimited("contact", clientIp(request))) {
+      return NextResponse.json(
+        { message: "Too many messages. Please try again later or email info@xrnord.com." },
+        { status: 429 }
+      );
+    }
+
+    const rawName = str(body.name);
+    const rawEmail = str(body.email);
+    const rawPhone = str(body.phone);
+    const rawSubject = str(body.subject);
+    const rawMessage = str(body.message);
 
     // Validation
-    if (!name || !email || !subject || !message) {
+    if (!rawName || !rawEmail || !rawSubject || !rawMessage) {
       return NextResponse.json(
         { message: "Missing required fields" },
         { status: 400 }
       );
     }
 
+    if (!isValidEmail(rawEmail)) {
+      return NextResponse.json({ message: "Please enter a valid email address." }, { status: 400 });
+    }
+
+    const tooLong = tooLongField({
+      name: [rawName, 100],
+      phone: [rawPhone, 40],
+      subject: [rawSubject, 200],
+      message: [rawMessage, 10000],
+    });
+    if (tooLong) {
+      return NextResponse.json({ message: `The ${tooLong} field is too long.` }, { status: 400 });
+    }
+
+    if (containsUrl(rawName)) {
+      return NextResponse.json({ message: "Please enter your name without links." }, { status: 400 });
+    }
+
+    // Random-string spam (e.g. subject "KSEsOOoMabhjUcXioolFOw", message "12345").
+    // Shown as an error rather than dropped silently, so a real person can rephrase.
+    if (looksLikeRandomString(rawSubject) || looksLikeRandomString(rawName) || hasNoLetters(rawMessage)) {
+      console.warn("Contact form: rejected random-looking submission");
+      return NextResponse.json(
+        { message: "Please write a short message describing your inquiry." },
+        { status: 400 }
+      );
+    }
+
+    const name = escapeHtml(rawName);
+    const email = escapeHtml(rawEmail);
+    const phone = escapeHtml(rawPhone);
+    const subject = escapeHtml(rawSubject);
+    const message = escapeHtml(rawMessage);
+
     // Email to xrNORD
     const mailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER || "noreply@xrnord.com",
       to: "SW@xrnord.com",
-      subject: `New Contact Form Submission: ${subject}`,
+      subject: `New Contact Form Submission: ${oneLine(rawSubject)}`,
       html: `
         <html style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">
           <body>
@@ -72,17 +140,17 @@ export async function POST(request: NextRequest) {
           </body>
         </html>
       `,
-      replyTo: email,
+      replyTo: rawEmail,
     };
 
     // Send email
     await transporter.sendMail(mailOptions);
 
-    // Optional: Send confirmation email to user
+    // Confirmation email to the sender, only after all checks above have passed
     const confirmationEmail = {
       from: `"xrNORD" <${process.env.SMTP_USER || "sw@xrnord.com"}>`,
       replyTo: "info@xrnord.com",
-      to: email,
+      to: rawEmail,
       subject: "We received your message - xrNORD",
       html: `
         <html style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">

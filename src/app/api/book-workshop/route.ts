@@ -1,5 +1,17 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
+import {
+  botTrapReason,
+  clientIp,
+  containsUrl,
+  escapeHtml,
+  isRateLimited,
+  isValidEmail,
+  readBody,
+  oneLine,
+  str,
+  tooLongField,
+} from "@/lib/formGuard";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.gmail.com",
@@ -13,17 +25,58 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, company, preferredDate } = await request.json();
+    const body = await readBody(request);
 
-    if (!name || !email || !company) {
+    // Bot traps: answer as if it worked, send nothing
+    const trap = botTrapReason(body);
+    if (trap) {
+      console.warn(`Workshop booking: dropped submission (${trap})`);
+      return NextResponse.json({ message: "Request sent successfully" }, { status: 200 });
+    }
+
+    if (isRateLimited("book-workshop", clientIp(request))) {
+      return NextResponse.json({ message: "Too many requests. Please try again later or email info@xrnord.com." }, { status: 429 });
+    }
+
+    const rawName = str(body.name);
+    const rawEmail = str(body.email);
+    const rawPhone = str(body.phone);
+    const rawCompany = str(body.company);
+    const rawPreferredDate = str(body.preferredDate);
+
+    if (!rawName || !rawEmail || !rawCompany) {
       return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
     }
+
+    if (!isValidEmail(rawEmail)) {
+      return NextResponse.json({ message: "Please enter a valid email address." }, { status: 400 });
+    }
+
+    const tooLong = tooLongField({
+      name: [rawName, 100],
+      phone: [rawPhone, 40],
+      company: [rawCompany, 5000],
+      preferredDate: [rawPreferredDate, 60],
+    });
+    if (tooLong) {
+      return NextResponse.json({ message: `The ${tooLong} field is too long.` }, { status: 400 });
+    }
+
+    if (containsUrl(rawName)) {
+      return NextResponse.json({ message: "Please enter your name without links." }, { status: 400 });
+    }
+
+    const name = escapeHtml(rawName);
+    const email = escapeHtml(rawEmail);
+    const phone = escapeHtml(rawPhone);
+    const company = escapeHtml(rawCompany);
+    const preferredDate = escapeHtml(rawPreferredDate);
 
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER || "noreply@xrnord.com",
       to: "SW@xrnord.com",
-      subject: `New Workshop Booking Request: ${name}`,
-      replyTo: email,
+      subject: `New Workshop Booking Request: ${oneLine(rawName)}`,
+      replyTo: rawEmail,
       html: `
         <html style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">
           <body>
@@ -71,10 +124,11 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    // Confirmation email to the sender, only after all checks above have passed
     await transporter.sendMail({
       from: `"xrNORD" <${process.env.SMTP_USER || "sw@xrnord.com"}>`,
       replyTo: "info@xrnord.com",
-      to: email,
+      to: rawEmail,
       subject: "Your AI Workshop Request - xrNORD",
       html: `
         <html style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px;">

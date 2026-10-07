@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
+import { useSpamGuard } from "@/components/forms/useSpamGuard";
 
 const COUNTRY_CODES = [
   { code: "+45", label: "🇩🇰 +45" },
@@ -63,6 +64,7 @@ export default function AILabsApplyPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const { honeypotField, fields: spamGuardFields } = useSpamGuard();
 
   const set = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
@@ -85,6 +87,7 @@ export default function AILabsApplyPage() {
           ...form,
           phone: form.phone ? `${countryCode} ${form.phone}` : "",
           wantsToJoin,
+          ...spamGuardFields(),
         }),
       });
       if (res.ok) {
@@ -223,8 +226,9 @@ export default function AILabsApplyPage() {
               transition={{ duration: 0.65, delay: 0.1 }}
               onSubmit={handleSubmit}
               className="apply-form"
-              style={{ display: "flex", flexDirection: "column", gap: 16 }}
+              style={{ display: "flex", flexDirection: "column", gap: 16, position: "relative" }}
             >
+              {honeypotField}
               {/* Checkbox */}
               <label style={{
                 display: "flex", alignItems: "flex-start", gap: 14, cursor: "pointer",

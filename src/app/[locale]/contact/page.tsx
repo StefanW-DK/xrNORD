@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
 import { trackLead, trackHighIntentPageView } from "@/lib/analytics";
+import { useSpamGuard } from "@/components/forms/useSpamGuard";
 
 const gradientText = {
   backgroundImage: "linear-gradient(135deg, #22D3EE, #38BDF8, #818CF8)",
@@ -94,6 +95,7 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const { honeypotField, fields: spamGuardFields } = useSpamGuard();
 
   // High-intent signal — fires once on mount, tells GTM/Google Ads this
   // visitor reached the contact page (strong purchase intent even without submitting)
@@ -119,7 +121,7 @@ export default function ContactPage() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, phone: phoneWithCode }),
+        body: JSON.stringify({ ...form, phone: phoneWithCode, ...spamGuardFields() }),
       });
       if (res.ok) {
         setSubmitted(true);
@@ -331,8 +333,10 @@ export default function ContactPage() {
                     borderRadius: "20px",
                     background: "rgba(255,255,255,0.025)",
                     border: "1px solid rgba(255,255,255,0.06)",
+                    position: "relative",
                   }}
                 >
+                  {honeypotField}
                   {error && (
                     <div
                       style={{
