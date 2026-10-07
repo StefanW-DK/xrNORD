@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -14,6 +14,145 @@ const fadeUp = {
 const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
+
+/* ─── FAQ data ─── */
+interface FAQEntry { q: string; a: string; }
+
+const FAQ_EN: FAQEntry[] = [
+  {
+    q: "Does the workshop require technical knowledge or AI experience?",
+    a: "You do not need to be AI specialists. We introduce the relevant concepts and connect them to your business. Your most important contribution is knowledge about your company, its products, workflows and ambitions.",
+  },
+  {
+    q: "We already use AI. What can the workshop add?",
+    a: "The workshop takes as its starting point what you already do, and explores opportunities across the business. Where can AI strengthen your products and competitive advantages? What can be improved in your workflows? And how can your employees' knowledge and AI create greater value together? The goal is to find the opportunities worth pursuing further.",
+  },
+  {
+    q: "How does the workshop take our specific company and industry as its starting point?",
+    a: "We bring knowledge about AI and its application in your industry. You bring knowledge of your business. We examine your products, processes, systems and data with a focus on what makes you distinctive, and where AI can make a meaningful difference. The aim is not to find the most use cases, but the right ones for you.",
+  },
+  {
+    q: "Can the workshop focus on a specific area or product?",
+    a: "Yes. We can explore AI opportunities broadly across the business, or go deeper into a specific business area, process or product.\n\nThe broad approach gives you an overview, while a focused scope allows for more detailed exploration of the opportunities. We also look at dependencies to other parts of the business and how they might be affected.\n\nWe agree on the focus with you before the workshop.",
+  },
+  {
+    q: "What does an AI workshop cost?",
+    a: "A full-day AI workshop with us costs DKK 10,000 excl. VAT.",
+  },
+  {
+    q: "What happens after the workshop?",
+    a: "You receive a written summary with the identified opportunities and our recommendations for next steps. If you wish to continue, a strategy and roadmap process can qualify the opportunities, prioritize the effort, and develop business cases and a plan for execution.",
+  },
+];
+
+const FAQ_DA: FAQEntry[] = [
+  {
+    q: "Kræver workshoppen teknisk viden eller erfaring med AI?",
+    a: "I behøver ikke være AI-specialister. Vi introducerer de relevante begreber og forbinder dem med jeres forretning. Jeres vigtigste bidrag er viden om virksomheden, dens produkter, arbejdsgange og ambitioner.",
+  },
+  {
+    q: "Vi bruger allerede AI. Hvad kan workshoppen tilføre?",
+    a: "Workshoppen tager afsæt i det, I allerede gør, og undersøger mulighederne på tværs af forretningen. Hvor kan AI styrke jeres produkter og konkurrencefordele? Hvad kan forbedres i arbejdsgangene? Og hvordan kan medarbejdernes viden og AI skabe større værdi? Målet er at finde de muligheder, der er værd at arbejde videre med.",
+  },
+  {
+    q: "Hvordan tager workshoppen udgangspunkt i vores virksomhed og branche?",
+    a: "Vi bringer viden om AI og dens anvendelse i jeres branche. I bringer kendskabet til jeres forretning. Vi undersøger jeres produkter, processer, systemer og data med fokus på, hvad der gør jer særlige, og hvor AI kan gøre en relevant forskel. Det handler ikke om at finde flest mulige use cases, men om at finde de rigtige for jer.",
+  },
+  {
+    q: "Kan workshoppen fokusere på et bestemt område eller produkt?",
+    a: "Ja. Vi kan undersøge AI-muligheder bredt på tværs af virksomheden eller gå mere i dybden med et bestemt forretningsområde, en proces eller et produkt.\n\nDen brede tilgang giver overblik, mens et afgrænset fokus giver plads til at undersøge mulighederne mere detaljeret. Vi ser også på afhængigheder til andre dele af virksomheden, og hvordan de kan blive påvirket.\n\nVi aftaler fokus med jer inden workshoppen.",
+  },
+  {
+    q: "Hvad koster en AI-workshop?",
+    a: "En hel dags AI-workshop med os koster 10.000 kr. ekskl. moms.",
+  },
+  {
+    q: "Hvad sker der efter workshoppen?",
+    a: "I modtager en skriftlig opsamling med de identificerede muligheder og vores anbefalinger til næste skridt. Hvis I ønsker at gå videre, kan et strategi- og roadmapforløb kvalificere mulighederne, prioritere indsatsen og udvikle business cases og en plan for gennemførelsen.",
+  },
+];
+
+/* ─── FAQ accordion item ─── */
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  const paragraphs = a.split("\n\n");
+  return (
+    <motion.div variants={fadeUp} style={{ borderBottom: "1px solid #E5E7EB" }}>
+      <button
+        onClick={() => setOpen(!open)}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "28px 0",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          textAlign: "left",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "var(--font-geist), system-ui, sans-serif",
+            fontSize: "1.1rem",
+            fontWeight: 600,
+            color: "#0A0F1E",
+            paddingRight: "32px",
+          }}
+        >
+          {q}
+        </span>
+        <span
+          style={{
+            flexShrink: 0,
+            width: "28px",
+            height: "28px",
+            borderRadius: "50%",
+            border: "1px solid rgba(192,38,211,0.4)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            transition: "transform 0.3s ease, background 0.3s ease",
+            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+            background: open ? "rgba(192,38,211,0.08)" : "transparent",
+          }}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C026D3" strokeWidth="2" strokeLinecap="round">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </span>
+      </button>
+      <div
+        style={{
+          maxHeight: open ? "3000px" : "0px",
+          overflow: "hidden",
+          transition: "max-height 0.6s ease, opacity 0.3s ease",
+          opacity: open ? 1 : 0,
+        }}
+      >
+        <div style={{ paddingBottom: "28px", maxWidth: "680px" }}>
+          {paragraphs.map((para, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-geist), system-ui, sans-serif",
+                fontSize: "0.95rem",
+                color: "#6B7280",
+                lineHeight: 1.8,
+                marginBottom: i < paragraphs.length - 1 ? "16px" : "0",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {para}
+            </p>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 
 export default function WorkshopPage() {
   const locale = useLocale();
@@ -1107,6 +1246,102 @@ export default function WorkshopPage() {
                 );
               })}
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ FAQ ═══════════ */}
+      <section
+        style={{
+          background: "#FFFFFF",
+          padding: "clamp(80px, 11vw, 140px) 0",
+          position: "relative",
+        }}
+      >
+        <div className="page-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+            className="about-grid"
+            style={{
+              gap: "clamp(40px, 8vw, 100px)",
+              alignItems: "start",
+            }}
+          >
+            {/* Left: heading */}
+            <div>
+              <motion.p
+                variants={fadeUp}
+                style={{
+                  fontFamily: "var(--font-geist), system-ui, sans-serif",
+                  fontSize: "22px",
+                  fontWeight: 800,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: "#0A0F1E",
+                  marginBottom: "20px",
+                }}
+              >
+                FAQ
+              </motion.p>
+              <motion.h2
+                variants={fadeUp}
+                style={{
+                  fontFamily: "var(--font-geist), system-ui, sans-serif",
+                  fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+                  fontWeight: 800,
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.02em",
+                  color: "#0A0F1E",
+                  marginBottom: "32px",
+                }}
+              >
+                <span style={{ background: "linear-gradient(135deg, #C026D3, #9333EA)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  {locale === "da" ? "Svar på de vigtigste spørgsmål" : "Answers to the key questions"}
+                </span>
+              </motion.h2>
+              <motion.div variants={fadeUp} style={{ display: "flex", flexDirection: "column" as const, gap: "10px" }}>
+                {(locale === "da"
+                  ? [
+                      "Ingen teknisk viden krævet",
+                      "Tilpasset jeres forretning",
+                      "Konkrete næste skridt",
+                    ]
+                  : [
+                      "No technical knowledge required",
+                      "Tailored to your business",
+                      "Concrete next steps",
+                    ]
+                ).map((line, i) => (
+                  <p
+                    key={i}
+                    style={{
+                      fontFamily: "var(--font-geist), system-ui, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#C026D3",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {line}
+                  </p>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Right: accordion */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={stagger}
+              style={{ borderTop: "1px solid #E5E7EB" }}
+            >
+              {(locale === "da" ? FAQ_DA : FAQ_EN).map((faq, i) => (
+                <FAQItem key={i} q={faq.q} a={faq.a} />
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
