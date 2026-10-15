@@ -42,9 +42,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementation", "AI integration", "Nordic AI"],
       },
       "ai-use-cases": {
-        title: "AI Use Cases | Real AI Value in Business | xrNORD",
+        title: "AI Use Cases | xrNORD",
         description:
-          "Explore how businesses use AI across sales, marketing, education, finance, and operations to create real value.",
+          "Discover how AI could create value for your business. Explore practical applications and opportunities across industries.",
         keywords: ["AI use cases", "AI examples", "AI business applications", "AI ROI"],
       },
       "why-ai": {
@@ -155,9 +155,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["AI execution", "AI ecosystem", "company AI", "AI implementering", "AI integration", "Nordisk AI"],
       },
       "ai-use-cases": {
-        title: "AI Use Cases | AI-værdi i virksomheder | xrNORD",
+        title: "AI Use Cases | xrNORD",
         description:
-          "Se hvordan virksomheder bruger AI i salg, marketing, undervisning og økonomi til at skabe reel værdi.",
+          "Find inspiration til, hvordan AI kan skabe værdi i jeres forretning. Se konkrete anvendelser og muligheder på tværs af brancher.",
         keywords: ["AI use cases", "AI eksempler", "AI i forretningen", "AI ROI"],
       },
       "why-ai": {
