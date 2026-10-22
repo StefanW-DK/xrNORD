@@ -95,14 +95,13 @@ export default function Hero() {
           initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
-          className="mx-auto mb-12"
+          className="mx-auto mb-12 max-w-[420px] sm:max-w-[660px]"
           style={{
             fontFamily: "var(--font-inter), system-ui, sans-serif",
             fontSize: "1.125rem",
             fontWeight: 400,
             lineHeight: 1.65,
             color: "rgba(255,255,255,0.65)",
-            maxWidth: "500px",
           }}
         >
           {t("subtext")}
