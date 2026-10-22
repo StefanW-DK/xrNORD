@@ -19,7 +19,7 @@
     "headlineMid": "Ind i",
     "headlineHighlight2": "Jeres",
     "headlineEnd": "Virksomhed",
-    "subtext": "Vi hjælper jer med at forstå, udvikle og implementere AI i jeres arbejdsgange, produkter og processer.",
+    "subtext": "Vi styrker jeres forretningsstrategi med AI og udvikler og implementerer løsninger, der løfter jeres produkter og arbejdsgange.",
     "ctaPrimary": "Udforsk vores AI Workshop",
     "ctaSecondary": "Hvorfor AI nu?"
   },
@@ -72,7 +72,7 @@
     "eyebrow": "Kompetencer",
     "headline": "Fra AI-potentiale til",
     "headlineAccent": "Struktureret handling.",
-    "body": "Vi hjælper B2B-virksomheder med at navigere i AI's kompleksitet gennem en disciplineret, resultatorienteret tilgang.",
+    "body": "Vi rådgiver om AI med afsæt i jeres forretning og udvikler løsninger til jeres produkter og arbejdsgange.",
     "strategyTitle": "AI-strategi",
     "strategyDesc": "Uden om hype'n. Vi definerer en klar retning for AI-implementering, der understøtter jeres reelle drift.",
     "bespokeTitle": "Skræddersyet udvikling",
@@ -342,7 +342,7 @@
   "siteLinks": {
     "workshopLabel": "AI Workshop",
     "workshopDesc": "Én fokuseret dag til at kortlægge, hvor AI skaber størst værdi for jer.",
-    "roadmapLabel": "AI Roadmap",
+    "roadmapLabel": "AI-strategi & Roadmap",
     "roadmapDesc": "En klar handlingsplan for hvordan AI bliver en del af jeres konkurrencekraft.",
     "executionLabel": "AI Execution",
     "executionDesc": "Vi designer og bygger jeres sammenhængende AI-ecosystem fra ende til anden.",

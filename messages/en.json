@@ -19,7 +19,7 @@
     "headlineMid": "Into",
     "headlineHighlight2": "Your",
     "headlineEnd": "Business",
-    "subtext": "We help your business understand, develop, and implement AI across operations, products, and workflows.",
+    "subtext": "We strengthen your business strategy with AI and develop and implement solutions that improve your products and workflows.",
     "ctaPrimary": "Explore our AI Workshop",
     "ctaSecondary": "Why AI Now?"
   },
@@ -72,7 +72,7 @@
     "eyebrow": "Capabilities",
     "headline": "Turning AI Potential into",
     "headlineAccent": "Structured Action.",
-    "body": "We help B2B organizations navigate the complexities of AI through a disciplined, result-oriented framework.",
+    "body": "We provide AI consulting grounded in your business and develop solutions for your products and workflows.",
     "strategyTitle": "AI Strategy",
     "strategyDesc": "Beyond the hype. We define a clear direction for AI adoption that supports real operations.",
     "bespokeTitle": "Bespoke Development",
@@ -342,7 +342,7 @@
   "siteLinks": {
     "workshopLabel": "AI Workshop",
     "workshopDesc": "One focused day to map where AI creates value in your business.",
-    "roadmapLabel": "AI Roadmap",
+    "roadmapLabel": "AI Strategy & Roadmap",
     "roadmapDesc": "A clear, actionable plan for making AI part of how you compete.",
     "executionLabel": "AI Execution",
     "executionDesc": "We design and build your connected AI ecosystem end-to-end.",

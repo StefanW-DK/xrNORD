@@ -18,9 +18,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
     siteName: "xrNORD",
     pages: {
       home: {
-        title: "Build AI Into Your Business | Stay Competitive | xrNORD",
+        title: "AI Consulting & Development for Business | xrNORD",
         description:
-          "Build AI into your business operations, products, and workflows. xrNORD helps companies turn AI into real competitive advantage.",
+          "We strengthen your business strategy with AI and develop and implement solutions that improve your products and workflows.",
         keywords: ["AI strategy", "AI implementation", "Scandinavian AI", "AI roadmap", "AI workshop", "Nordic AI"],
       },
       workshop: {
@@ -131,9 +131,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
     siteName: "xrNORD",
     pages: {
       home: {
-        title: "Styrk konkurrencekraften | AI i jeres forretning | xrNORD",
+        title: "AI-rådgivning og udvikling til virksomheder | xrNORD",
         description:
-          "Gør AI til en del af jeres arbejdsgange, produkter og processer. xrNORD hjælper virksomheder med at styrke konkurrencekraften.",
+          "Vi styrker jeres forretningsstrategi med AI og udvikler og implementerer løsninger, der løfter jeres produkter og arbejdsgange.",
         keywords: ["AI strategi", "AI implementering", "Skandinavisk AI", "AI roadmap", "AI workshop", "Nordisk AI"],
       },
       workshop: {
