@@ -96,9 +96,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["terms of use", "terms and conditions", "legal", "website terms"],
       },
       "future-of-auditing": {
-        title: "AI for Financial Auditing - Lead the Change | xrNORD",
+        title: "AI in Financial Auditing | xrNORD",
         description:
-          "76% of auditors expect AI to fundamentally reshape the profession within 10 years. See how AI transforms financial auditing and how your firm stays competitive.",
+          "How can AI strengthen your audit firm? Explore opportunities to free up time, strengthen advisory services and develop new offerings for your clients.",
         keywords: ["AI auditing", "AI financial auditing", "future of auditing", "AI audit firms", "IDC audit report 2026", "audit AI transformation", "xrNORD"],
       },
       "one-more-day": {
@@ -209,9 +209,9 @@ const siteMetadata: Record<Locale, { siteName: string; pages: Record<PageMetaKey
         keywords: ["vilkår for brug", "betingelser", "juridisk", "webstedsvilkår"],
       },
       "future-of-auditing": {
-        title: "AI til revision - Forbliv konkurrencedygtig | xrNORD",
+        title: "AI i revisionsbranchen | xrNORD",
         description:
-          "76 % af revisorer forventer, at AI fundamentalt ændrer revision inden for 10 år. Se hvordan AI forvandler revisionsbranchen, og hvordan jeres firma tager førertrøjen.",
+          "Hvordan kan AI styrke jeres revisionsvirksomhed? Se mulighederne for at frigøre tid, styrke rådgivningen og udvikle nye ydelser til jeres kunder.",
         keywords: ["AI revision", "kunstig intelligens revision", "fremtidens revision", "AI revisionshus", "IDC rapport revision 2026", "xrNORD"],
       },
       "one-more-day": {
