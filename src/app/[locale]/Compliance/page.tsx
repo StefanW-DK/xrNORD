@@ -1164,7 +1164,7 @@ function ReadPerspective({ locale }: { locale: string }) {
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}
           style={{ paddingLeft: "clamp(0px, 4vw, 100px)" }} className="cc-section-text"
         >
-          <a href="#documents" style={{
+          <a href="#executive-summary" style={{
             display: "inline-flex", alignItems: "center", gap: 10,
             padding: "16px 30px", borderRadius: 999,
             background: "linear-gradient(135deg, #A855F7, #818CF8)",
@@ -1172,8 +1172,7 @@ function ReadPerspective({ locale }: { locale: string }) {
             fontFamily: "var(--font-geist), system-ui, sans-serif",
             boxShadow: "0 12px 36px rgba(124,111,212,0.35)",
           }}>
-            {/* TODO: Replace href — decide: direct PDF download or request form? */}
-            Read Part I and II <span aria-hidden>→</span>
+            Download the Executive Summary <span aria-hidden>↓</span>
           </a>
         </motion.div>
       </div>
@@ -1193,6 +1192,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
   const [fields, setFields] = useState({ name: "", email: "", jobTitle: "", consent: false });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const startedAt = useRef(Date.now());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -1202,7 +1202,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
       const res = await fetch("/api/executive-summary", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
+        body: JSON.stringify({ ...fields, startedAt: startedAt.current, website: "" }),
       });
       const data = await res.json();
       if (res.ok) {
@@ -1259,13 +1259,13 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
 
       <div style={{
         position: "relative", zIndex: 1, width: "100%",
-        display: "grid", gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, 1fr)",
-        gap: "clamp(48px, 7vw, 120px)", alignItems: "center",
+        display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
+        gap: "clamp(40px, 4vw, 80px)", alignItems: "start",
       }} className="cc-gate-grid">
 
         {/* Left: copy + form */}
         <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-          style={{ paddingLeft: "clamp(0px, 4vw, 100px)" }} className="cc-section-text"
+          style={{ paddingLeft: "clamp(0px, 2vw, 60px)" }} className="cc-section-text"
         >
           <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
             <span style={{
@@ -1429,7 +1429,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         >
-          <div style={{ position: "relative", width: "100%", maxWidth: 360 }}>
+          <div style={{ position: "relative", width: "100%", maxWidth: 600 }}>
             {/* Shadow layer underneath */}
             <div aria-hidden style={{
               position: "absolute", top: 24, left: 12, right: -12, bottom: -24,
