@@ -33,14 +33,41 @@ function NewsletterForm() {
   const t = useTranslations("footer");
   const locale = useLocale();
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [focused, setFocused] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  const isDa = locale === "da";
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
-    trackNewsletterSignup(locale);
-    setSubmitted(true);
+    if (!email || loading) return;
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          locale,
+          sourcePage: typeof window !== "undefined" ? window.location.pathname : "/",
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.message || (isDa ? "Noget gik galt. Prøv igen." : "Something went wrong. Please try again."));
+        return;
+      }
+      trackNewsletterSignup(locale);
+      setSubmitted(true);
+    } catch {
+      setError(isDa ? "Noget gik galt. Prøv igen." : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -67,49 +94,87 @@ function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="newsletter-form">
-      <div style={{
-        flex: 1, position: "relative",
-        borderRadius: "12px", overflow: "hidden",
-        background: "rgba(255,255,255,0.04)",
-        border: `1px solid ${focused ? "rgba(6,182,212,0.35)" : "rgba(255,255,255,0.08)"}`,
-        transition: "border-color 0.3s ease",
-        boxShadow: focused ? "0 0 0 3px rgba(6,182,212,0.06)" : "none",
+    <div>
+      <form onSubmit={handleSubmit} className="newsletter-form">
+        <div style={{
+          flex: 1, position: "relative",
+          borderRadius: "12px", overflow: "hidden",
+          background: "rgba(255,255,255,0.04)",
+          border: `1px solid ${focused ? "rgba(6,182,212,0.35)" : "rgba(255,255,255,0.08)"}`,
+          transition: "border-color 0.3s ease",
+          boxShadow: focused ? "0 0 0 3px rgba(6,182,212,0.06)" : "none",
+        }}>
+          <input
+            type="email"
+            placeholder={t("emailPlaceholder")}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            required
+            style={{
+              width: "100%", padding: "13px 16px",
+              background: "transparent", border: "none", outline: "none",
+              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontSize: "0.88rem", color: "#F1F5F9",
+              caretColor: "#06B6D4",
+            }}
+          />
+        </div>
+        <button
+          type="submit"
+          disabled={loading || !consent}
+          style={{
+            padding: "13px 22px", borderRadius: "12px", border: "none",
+            background: loading || !consent
+              ? "rgba(255,255,255,0.07)"
+              : "linear-gradient(135deg, #06B6D4, #3B82F6)",
+            color: loading || !consent ? "rgba(255,255,255,0.3)" : "#fff",
+            cursor: loading || !consent ? "default" : "pointer",
+            flexShrink: 0,
+            fontFamily: "var(--font-geist), system-ui, sans-serif",
+            fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.01em",
+            boxShadow: loading || !consent ? "none" : "0 4px 16px rgba(6,182,212,0.25)",
+            transition: "all 0.2s ease",
+          }}
+        >
+          {loading
+            ? (isDa ? "Tilmelder…" : "Subscribing…")
+            : t("subscribe")}
+        </button>
+      </form>
+
+      {/* Consent checkbox */}
+      <label style={{
+        display: "flex", alignItems: "flex-start", gap: "10px",
+        marginTop: "12px", cursor: "pointer",
       }}>
         <input
-          type="email"
-          placeholder={t("emailPlaceholder")}
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          required
-          style={{
-            width: "100%", padding: "13px 16px",
-            background: "transparent", border: "none", outline: "none",
-            fontFamily: "var(--font-inter), system-ui, sans-serif",
-            fontSize: "0.88rem", color: "#F1F5F9",
-            caretColor: "#06B6D4",
-          }}
+          type="checkbox"
+          checked={consent}
+          onChange={e => setConsent(e.target.checked)}
+          style={{ marginTop: "2px", flexShrink: 0, accentColor: "#06B6D4", cursor: "pointer" }}
         />
-      </div>
-      <button
-        type="submit"
-        style={{
-          padding: "13px 22px", borderRadius: "12px", border: "none",
-          background: "linear-gradient(135deg, #06B6D4, #3B82F6)",
-          color: "#fff", cursor: "pointer", flexShrink: 0,
-          fontFamily: "var(--font-geist), system-ui, sans-serif",
-          fontSize: "0.85rem", fontWeight: 600, letterSpacing: "0.01em",
-          boxShadow: "0 4px 16px rgba(6,182,212,0.25)",
-          transition: "opacity 0.2s ease, transform 0.2s ease",
-        }}
-        onMouseEnter={e => (e.currentTarget.style.opacity = "0.88")}
-        onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-      >
-        {t("subscribe")}
-      </button>
-    </form>
+        <span style={{
+          fontFamily: "var(--font-inter), system-ui, sans-serif",
+          fontSize: "0.75rem", lineHeight: 1.5,
+          color: "rgba(148,163,184,0.55)",
+        }}>
+          {isDa
+            ? "Jeg accepterer at modtage xrNORDs artikler, AI-interviews og indsigter. Du kan afmelde dig når som helst."
+            : "I agree to receive xrNORD’s articles, AI interviews and insights. You can unsubscribe at any time."}
+        </span>
+      </label>
+
+      {error && (
+        <p style={{
+          fontFamily: "var(--font-inter), system-ui, sans-serif",
+          fontSize: "0.78rem", color: "#F87171", marginTop: "8px",
+        }}>
+          {error}
+        </p>
+      )}
+    </div>
   );
 }
 

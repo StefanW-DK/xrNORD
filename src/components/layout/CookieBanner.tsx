@@ -87,7 +87,13 @@ export default function CookieBanner() {
   const focusSettingsButton = useRef(false);
 
   useEffect(() => {
-    if (!currentConsent()) setVisible(true);
+    const stored = currentConsent();
+    if (!stored) {
+      setVisible(true);
+    } else {
+      // Re-apply stored consent on every page load so GTM sees the correct state
+      updateGtagConsent(stored.analytics, stored.marketing);
+    }
 
     function handleOpen(e: Event) {
       const opener = (e as CustomEvent<{ opener?: HTMLElement }>).detail?.opener;

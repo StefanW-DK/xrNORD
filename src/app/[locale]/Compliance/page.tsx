@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
 import { motion, useInView, type Variants } from "framer-motion";
@@ -20,6 +20,7 @@ const stagger = {
    HERO — two-column, left-aligned, AI-LABs background style
    ════════════════════════════════════════════════════════════════════════ */
 function Hero({ locale }: { locale: string }) {
+  const en = locale !== "da";
   return (
     <section
       style={{
@@ -101,12 +102,26 @@ function Hero({ locale }: { locale: string }) {
       >
         <div style={{ paddingLeft: "clamp(0px, 4vw, 100px)" }} className="cc-hero-left">
           <motion.h2 variants={fadeUp} style={{
-            fontSize: "clamp(3rem, 5vw, 6rem)", fontWeight: 800, lineHeight: 1.0,
+            fontSize: "clamp(2.8rem, 5vw, 6rem)", fontWeight: 800, lineHeight: 1.05,
             letterSpacing: "-0.03em", color: "rgba(255,255,255,0.75)", margin: "0 0 28px",
           }} className="cc-h2">
-            <span style={{ color: "#22D3EE" }}>See</span> your compliance gaps.{" "}
-            <br />
-            <span style={{ color: "#A855F7" }}>Close</span> them, continuously.
+            {en ? (
+              <>
+                {"From "}
+                <span style={{ backgroundImage: "linear-gradient(135deg, #E879F9 0%, #A855F7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>periodic audit</span>
+                <br />
+                {"to "}
+                <span style={{ backgroundImage: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>continuous compliance.</span>
+              </>
+            ) : (
+              <>
+                {"Fra "}
+                <span style={{ backgroundImage: "linear-gradient(135deg, #E879F9 0%, #A855F7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>periodisk audit</span>
+                <br />
+                {"til "}
+                <span style={{ backgroundImage: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>kontinuerlig compliance.</span>
+              </>
+            )}
           </motion.h2>
 
           <motion.div variants={fadeUp} style={{ margin: "0 0 28px" }}>
@@ -115,14 +130,25 @@ function Hero({ locale }: { locale: string }) {
 
           <motion.h1 variants={fadeUp} style={{
             fontFamily: "var(--font-inter), system-ui, sans-serif",
-            fontSize: "clamp(1rem, 1.3vw, 1.15rem)", fontWeight: 400, lineHeight: 1.7,
-            color: "rgba(255,255,255,0.88)", maxWidth: 650, margin: "0 0 52px", letterSpacing: 0,
+            fontSize: "clamp(1.05rem, 1.5vw, 1.3rem)", fontWeight: 400, lineHeight: 1.65,
+            maxWidth: 600, margin: "0 0 52px", letterSpacing: 0,
+            color: "rgba(255,255,255,0.92)",
           }}>
-            See where your compliance gaps are, empower your people to stay compliant as they work, and let agents carry out the compliance-critical tasks themselves.
+            {en ? (
+              <>
+                <span style={{ color: "rgba(255,255,255,0.55)" }}>Compliance gaps are invisible until the next audit, or until something goes wrong. </span>
+                <span style={{ color: "rgba(255,255,255,0.95)" }}>Now you see the gaps live and employees get help at the moment of need.</span>
+              </>
+            ) : (
+              <>
+                <span style={{ color: "rgba(255,255,255,0.55)" }}>Compliance-gaps er usynlige indtil det næste audit, eller når noget går galt. </span>
+                <span style={{ color: "rgba(255,255,255,0.95)" }}>Nu ser I gapsene live og medarbejdere får hjælp i øjeblikket, når de har brug for det.</span>
+              </>
+            )}
           </motion.h1>
 
-          <motion.div variants={fadeUp} style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
-            <Link href={`/${locale}/contact`} style={{
+          <motion.div variants={fadeUp} style={{ marginTop: 8 }}>
+            <a href="#executive-summary" style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               padding: "16px 30px", borderRadius: 999,
               background: "linear-gradient(135deg, #A855F7, #818CF8)",
@@ -130,17 +156,7 @@ function Hero({ locale }: { locale: string }) {
               fontFamily: "var(--font-geist), system-ui, sans-serif",
               boxShadow: "0 12px 36px rgba(124,111,212,0.35)",
             }}>
-              Start a conversation with xrNORD <span aria-hidden>→</span>
-            </Link>
-            <a href="#read-the-perspective" style={{
-              display: "inline-flex", alignItems: "center", gap: 10,
-              padding: "15px 28px", borderRadius: 999,
-              background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.95)",
-              border: "1px solid rgba(255,255,255,0.22)",
-              fontSize: 15, fontWeight: 500, textDecoration: "none",
-              fontFamily: "var(--font-geist), system-ui, sans-serif",
-            }}>
-              Read the thinking
+              {en ? "Download the Executive Summary" : "Download Executive Summary"} <span aria-hidden>↓</span>
             </a>
           </motion.div>
         </div>
@@ -156,13 +172,25 @@ function Hero({ locale }: { locale: string }) {
               fontSize: 11, fontWeight: 700, letterSpacing: "0.18em",
               textTransform: "uppercase" as const, color: "rgba(255,255,255,0.40)", margin: "0 0 48px",
             }}>
-              How we do it
+              {en ? "How we do it" : "Sådan gør vi det"}
             </p>
 
             {[
-              { name: "See", color: "#22D3EE", desc: "Where your gaps are" },
-              { name: "Help", color: "#818CF8", desc: "Your people, in the moment" },
-              { name: "Automate", color: "#A855F7", desc: "The compliance-critical tasks" },
+              {
+                name: en ? "See" : "Se",
+                color: "#22D3EE",
+                desc: en ? "Always know where your gaps are, across the full standard" : "Kend altid, hvor jeres gaps er, på tværs af hele standarden",
+              },
+              {
+                name: en ? "Help" : "Hjælp",
+                color: "#818CF8",
+                desc: en ? "Employees get the right answer at the moment of doubt" : "Medarbejdere får svaret i tvivlens øjeblik",
+              },
+              {
+                name: en ? "Automate" : "Automatiser",
+                color: "#A855F7",
+                desc: en ? "Critical tasks happen by construction, not memory" : "Kritiske opgaver sker per konstruktion, ikke per hukommelse",
+              },
             ].map(item => (
               <div key={item.name} style={{ marginBottom: 40 }}>
                 <p style={{
@@ -1158,7 +1186,304 @@ function ReadPerspective({ locale }: { locale: string }) {
 }
 
 /* ════════════════════════════════════════════════════════════════════════
-   SECTION 9 — NEXT STEP CTA
+   SECTION 9 — EXECUTIVE SUMMARY GATE
+   ════════════════════════════════════════════════════════════════════════ */
+function ExecutiveSummaryGate({ locale }: { locale: string }) {
+  const en = locale !== "da";
+  const [fields, setFields] = useState({ name: "", email: "", jobTitle: "", consent: false });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/executive-summary", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(fields),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again.");
+    }
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%", boxSizing: "border-box" as const,
+    padding: "13px 16px",
+    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.14)",
+    borderRadius: 10,
+    color: "#fff", fontSize: 15, outline: "none",
+    fontFamily: "var(--font-inter), system-ui, sans-serif",
+    fontWeight: 300,
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: "block", fontSize: 11, fontWeight: 700,
+    letterSpacing: "0.16em", textTransform: "uppercase" as const,
+    color: "rgba(255,255,255,0.45)", marginBottom: 8,
+    fontFamily: "var(--font-geist), system-ui, sans-serif",
+  };
+
+  return (
+    <section id="executive-summary" style={{
+      position: "relative", width: "100%",
+      padding: "clamp(100px, 12vw, 160px) clamp(24px, 6vw, 160px)",
+      background: "linear-gradient(168deg, #04060F 0%, #080B20 40%, #0C0A24 100%)",
+      overflow: "hidden", isolation: "isolate",
+      fontFamily: "var(--font-geist), system-ui, sans-serif",
+    }}>
+      {/* Background accents */}
+      <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+        background: "radial-gradient(ellipse 60% 55% at 4% 50%, rgba(168,85,247,0.14) 0%, transparent 65%)",
+      }} />
+      <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+        background: "radial-gradient(ellipse 50% 45% at 96% 50%, rgba(34,211,238,0.08) 0%, transparent 65%)",
+      }} />
+      <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+        backgroundImage: "linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)",
+        backgroundSize: "64px 64px",
+        maskImage: "radial-gradient(ellipse 70% 60% at 40% 50%, black 30%, transparent 90%)",
+        WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 40% 50%, black 30%, transparent 90%)",
+      }} />
+
+      <div style={{
+        position: "relative", zIndex: 1, width: "100%",
+        display: "grid", gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, 1fr)",
+        gap: "clamp(48px, 7vw, 120px)", alignItems: "center",
+      }} className="cc-gate-grid">
+
+        {/* Left: copy + form */}
+        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+          style={{ paddingLeft: "clamp(0px, 4vw, 100px)" }} className="cc-section-text"
+        >
+          <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
+            <span style={{
+              display: "inline-flex", alignItems: "center", gap: 9,
+              padding: "7px 16px", borderRadius: 999,
+              background: "rgba(168,85,247,0.10)", border: "1px solid rgba(168,85,247,0.35)",
+              fontSize: 11, fontWeight: 700, letterSpacing: "0.20em",
+              textTransform: "uppercase" as const, color: "#C4B5FD",
+            }}>
+              <span style={{ width: 5, height: 5, borderRadius: "50%", background: "linear-gradient(135deg,#A855F7,#22D3EE)", display: "inline-block", flexShrink: 0 }} />
+              {en ? "The executive summary" : "Executive summary"}
+            </span>
+          </motion.div>
+
+          <motion.h2 variants={fadeUp} style={{
+            fontSize: "clamp(2.4rem, 5vw, 4.4rem)", fontWeight: 800, lineHeight: 1.05,
+            letterSpacing: "-0.03em", color: "#fff", margin: "0 0 20px",
+          }}>
+            {en ? (
+              <>Download the{" "}
+                <span style={{ background: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Executive Summary.
+                </span>
+              </>
+            ) : (
+              <>Download{" "}
+                <span style={{ background: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Executive Summary.
+                </span>
+              </>
+            )}
+          </motion.h2>
+
+          <motion.p variants={fadeUp} style={{
+            fontSize: "clamp(1.05rem, 1.3vw, 1.2rem)", lineHeight: 1.65,
+            color: "rgba(255,255,255,0.60)", maxWidth: 540, margin: "0 0 48px",
+            fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
+          }}>
+            {en
+              ? <>A 9-page introduction to the concept, the value it creates, and how to get started. If you want the full documents and a deeper conversation, <a href="/en/contact" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "underline", textDecorationColor: "rgba(168,85,247,0.5)" }}>we are happy to talk.</a></>
+              : <>En 9-siders introduktion til konceptet, den værdiskabelse det medfører, og hvordan man kommer i gang. Ønsker du de fulde dokumenter og en dybere samtale, er du <a href="/da/contact" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "underline", textDecorationColor: "rgba(168,85,247,0.5)" }}>velkommen til at kontakte os.</a></>}
+          </motion.p>
+
+          {status === "success" ? (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              style={{
+                padding: "28px 32px", borderRadius: 16,
+                background: "rgba(168,85,247,0.08)", border: "1px solid rgba(168,85,247,0.30)",
+              }}
+            >
+              <p style={{ fontSize: "clamp(1.1rem, 1.4vw, 1.25rem)", fontWeight: 700, color: "#fff", margin: "0 0 8px" }}>
+                {en ? "It is on its way." : "Den er på vej."}
+              </p>
+              <p style={{ fontSize: "clamp(0.95rem, 1.1vw, 1.05rem)", color: "rgba(255,255,255,0.60)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300, lineHeight: 1.6 }}>
+                {en
+                  ? "Check your inbox in the next few minutes. If you have any questions in the meantime, reach us at info@xrnord.com."
+                  : "Tjek din indbakke inden for de næste få minutter. Hvis du har spørgsmål, kan du nå os på info@xrnord.com."}
+              </p>
+            </motion.div>
+          ) : (
+            <motion.form variants={fadeUp} onSubmit={handleSubmit}
+              style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 500 }}
+            >
+              <div>
+                <label style={labelStyle}>{en ? "Your name" : "Dit navn"}</label>
+                <input
+                  type="text" required autoComplete="name"
+                  value={fields.name}
+                  onChange={e => setFields(f => ({ ...f, name: e.target.value }))}
+                  placeholder={en ? "Jane Smith" : "Jane Smith"}
+                  style={inputStyle}
+                />
+              </div>
+              <div>
+                <label style={labelStyle}>{en ? "Work email" : "Arbejdsemail"}</label>
+                <input
+                  type="email" required autoComplete="email"
+                  value={fields.email}
+                  onChange={e => setFields(f => ({ ...f, email: e.target.value }))}
+                  placeholder={en ? "jane@company.com" : "jane@virksomhed.dk"}
+                  style={inputStyle}
+                />
+              </div>
+              <div>
+                <label style={labelStyle}>{en ? "Your title" : "Din stilling"}</label>
+                <input
+                  type="text" required autoComplete="organization-title"
+                  value={fields.jobTitle}
+                  onChange={e => setFields(f => ({ ...f, jobTitle: e.target.value }))}
+                  placeholder={en ? "Head of Compliance" : "Head of Compliance"}
+                  style={inputStyle}
+                />
+              </div>
+
+              {/* Consent checkbox */}
+              <label style={{
+                display: "flex", alignItems: "flex-start", gap: 12, cursor: "pointer",
+                padding: "16px 18px", borderRadius: 10,
+                background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.10)",
+              }}>
+                <input
+                  type="checkbox"
+                  checked={fields.consent}
+                  onChange={e => setFields(f => ({ ...f, consent: e.target.checked }))}
+                  style={{ marginTop: 2, accentColor: "#A855F7", width: 16, height: 16, flexShrink: 0, cursor: "pointer" }}
+                />
+                <span style={{
+                  fontSize: "clamp(0.82rem, 0.95vw, 0.9rem)", lineHeight: 1.55,
+                  color: "rgba(255,255,255,0.50)",
+                  fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
+                }}>
+                  {en
+                    ? "I am happy for xrNORD to contact me about continuous compliance and how it could apply to my organisation. You can unsubscribe at any time."
+                    : "Jeg er indforstået med at xrNORD kontakter mig om kontinuerlig compliance og hvordan det kan anvendes i min organisation. Du kan til enhver tid framelde dig."}
+                </span>
+              </label>
+
+              {status === "error" && (
+                <p style={{ fontSize: 14, color: "#F87171", margin: 0 }}>{errorMsg}</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                style={{
+                  display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10,
+                  padding: "16px 30px", borderRadius: 999, border: "none", cursor: status === "submitting" ? "wait" : "pointer",
+                  background: status === "submitting"
+                    ? "rgba(168,85,247,0.5)"
+                    : "linear-gradient(135deg, #A855F7, #818CF8)",
+                  color: "#fff", fontSize: 15, fontWeight: 600,
+                  fontFamily: "var(--font-geist), system-ui, sans-serif",
+                  boxShadow: status === "submitting" ? "none" : "0 12px 36px rgba(124,111,212,0.35)",
+                  transition: "opacity 0.2s",
+                }}
+              >
+                {status === "submitting"
+                  ? (en ? "Sending..." : "Sender...")
+                  : (en ? "Send me the summary" : "Send mig summary")}
+              </button>
+
+              <p style={{
+                fontSize: 12, color: "rgba(255,255,255,0.28)", margin: 0,
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
+              }}>
+                {en
+                  ? "Your details are used only to send you this document, and to follow up if you consented above."
+                  : "Dine oplysninger bruges kun til at sende dig dette dokument, og til opfølgning hvis du har givet samtykke ovenfor."}
+              </p>
+            </motion.form>
+          )}
+        </motion.div>
+
+        {/* Right: document cover preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        >
+          <div style={{ position: "relative", width: "100%", maxWidth: 360 }}>
+            {/* Shadow layer underneath */}
+            <div aria-hidden style={{
+              position: "absolute", top: 24, left: 12, right: -12, bottom: -24,
+              borderRadius: 16,
+              background: "rgba(168,85,247,0.25)",
+              filter: "blur(28px)",
+            }} />
+            {/* Document image */}
+            <img
+              src="/images/compliance-executive-summary-cover.webp"
+              alt="Executive Summary: Compliance as a Living Capability"
+              style={{
+                position: "relative", zIndex: 1,
+                width: "100%", height: "auto", display: "block",
+                borderRadius: 12,
+                boxShadow: "0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08)",
+                transform: "rotate(1.5deg)",
+              }}
+            />
+            {/* Subtle top shine */}
+            <div aria-hidden style={{
+              position: "absolute", top: 0, left: 0, right: 0, height: "30%", zIndex: 2,
+              borderRadius: "12px 12px 0 0",
+              background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%)",
+              pointerEvents: "none",
+            }} />
+            {/* Label below */}
+            <p style={{
+              textAlign: "center", margin: "20px 0 0",
+              fontSize: 11, fontWeight: 700, letterSpacing: "0.18em",
+              textTransform: "uppercase" as const,
+              color: "rgba(255,255,255,0.35)",
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
+            }}>
+              {en ? "Continuous Compliance Framework · xrNORD" : "Continuous Compliance Framework · xrNORD"}
+            </p>
+          </div>
+        </motion.div>
+      </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+@media (max-width: 900px) {
+  .cc-gate-grid { grid-template-columns: 1fr !important; }
+  .cc-gate-grid > div:last-child { display: none !important; }
+}
+input::placeholder { color: rgba(255,255,255,0.25); }
+input:focus { border-color: rgba(168,85,247,0.55) !important; }
+      ` }} />
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   SECTION 10 — NEXT STEP CTA
    ════════════════════════════════════════════════════════════════════════ */
 function NextStepCta({ locale }: { locale: string }) {
   return (
@@ -1252,6 +1577,7 @@ export default function CompliancePage() {
       <Rollout locale={locale} />
       <ValueCards locale={locale} />
       <ReadPerspective locale={locale} />
+      <ExecutiveSummaryGate locale={locale} />
       <NextStepCta locale={locale} />
     </main>
   );
