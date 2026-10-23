@@ -1261,7 +1261,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
         position: "relative", zIndex: 1,
         width: "100%", maxWidth: "1280px", margin: "0 auto",
         display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-        gap: "clamp(40px, 4vw, 80px)", alignItems: "start",
+        gap: "clamp(60px, 6vw, 120px)", alignItems: "start",
       }} className="cc-gate-grid">
 
         {/* Left: copy + form */}
