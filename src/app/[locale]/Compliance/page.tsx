@@ -294,17 +294,17 @@ function TheProblem({ locale }: { locale: string }) {
   return (
     <section style={{
       position: "relative", width: "100%",
-      padding: "clamp(120px, 14vw, 180px) clamp(24px, 6vw, 160px) clamp(140px, 16vw, 220px)",
+      padding: "clamp(120px, 14vw, 180px) 0 clamp(120px, 14vw, 180px)",
       background: "linear-gradient(168deg, #04060F 0%, #070A1F 50%, #0C0A24 100%)",
       overflow: "hidden", isolation: "isolate",
       fontFamily: "var(--font-geist), system-ui, sans-serif",
     }}>
       {/* bg accents */}
       <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
-        background: "radial-gradient(ellipse 55% 50% at 95% 5%, rgba(99,102,241,0.07) 0%, transparent 65%)",
+        background: "radial-gradient(ellipse 60% 50% at 100% 0%, rgba(99,102,241,0.09) 0%, transparent 60%)",
       }} />
       <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
-        background: "radial-gradient(ellipse 50% 45% at 5% 95%, rgba(168,85,247,0.09) 0%, transparent 65%)",
+        background: "radial-gradient(ellipse 50% 40% at 0% 100%, rgba(168,85,247,0.10) 0%, transparent 60%)",
       }} />
 
       <div style={{ position: "relative", zIndex: 1 }}>
@@ -312,69 +312,73 @@ function TheProblem({ locale }: { locale: string }) {
         {/* ── PART 1: Headline left + Graph right ── */}
         <div className="problem-top-grid" style={{
           display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.15fr)",
-          gap: "clamp(40px, 6vw, 100px)",
+          gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.3fr)",
+          gap: "clamp(48px, 6vw, 100px)",
           alignItems: "center",
-          marginBottom: "clamp(100px, 16vw, 180px)",
+          marginBottom: "clamp(100px, 14vw, 160px)",
+          padding: "0 clamp(24px, 6vw, 160px)",
         }}>
 
           {/* LEFT: headline */}
           <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}>
 
-            <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
+            <motion.div variants={fadeUp} style={{ marginBottom: 32 }}>
               <span style={{
                 display: "inline-flex", alignItems: "center", gap: 9,
-                padding: "7px 16px", borderRadius: 999,
-                background: "rgba(168,85,247,0.12)", border: "1px solid rgba(168,85,247,0.35)",
-                fontSize: 11, fontWeight: 700, letterSpacing: "0.20em",
-                textTransform: "uppercase" as const, color: "#C4B5FD",
+                padding: "6px 14px", borderRadius: 999,
+                background: "rgba(168,85,247,0.10)", border: "1px solid rgba(168,85,247,0.28)",
+                fontSize: 10, fontWeight: 700, letterSpacing: "0.22em",
+                textTransform: "uppercase" as const, color: "rgba(196,181,253,0.8)",
               }}>
-                <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#A855F7", display: "inline-block", flexShrink: 0 }} />
+                <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#A855F7", display: "inline-block", flexShrink: 0 }} />
                 {en ? "The problem" : "Problemet"}
               </span>
             </motion.div>
 
             <motion.h2 variants={fadeUp} style={{
-              fontSize: "clamp(2.6rem, 5vw, 4.8rem)", fontWeight: 800, lineHeight: 1.05,
-              letterSpacing: "-0.035em", margin: "0 0 40px",
+              fontSize: "clamp(3rem, 5.5vw, 5.5rem)", fontWeight: 800, lineHeight: 1.0,
+              letterSpacing: "-0.04em", margin: "0 0 36px",
             }}>
-              <span style={{ color: "#fff" }}>
+              <span style={{ color: "#fff", display: "block" }}>
                 {en ? "You think you're compliant." : "Du tror du er compliant."}
               </span>
-              <br />
               <span style={{
                 background: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                display: "block",
               }}>
                 {en ? "You're probably not." : "Det er du sandsynligvis ikke."}
               </span>
             </motion.h2>
 
-            <motion.div variants={fadeUp} style={{
-              padding: "20px 28px",
-              borderLeft: "3px solid rgba(168,85,247,0.60)",
-              background: "rgba(168,85,247,0.05)", borderRadius: "0 12px 12px 0",
+            <motion.p variants={fadeUp} style={{
+              fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)", lineHeight: 1.65, fontWeight: 400,
+              color: "rgba(255,255,255,0.65)", margin: 0,
+              fontFamily: "var(--font-inter), system-ui, sans-serif", fontStyle: "italic",
+              paddingLeft: 20, borderLeft: "2px solid rgba(168,85,247,0.50)",
+              maxWidth: 480,
             }}>
-              <p style={{
-                fontSize: "clamp(1.0rem, 1.3vw, 1.2rem)", lineHeight: 1.6, fontWeight: 400,
-                color: "rgba(255,255,255,0.85)", margin: 0,
-                fontFamily: "var(--font-inter), system-ui, sans-serif", fontStyle: "italic",
-              }}>
-                {en
-                  ? "Compliance is an illusion if it isn't built into daily work."
-                  : "Compliance er en illusion, hvis den ikke er bygget ind i det daglige arbejde."}
-              </p>
-            </motion.div>
+              {en
+                ? "Compliance is an illusion if it isn't built into daily work."
+                : "Compliance er en illusion, hvis den ikke er bygget ind i det daglige arbejde."}
+            </motion.p>
           </motion.div>
 
           {/* RIGHT: graph */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            style={{ position: "relative" }}
           >
-            <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg"
-              style={{ width: "100%", height: "auto", display: "block", overflow: "visible" }}
+            {/* subtle ambient glow under graph */}
+            <div aria-hidden style={{
+              position: "absolute", bottom: -20, left: "15%", right: "15%", height: 80,
+              background: "radial-gradient(ellipse, rgba(129,140,248,0.18) 0%, transparent 70%)",
+              filter: "blur(24px)", pointerEvents: "none",
+            }} />
+            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg"
+              style={{ width: "100%", height: "auto", display: "block", overflow: "visible", position: "relative" }}
               aria-label={en ? "The audit cycle: compliance drifts below the requirement line, then spikes before each audit" : "Audit-cyklussen: compliance drifter under kravlinjen og stiger markant inden hver audit"}
             >
               <defs>
@@ -384,108 +388,125 @@ function TheProblem({ locale }: { locale: string }) {
                   <stop offset="100%" stopColor="#22D3EE"/>
                 </linearGradient>
                 <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#A855F7" stopOpacity="0.14"/>
+                  <stop offset="0%" stopColor="#A855F7" stopOpacity="0.16"/>
                   <stop offset="100%" stopColor="#A855F7" stopOpacity="0"/>
                 </linearGradient>
               </defs>
 
-              <line x1="0" y1="70" x2="800" y2="70" stroke="rgba(255,255,255,0.18)" strokeWidth="1" strokeDasharray="6 4"/>
-              <text x="810" y="74" fill="rgba(255,255,255,0.35)" fontSize="10" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "Required" : "Krav"}</text>
+              <line x1="0" y1="70" x2="800" y2="70" stroke="rgba(255,255,255,0.12)" strokeWidth="1" strokeDasharray="5 5"/>
+              <text x="812" y="74" fill="rgba(255,255,255,0.30)" fontSize="9" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "Required" : "Krav"}</text>
 
               <motion.path
-                d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165 L 800,200 L 0,200 Z"
+                d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165 L 800,220 L 0,220 Z"
                 fill="url(#areaGrad)"
                 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-                viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.3 }}
+                viewport={{ once: true }} transition={{ duration: 1.4, delay: 0.2 }}
               />
               <motion.path
                 d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165"
-                fill="none" stroke="url(#lineGrad)" strokeWidth="2.5" strokeLinecap="round"
+                fill="none" stroke="url(#lineGrad)" strokeWidth="2" strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 whileInView={{ pathLength: 1, opacity: 1 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ pathLength: { duration: 2.2, ease: "easeInOut" }, opacity: { duration: 0.4 } }}
+                transition={{ pathLength: { duration: 2.4, ease: "easeInOut" }, opacity: { duration: 0.3 } }}
               />
 
               {[230, 550].map((x, i) => (
                 <g key={i}>
-                  <line x1={x} y1="22" x2={x} y2="185" stroke="rgba(255,255,255,0.10)" strokeWidth="1" strokeDasharray="3 3"/>
-                  <motion.text x={x} y="17" textAnchor="middle"
-                    fill="rgba(255,255,255,0.35)" fontSize="9" fontWeight="700" letterSpacing="0.15em"
+                  <line x1={x} y1="20" x2={x} y2="200" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="3 4"/>
+                  <motion.text x={x} y="14" textAnchor="middle"
+                    fill="rgba(255,255,255,0.28)" fontSize="8" fontWeight="700" letterSpacing="0.18em"
                     fontFamily="var(--font-geist), system-ui, sans-serif"
                     initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-                    transition={{ delay: 0.6 + i * 0.4 }}
+                    transition={{ delay: 0.8 + i * 0.4 }}
                   >AUDIT</motion.text>
                 </g>
               ))}
 
-              <line x1="0" y1="185" x2="800" y2="185" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-              <text x="0" y="198" fill="rgba(255,255,255,0.25)" fontSize="9" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "← time →" : "← tid →"}</text>
-              <text x="-5" y="140" fill="rgba(255,255,255,0.25)" fontSize="9" fontFamily="var(--font-inter), system-ui, sans-serif"
-                transform="rotate(-90 -5 140)" textAnchor="middle">compliance</text>
+              <line x1="0" y1="200" x2="800" y2="200" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+              <text x="0" y="215" fill="rgba(255,255,255,0.20)" fontSize="8" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "← time →" : "← tid →"}</text>
 
-              {[{ x: 110, delay: 1.8 }, { x: 390, delay: 2.2 }, { x: 690, delay: 2.6 }].map(({ x, delay }) => (
-                <motion.text key={x} x={x} y="182" textAnchor="middle"
-                  fill="rgba(168,85,247,0.55)" fontSize="9" fontWeight="700" letterSpacing="0.12em"
+              {[{ x: 110, delay: 2.0 }, { x: 390, delay: 2.4 }, { x: 690, delay: 2.8 }].map(({ x, delay }) => (
+                <motion.text key={x} x={x} y="198" textAnchor="middle"
+                  fill="rgba(168,85,247,0.45)" fontSize="8" fontWeight="700" letterSpacing="0.14em"
                   fontFamily="var(--font-geist), system-ui, sans-serif"
                   initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
                   transition={{ delay }}
                 >DRIFT</motion.text>
               ))}
             </svg>
-
-            <p style={{
-              marginTop: 12,
-              fontSize: 11, fontWeight: 400, color: "rgba(255,255,255,0.25)",
-              fontFamily: "var(--font-inter), system-ui, sans-serif",
-            }}>
-              {en
-                ? "The audit cycle. Compliance rises before each audit, then silently drifts below the requirement line."
-                : "Audit-cyklussen. Compliance stiger inden hver audit og drifter derefter stille og roligt under kravniveauet."}
-            </p>
           </motion.div>
         </div>
 
-        {/* ── PART 2: Alternating problem texts — no cards ── */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "clamp(80px, 10vw, 130px)" }}>
+        {/* ── PART 2: Alternating — full-width with gradient separator lines ── */}
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {problems.map((p, i) => {
             const isRight = i % 2 !== 0;
             return (
               <motion.div key={i}
-                initial={{ x: isRight ? 60 : -60, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-                style={{
-                  maxWidth: 540,
-                  marginLeft: isRight ? "auto" : 0,
-                  marginRight: isRight ? 0 : "auto",
-                  paddingLeft: isRight ? 0 : "clamp(0px, 4vw, 100px)",
-                  paddingRight: isRight ? "clamp(0px, 4vw, 100px)" : 0,
-                  textAlign: isRight ? "right" as const : "left" as const,
-                }}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                style={{ position: "relative", width: "100%" }}
               >
+                {/* Full-width gradient separator — bright from the text side */}
+                <div aria-hidden style={{
+                  position: "absolute", top: 0, left: 0, right: 0, height: 1,
+                  background: isRight
+                    ? "linear-gradient(90deg, transparent 15%, rgba(129,140,248,0.12) 45%, rgba(168,85,247,0.65) 100%)"
+                    : "linear-gradient(90deg, rgba(168,85,247,0.65) 0%, rgba(129,140,248,0.12) 55%, transparent 85%)",
+                }} />
+
+                {/* Content block — aligned to correct side */}
                 <div style={{
-                  fontSize: "clamp(4rem, 7vw, 7rem)", fontWeight: 900, lineHeight: 0.9,
-                  color: "rgba(168,85,247,0.08)", marginBottom: 16,
-                  letterSpacing: "-0.05em", userSelect: "none" as const,
-                }}>0{i + 1}</div>
-                <p style={{
-                  fontSize: 10, fontWeight: 700, letterSpacing: "0.20em",
-                  textTransform: "uppercase" as const,
-                  color: "rgba(168,85,247,0.75)", margin: "0 0 14px",
-                  fontFamily: "var(--font-geist), system-ui, sans-serif",
-                }}>{p.label}</p>
-                <h3 style={{
-                  fontSize: "clamp(1.5rem, 2.4vw, 2rem)", fontWeight: 700, lineHeight: 1.2,
-                  color: "#fff", margin: "0 0 18px",
-                  letterSpacing: "-0.025em",
-                }}>{p.heading}</h3>
-                <p style={{
-                  fontSize: "clamp(0.95rem, 1.1vw, 1.05rem)", lineHeight: 1.75,
-                  color: "rgba(255,255,255,0.48)", margin: 0,
-                  fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
-                }}>{p.body}</p>
+                  maxWidth: 680,
+                  marginLeft: isRight ? "auto" : 0,
+                  padding: "clamp(56px, 7vw, 84px) clamp(24px, 6vw, 160px)",
+                  paddingBottom: "clamp(56px, 7vw, 84px)",
+                  paddingLeft: isRight ? 0 : "clamp(24px, 6vw, 160px)",
+                  paddingRight: isRight ? "clamp(24px, 6vw, 160px)" : 0,
+                }}>
+
+                  {/* Ordinal — gradient, prominent */}
+                  <div style={{
+                    fontSize: "clamp(5.5rem, 9vw, 10rem)", fontWeight: 900, lineHeight: 0.82,
+                    letterSpacing: "-0.06em", userSelect: "none" as const,
+                    marginBottom: 20,
+                    background: isRight
+                      ? "linear-gradient(135deg, rgba(34,211,238,0.22) 0%, rgba(129,140,248,0.10) 100%)"
+                      : "linear-gradient(135deg, rgba(168,85,247,0.22) 0%, rgba(129,140,248,0.08) 100%)",
+                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                    textAlign: isRight ? "right" as const : "left" as const,
+                  }}>0{i + 1}</div>
+
+                  {/* Label */}
+                  <p style={{
+                    fontSize: 10, fontWeight: 700, letterSpacing: "0.22em",
+                    textTransform: "uppercase" as const,
+                    color: "#A855F7", margin: "0 0 16px",
+                    fontFamily: "var(--font-geist), system-ui, sans-serif",
+                    textAlign: isRight ? "right" as const : "left" as const,
+                  }}>{p.label}</p>
+
+                  {/* Heading */}
+                  <h3 style={{
+                    fontSize: "clamp(2rem, 3.2vw, 3rem)", fontWeight: 700, lineHeight: 1.12,
+                    color: "#fff", margin: "0 0 22px",
+                    letterSpacing: "-0.035em",
+                    textAlign: isRight ? "right" as const : "left" as const,
+                  }}>{p.heading}</h3>
+
+                  {/* Body */}
+                  <p style={{
+                    fontSize: "clamp(1rem, 1.2vw, 1.1rem)", lineHeight: 1.78,
+                    color: "rgba(255,255,255,0.42)", margin: 0,
+                    fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
+                    maxWidth: 440,
+                    marginLeft: isRight ? "auto" : 0,
+                    textAlign: isRight ? "right" as const : "left" as const,
+                  }}>{p.body}</p>
+                </div>
               </motion.div>
             );
           })}
