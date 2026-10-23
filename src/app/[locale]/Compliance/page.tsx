@@ -1238,7 +1238,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
   return (
     <section id="executive-summary" style={{
       position: "relative", width: "100%",
-      padding: "clamp(100px, 12vw, 160px) clamp(24px, 10vw, 220px)",
+      padding: "clamp(100px, 12vw, 160px) clamp(24px, 4vw, 80px)",
       background: "linear-gradient(168deg, #04060F 0%, #080B20 40%, #0C0A24 100%)",
       overflow: "hidden", isolation: "isolate",
       fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -1258,7 +1258,8 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
       }} />
 
       <div style={{
-        position: "relative", zIndex: 1, width: "100%",
+        position: "relative", zIndex: 1,
+        width: "100%", maxWidth: "1280px", margin: "0 auto",
         display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
         gap: "clamp(40px, 4vw, 80px)", alignItems: "start",
       }} className="cc-gate-grid">
@@ -1415,7 +1416,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
           initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start", paddingTop: "clamp(40px, 5vw, 100px)" }}
+          style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", paddingTop: "clamp(40px, 5vw, 100px)" }}
         >
           <div style={{ position: "relative", width: "100%", maxWidth: 440 }}>
             {/* Shadow layer underneath */}
