@@ -252,6 +252,310 @@ function Hero({ locale }: { locale: string }) {
 }
 
 /* ════════════════════════════════════════════════════════════════════════
+   SECTION 2 — THE PROBLEM (replaces CapabilityBridge + ThreeGaps)
+   ════════════════════════════════════════════════════════════════════════ */
+function TheProblem({ locale }: { locale: string }) {
+  const en = locale !== "da";
+  const graphRef = useRef<SVGPathElement>(null);
+  const inView = useInView({ current: graphRef.current ? graphRef.current.closest("section") as HTMLElement : null }, { once: true, margin: "-80px" });
+
+  const problems = en ? [
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          <path d="M11 8v6M8 11h6" opacity="0.5"/>
+        </svg>
+      ),
+      label: "Visibility",
+      heading: "You can't see it until the audit finds it.",
+      body: "Compliance gaps open slowly and silently. By the time an audit surfaces one, it has been there for months.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      ),
+      label: "Guidance",
+      heading: "Your people work without knowing they're drifting.",
+      body: "Compliance lives in documents. Daily work happens in the moment. The two rarely meet.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      ),
+      label: "Execution",
+      heading: "The compliant outcome depends on someone remembering.",
+      body: "Manual evidence, recurring sign-offs, recurring tasks — each one is a quiet point of failure that accumulates.",
+    },
+  ] : [
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          <path d="M11 8v6M8 11h6" opacity="0.5"/>
+        </svg>
+      ),
+      label: "Synlighed",
+      heading: "Du finder det ikke, før din auditor gør.",
+      body: "Compliance-huller åbner sig langsomt og lydløst. Når auditen afslører et, har det eksisteret i måneder.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      ),
+      label: "Vejledning",
+      heading: "Dine medarbejdere ved ikke, at de er ved at drifte.",
+      body: "Compliance lever i dokumenter. Det daglige arbejde sker i øjeblikket. De to mødes sjældent.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      ),
+      label: "Udførelse",
+      heading: "Det compliant resultat afhænger af, at nogen husker.",
+      body: "Manuel dokumentation, tilbagevendende opgaver, sign-offs — hvert enkelt er et stille fejlpunkt, der akkumulerer.",
+    },
+  ];
+
+  return (
+    <section style={{
+      position: "relative", width: "100%",
+      padding: "clamp(100px, 12vw, 160px) clamp(24px, 6vw, 160px)",
+      background: "linear-gradient(168deg, #04060F 0%, #070A1F 50%, #0C0A24 100%)",
+      overflow: "hidden", isolation: "isolate",
+      fontFamily: "var(--font-geist), system-ui, sans-serif",
+    }}>
+      {/* bg accents */}
+      <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+        background: "radial-gradient(ellipse 55% 50% at 95% 5%, rgba(99,102,241,0.07) 0%, transparent 65%)",
+      }} />
+      <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+        background: "radial-gradient(ellipse 50% 45% at 5% 95%, rgba(168,85,247,0.09) 0%, transparent 65%)",
+      }} />
+
+      <div style={{ position: "relative", zIndex: 1 }}>
+
+        {/* ── Headline ── */}
+        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}
+          style={{ paddingLeft: "clamp(0px, 4vw, 100px)", marginBottom: "clamp(88px, 10vw, 130px)", maxWidth: 900 }}>
+
+          <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
+            <span style={{
+              display: "inline-flex", alignItems: "center", gap: 9,
+              padding: "7px 16px", borderRadius: 999,
+              background: "rgba(168,85,247,0.12)", border: "1px solid rgba(168,85,247,0.35)",
+              fontSize: 11, fontWeight: 700, letterSpacing: "0.20em",
+              textTransform: "uppercase" as const, color: "#C4B5FD",
+            }}>
+              <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#A855F7", display: "inline-block", flexShrink: 0 }} />
+              {en ? "The problem" : "Problemet"}
+            </span>
+          </motion.div>
+
+          <motion.h2 variants={fadeUp} style={{
+            fontSize: "clamp(2.8rem, 6vw, 5.2rem)", fontWeight: 800, lineHeight: 1.0,
+            letterSpacing: "-0.035em", margin: "0 0 32px",
+          }}>
+            <span style={{ color: "#fff" }}>
+              {en ? "You think you're compliant." : "Du tror du er compliant."}
+            </span>
+            <br />
+            <span style={{
+              background: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)",
+              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+            }}>
+              {en ? "You're probably not." : "Det er du sandsynligvis ikke."}
+            </span>
+          </motion.h2>
+
+          <motion.div variants={fadeUp} style={{
+            maxWidth: 680, padding: "20px 28px",
+            borderLeft: "3px solid rgba(168,85,247,0.60)",
+            background: "rgba(168,85,247,0.05)", borderRadius: "0 12px 12px 0",
+          }}>
+            <p style={{
+              fontSize: "clamp(1.1rem, 1.5vw, 1.3rem)", lineHeight: 1.6, fontWeight: 400,
+              color: "rgba(255,255,255,0.85)", margin: 0,
+              fontFamily: "var(--font-inter), system-ui, sans-serif", fontStyle: "italic",
+            }}>
+              {en
+                ? "Compliance is an illusion if it isn't built into daily work."
+                : "Compliance er en illusion, hvis den ikke er bygget ind i det daglige arbejde."}
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* ── Audit-cycle graph ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8 }}
+          style={{ paddingLeft: "clamp(0px, 4vw, 100px)", marginBottom: "clamp(88px, 10vw, 130px)" }}
+        >
+          <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg"
+            style={{ width: "100%", maxWidth: 700, height: "auto", display: "block", overflow: "visible" }}
+            aria-label={en ? "The audit cycle: compliance drifts below the requirement line, then spikes before each audit" : "Audit-cyklussen: compliance drifter under kravlinjen og stiger markant inden hver audit"}
+          >
+            <defs>
+              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#A855F7"/>
+                <stop offset="55%" stopColor="#818CF8"/>
+                <stop offset="100%" stopColor="#22D3EE"/>
+              </linearGradient>
+              <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#A855F7" stopOpacity="0.14"/>
+                <stop offset="100%" stopColor="#A855F7" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
+
+            {/* Requirement line */}
+            <line x1="0" y1="70" x2="800" y2="70" stroke="rgba(255,255,255,0.18)" strokeWidth="1" strokeDasharray="6 4"/>
+            <text x="810" y="74" fill="rgba(255,255,255,0.35)" fontSize="10" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "Required" : "Krav"}</text>
+
+            {/* Area under curve */}
+            <motion.path
+              d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165 L 800,200 L 0,200 Z"
+              fill="url(#areaGrad)"
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+              viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.3 }}
+            />
+
+            {/* Main line */}
+            <motion.path
+              d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165"
+              fill="none" stroke="url(#lineGrad)" strokeWidth="2.5" strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ pathLength: { duration: 2.2, ease: "easeInOut" }, opacity: { duration: 0.4 } }}
+            />
+
+            {/* Audit markers */}
+            {[230, 550].map((x, i) => (
+              <g key={i}>
+                <line x1={x} y1="22" x2={x} y2="185" stroke="rgba(255,255,255,0.10)" strokeWidth="1" strokeDasharray="3 3"/>
+                <motion.text x={x} y="17" textAnchor="middle"
+                  fill="rgba(255,255,255,0.35)" fontSize="9" fontWeight="700" letterSpacing="0.15em"
+                  fontFamily="var(--font-geist), system-ui, sans-serif"
+                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+                  transition={{ delay: 0.6 + i * 0.4 }}
+                >AUDIT</motion.text>
+              </g>
+            ))}
+
+            {/* Axes */}
+            <line x1="0" y1="185" x2="800" y2="185" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
+            <text x="0" y="198" fill="rgba(255,255,255,0.25)" fontSize="9" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "← time →" : "← tid →"}</text>
+
+            {/* Compliance label */}
+            <text x="-5" y="140" fill="rgba(255,255,255,0.25)" fontSize="9" fontFamily="var(--font-inter), system-ui, sans-serif"
+              transform="rotate(-90 -5 140)" textAnchor="middle">
+              {en ? "compliance" : "compliance"}
+            </text>
+
+            {/* Drift labels */}
+            <motion.text x="110" y="182" textAnchor="middle"
+              fill="rgba(168,85,247,0.55)" fontSize="9" fontWeight="700" letterSpacing="0.12em"
+              fontFamily="var(--font-geist), system-ui, sans-serif"
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+              transition={{ delay: 1.8 }}
+            >DRIFT</motion.text>
+            <motion.text x="390" y="182" textAnchor="middle"
+              fill="rgba(168,85,247,0.55)" fontSize="9" fontWeight="700" letterSpacing="0.12em"
+              fontFamily="var(--font-geist), system-ui, sans-serif"
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+              transition={{ delay: 2.2 }}
+            >DRIFT</motion.text>
+            <motion.text x="690" y="182" textAnchor="middle"
+              fill="rgba(168,85,247,0.55)" fontSize="9" fontWeight="700" letterSpacing="0.12em"
+              fontFamily="var(--font-geist), system-ui, sans-serif"
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+              transition={{ delay: 2.6 }}
+            >DRIFT</motion.text>
+          </svg>
+
+          <p style={{
+            marginTop: 16, paddingLeft: 4,
+            fontSize: 12, fontWeight: 400, color: "rgba(255,255,255,0.28)",
+            fontFamily: "var(--font-inter), system-ui, sans-serif",
+          }}>
+            {en
+              ? "The audit cycle. Compliance rises before each audit, then silently drifts below the requirement line."
+              : "Audit-cyklussen. Compliance stiger inden hver audit og drifter derefter stille og roligt under kravniveauet."}
+          </p>
+        </motion.div>
+
+        {/* ── Three problem cards ── */}
+        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}
+          style={{
+            paddingLeft: "clamp(0px, 4vw, 100px)",
+            display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gap: "clamp(16px, 2vw, 28px)",
+          }}
+        >
+          {problems.map((p, i) => (
+            <motion.div key={i} variants={fadeUp} style={{
+              padding: "28px 28px 32px",
+              borderRadius: 16,
+              background: "rgba(255,255,255,0.03)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              display: "flex", flexDirection: "column", gap: 16,
+            }}>
+              <div style={{
+                width: 44, height: 44, borderRadius: 12, flexShrink: 0,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                background: "rgba(168,85,247,0.10)", color: "#C4B5FD",
+              }}>
+                {p.icon}
+              </div>
+              <div>
+                <p style={{
+                  fontSize: 10, fontWeight: 700, letterSpacing: "0.18em",
+                  textTransform: "uppercase" as const,
+                  color: "rgba(168,85,247,0.75)", margin: "0 0 10px",
+                  fontFamily: "var(--font-geist), system-ui, sans-serif",
+                }}>{p.label}</p>
+                <h3 style={{
+                  fontSize: "clamp(1.05rem, 1.3vw, 1.15rem)", fontWeight: 700, lineHeight: 1.3,
+                  color: "#fff", margin: "0 0 12px",
+                  letterSpacing: "-0.01em",
+                }}>{p.heading}</h3>
+                <p style={{
+                  fontSize: "clamp(0.9rem, 1.0vw, 0.95rem)", lineHeight: 1.65,
+                  color: "rgba(255,255,255,0.50)", margin: 0,
+                  fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
+                }}>{p.body}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* mobile: stack cards */}
+        <style dangerouslySetInnerHTML={{ __html: `
+@media (max-width: 768px) {
+  .problem-cards { grid-template-columns: 1fr !important; }
+}
+        ` }} />
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════════════
    BRIDGE — animated See / Help / Automate diagram
    ════════════════════════════════════════════════════════════════════════ */
 function CapabilityBridge() {
@@ -1566,8 +1870,7 @@ export default function CompliancePage() {
     <main style={{ background: "#04060F" }}>
       <Navbar />
       <Hero locale={locale} />
-      <CapabilityBridge />
-      <ThreeGaps locale={locale} />
+      <TheProblem locale={locale} />
       <SeeHelpAutomate locale={locale} />
       <ConceptToCapability locale={locale} />
       <AgenticAudit locale={locale} />
