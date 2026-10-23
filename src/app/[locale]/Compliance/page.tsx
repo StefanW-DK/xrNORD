@@ -1265,20 +1265,8 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
 
         {/* Left: copy + form */}
         <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-          style={{ paddingLeft: "clamp(0px, 2vw, 60px)" }} className="cc-section-text"
+          style={{ paddingLeft: "clamp(0px, 5vw, 140px)" }} className="cc-section-text"
         >
-          <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
-            <span style={{
-              display: "inline-flex", alignItems: "center", gap: 9,
-              padding: "7px 16px", borderRadius: 999,
-              background: "rgba(168,85,247,0.10)", border: "1px solid rgba(168,85,247,0.35)",
-              fontSize: 11, fontWeight: 700, letterSpacing: "0.20em",
-              textTransform: "uppercase" as const, color: "#C4B5FD",
-            }}>
-              <span style={{ width: 5, height: 5, borderRadius: "50%", background: "linear-gradient(135deg,#A855F7,#22D3EE)", display: "inline-block", flexShrink: 0 }} />
-              {en ? "The executive summary" : "Executive summary"}
-            </span>
-          </motion.div>
 
           <motion.h2 variants={fadeUp} style={{
             fontSize: "clamp(2.4rem, 5vw, 4.4rem)", fontWeight: 800, lineHeight: 1.05,
@@ -1427,9 +1415,9 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
           initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+          style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start", paddingTop: "clamp(40px, 5vw, 100px)" }}
         >
-          <div style={{ position: "relative", width: "100%", maxWidth: 600 }}>
+          <div style={{ position: "relative", width: "100%", maxWidth: 440 }}>
             {/* Shadow layer underneath */}
             <div aria-hidden style={{
               position: "absolute", top: 24, left: 12, right: -12, bottom: -24,
