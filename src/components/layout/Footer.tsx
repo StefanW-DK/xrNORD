@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
@@ -38,6 +38,7 @@ function NewsletterForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [focused, setFocused] = useState(false);
+  const startedAt = useRef(Date.now());
 
   const isDa = locale === "da";
 
@@ -54,6 +55,8 @@ function NewsletterForm() {
           email,
           locale,
           sourcePage: typeof window !== "undefined" ? window.location.pathname : "/",
+          startedAt: startedAt.current,
+          website: "",
         }),
       });
       const data = await res.json();
