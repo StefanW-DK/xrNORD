@@ -307,16 +307,16 @@ function TheProblem({ locale }: { locale: string }) {
         background: "radial-gradient(ellipse 50% 40% at 0% 100%, rgba(168,85,247,0.10) 0%, transparent 60%)",
       }} />
 
-      <div style={{ position: "relative", zIndex: 1 }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 1520, margin: "0 auto" }}>
 
         {/* ── PART 1: Headline left + Graph right ── */}
         <div className="problem-top-grid" style={{
           display: "grid",
           gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.3fr)",
           gap: "clamp(48px, 6vw, 100px)",
-          alignItems: "center",
+          alignItems: "start",
           marginBottom: "clamp(100px, 14vw, 160px)",
-          padding: "0 clamp(24px, 6vw, 160px)",
+          padding: "0 clamp(24px, 5vw, 150px)",
         }}>
 
           {/* LEFT: headline */}
@@ -369,7 +369,7 @@ function TheProblem({ locale }: { locale: string }) {
             initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            style={{ position: "relative" }}
+            style={{ position: "relative", paddingTop: "clamp(40px, 7vw, 130px)" }}
           >
             {/* subtle ambient glow under graph */}
             <div aria-hidden style={{
@@ -438,10 +438,11 @@ function TheProblem({ locale }: { locale: string }) {
           </motion.div>
         </div>
 
-        {/* ── PART 2: Alternating — full-width with gradient separator lines ── */}
+        {/* ── PART 2: Alternating — gradient separator lines, pain name as display ── */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           {problems.map((p, i) => {
             const isRight = i % 2 !== 0;
+            const inset = "clamp(24px, 6vw, 150px)";
             return (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 28 }}
@@ -450,56 +451,48 @@ function TheProblem({ locale }: { locale: string }) {
                 transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
                 style={{ position: "relative", width: "100%" }}
               >
-                {/* Full-width gradient separator — bright from the text side */}
+                {/* Gradient separator — bright from the text side, aligned to content */}
                 <div aria-hidden style={{
-                  position: "absolute", top: 0, left: 0, right: 0, height: 1,
+                  position: "absolute", top: 0,
+                  left: isRight ? 0 : inset,
+                  right: isRight ? inset : 0,
+                  height: 1,
                   background: isRight
-                    ? "linear-gradient(90deg, transparent 15%, rgba(129,140,248,0.12) 45%, rgba(168,85,247,0.65) 100%)"
-                    : "linear-gradient(90deg, rgba(168,85,247,0.65) 0%, rgba(129,140,248,0.12) 55%, transparent 85%)",
+                    ? "linear-gradient(90deg, transparent 15%, rgba(129,140,248,0.12) 45%, rgba(34,211,238,0.6) 100%)"
+                    : "linear-gradient(90deg, rgba(168,85,247,0.6) 0%, rgba(129,140,248,0.12) 55%, transparent 85%)",
                 }} />
 
-                {/* Content block — aligned to correct side */}
+                {/* Content block — aligned to correct side, pulled in from edges */}
                 <div style={{
-                  maxWidth: 680,
+                  maxWidth: 620,
                   marginLeft: isRight ? "auto" : 0,
-                  padding: "clamp(56px, 7vw, 84px) clamp(24px, 6vw, 160px)",
-                  paddingBottom: "clamp(56px, 7vw, 84px)",
-                  paddingLeft: isRight ? 0 : "clamp(24px, 6vw, 160px)",
-                  paddingRight: isRight ? "clamp(24px, 6vw, 160px)" : 0,
+                  padding: "clamp(60px, 7vw, 92px) 0",
+                  paddingLeft: isRight ? 0 : inset,
+                  paddingRight: isRight ? inset : 0,
                 }}>
 
-                  {/* Ordinal — gradient, prominent */}
-                  <div style={{
-                    fontSize: "clamp(5.5rem, 9vw, 10rem)", fontWeight: 900, lineHeight: 0.82,
-                    letterSpacing: "-0.06em", userSelect: "none" as const,
-                    marginBottom: 20,
-                    background: isRight
-                      ? "linear-gradient(135deg, rgba(34,211,238,0.22) 0%, rgba(129,140,248,0.10) 100%)"
-                      : "linear-gradient(135deg, rgba(168,85,247,0.22) 0%, rgba(129,140,248,0.08) 100%)",
-                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-                    textAlign: isRight ? "right" as const : "left" as const,
-                  }}>0{i + 1}</div>
-
-                  {/* Label */}
+                  {/* Pain name — big gradient display (replaces ordinal) */}
                   <p style={{
-                    fontSize: 10, fontWeight: 700, letterSpacing: "0.22em",
-                    textTransform: "uppercase" as const,
-                    color: "#A855F7", margin: "0 0 16px",
-                    fontFamily: "var(--font-geist), system-ui, sans-serif",
+                    fontSize: "clamp(2.4rem, 4vw, 4rem)", fontWeight: 800, lineHeight: 1.0,
+                    letterSpacing: "-0.035em", margin: "0 0 22px",
+                    background: isRight
+                      ? "linear-gradient(135deg, #22D3EE 0%, #818CF8 100%)"
+                      : "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)",
+                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                     textAlign: isRight ? "right" as const : "left" as const,
                   }}>{p.label}</p>
 
-                  {/* Heading */}
+                  {/* Statement */}
                   <h3 style={{
-                    fontSize: "clamp(2rem, 3.2vw, 3rem)", fontWeight: 700, lineHeight: 1.12,
-                    color: "#fff", margin: "0 0 22px",
-                    letterSpacing: "-0.035em",
+                    fontSize: "clamp(1.4rem, 2vw, 1.9rem)", fontWeight: 700, lineHeight: 1.2,
+                    color: "#fff", margin: "0 0 20px",
+                    letterSpacing: "-0.025em",
                     textAlign: isRight ? "right" as const : "left" as const,
                   }}>{p.heading}</h3>
 
                   {/* Body */}
                   <p style={{
-                    fontSize: "clamp(1rem, 1.2vw, 1.1rem)", lineHeight: 1.78,
+                    fontSize: "clamp(1rem, 1.15vw, 1.08rem)", lineHeight: 1.75,
                     color: "rgba(255,255,255,0.42)", margin: 0,
                     fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
                     maxWidth: 440,
