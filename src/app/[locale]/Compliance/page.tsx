@@ -1238,7 +1238,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
   return (
     <section id="executive-summary" style={{
       position: "relative", width: "100%",
-      padding: "clamp(100px, 12vw, 160px) clamp(24px, 6vw, 160px)",
+      padding: "clamp(100px, 12vw, 160px) clamp(24px, 10vw, 220px)",
       background: "linear-gradient(168deg, #04060F 0%, #080B20 40%, #0C0A24 100%)",
       overflow: "hidden", isolation: "isolate",
       fontFamily: "var(--font-geist), system-ui, sans-serif",
@@ -1265,7 +1265,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
 
         {/* Left: copy + form */}
         <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-          style={{ paddingLeft: "clamp(0px, 5vw, 140px)" }} className="cc-section-text"
+          style={{ paddingLeft: "clamp(0px, 2vw, 40px)" }} className="cc-section-text"
         >
 
           <motion.h2 variants={fadeUp} style={{
