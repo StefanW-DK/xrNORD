@@ -307,139 +307,131 @@ function TheProblem({ locale }: { locale: string }) {
         background: "radial-gradient(ellipse 50% 40% at 0% 100%, rgba(168,85,247,0.10) 0%, transparent 60%)",
       }} />
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 1520, margin: "0 auto" }}>
+      <div style={{ position: "relative", zIndex: 1 }}>
 
-        {/* ── PART 1: Headline left + Graph right ── */}
-        <div className="problem-top-grid" style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.3fr)",
-          gap: "clamp(48px, 6vw, 100px)",
-          alignItems: "start",
+        {/* ── PART 1: Headline top-left, graph + caption bottom-right ── */}
+        <div style={{
           marginBottom: "clamp(100px, 14vw, 160px)",
-          padding: "0 clamp(24px, 5vw, 150px)",
+          padding: "0 clamp(24px, 5vw, 120px)",
         }}>
+          <div className="problem-top" style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(0, 0.92fr) minmax(0, 1.08fr)",
+            gap: "clamp(40px, 5vw, 96px)",
+            alignItems: "start",
+          }}>
 
-          {/* LEFT: headline */}
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}>
+            {/* LEFT: headline — top-aligned */}
+            <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}
+              style={{ alignSelf: "start" }}>
 
-            <motion.div variants={fadeUp} style={{ marginBottom: 32 }}>
-              <span style={{
-                display: "inline-flex", alignItems: "center", gap: 9,
-                padding: "6px 14px", borderRadius: 999,
-                background: "rgba(168,85,247,0.10)", border: "1px solid rgba(168,85,247,0.28)",
-                fontSize: 10, fontWeight: 700, letterSpacing: "0.22em",
-                textTransform: "uppercase" as const, color: "rgba(196,181,253,0.8)",
+              <motion.div variants={fadeUp} style={{ marginBottom: 30 }}>
+                <span style={{
+                  display: "inline-flex", alignItems: "center", gap: 9,
+                  padding: "6px 14px", borderRadius: 999,
+                  background: "rgba(168,85,247,0.10)", border: "1px solid rgba(168,85,247,0.28)",
+                  fontSize: 10, fontWeight: 700, letterSpacing: "0.22em",
+                  textTransform: "uppercase" as const, color: "rgba(196,181,253,0.8)",
+                }}>
+                  <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#A855F7", display: "inline-block", flexShrink: 0 }} />
+                  {en ? "The problem" : "Problemet"}
+                </span>
+              </motion.div>
+
+              <motion.h2 variants={fadeUp} style={{
+                fontSize: "clamp(2.2rem, 4vw, 4rem)", fontWeight: 800, lineHeight: 1.05,
+                letterSpacing: "-0.04em", margin: 0,
               }}>
-                <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#A855F7", display: "inline-block", flexShrink: 0 }} />
-                {en ? "The problem" : "Problemet"}
-              </span>
+                <span style={{ color: "#fff", display: "block" }}>
+                  {en ? "You think you're compliant." : "Du tror du er compliant."}
+                </span>
+                <span style={{
+                  background: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)",
+                  WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                  display: "block",
+                }}>
+                  {en ? "You're probably not." : "Det er du sandsynligvis ikke."}
+                </span>
+              </motion.h2>
             </motion.div>
 
-            <motion.h2 variants={fadeUp} style={{
-              fontSize: "clamp(3rem, 5.5vw, 5.5rem)", fontWeight: 800, lineHeight: 1.0,
-              letterSpacing: "-0.04em", margin: "0 0 36px",
-            }}>
-              <span style={{ color: "#fff", display: "block" }}>
-                {en ? "You think you're compliant." : "Du tror du er compliant."}
-              </span>
-              <span style={{
-                background: "linear-gradient(135deg, #A855F7 0%, #818CF8 100%)",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-                display: "block",
-              }}>
-                {en ? "You're probably not." : "Det er du sandsynligvis ikke."}
-              </span>
-            </motion.h2>
+            {/* RIGHT: graph + caption — bottom-aligned. Static structure; only the wave fades in. */}
+            <div style={{ marginTop: "clamp(130px, 18vw, 320px)", position: "relative" }}>
+              {/* ambient glow under graph */}
+              <div aria-hidden style={{
+                position: "absolute", top: "20%", left: "8%", right: "8%", bottom: "30%",
+                background: "radial-gradient(ellipse, rgba(129,140,248,0.16) 0%, transparent 70%)",
+                filter: "blur(34px)", pointerEvents: "none",
+              }} />
+              <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg"
+                style={{ width: "100%", height: "auto", display: "block", overflow: "visible", position: "relative" }}
+                aria-label={en ? "The audit cycle: compliance drifts below the requirement line, then spikes before each audit" : "Audit-cyklussen: compliance drifter under kravlinjen og stiger markant inden hver audit"}
+              >
+                <defs>
+                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#A855F7"/>
+                    <stop offset="55%" stopColor="#818CF8"/>
+                    <stop offset="100%" stopColor="#22D3EE"/>
+                  </linearGradient>
+                  <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#A855F7" stopOpacity="0.16"/>
+                    <stop offset="100%" stopColor="#A855F7" stopOpacity="0"/>
+                  </linearGradient>
+                </defs>
 
-            <motion.p variants={fadeUp} style={{
-              fontSize: "clamp(1.05rem, 1.4vw, 1.2rem)", lineHeight: 1.65, fontWeight: 400,
-              color: "rgba(255,255,255,0.65)", margin: 0,
-              fontFamily: "var(--font-inter), system-ui, sans-serif", fontStyle: "italic",
-              paddingLeft: 20, borderLeft: "2px solid rgba(168,85,247,0.50)",
-              maxWidth: 480,
-            }}>
-              {en
-                ? "Compliance is an illusion if it isn't built into daily work."
-                : "Compliance er en illusion, hvis den ikke er bygget ind i det daglige arbejde."}
-            </motion.p>
-          </motion.div>
+                {/* ── Static structure (visible from the start) ── */}
+                <line x1="0" y1="70" x2="800" y2="70" stroke="rgba(255,255,255,0.14)" strokeWidth="1" strokeDasharray="5 5"/>
+                <text x="800" y="60" textAnchor="end" fill="rgba(255,255,255,0.45)" fontSize="13" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "Required" : "Krav"}</text>
 
-          {/* RIGHT: graph */}
-          <motion.div
-            initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            style={{ position: "relative", paddingTop: "clamp(40px, 7vw, 130px)" }}
-          >
-            {/* subtle ambient glow under graph */}
-            <div aria-hidden style={{
-              position: "absolute", bottom: -20, left: "15%", right: "15%", height: 80,
-              background: "radial-gradient(ellipse, rgba(129,140,248,0.18) 0%, transparent 70%)",
-              filter: "blur(24px)", pointerEvents: "none",
-            }} />
-            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg"
-              style={{ width: "100%", height: "auto", display: "block", overflow: "visible", position: "relative" }}
-              aria-label={en ? "The audit cycle: compliance drifts below the requirement line, then spikes before each audit" : "Audit-cyklussen: compliance drifter under kravlinjen og stiger markant inden hver audit"}
-            >
-              <defs>
-                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#A855F7"/>
-                  <stop offset="55%" stopColor="#818CF8"/>
-                  <stop offset="100%" stopColor="#22D3EE"/>
-                </linearGradient>
-                <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#A855F7" stopOpacity="0.16"/>
-                  <stop offset="100%" stopColor="#A855F7" stopOpacity="0"/>
-                </linearGradient>
-              </defs>
-
-              <line x1="0" y1="70" x2="800" y2="70" stroke="rgba(255,255,255,0.12)" strokeWidth="1" strokeDasharray="5 5"/>
-              <text x="812" y="74" fill="rgba(255,255,255,0.30)" fontSize="9" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "Required" : "Krav"}</text>
-
-              <motion.path
-                d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165 L 800,220 L 0,220 Z"
-                fill="url(#areaGrad)"
-                initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-                viewport={{ once: true }} transition={{ duration: 1.4, delay: 0.2 }}
-              />
-              <motion.path
-                d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165"
-                fill="none" stroke="url(#lineGrad)" strokeWidth="2" strokeLinecap="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                whileInView={{ pathLength: 1, opacity: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ pathLength: { duration: 2.4, ease: "easeInOut" }, opacity: { duration: 0.3 } }}
-              />
-
-              {[230, 550].map((x, i) => (
-                <g key={i}>
-                  <line x1={x} y1="20" x2={x} y2="200" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="3 4"/>
-                  <motion.text x={x} y="14" textAnchor="middle"
-                    fill="rgba(255,255,255,0.28)" fontSize="8" fontWeight="700" letterSpacing="0.18em"
+                {[230, 550].map((x) => (
+                  <line key={x} x1={x} y1="16" x2={x} y2="200" stroke="rgba(255,255,255,0.10)" strokeWidth="1" strokeDasharray="3 4"/>
+                ))}
+                {[230, 550].map((x) => (
+                  <text key={x} x={x} y="10" textAnchor="middle"
+                    fill="rgba(255,255,255,0.40)" fontSize="12" fontWeight="700" letterSpacing="0.18em"
                     fontFamily="var(--font-geist), system-ui, sans-serif"
-                    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-                    transition={{ delay: 0.8 + i * 0.4 }}
-                  >AUDIT</motion.text>
-                </g>
-              ))}
+                  >AUDIT</text>
+                ))}
 
-              <line x1="0" y1="200" x2="800" y2="200" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
-              <text x="0" y="215" fill="rgba(255,255,255,0.20)" fontSize="8" fontFamily="var(--font-inter), system-ui, sans-serif">{en ? "← time →" : "← tid →"}</text>
+                <line x1="0" y1="200" x2="800" y2="200" stroke="rgba(255,255,255,0.10)" strokeWidth="1"/>
 
-              {[{ x: 110, delay: 2.0 }, { x: 390, delay: 2.4 }, { x: 690, delay: 2.8 }].map(({ x, delay }) => (
-                <motion.text key={x} x={x} y="198" textAnchor="middle"
-                  fill="rgba(168,85,247,0.45)" fontSize="8" fontWeight="700" letterSpacing="0.14em"
-                  fontFamily="var(--font-geist), system-ui, sans-serif"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-                  transition={{ delay }}
-                >DRIFT</motion.text>
-              ))}
-            </svg>
-          </motion.div>
+                {[110, 390, 690].map((x) => (
+                  <text key={x} x={x} y="192" textAnchor="middle"
+                    fill="rgba(168,85,247,0.55)" fontSize="12" fontWeight="700" letterSpacing="0.14em"
+                    fontFamily="var(--font-geist), system-ui, sans-serif"
+                  >DRIFT</text>
+                ))}
+
+                {/* ── The wave (always visible) ── */}
+                <path
+                  d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165 L 800,220 L 0,220 Z"
+                  fill="url(#areaGrad)"
+                />
+                <motion.path
+                  d="M 0,115 C 50,120 100,137 145,152 C 165,158 180,161 195,162 C 205,142 218,88 230,40 C 240,55 258,88 278,118 C 310,143 360,156 405,161 C 445,163 480,163 512,161 C 522,141 535,88 550,40 C 560,55 578,88 600,118 C 632,143 690,158 752,163 C 772,164 788,165 800,165"
+                  fill="none" stroke="url(#lineGrad)" strokeWidth="3" strokeLinecap="round"
+                  initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+                  transition={{ duration: 2.4, ease: "easeInOut", delay: 0.3 }}
+                />
+              </svg>
+
+              {/* Caption under graph — static */}
+              <p style={{
+                marginTop: 26, marginBottom: 0,
+                fontSize: "clamp(1rem, 1.2vw, 1.2rem)", lineHeight: 1.5, fontWeight: 400,
+                color: "rgba(255,255,255,0.62)", fontStyle: "italic",
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
+              }}>
+                {en
+                  ? "Compliance is an illusion if it isn't built into daily work."
+                  : "Compliance er en illusion, hvis den ikke er bygget ind i det daglige arbejde."}
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* ── PART 2: Alternating — gradient separator lines, pain name as display ── */}
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column", maxWidth: 1520, margin: "0 auto" }}>
           {problems.map((p, i) => {
             const isRight = i % 2 !== 0;
             const inset = "clamp(24px, 6vw, 150px)";
@@ -508,8 +500,9 @@ function TheProblem({ locale }: { locale: string }) {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-@media (max-width: 768px) {
-  .problem-top-grid { grid-template-columns: 1fr !important; }
+@media (max-width: 860px) {
+  .problem-top { grid-template-columns: 1fr !important; gap: clamp(48px, 10vw, 80px) !important; }
+  .problem-top > div:last-child { margin-top: 0 !important; }
 }
       ` }} />
     </section>
