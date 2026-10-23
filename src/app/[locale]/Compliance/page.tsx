@@ -1187,8 +1187,9 @@ function ReadPerspective({ locale }: { locale: string }) {
 /* ════════════════════════════════════════════════════════════════════════
    SECTION 9 — EXECUTIVE SUMMARY GATE
    ════════════════════════════════════════════════════════════════════════ */
-function ExecutiveSummaryGate({ locale }: { locale: string }) {
+function ExecutiveSummaryGate({ locale, variant = "dark" }: { locale: string; variant?: "dark" | "light" }) {
   const en = locale !== "da";
+  const light = variant === "light";
   const [fields, setFields] = useState({ name: "", email: "", jobTitle: "", consent: false });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -1220,10 +1221,10 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
   const inputStyle: React.CSSProperties = {
     width: "100%", boxSizing: "border-box" as const,
     padding: "13px 16px",
-    background: "rgba(255,255,255,0.05)",
-    border: "1px solid rgba(255,255,255,0.14)",
+    background: light ? "#F8FAFC" : "rgba(255,255,255,0.05)",
+    border: light ? "1px solid rgba(0,0,0,0.12)" : "1px solid rgba(255,255,255,0.14)",
     borderRadius: 10,
-    color: "#fff", fontSize: 15, outline: "none",
+    color: light ? "#111827" : "#fff", fontSize: 15, outline: "none",
     fontFamily: "var(--font-inter), system-ui, sans-serif",
     fontWeight: 300,
   };
@@ -1231,19 +1232,20 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
   const labelStyle: React.CSSProperties = {
     display: "block", fontSize: 11, fontWeight: 700,
     letterSpacing: "0.16em", textTransform: "uppercase" as const,
-    color: "rgba(255,255,255,0.45)", marginBottom: 8,
+    color: light ? "rgba(0,0,0,0.45)" : "rgba(255,255,255,0.45)", marginBottom: 8,
     fontFamily: "var(--font-geist), system-ui, sans-serif",
   };
 
   return (
-    <section id="executive-summary" style={{
+    <section id={light ? "executive-summary-light" : "executive-summary"} style={{
       position: "relative", width: "100%",
       padding: "clamp(100px, 12vw, 160px) clamp(24px, 4vw, 80px)",
-      background: "linear-gradient(168deg, #04060F 0%, #080B20 40%, #0C0A24 100%)",
+      background: light ? "#FFFFFF" : "linear-gradient(168deg, #04060F 0%, #080B20 40%, #0C0A24 100%)",
       overflow: "hidden", isolation: "isolate",
       fontFamily: "var(--font-geist), system-ui, sans-serif",
     }}>
-      {/* Background accents */}
+      {/* Background accents — dark only */}
+      {!light && <>
       <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
         background: "radial-gradient(ellipse 60% 55% at 4% 50%, rgba(168,85,247,0.14) 0%, transparent 65%)",
       }} />
@@ -1256,6 +1258,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
         maskImage: "radial-gradient(ellipse 70% 60% at 40% 50%, black 30%, transparent 90%)",
         WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 40% 50%, black 30%, transparent 90%)",
       }} />
+      </>}
 
       <div style={{
         position: "relative", zIndex: 1,
@@ -1271,7 +1274,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
 
           <motion.h2 variants={fadeUp} style={{
             fontSize: "clamp(2.4rem, 5vw, 4.4rem)", fontWeight: 800, lineHeight: 1.05,
-            letterSpacing: "-0.03em", color: "#fff", margin: "0 0 20px",
+            letterSpacing: "-0.03em", color: light ? "#111827" : "#fff", margin: "0 0 20px",
           }}>
             {en ? (
               <>Download the{" "}
@@ -1290,12 +1293,12 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
 
           <motion.p variants={fadeUp} style={{
             fontSize: "clamp(1.05rem, 1.3vw, 1.2rem)", lineHeight: 1.65,
-            color: "rgba(255,255,255,0.60)", maxWidth: 540, margin: "0 0 48px",
+            color: light ? "#64748B" : "rgba(255,255,255,0.60)", maxWidth: 540, margin: "0 0 48px",
             fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
           }}>
             {en
-              ? <>A 9-page introduction to the concept, the value it creates, and how to get started. If you want the full documents and a deeper conversation, <a href="/en/contact" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "underline", textDecorationColor: "rgba(168,85,247,0.5)" }}>we are happy to talk.</a></>
-              : <>En 9-siders introduktion til konceptet, den værdiskabelse det medfører, og hvordan man kommer i gang. Ønsker du de fulde dokumenter og en dybere samtale, er du <a href="/da/contact" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "underline", textDecorationColor: "rgba(168,85,247,0.5)" }}>velkommen til at kontakte os.</a></>}
+              ? <>A 9-page introduction to the concept, the value it creates, and how to get started. If you want the full documents and a deeper conversation, <a href="/en/contact" style={{ color: light ? "#A855F7" : "rgba(255,255,255,0.85)", textDecoration: "underline", textDecorationColor: "rgba(168,85,247,0.5)" }}>we are happy to talk.</a></>
+              : <>En 9-siders introduktion til konceptet, den værdiskabelse det medfører, og hvordan man kommer i gang. Ønsker du de fulde dokumenter og en dybere samtale, er du <a href="/da/contact" style={{ color: light ? "#A855F7" : "rgba(255,255,255,0.85)", textDecoration: "underline", textDecorationColor: "rgba(168,85,247,0.5)" }}>velkommen til at kontakte os.</a></>}
           </motion.p>
 
           {status === "success" ? (
@@ -1308,10 +1311,10 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
                 background: "rgba(168,85,247,0.08)", border: "1px solid rgba(168,85,247,0.30)",
               }}
             >
-              <p style={{ fontSize: "clamp(1.1rem, 1.4vw, 1.25rem)", fontWeight: 700, color: "#fff", margin: "0 0 8px" }}>
+              <p style={{ fontSize: "clamp(1.1rem, 1.4vw, 1.25rem)", fontWeight: 700, color: light ? "#111827" : "#fff", margin: "0 0 8px" }}>
                 {en ? "It is on its way." : "Den er på vej."}
               </p>
-              <p style={{ fontSize: "clamp(0.95rem, 1.1vw, 1.05rem)", color: "rgba(255,255,255,0.60)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300, lineHeight: 1.6 }}>
+              <p style={{ fontSize: "clamp(0.95rem, 1.1vw, 1.05rem)", color: light ? "#64748B" : "rgba(255,255,255,0.60)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300, lineHeight: 1.6 }}>
                 {en
                   ? "Check your inbox in the next few minutes. If you have any questions in the meantime, reach us at info@xrnord.com."
                   : "Tjek din indbakke inden for de næste få minutter. Hvis du har spørgsmål, kan du nå os på info@xrnord.com."}
@@ -1356,7 +1359,8 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
               <label style={{
                 display: "flex", alignItems: "flex-start", gap: 12, cursor: "pointer",
                 padding: "16px 18px", borderRadius: 10,
-                background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.10)",
+                background: light ? "rgba(0,0,0,0.03)" : "rgba(255,255,255,0.03)",
+                border: light ? "1px solid rgba(0,0,0,0.10)" : "1px solid rgba(255,255,255,0.10)",
               }}>
                 <input
                   type="checkbox"
@@ -1366,7 +1370,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
                 />
                 <span style={{
                   fontSize: "clamp(0.82rem, 0.95vw, 0.9rem)", lineHeight: 1.55,
-                  color: "rgba(255,255,255,0.50)",
+                  color: light ? "rgba(0,0,0,0.50)" : "rgba(255,255,255,0.50)",
                   fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300,
                 }}>
                   {en
@@ -1376,7 +1380,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
               </label>
 
               {status === "error" && (
-                <p style={{ fontSize: 14, color: "#F87171", margin: 0 }}>{errorMsg}</p>
+                <p style={{ fontSize: 14, color: light ? "#DC2626" : "#F87171", margin: 0 }}>{errorMsg}</p>
               )}
 
               <button
@@ -1400,7 +1404,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
               </button>
 
               <p style={{
-                fontSize: 12, color: "rgba(255,255,255,0.28)", margin: 0,
+                fontSize: 12, color: light ? "rgba(0,0,0,0.35)" : "rgba(255,255,255,0.28)", margin: 0,
                 fontFamily: "var(--font-inter), system-ui, sans-serif",
               }}>
                 {en
@@ -1423,7 +1427,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
             <div aria-hidden style={{
               position: "absolute", top: 24, left: 12, right: -12, bottom: -24,
               borderRadius: 16,
-              background: "rgba(168,85,247,0.25)",
+              background: light ? "rgba(168,85,247,0.18)" : "rgba(168,85,247,0.25)",
               filter: "blur(28px)",
             }} />
             {/* Document image */}
@@ -1434,7 +1438,9 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
                 position: "relative", zIndex: 1,
                 width: "100%", height: "auto", display: "block",
                 borderRadius: 12,
-                boxShadow: "0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08)",
+                boxShadow: light
+                  ? "0 32px 80px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.06)"
+                  : "0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08)",
                 transform: "rotate(1.5deg)",
               }}
             />
@@ -1450,7 +1456,7 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
               textAlign: "center", margin: "20px 0 0",
               fontSize: 11, fontWeight: 700, letterSpacing: "0.18em",
               textTransform: "uppercase" as const,
-              color: "rgba(255,255,255,0.35)",
+              color: light ? "rgba(0,0,0,0.30)" : "rgba(255,255,255,0.35)",
               fontFamily: "var(--font-geist), system-ui, sans-serif",
             }}>
               {en ? "Continuous Compliance Framework · xrNORD" : "Continuous Compliance Framework · xrNORD"}
@@ -1464,8 +1470,10 @@ function ExecutiveSummaryGate({ locale }: { locale: string }) {
   .cc-gate-grid { grid-template-columns: 1fr !important; }
   .cc-gate-grid > div:last-child { display: none !important; }
 }
-input::placeholder { color: rgba(255,255,255,0.25); }
-input:focus { border-color: rgba(168,85,247,0.55) !important; }
+${light
+  ? `input::placeholder { color: rgba(0,0,0,0.25); } input:focus { border-color: rgba(168,85,247,0.55) !important; }`
+  : `input::placeholder { color: rgba(255,255,255,0.25); } input:focus { border-color: rgba(168,85,247,0.55) !important; }`
+}
       ` }} />
     </section>
   );
@@ -1566,7 +1574,8 @@ export default function CompliancePage() {
       <Rollout locale={locale} />
       <ValueCards locale={locale} />
       <ReadPerspective locale={locale} />
-      <ExecutiveSummaryGate locale={locale} />
+      <ExecutiveSummaryGate locale={locale} variant="dark" />
+      <ExecutiveSummaryGate locale={locale} variant="light" />
       <NextStepCta locale={locale} />
     </main>
   );
