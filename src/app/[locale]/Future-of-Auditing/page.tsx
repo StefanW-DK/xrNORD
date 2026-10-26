@@ -850,7 +850,7 @@ function BarriersSection({ locale }: { locale: string }) {
         filter: "blur(60px)", pointerEvents: "none", zIndex: 0,
       }} />
 
-      <div style={{ position: "relative", zIndex: 1 }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 1360, margin: "0 auto" }}>
         {/* Header */}
         <motion.div
           variants={stagger}
@@ -901,105 +901,90 @@ function BarriersSection({ locale }: { locale: string }) {
           </motion.h2>
         </motion.div>
 
-        {/* Two big metrics */}
+        {/* Barriers — two columns: % stats (left) + challenges (right) */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "clamp(40px, 5vw, 80px)",
+            gap: "clamp(48px, 6vw, 110px)",
             alignItems: "start",
             position: "relative",
-            marginBottom: "clamp(120px, 15vw, 180px)",
           }}
-          className="fa-barriers-stats"
+          className="fa-barriers-grid"
         >
-          <div aria-hidden />
-          <div style={{ display: "flex", flexDirection: "column", gap: "clamp(56px, 7vw, 88px)" }}>
-            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}>
-              <p style={{
-                fontSize: "clamp(4rem, 5.8vw, 7rem)",
-                fontWeight: 800, lineHeight: 0.95, letterSpacing: "-0.05em", margin: "0 0 20px",
-                background: "linear-gradient(135deg, #818CF8, #22D3EE, #7DD3FC)",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-              }}>
-                <Counter to={34} duration={2.0} />%
-              </p>
-              <p style={{ fontSize: "clamp(1.2rem, 1.6vw, 1.45rem)", fontWeight: 700, color: "#fff", margin: "0 0 14px", letterSpacing: "-0.01em" }}>
-                {locale === "da" ? "Implementeringsomkostninger" : "Cost of implementation"}
-              </p>
-              <p style={{ fontSize: "0.95rem", lineHeight: 1.65, color: "rgba(255,255,255,0.62)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300, fontStyle: "italic", maxWidth: 480 }}>
-                {locale === "da"
+          <div aria-hidden style={{ position: "absolute", left: "50%", top: "2%", bottom: "2%", width: 1, transform: "translateX(-50%)", background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.09) 50%, transparent 100%)" }} className="fa-barriers-divider" />
+
+          {/* LEFT: the two quantified barriers */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "clamp(48px, 6vw, 84px)" }}>
+            {([
+              {
+                value: 34,
+                grad: "linear-gradient(135deg, #818CF8, #22D3EE, #7DD3FC)",
+                title: locale === "da" ? "Implementeringsomkostninger" : "Cost of implementation",
+                quote: locale === "da"
                   ? "“Høje implementeringsomkostninger kan gøre det udfordrende for firmaer at omfavne AI fuldt ud.”"
-                  : "“High implementation costs can make it challenging for firms to fully embrace AI.”"}
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ delay: 0.12 }}>
-              <p style={{
-                fontSize: "clamp(4rem, 5.8vw, 7rem)",
-                fontWeight: 800, lineHeight: 0.95, letterSpacing: "-0.05em", margin: "0 0 20px",
-                background: "linear-gradient(135deg, #22D3EE, #7DD3FC, #A5F3FC)",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-                fontFamily: "var(--font-geist), system-ui, sans-serif",
-              }}>
-                <Counter to={30} duration={2.0} />%
-              </p>
-              <p style={{ fontSize: "clamp(1.2rem, 1.6vw, 1.45rem)", fontWeight: 700, color: "#fff", margin: "0 0 14px", letterSpacing: "-0.01em" }}>
-                {locale === "da" ? "Mangel på teknisk talent" : "Lack of technical talent"}
-              </p>
-              <p style={{ fontSize: "0.95rem", lineHeight: 1.65, color: "rgba(255,255,255,0.62)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300, fontStyle: "italic", maxWidth: 480 }}>
-                {locale === "da"
+                  : "“High implementation costs can make it challenging for firms to fully embrace AI.”",
+              },
+              {
+                value: 30,
+                grad: "linear-gradient(135deg, #22D3EE, #7DD3FC, #A5F3FC)",
+                title: locale === "da" ? "Mangel på teknisk talent" : "Lack of technical talent",
+                quote: locale === "da"
                   ? "“At sikre at folk har færdighederne og selvtilliden til at arbejde sammen med AI. Uden det rette talent-mindset vil adoptionen halte, uanset hvor god teknologien er.”"
-                  : "“Ensuring that people have the skills and confidence to work alongside AI. Without the right talent mindset, adoption will lag no matter how good the technology is.”"}
-              </p>
-            </motion.div>
+                  : "“Ensuring that people have the skills and confidence to work alongside AI. Without the right talent mindset, adoption will lag no matter how good the technology is.”",
+              },
+            ]).map((m, i) => (
+              <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ delay: i * 0.12 }}>
+                <p style={{
+                  fontSize: "clamp(3.6rem, 5.5vw, 6.5rem)",
+                  fontWeight: 800, lineHeight: 0.95, letterSpacing: "-0.05em", margin: "0 0 16px",
+                  background: m.grad,
+                  WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                  fontFamily: "var(--font-geist), system-ui, sans-serif",
+                }}>
+                  <Counter to={m.value} duration={2.0} />%
+                </p>
+                <p style={{ fontSize: "clamp(1.15rem, 1.5vw, 1.4rem)", fontWeight: 700, color: "#fff", margin: "0 0 12px", letterSpacing: "-0.01em" }}>
+                  {m.title}
+                </p>
+                <p style={{ fontSize: "0.95rem", lineHeight: 1.65, color: "rgba(255,255,255,0.62)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 300, fontStyle: "italic", maxWidth: 440 }}>
+                  {m.quote}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        </div>
 
-        {/* Three challenges */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            gap: "clamp(40px, 5vw, 80px)",
-            alignItems: "start",
-            position: "relative",
-          }}
-          className="fa-challenges-grid"
-        >
-          <div aria-hidden style={{ position: "absolute", left: "33.33%", top: "4%", bottom: "4%", width: 1, background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)" }} className="fa-challenges-divider" />
-          <div aria-hidden style={{ position: "absolute", left: "66.66%", top: "4%", bottom: "4%", width: 1, background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%)" }} className="fa-challenges-divider" />
+          {/* RIGHT: the three qualitative challenges */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "clamp(40px, 5vw, 60px)" }}>
+            {([
+              {
+                title: locale === "da" ? "Det juridiske vakuum" : "The legal vacuum",
+                quote: locale === "da" ? "Om AI-output vil kunne holde stand juridisk eller under et regulatorisk eftersyn." : "Whether AI outputs would hold up legally or during a regulatory review.",
+                accent: "#A78BFA",
+              },
+              {
+                title: locale === "da" ? "Den manglende køreplan" : "The missing roadmap",
+                quote: locale === "da" ? "Mangel på en klar køreplan for hvordan AI passer ind i den langsigtede revisionsstrategi." : "Lack of a clear road map for how AI fits into the long-term audit strategy.",
+                accent: "#818CF8",
+              },
+              {
+                title: locale === "da" ? "Compliance & følsom data" : "Compliance & sensitive data",
+                quote: locale === "da" ? "Regulatoriske, compliance- og privatlivsmæssige overvejelser, der komplicerer AI-adoption, især når workflows involverer følsomme data." : "Regulatory, compliance and privacy considerations that complicate AI adoption, especially when workflows involve sensitive data.",
+                accent: "#22D3EE",
+              },
+            ]).map((c, i) => (
+              <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ delay: 0.15 + i * 0.1 }}>
 
-          {([
-            {
-              title: locale === "da" ? "Det juridiske vakuum" : "The legal vacuum",
-              quote: locale === "da" ? "Om AI-output vil kunne holde stand juridisk eller under et regulatorisk eftersyn." : "Whether AI outputs would hold up legally or during a regulatory review.",
-              accent: "#A78BFA",
-            },
-            {
-              title: locale === "da" ? "Den manglende køreplan" : "The missing roadmap",
-              quote: locale === "da" ? "Mangel på en klar køreplan for hvordan AI passer ind i den langsigtede revisionsstrategi." : "Lack of a clear road map for how AI fits into the long-term audit strategy.",
-              accent: "#818CF8",
-            },
-            {
-              title: locale === "da" ? "Compliance & følsom data" : "Compliance & sensitive data",
-              quote: locale === "da" ? "Regulatoriske, compliance- og privatlivsmæssige overvejelser, der komplicerer AI-adoption, især når workflows involverer følsomme data." : "Regulatory, compliance and privacy considerations that complicate AI adoption, especially when workflows involve sensitive data.",
-              accent: "#22D3EE",
-            },
-          ]).map((c, i) => (
-            <motion.div key={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ delay: i * 0.1 }}
-              style={{ position: "relative", paddingLeft: i === 0 ? 0 : "clamp(0px, 1.5vw, 28px)", paddingRight: i === 2 ? 0 : "clamp(0px, 1.5vw, 28px)" }}
-            >
-              <div aria-hidden style={{ width: 32, height: 2, background: c.accent, marginBottom: 24, borderRadius: 999 }} />
-              <h3 style={{ fontSize: "clamp(1.25rem, 1.7vw, 1.5rem)", fontWeight: 700, lineHeight: 1.25, letterSpacing: "-0.015em", color: "#fff", margin: "0 0 20px" }}>
-                {c.title}
-              </h3>
-              <p style={{ fontSize: "0.96rem", lineHeight: 1.7, color: "rgba(255,255,255,0.70)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 400, fontStyle: "italic" }}>
-                &ldquo;{c.quote}&rdquo;
-              </p>
-            </motion.div>
-          ))}
+                <div aria-hidden style={{ width: 28, height: 2, background: c.accent, marginBottom: 18, borderRadius: 999 }} />
+                <h3 style={{ fontSize: "clamp(1.2rem, 1.6vw, 1.45rem)", fontWeight: 700, lineHeight: 1.25, letterSpacing: "-0.015em", color: "#fff", margin: "0 0 14px" }}>
+                  {c.title}
+                </h3>
+                <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "rgba(255,255,255,0.68)", margin: 0, fontFamily: "var(--font-inter), system-ui, sans-serif", fontWeight: 400, fontStyle: "italic" }}>
+                  &ldquo;{c.quote}&rdquo;
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* CTA */}
@@ -1032,10 +1017,8 @@ function BarriersSection({ locale }: { locale: string }) {
 
       <style dangerouslySetInnerHTML={{ __html: `
 @media (max-width: 900px) {
-  .fa-barriers-stats { grid-template-columns: 1fr !important; gap: 0 !important; }
-  .fa-barriers-stats > div[aria-hidden] { display: none !important; }
-  .fa-challenges-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-  .fa-challenges-divider { display: none !important; }
+  .fa-barriers-grid { grid-template-columns: 1fr !important; gap: 64px !important; }
+  .fa-barriers-divider { display: none !important; }
 }
       ` }} />
     </section>
